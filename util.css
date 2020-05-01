@@ -1,0 +1,23 @@
+.img-size{
+  width: 70%;
+  height: auto;
+}
+
+.circle-link{
+  border-radius: 100%;
+  border-width: 50px;
+  background-color: blue;
+  width: 50%;
+  height: 160px;
+  color: white;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+a:link{
+  color:white;
+}
+a:hover{
+  color: white;
+}
