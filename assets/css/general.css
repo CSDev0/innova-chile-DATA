@@ -50,9 +50,6 @@ p{
     vertical-align: middle;
 }
 
-a:link{
-    color: #0062AB;
-}
 a:visited{
     color: white;
 }
@@ -77,7 +74,6 @@ a:visited{
     color: #0062AB;
     background-color: #FFFFFF;
 }
-
 .row{
     padding-top: 70px;
 }
