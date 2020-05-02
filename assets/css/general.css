@@ -38,13 +38,13 @@ p{
     height: auto;
 }
 
+.img-round{
+  border-radius: 50%;
+  width: 300px;
+  z-index: -300;
+}
+
 .circle-link{
-    border-radius: 100%;
-    border-width: 50px;
-    background-color: blue;
-    width: 50%;
-    height: 180px;
-    color: white;
     text-align: center;
     display: block;
     vertical-align: middle;
