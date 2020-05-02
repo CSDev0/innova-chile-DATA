@@ -66,9 +66,10 @@ a:visited{
 .nav-link{
     font-size: 20px;
     background-color: #0062AB;
+    color: #FFFFFF;
     transition: 0.5s;
     border-radius: 5px;
-    margin-left: 50px;
+    margin-left: 30px;
     width: 200px;
     text-align: center;
 }
