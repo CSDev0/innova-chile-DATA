@@ -1,0 +1,95 @@
+h1{
+    color: #11456B;
+    font-size: 40px;
+}
+p{
+    color: #49535E;
+    font-size: 20px;
+}
+
+.logo-corfo{
+    background-image: url("../img/logos/corfo_logo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 300px;
+    height: 120px;
+    margin-top: -70px;
+    margin-left: 150px;
+}
+.logo-innova{
+    background-image: url("../img/logos/innova_logo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 450px;
+    height: 120px;
+
+    margin: auto;
+    margin-top: -110px;
+}
+.jumbotron{
+    width: 100%;
+    height: 10px;
+    background-color: #FFFFFF;
+    margin-bottom: 0px;
+}
+
+.img-size{
+    width: 70%;
+    height: auto;
+}
+
+.circle-link{
+    border-radius: 100%;
+    border-width: 50px;
+    background-color: blue;
+    width: 50%;
+    height: 180px;
+    color: white;
+    text-align: center;
+    display: block;
+    vertical-align: middle;
+}
+
+a:link{
+    color: #0062AB;
+}
+a:visited{
+    color: white;
+}
+
+.navbar{
+    background-color: #0062AB;
+}
+.navbar-nav{
+    margin-left: 10%;
+}
+.nav-link{
+    font-size: 20px;
+    background-color: #0062AB;
+    transition: 0.5s;
+    border-radius: 5px;
+    margin-left: 50px;
+    width: 200px;
+    text-align: center;
+}
+.nav-link:hover{
+    color: #0062AB;
+    background-color: #FFFFFF;
+}
+
+.row{
+    padding-top: 70px;
+}
+
+
+
+.bg-quienes-somos{
+    width:100%;
+    height: 500px;
+    position: absolute;
+    background-image: url("../img/bg/proyectos.jpg");
+    opacity:0.1;
+    z-index: -5;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
