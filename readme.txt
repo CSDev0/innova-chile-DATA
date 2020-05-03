@@ -1,4 +1,4 @@
 Visualizacion del prototipo: https://clazherx.github.io/innova-chile-DATA/Prototipo.html
 
 Guía de estilo DATA:
-https://drive.google.com/file/d/1tkYgN7FPLvdcGpcRh9YPUbT-hQKli9Xc/view?usp=sharing
+https://drive.google.com/file/d/1b-Y9MLUwTrW6S3Rv2TBZ4kyEMagal3Uo/view?usp=sharing
