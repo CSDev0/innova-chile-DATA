@@ -1,3 +1,7 @@
+body{
+    overflow: scroll;
+    height: 100vh;
+}
 h1{
     color: #11456B;
     font-size: 40px;
@@ -53,7 +57,9 @@ p{
 a:visited{
     color: white;
 }
-
+a{
+    color: white;
+}
 .navbar{
     background-color: #0062AB;
 }
@@ -77,8 +83,6 @@ a:visited{
 .row{
     padding-top: 70px;
 }
-
-
 
 .bg-quienes-somos{
     width:100%;
