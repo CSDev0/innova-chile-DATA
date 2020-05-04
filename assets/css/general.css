@@ -2,6 +2,9 @@ h1{
     color: #2680BD;
     font-size: 40px;
 }
+h4{
+  color: #2680BD;
+}
 p{
     color: #49535E;
     font-size: 20px;
@@ -50,9 +53,10 @@ p{
     vertical-align: middle;
 }
 
-a:visited{
-    color: white;
+hr{
+  border-color: #0062AB;
 }
+
 a{
     color: white;
 }
