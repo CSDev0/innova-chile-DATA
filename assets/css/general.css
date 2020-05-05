@@ -1,13 +1,19 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css');
+
 h1{
     color: #2680BD;
     font-size: 40px;
 }
 h4{
-  color: #2680BD;
+    color: #2680BD;
+    font-size: 20px;
 }
 p{
     color: #49535E;
     font-size: 20px;
+}
+p.white{
+    color: #FFFFFF;
 }
 
 .logo-corfo{
@@ -42,10 +48,28 @@ p{
 }
 
 .img-round{
-  border-radius: 50%;
-  width: 200px;
+    border-radius: 50%;
+    width: 200px;
 }
 
+.circulo-data{
+    width: 200px;
+    height: 200px;
+    background-color: #48ACF1;
+    border-radius: 100px;
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+.circulo-data:hover{
+    transform: scale(1.2);
+-webkit-box-shadow: 0px 0px 46px -13px rgba(0,0,0,0.87);
+-moz-box-shadow: 0px 0px 46px -13px rgba(0,0,0,0.87);
+box-shadow: 0px 0px 46px -13px rgba(0,0,0,0.87);
+}
+.texto-circulo-data{
+    margin: auto;
+    font-size: 20px
+}
 .circle-link{
     text-align: center;
     display: block;
@@ -61,7 +85,7 @@ p{
 }
 
 hr{
-  border-color: #0062AB;
+    border-color: #0062AB;
 }
 
 a{
@@ -108,4 +132,20 @@ a{
     z-index: -5;
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+
+#footer{
+    background-color: #D1ECFF;
+    padding-top: 30px;
+    padding-bottom: 50px;
+}
+
+#copyright{
+    padding-top: 10px;
+    padding-bottom: 2px;
+    align-content: center;
+    text-align: center;
+    background-color: #11456B;
+
 }
