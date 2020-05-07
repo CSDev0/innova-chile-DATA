@@ -8,14 +8,26 @@ and open the template in the editor.
     Author     : saez_
 */
 .contenedor-grafico{
-    padding-top: 20px;
+    padding-top: 30px;
 }
 .grafico-data{
     overflow: hidden;
     width: 100%;
+    height: 700px;
     display: flex;
     max-width: 700px;
-    height: 700px;
+    max-height: 700px;
+    margin: auto;
+    border-style: none;
+    align-content: center;
+}
+.grafico-destacado{
+    overflow: hidden;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    max-width: 700px;
+    max-height: 700px;
     margin: auto;
     border-style: none;
     align-content: center;

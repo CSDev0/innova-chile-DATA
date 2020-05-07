@@ -1,4 +1,4 @@
-<section class="menubar" id="menubar">
+<section id="menubar">
     <nav class="navbar sticky-top navbar-expand-sm">
         <ul class="navbar-nav">
             <li>

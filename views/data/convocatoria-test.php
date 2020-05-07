@@ -15,7 +15,7 @@
 
 <div class="container">
     <div class="contenedor-grafico" id="grafico">
-        <iframe class="grafico-data" src="https://datainnovacion.github.io/plot_text/">
+        <iframe class="grafico-data" src="https://datainnovacion.github.io/plot_2/">
         </iframe>
     </div>
 
