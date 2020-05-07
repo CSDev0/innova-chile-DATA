@@ -1,5 +1,4 @@
-Visualizacion del prototipo: https://clazherx.github.io/innova-chile-DATA/Prototipo.html
-(La visualziacion puede estar desfasada en respecto a los archivos actuales)
+Ya no esta disponible la visualización del prototipo debido a que ahora la pagina se basa en PHP.
 
 Guía de estilo DATA:
 https://drive.google.com/file/d/1b-Y9MLUwTrW6S3Rv2TBZ4kyEMagal3Uo/view?usp=sharing
