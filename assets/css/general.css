@@ -42,7 +42,7 @@ p.white{
 
     margin: auto;
     margin-top: -110px;
-    
+
     transition: 1s;
 }
 .logo-innova:hover{
@@ -166,4 +166,14 @@ a{
     text-align: center;
     background-color: #11456B;
 
+}
+
+.dropdown>.dropdown-menu {
+  top: 200%;
+  transition: 0.3s all ease-in-out;
+}
+.dropdown:hover>.dropdown-menu {
+  display: block;
+  top: 100%;
+  left: 22%;
 }
