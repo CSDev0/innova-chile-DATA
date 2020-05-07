@@ -1,5 +1,13 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css');
 
+.back-to-top {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    display: none;
+    border: 1px solid #49535E;
+}
+
 h1{
     color: #2680BD;
     font-size: 40px;
@@ -34,6 +42,11 @@ p.white{
 
     margin: auto;
     margin-top: -110px;
+    
+    transition: 1s;
+}
+.logo-innova:hover{
+    transform: scale(1.1);
 }
 .jumbotron{
     width: 100%;
