@@ -13,12 +13,15 @@ class webController {
         require_once('views/layout/navbar.php');
         require_once('views/layout/landing-page.php');
     }
-    function data(){
+
+    function data() {
         require_once('views/layout/menubar.php');
         require_once('views/data/convocatoria-test.php');
     }
-    function app_test($value='')
-    {
-      require_once('views/data/app.php');
+
+    function apptest() {
+        require_once('views/layout/menubar.php');
+        require_once('views/data/app.php');
     }
+
 }
