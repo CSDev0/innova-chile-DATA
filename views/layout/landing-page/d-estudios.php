@@ -5,70 +5,70 @@
         <br><br>
         <div class="row">
             <div class="col-sm-6">
-                <a class="link-normal" href="Prueba_de_descarga.txt" download="P_Descarga">Encuesta caracterizacion Socioeconomica Nacional (CASEN)</a>
+                <a class="link-normal" href="#"data-toggle="modal" data-target="#modal-estudios">Encuesta caracterizacion Socioeconomica Nacional (CASEN)</a>
                 <hr>
             </div>
             <div class="col-sm-6">
-                <a class="link-normal" href="Prueba_de_descarga.txt" download="P_Descarga">Indicadores de Acceso a la salud</a>
-                <hr>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-6">
-                <a class="link-normal" href="Prueba_de_descarga.txt" download="P_Descarga">Nueva Encuesta Nacional de Empleo (NENE)</a>
-                <hr>
-            </div>
-            <div class="col-sm-6">
-                <a class="link-normal" href="Prueba_de_descarga.txt" download="P_Descarga">Esperanza de Vida</a>
+                <a class="link-normal" href="#"data-toggle="modal" data-target="#modal-estudios">Indicadores de Acceso a la salud</a>
                 <hr>
             </div>
         </div>
         <div class="row">
             <div class="col-sm-6">
-                <a class="link-normal" href="Prueba_de_descarga.txt" download="P_Descarga">Nueva Encuesta Suplementaria de Ingresos (NESI)</a>
+                <a class="link-normal" href="#"data-toggle="modal" data-target="#modal-estudios" >Nueva Encuesta Nacional de Empleo (NENE)</a>
                 <hr>
             </div>
             <div class="col-sm-6">
-                <a class="link-normal" href="Prueba_de_descarga.txt" download="P_Descarga">Estadisticas Migratorias</a>
-                <hr>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-6">
-                <a class="link-normal" href="Prueba_de_descarga.txt" download="P_Descarga">Matricula Escolar</a>
-                <hr>
-            </div>
-            <div class="col-sm-6">
-                <a class="link-normal" href="Prueba_de_descarga.txt" download="P_Descarga">Encuesta Nacional de Discapacidad (ENDISC)</a>
+                <a class="link-normal" href="#"data-toggle="modal" data-target="#modal-estudios">Esperanza de Vida</a>
                 <hr>
             </div>
         </div>
         <div class="row">
             <div class="col-sm-6">
-                <a class="link-normal" href="Prueba_de_descarga.txt" download="P_Descarga">Prueba de Seleccion Universitaria (PSU)</a>
+                <a class="link-normal" href="#"data-toggle="modal" data-target="#modal-estudios">Nueva Encuesta Suplementaria de Ingresos (NESI)</a>
                 <hr>
             </div>
             <div class="col-sm-6">
-                <a class="link-normal" href="Prueba_de_descarga.txt" download="P_Descarga">Encuesta Sobre Gasto y Personal en I+D</a>
-                <hr>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-6">
-                <a class="link-normal" href="Prueba_de_descarga.txt" download="P_Descarga">Registro de Exportacion e Importacion</a>
-                <hr>
-            </div>
-            <div class="col-sm-6">
-                <a class="link-normal" href="Prueba_de_descarga.txt" download="P_Descarga">Desempeño Escolar</a>
+                <a class="link-normal" href="#"data-toggle="modal" data-target="#modal-estudios">Estadisticas Migratorias</a>
                 <hr>
             </div>
         </div>
         <div class="row">
             <div class="col-sm-6">
-                <a class="link-normal" href="Prueba_de_descarga.txt" download="P_Descarga">Causas de Muerte</a>
+                <a class="link-normal" href="#"data-toggle="modal" data-target="#modal-estudios">Matricula Escolar</a>
+                <hr>
             </div>
             <div class="col-sm-6">
-                <a class="link-normal" href="Prueba_de_descarga.txt" download="P_Descarga">Proyecciones de Poblacion</a>
+                <a class="link-normal" href="#"data-toggle="modal" data-target="#modal-estudios">Encuesta Nacional de Discapacidad (ENDISC)</a>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <a class="link-normal" href="#"data-toggle="modal" data-target="#modal-estudios">Prueba de Seleccion Universitaria (PSU)</a>
+                <hr>
+            </div>
+            <div class="col-sm-6">
+                <a class="link-normal" href="#"data-toggle="modal" data-target="#modal-estudios">Encuesta Sobre Gasto y Personal en I+D</a>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <a class="link-normal" href="#"data-toggle="modal" data-target="#modal-estudios">Registro de Exportacion e Importacion</a>
+                <hr>
+            </div>
+            <div class="col-sm-6">
+                <a class="link-normal" href="#"data-toggle="modal" data-target="#modal-estudios">Desempeño Escolar</a>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <a class="link-normal" href="#"data-toggle="modal" data-target="#modal-estudios">Causas de Muerte</a>
+            </div>
+            <div class="col-sm-6">
+                <a class="link-normal" href="#"data-toggle="modal" data-target="#modal-estudios">Proyecciones de Poblacion</a>
                 <hr>
             </div>
         </div>
@@ -76,7 +76,7 @@
             <div class="col-sm-6">
             </div>
             <div class="col-sm-6">
-                <a class="link-normal" href="Prueba_de_descarga.txt" download="P_Descarga">Encuesta Nacional de Acceso y Usos de Internet</a>
+                <a class="link-normal" href="#"data-toggle="modal" data-target="#modal-estudios">Encuesta Nacional de Acceso y Usos de Internet</a>
             </div>
         </div>
     </div>
