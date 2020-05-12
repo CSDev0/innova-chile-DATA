@@ -143,6 +143,11 @@ a{
     color: #0062AB;
     background-color: #FFFFFF;
 }
+
+.container.menu-bar{
+    padding-left: 150px;
+}
+
 .row.section{
     padding-top: 70px;
     margin-bottom: 100px;

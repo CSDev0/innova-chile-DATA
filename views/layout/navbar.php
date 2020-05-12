@@ -8,8 +8,6 @@
                 <a class="nav-link" href="#2">Graficos destacados</a>
             </li>
             <li class="nav-item">
-
-
                 <div class="dropdown">
                     <a class="nav-link dropdown-toggle" href="#3">Data</a>
                     
