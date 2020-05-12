@@ -20,13 +20,13 @@
         <div class="row">
             <div class="col-sm-4">
                 <div class="contenedor-grafico">
-                    <iframe class="grafico-destacado" src="https://datainnovacion.github.io/plot_text/">
+                    <iframe class="grafico-destacado" src="../models/plot_test_1.html">
                     </iframe>
                 </div>
             </div>
             <div class="col-sm-4">
                 <div class="contenedor-grafico">
-                    <iframe class="grafico-destacado" src="https://datainnovacion.github.io/plot_text/">
+                    <iframe class="grafico-destacado" src="../models/GII_chile.html">
                     </iframe>
                 </div>
             </div>
@@ -55,4 +55,3 @@
         </div>
     </div>
 </div>
-
