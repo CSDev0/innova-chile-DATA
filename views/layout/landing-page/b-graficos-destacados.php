@@ -20,19 +20,19 @@
         <div class="row">
             <div class="col-sm-4">
                 <div class="contenedor-grafico">
-                    <iframe class="grafico-destacado" src="https://datainnovacion.github.io/plot_text/">
+                    <iframe class="grafico-destacado" src="https://ghcdn.rawgit.org/datainnovacion/graficos_prueba/master/plot_test_1.html">
                     </iframe>
                 </div>
             </div>
             <div class="col-sm-4">
                 <div class="contenedor-grafico">
-                    <iframe class="grafico-destacado" src="https://datainnovacion.github.io/plot_text/">
+                    <iframe class="grafico-destacado" src="https://ghcdn.rawgit.org/datainnovacion/graficos_prueba/master/plot_test_1.html">
                     </iframe>
                 </div>
             </div>
             <div class="col-sm-4">
                 <div class="contenedor-grafico">
-                    <iframe class="grafico-destacado" src="https://datainnovacion.github.io/plot_text/">
+                    <iframe class="grafico-destacado" src="https://ghcdn.rawgit.org/datainnovacion/graficos_prueba/master/plot_test_1.html">
                     </iframe>
                 </div>
             </div>
@@ -41,13 +41,13 @@
             <div class="col-sm-2"></div>
             <div class="col-sm-4">
                 <div class="contenedor-grafico">
-                    <iframe class="grafico-destacado" src="https://datainnovacion.github.io/plot_text/">
+                    <iframe class="grafico-destacado" src="https://ghcdn.rawgit.org/datainnovacion/graficos_prueba/master/plot_test_1.html">
                     </iframe>
                 </div>
             </div>
             <div class="col-sm-4">
                 <div class="contenedor-grafico">
-                    <iframe class="grafico-destacado" src="https://datainnovacion.github.io/plot_text/">
+                    <iframe class="grafico-destacado" src="https://ghcdn.rawgit.org/datainnovacion/graficos_prueba/master/plot_test_1.html">
                     </iframe>
                 </div>
             </div>
