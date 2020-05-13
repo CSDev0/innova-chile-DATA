@@ -20,13 +20,13 @@
         <div class="row">
             <div class="col-sm-4">
                 <div class="contenedor-grafico">
-                    <iframe class="grafico-destacado" src="../models/plot_test_1.html">
+                    <iframe class="grafico-destacado" src="../graficos/plot_test_1.html">
                     </iframe>
                 </div>
             </div>
             <div class="col-sm-4">
                 <div class="contenedor-grafico">
-                    <iframe class="grafico-destacado" src="../models/GII_chile.html">
+                    <iframe class="grafico-destacado" src="../graficos/GII_chile.html">
                     </iframe>
                 </div>
             </div>
