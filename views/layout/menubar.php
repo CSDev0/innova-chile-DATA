@@ -1,6 +1,6 @@
-<nav class="navbar sticky-top navbar-expand-sm">
+<nav id="navMenu" class="navbar sticky-top navbar-expand-sm">
     <ul class="navbar-nav">
-        <div class="container menu-bar"> 
+        <div class="container menu-bar">
             <li class="nav-item">
                 <a class="nav-link" href="<?= base_url ?>web/inicio">Inicio</a>
             </li>

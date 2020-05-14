@@ -20,8 +20,8 @@
         <title>InnovaChile - Proyectos para el mañana.</title>
     </head>
     <body>
-        <?=require_once('views/mensajes/modal-mensajes.php');?> 
-        
+        <?=require_once('views/mensajes/modal-mensajes.php');?>
+
         <a id="back-to-top" href="#" class="btn btn-light btn-lg back-to-top" role="button"><i class="fas fa-chevron-up"></i></a>
         <section class="header">
             <div id="jumbo" class="jumbotron">
@@ -29,4 +29,3 @@
                 <a href="<?= base_url ?>web/inicio"><div class="logo-innova"></div></a>
             </div>
         </section>
-
