@@ -1,7 +1,7 @@
 <?php
 
 function controllers_autoload($classname) {
-    require 'classes/' . $classname . '.php';
+    require 'controllers/' . $classname . '.php';
     }
 
 spl_autoload_register('controllers_autoload');
