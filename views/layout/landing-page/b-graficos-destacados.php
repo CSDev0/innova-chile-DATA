@@ -20,7 +20,7 @@
         <div class="row">
             <div class="col-sm-4">
                 <div class="contenedor-grafico">
-                    <iframe class="grafico-destacado" src="../models/plot_test_1.html">
+                    <iframe class="grafico-destacado" src="https://raw.githack.com/datainnovacion/graficos_prueba/master/plot_test_1.html">
                     </iframe>
                 </div>
             </div>

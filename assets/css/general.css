@@ -1,5 +1,12 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css');
-
+.x-msg{
+    text-align: left;
+    font-size: 25px;
+}
+#x-titulo{
+    text-align: center;
+    font-size: 30px;
+}
 .back-to-top {
     position: fixed;
     bottom: 25px;
