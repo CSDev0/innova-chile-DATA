@@ -6,38 +6,16 @@
         <div class="row">
             <div class="col-sm-2"></div>
             <div class="col-sm-4">
-                <div id="tester7" style="width:300px;height:300px;">
-                    <script>
-                        TESTER7 = document.getElementById('tester7');
-                        var data7 = [
-                            {
-                                x: ['dato1', 'dato2', 'dato3'],
-                                y: [20, 14, 23],
-                                type: 'scatter',
-                                width: [0.2, 0.2, 0.2]
-                            }
-                        ];
-                        Plotly.newPlot(TESTER7, data7, {displayModeBar: false});
-                        console.log(Plotly.BUILD);
-                    </script>
+                <div class="contenedor-grafico">
+                    <iframe class="grafico-destacado" src="https://raw.githack.com/datainnovacion/graficos_prueba/master/GCR_chile.html">
+                    </iframe>
                 </div>
                 <br><br> <p>Grafico Indice de Competitividad</p>
             </div>
             <div class="col-sm-4">
-                <div id="tester6" style="width:300px;height:300px;">
-                    <script>
-                        TESTER6 = document.getElementById('tester6');
-                        var data6 = [
-                            {
-                                x: ['dato1', 'dato2', 'dato3'],
-                                y: [20, 14, 23],
-                                type: 'bar',
-                                width: [0.2, 0.2, 0.2]
-                            }
-                        ];
-                        Plotly.newPlot(TESTER6, data6, {displayModeBar: false});
-                        console.log(Plotly.BUILD);
-                    </script>
+                <div class="contenedor-grafico">
+                    <iframe class="grafico-destacado" src="https://raw.githack.com/datainnovacion/graficos_prueba/master/GII_chile.html">
+                    </iframe>
                 </div>
                 <br><br> <p>Grafico Indice de Innovación</p>
             </div>
