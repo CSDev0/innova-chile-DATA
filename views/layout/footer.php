@@ -32,6 +32,5 @@
 <script src="<?= base_url ?>assets/js/jquery-3.5.0.min.js"></script>
 <script src="<?= base_url ?>assets/js/plotly-latest.min.js"></script>
 <script src="<?= base_url ?>assets/js/general.js"></script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js"></script>
-
-
