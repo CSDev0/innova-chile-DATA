@@ -68,7 +68,3 @@ $('#dropdown-item-hover5').mouseenter(function (e) {
     $('#nav-bar-dropdown-arrow3').removeClass("fa-angle-double-down");
     $('#nav-bar-dropdown-arrow3').addClass("fa-angle-double-right");
 });
-
-
-
-

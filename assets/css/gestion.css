@@ -1,0 +1,78 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 18-05-2020, 16:57:41
+    Author     : saez_
+*/
+
+.panel-nombre{
+    font-size: 25px;
+    color: white;
+    margin-bottom: 20px;
+}
+.btn.btn-primary.panel{
+    width: 95%;
+}
+.btn.btn-nuestros{
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #F58457;
+    color: white;
+}
+.btn.btn-nuestros:hover{
+    font-weight: bold;
+    background-color: #e2794f;
+    color: white;
+}
+.btn.btn-recomendadas{
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #0B65AB;
+    color: white;
+}
+.btn.btn-recomendadas:hover{
+    background-color: #085691;
+    color: white;
+}
+.btn.btn-info{
+    font-weight: bold;
+    color: white;
+}
+.col-sm-10.estudios{
+    border-radius: 5px;
+    position: absolute;
+    padding: 10px;
+    border: 1px solid #D1ECFF;
+    background-color: white;
+    margin-top: 190px;
+    margin-left: 15px;
+    margin-bottom: 10px;
+    
+    top: 0;
+    z-index: 100;
+    opacity: 1;
+    visibility: visible;
+    transition: 0.3s;
+}
+.col-sm-10.lecturas{
+    border-radius: 5px;
+    
+    padding: 10px;
+    border: 1px solid #D1ECFF;
+    background-color: white;
+    margin-top: 20px;
+    margin-left: 15px;
+    margin-bottom: 10px;
+    top: 0;
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+}
+.modal-open{
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+}

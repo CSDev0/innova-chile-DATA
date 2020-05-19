@@ -11,7 +11,7 @@
 						<p class="text-warning"><small>Esta accion no se podra revertir.</small></p>
 					</div>
 					<div class="modal-footer">
-						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
+						<input type="button" class="btn btn-info" data-dismiss="modal" value="Cancelar">
 						<input type="submit" class="btn btn-danger" value="Borrar">
 					</div>
 				</form>

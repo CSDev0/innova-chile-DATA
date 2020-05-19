@@ -19,7 +19,7 @@
                                 <a class="dropdown-item" id="dropdown-item-hover3"href="#"><i class="fa fa-angle-double-right" id="nav-bar-dropdown-arrow3"></i> Subsidios</a>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                     <a class="dropdown-item" id="dropdown-item-hover4" href="<?= base_url ?>web/data"><i class="fa fa-angle-double-right" id="nav-bar-dropdown-arrow4"></i> Convocatoria</a>
-                                    <a class="dropdown-item" id="dropdown-item-hover5" href="<?= base_url ?>web/apptest"><i class="fa fa-angle-double-right" id="nav-bar-dropdown-arrow5"></i> Historico</a>
+                                    <a class="dropdown-item" id="dropdown-item-hover5" href="<?= base_url ?>web/apptest"><i class="fa fa-angle-double-right" id="nav-bar-dropdown-arrow5"></i> Historico desde 2010</a>
                                 </div>
                             </div>
                         </div>

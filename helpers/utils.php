@@ -59,4 +59,13 @@ class utils {
             return false;
         }
     }
+    
+    public static function getNombreCompleto(){
+        if(isset($_SESSION['identidad'])){
+            $nombre = $_SESSION['identidad']->nombre.' '.$_SESSION['identidad']->apellido;
+            return $nombre;
+        }else{
+            return false;
+        }
+    }
 }

@@ -3,8 +3,19 @@
 ob_start();
 
 require_once 'models/Usuario.php';
+require_once 'helpers/utils.php';
 
 class usuarioController {
+
+    function panel() {
+        if (utils::isAdminOEmpleado()) {
+            require_once ('views/usuario/sidebar.php');
+            require_once ('views/usuario/mi-perfil.php');
+            
+        } else {
+            header('Location:' . base_url . 'web/login');
+        }
+    }
 
 //  Funcion para enviar los datos de inicio de sesión.
     function loginRequest() {
@@ -22,7 +33,6 @@ class usuarioController {
                 $_SESSION['autenticacion_mensaje'] = 'fallo login';
                 header('Location:' . base_url . 'web/login');
             }
-            
         }
     }
 
@@ -77,4 +87,5 @@ class usuarioController {
     }
 
 }
+
 ob_end_flush();

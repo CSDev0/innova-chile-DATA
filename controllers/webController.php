@@ -34,10 +34,10 @@ class webController {
     }
     function cuentas()
     {
-      require_once('views/layout/usuario/admin/cuentas.php');
-      require_once("views/layout/usuario/admin/edit-modal.php");
-      require_once("views/layout/usuario/admin/delete-modal.php");
-      require_once("views/layout/usuario/admin/add-modal.php");
+      require_once('views/usuario/admin/cuentas.php');
+      require_once("views/usuario/admin/edit-modal.php");
+      require_once("views/usuario/admin/delete-modal.php");
+      require_once("views/usuario/admin/add-modal.php");
     }
     function contenido()
     {
@@ -45,9 +45,9 @@ class webController {
     }
     function archivos()
     {
-      require_once('views/layout/usuario/archivos.php');
-      require_once("views/layout/usuario/addAr-modal.php");
-      require_once("views/layout/usuario/deleteAr-modal.php");
+      require_once('views/usuario/archivos.php');
+      require_once("views/usuario/addAr-modal.php");
+      require_once("views/usuario/deleteAr-modal.php");
     }
     function sectionA()
     {
