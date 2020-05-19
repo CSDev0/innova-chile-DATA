@@ -125,7 +125,7 @@ a{
 }
 .link-normal{
     color: #0062AB;
-    font-size: 20px;
+    font-size: 18px;
 }
 .link-normal:hover{
     color: #2680BD;
@@ -135,7 +135,10 @@ a{
     color: #0062AB;
     font-size: 18px;
 }
-
+.link-normal.small{
+    color: #0062AB;
+    font-size: 15px;
+}
 .navbar{
     background-color: #0062AB;
 
@@ -186,16 +189,19 @@ a{
     color: #F6875A;
     padding-left: 30px;
 }
-
-#footer{
+#bg-footer{
     background-color: #D1ECFF;
     padding-top: 30px;
     padding-bottom: 50px;
 }
+#footer{
+    transition: 2s;
+}
 
 #copyright{
+    margin-top: 0px;
     padding-top: 10px;
-    padding-bottom: 2px;
+    padding-bottom: 50px;
     align-content: center;
     text-align: center;
     background-color: #11456B;
@@ -219,6 +225,7 @@ a{
 .dropdown-item:hover{
     color: #FFFFFF;
     background-color: #0062AB;
+    
 }
 
 #nav-bar-dropdown-arrow3{
@@ -242,4 +249,12 @@ a{
     display: block;
     top: 100%;
     left: 22%;
+}
+
+
+
+.header{
+-webkit-box-shadow: 2px 12px 40px -28px rgba(0,0,0,0.6);
+-moz-box-shadow: 2px 12px 40px -28px rgba(0,0,0,0.6);
+box-shadow: 2px 12px 40px -28px rgba(0,0,0,0.6);
 }

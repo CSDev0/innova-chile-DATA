@@ -1,4 +1,5 @@
 <?php
+ob_start();
 
 session_start();
 
@@ -37,3 +38,5 @@ if (class_exists($nombre_controlador)) {
     mostrar_error();
 }
 require_once 'views/layout/footer.php';
+
+ob_end_flush();

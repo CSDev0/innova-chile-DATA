@@ -1,7 +1,5 @@
 <?php
 
-ob_start();
-
 require_once 'models/Usuario.php';
 require_once 'helpers/utils.php';
 
@@ -28,7 +26,7 @@ class usuarioController {
                 $_SESSION['identidad'] = $identidad;
                 $_SESSION['tipo_usuario'] = $identidad->tipo;
                 $_SESSION['autenticacion_mensaje'] = 'exito login';
-                header('Location:' . base_url . 'web/panel');
+                header('Location:' . base_url . 'usuario/panel');
             } else {
                 $_SESSION['autenticacion_mensaje'] = 'fallo login';
                 header('Location:' . base_url . 'web/login');
@@ -88,4 +86,3 @@ class usuarioController {
 
 }
 
-ob_end_flush();

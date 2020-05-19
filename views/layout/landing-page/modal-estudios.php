@@ -2,20 +2,18 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title" id="exampleModalLabel">Nombre del estudio</h1>
+                <h1 class="modal-title" id="modal-estudios-nombre"></h1>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
                 <div class="container">
-                    <div class="row">
-                        <p>Esta es la descripción breve del estudio en cuestion. Para descargarlo, presione el siguiente botón.</p>
-                            <a href="<?= base_url ?>/uploads/documentos/Prueba_de_descarga.txt" download="Prueba_de_descarga.txt">
-                                <button class="btn btn-primary">Descargar</button>
-                            </a>
+                    <div class="row" id="modal-estudios-descripcion">
                     </div>
                 </div>
+            </div>
+            <div class="modal-footer" id="modal-estudios-footer">
             </div>
         </div>
     </div>

@@ -1,14 +1,16 @@
 <?php
 
 class utils {
-    public static function isActived(){
-            if ($_SESSION['identidad']->ACTIVADO == 1) {
-                return true;
-            } else {
-                $_SESSION['autenticacion_mensaje'] = 'fallo no activada';
-                return false;
-            }
+
+    public static function isActived() {
+        if ($_SESSION['identidad']->ACTIVADO == 1) {
+            return true;
+        } else {
+            $_SESSION['autenticacion_mensaje'] = 'fallo no activada';
+            return false;
+        }
     }
+
     public static function isAdmin() {
         if (isset($_SESSION['tipo_usuario'])) {
             if ($_SESSION['tipo_usuario'] == 'admin') {
@@ -59,13 +61,31 @@ class utils {
             return false;
         }
     }
-    
-    public static function getNombreCompleto(){
-        if(isset($_SESSION['identidad'])){
-            $nombre = $_SESSION['identidad']->nombre.' '.$_SESSION['identidad']->apellido;
+
+    public static function getNombreCompleto() {
+        if (isset($_SESSION['identidad'])) {
+            $nombre = $_SESSION['identidad']->nombre . ' ' . $_SESSION['identidad']->apellido;
             return $nombre;
-        }else{
+        } else {
             return false;
         }
     }
+
+    // Start function
+    public static function acortador($text, $chars_limit) {
+        // Check if length is larger than the character limit
+        if (strlen($text) > $chars_limit) {
+            // If so, cut the string at the character limit
+            $new_text = substr($text, 0, $chars_limit);
+            // Trim off white space
+            $new_text = trim($new_text);
+            // Add at end of text ...
+            return $new_text . "...";
+        }
+        // If not just return the text as is
+        else {
+            return $text;
+        }
+    }
+
 }

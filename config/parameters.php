@@ -1,6 +1,7 @@
 <?php
 
-define("base_url", "http://192.168.0.18:8085/innova-chile-data/");
+define("base_url", "http://192.168.0.13:8085/innova-chile-data/");
+define("home", "web/inicio");
 define("controller_default", "webController");
 define("action_default", "inicio");
 define("correo", "innova@corfo.cl");

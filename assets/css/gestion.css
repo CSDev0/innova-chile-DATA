@@ -7,14 +7,43 @@ and open the template in the editor.
     Created on : 18-05-2020, 16:57:41
     Author     : saez_
 */
+.side-bar{
+    width: 100%;
+    margin-left:0%; 
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-top:10% ;
+    padding-bottom: 500%;
+    background-color:#F58457;
+}
+.form-group.login{
+    padding: 30px;
+    background-color: white;
+    border-radius: 5px;
+}
+#modal-fade{
+    transition: 2s;
+    opacity: 0;
+    top:100px;
+}
+#bg-login{
+    background-image: url("../img/bg/login.jpg");
+    width: 100%;
+    height: 900px;
+    position: absolute;
+    z-index: -50;
+    margin-top: -100px;
+}
 
 .panel-nombre{
     font-size: 25px;
     color: white;
     margin-bottom: 20px;
 }
-.btn.btn-primary.panel{
-    width: 95%;
+.panel{
+    width: 99%;
+    font-size: 20px;
+    text-align: center;
 }
 .btn.btn-nuestros{
     font-size: 18px;

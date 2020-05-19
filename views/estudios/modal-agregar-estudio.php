@@ -1,7 +1,8 @@
+<?php $url_action = base_url . "estudio/save"; ?>
 <div id="modal-agregar-estudio" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form>
+            <form action="<?= $url_action ?>" method="post" enctype="multipart/form-data" >
                 <div class="modal-header">
                     <h4 class="modal-title">Agregar un estudio</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -9,7 +10,7 @@
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="txtNombre">Nombre: </label>
-                        <input type="text" class="form-control" name="txtNombre" placeholder="Estudio de la natalidad">
+                        <input type="text" class="form-control" name="txtNombre" placeholder="Estudio de la natalidad" required="true">
                         <br>
                         <label for="txtDescripcion">Descripcion: </label>
                         <textarea class="form-control" name="txtDescripcion">Ingrese una descripción..</textarea>
@@ -19,7 +20,7 @@
                         $seleccionado = 2010;
                         $antiguedad = 1900;
 
-                        print '<select class="form-control" name="cbAno">';
+                        print '<select class="form-control" name="cbAno" required="true">';
                         foreach (range(date('Y'), $antiguedad) as $x) {
                             print '<option value="' . $x . '"' . ($x === $seleccionado ? ' selected="selected"' : '') . '>' . $x . '</option>';
                         }
@@ -28,10 +29,13 @@
                         <br>
                         <label for="">Tipo: Estudio</label>
                         <input type="hidden" value="estudio" name="tipo">
-                        
+
                         <div class="custom-file">
-                            <input type="file" class="custom-file-input" name="archivo">
-                            <label class="custom-file-label" for="customFile">Elegir un archivo</label>
+                            <input type="file" class="custom-file-input" name="fileArchivo" id='fileArchivo' required="true">
+                            <label class="custom-file-label" for="archivo">
+                                <span class="d-inline-block text-truncate w-75">Elegir un archivo..</span>
+                            </label>
+
                         </div>
                     </div>
                 </div>

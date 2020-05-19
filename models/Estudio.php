@@ -5,7 +5,7 @@
  *
  * @author saez_
  */
-class Usuario {
+class Estudio {
 
     private $id;
     private $nombre;
@@ -23,6 +23,14 @@ class Usuario {
 
     function getId() {
         return $this->id;
+    }
+
+    function getEnlace() {
+        return $this->enlace;
+    }
+
+    function setEnlace($enlace) {
+        $this->enlace = $enlace;
     }
 
     function getNombre() {
@@ -80,24 +88,55 @@ class Usuario {
     public function save() {
         $now = new DateTime();
         $date = $now->format("Y-m-d H:i");
-        
+
         $query = "INSERT INTO estudio VALUES (NULL, '{$this->getNombre()}', '{$this->getDescripcion()}', '{$this->getAno_estudio()}', ";
         if ($this->getTipo() == 'estudio') {
-            $query .= "{$this->getArchivo()}, ";
+            $query .= "'{$this->getArchivo()}', ";
         } else {
             $query .= "NULL, ";
         }
         if ($this->getTipo() == 'lectura') {
-            $query .= "{$this->getEnlace()}, ";
+            $query .= "'{$this->getEnlace()}', ";
         } else {
             $query .= "NULL, ";
         }
-        $query .= "'" . $date . "', '{$this->getClave()}', '{$this->getTipo()}', '1');";
+        $query .= "'" . $date . "', '{$this->getTipo()}', '1');";
 
         $save = $this->db->query($query);
         $result = false;
         if ($save) {
             $result = true;
+        }
+        return $result;
+    }
+
+    public function getAll() {
+        $estudios = $this->db->query("SELECT * FROM estudio ORDER BY UNIX_TIMESTAMP(fecha_creacion) DESC");
+        return $estudios;
+    }
+    public function getAllByAno() {
+        $estudios = $this->db->query("SELECT * FROM estudio ORDER BY ano_estudio DESC");
+        return $estudios;
+    }
+
+    public function getEstudioById() {
+        $result = false;
+        $query = "SELECT * FROM estudio WHERE id = '{$this->id}' LIMIT 1";
+        $estudio = $this->db->query($query);
+        if ($estudio) {
+            $result = $estudio->fetch_object();
+        }
+        return $result;
+    }
+
+    public function delete() {
+        $result = false;
+        $query = "DELETE FROM estudio WHERE id = '$this->id'";
+
+        if ($this->db->query($query) == TRUE && $this->db->affected_rows > 0) {
+            $result = true;
+        } else {
+            $result = false;
         }
         return $result;
     }

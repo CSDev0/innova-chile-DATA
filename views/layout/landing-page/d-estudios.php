@@ -13,85 +13,35 @@
                 <br>
             </div>
         </div> 
-        <div class="row">
-            <div class="col-sm-6">
-                <a class="link-normal estudios" href="#"data-toggle="modal" data-target="#modal-estudios">Encuesta caracterizacion Socioeconomica Nacional (CASEN)</a>
-                <hr>
-            </div>
-            <div class="col-sm-6">
-                <a class="link-normal estudios" href="#"data-toggle="modal" data-target="#modal-estudios">Indicadores de Acceso a la salud</a>
-                <hr>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-6">
-                <a class="link-normal estudios" href="#"data-toggle="modal" data-target="#modal-estudios" >Nueva Encuesta Nacional de Empleo (NENE)</a>
-                <hr>
-            </div>
-            <div class="col-sm-6">
-                <a class="link-normal estudios" href="#"data-toggle="modal" data-target="#modal-estudios">Esperanza de Vida</a>
-                <hr>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-6">
-                <a class="link-normal estudios" href="#"data-toggle="modal" data-target="#modal-estudios">Nueva Encuesta Suplementaria de Ingresos (NESI)</a>
-                <hr>
-            </div>
-            <div class="col-sm-6">
-                <a class="link-normal estudios" href="#"data-toggle="modal" data-target="#modal-estudios">Estadisticas Migratorias</a>
-                <hr>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-6">
-                <a class="link-normal estudios" href="#"data-toggle="modal" data-target="#modal-estudios">Matricula Escolar</a>
-                <hr>
-            </div>
-            <div class="col-sm-6">
-                <a class="link-normal estudios" href="#"data-toggle="modal" data-target="#modal-estudios">Encuesta Nacional de Discapacidad (ENDISC)</a>
-                <hr>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-6">
-                <a class="link-normal estudios" href="#"data-toggle="modal" data-target="#modal-estudios">Prueba de Seleccion Universitaria (PSU)</a>
-                <hr>
-            </div>
-            <div class="col-sm-6">
-                <a class="link-normal estudios" href="#"data-toggle="modal" data-target="#modal-estudios">Encuesta Sobre Gasto y Personal en I+D</a>
-                <hr>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-6">
-                <a class="link-normal estudios" href="#"data-toggle="modal" data-target="#modal-estudios">Registro de Exportacion e Importacion</a>
-                <hr>
-            </div>
-            <div class="col-sm-6">
-                <a class="link-normal estudios" href="#"data-toggle="modal" data-target="#modal-estudios">Desempeño Escolar</a>
-                <hr>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-6">
-                <a class="link-normal estudios" href="#"data-toggle="modal" data-target="#modal-estudios">Causas de Muerte</a>
-                <hr>
-            </div>
-            <div class="col-sm-6">
-                <a class="link-normal estudios" href="#"data-toggle="modal" data-target="#modal-estudios">Proyecciones de Poblacion</a>
-                <hr>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-6">
-                <a class="link-normal estudios" href="#"data-toggle="modal" data-target="#modal-estudios">Encuesta Nacional de Acceso y Usos de Internet</a>
-                <hr>
-            </div>
-            <div class="col-sm-6">
+        <?php
+        $contador1 = 0;
+        $iniciador1 = 0;
+        while ($est1 = $estudios1->fetch_object()):
+            if ($est1->tipo == "estudio") {
+                
+                if ($contador1 == 0) {         
+                    ?>
+                    <div class="row">
+                        <?php
+                    }?>
+                        <div class="col-sm-6">
+                            <a class="link-normal estudios" data-nombre="<?= $est1->nombre ?>" data-descripcion="<?= $est1->descripcion ?>" 
+                               data-archivo="<?= $est1->archivo ?>" data-tipo="<?= $est1->tipo ?>" 
+                               href="#modal-estudios" data-toggle="modal" ><?= $est1->nombre ?></a>
+                            <hr>
+                        </div>
 
-            </div>
-        </div>
+                        <?php
+                        $contador1 = $contador1 +1;
+                if ($contador1 == 2) {
+                    $contador1 = 0;
+                    ?>
+                </div>
+                <?php
+                }
+            }
+        endwhile;
+        ?>
         <div id="LecturasRecomendadas"></div>
         <br><br><br>
         <div class="row" >
@@ -103,44 +53,36 @@
                 <br>
             </div>
         </div>
-        <div class="row">
-            <div class="col-sm-6">
-                <a class="link-normal estudios" href="#"data-toggle="modal" data-target="#modal-estudios">Manual de Frascatti</a>
-                <hr>
-            </div>
-            <div class="col-sm-6">
-                <a class="link-normal estudios" href="#"data-toggle="modal" data-target="#modal-estudios">Manual de Oslo</a>
-                <hr>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-6">
-                <a class="link-normal estudios" href="#"data-toggle="modal" data-target="#modal-estudios">Estadísticas e Innicadores de Innovación en Negocios de la OCDE </a>
-                <hr>
-            </div>
-            <div class="col-sm-6">
-                <a class="link-normal estudios" href="#"data-toggle="modal" data-target="#modal-estudios">Observatorio del Ministerio de Economía, Fomento y Turismo</a>
-                <hr>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-6">
-                <a class="link-normal estudios" href="#"data-toggle="modal" data-target="#modal-estudios">GCR: Índice de Competitividad Global del World Economic  </a>
-                <hr>
-            </div>
-            <div class="col-sm-6">
-                <a class="link-normal estudios" href="#"data-toggle="modal" data-target="#modal-estudios">GII: Índice de Innovación </a>
-                <hr>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-6">
-                <a class="link-normal estudios" href="#"data-toggle="modal" data-target="#modal-estudios">GEM: Global Entrepreneurship  </a>
-                <hr>
-            </div>
-            <div class="col-sm-6">
-                <a class="link-normal estudios" href="#"data-toggle="modal" data-target="#modal-estudios"></a>
-            </div>
-        </div>
+        <?php
+        $contador2 = 0;
+
+        while ($est2 = $estudios2->fetch_object()):
+            if ($est2->tipo == "lectura") {
+                
+                if ($contador2 == 0) {
+                    
+                    ?>
+                    <div class="row">
+                        <?php
+                    }?>
+                        <div class="col-sm-6">
+                            <a class="link-normal estudios" data-nombre="<?= $est2->nombre ?>" data-descripcion="<?= $est2->descripcion ?>" 
+                               data-enlace="<?= $est2->enlace ?>" data-tipo="<?= $est2->tipo ?>" 
+                               href="#modal-estudios" data-toggle="modal" ><?= $est2->nombre ?></a>
+                            <hr>
+                        </div>
+                        <?php
+                    
+                    $contador2 = $contador2 +1;
+                   
+                    if ($contador2 == 2) {
+                        $contador2 = 0;
+                        ?>
+                    </div>
+                    <?php
+                }
+            }
+        endwhile;
+        ?>
     </div>
 </div>
