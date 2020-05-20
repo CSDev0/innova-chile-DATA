@@ -2,14 +2,14 @@
     <ul class="navbar-nav">
         <div class="container">
             <li class="nav-item">
-                <a class="nav-link" href="#1">Quiénes somos</a>
+                <a class="nav-link" href="#nav1">Quiénes somos</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#2">Graficos destacados</a>
+                <a class="nav-link" href="#nav2">Graficos destacados</a>
             </li>
             <li class="nav-item">
                 <div class="dropdown">
-                    <a class="nav-link dropdown-toggle" href="#3">Data</a>
+                    <a class="nav-link dropdown-toggle" href="#nav3">Data</a>
 
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <div class="move-drop">
@@ -29,7 +29,7 @@
             </li>
             <li class="nav-item">
                 <div class="dropdown">
-                    <a class="nav-link dropdown-toggle" href="#4">Estudios</a>
+                    <a class="nav-link dropdown-toggle" href="#nav4">Estudios</a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <a class="dropdown-item" id="dropdown-item-hover6" href="#NuestrosEstudios"><i class="fa fa-angle-double-right" id="nav-bar-dropdown-arrow6"></i> Nuestros estudios</a>
                         <a class="dropdown-item"  id="dropdown-item-hover7" href="#LecturasRecomendadas"><i class="fa fa-angle-double-right" id="nav-bar-dropdown-arrow7"></i>Lecturas recomendadas</a>
@@ -37,7 +37,7 @@
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#5">Chile en el mundo</a>
+                <a class="nav-link" href="#nav5">Chile en el mundo</a>
             </li>
         </div>
     </ul>

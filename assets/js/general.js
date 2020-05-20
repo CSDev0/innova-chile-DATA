@@ -1,7 +1,8 @@
 $(document).ready(function () {
   bsCustomFileInput.init()
-})
-$(document).on('click', 'a[href^="#"]', function (event) {
+});
+
+$(document).on('click', 'a[href^="#nav"]', function (event) {
     event.preventDefault();
 
     $('html, body, #main').animate({

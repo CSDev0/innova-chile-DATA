@@ -1,4 +1,4 @@
-<div class="row section" id="3">
+<div class="row section" id="nav3">
     <div class="col-sm-12">
         <h1 >Data</h1>
         <!--<p style="padding-top:300px;">algo</p>-->
