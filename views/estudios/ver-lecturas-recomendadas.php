@@ -21,8 +21,9 @@
                     <td><?=utils::acortador($est2->enlace, 30)?></td>
                     <td><?=$est2->fecha_creacion?></td>
                     <td>
-                                <a href="<?= base_url ?>estudio/modificarEstudio&id=<?= $est2->id ?>" class="btn btn-success" style="width: 100%;" ><i class="fas fa-edit"></i> Editar</a>
-                                <a href="<?= base_url ?>estudio/delete&id=<?= $est2->id ?>" class="btn btn-danger" style="margin-top: 5px;width: 100%;" ><i class="fas fa-trash-alt"></i> Eliminar</a>
+                        <a href="<?= base_url ?>estudio/modificarEstudio&id=<?= $est2->id ?>" class="btn btn-success" style="width: 100%;" ><i class="fas fa-edit"></i> Editar</a>
+                        <a href="#modal-eliminar" data-toggle="modal" data-ruta="estudio/delete&id=" data-tipo="lectura" data-id="<?= $est2->id ?>" class="btn btn-danger eliminar" 
+                           style="margin-top: 5px;width: 100%;" ><i class="fas fa-trash-alt"></i> Eliminar</a>
                     </td>
 
                 </tr>

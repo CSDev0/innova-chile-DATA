@@ -24,8 +24,7 @@ class gestionController {
             require_once('views/estudios/gestion-estudios.php');
             require_once("views/estudios/modal-agregar-estudio.php");
             require_once("views/estudios/modal-agregar-lectura.php");
-            require_once("views/estudios/modal-ver-estudio.php");
-            require_once("views/usuario/deleteAr-modal.php");
+            require_once("views/mensajes/modal-eliminar.php");
         }else{
             header("Location:" . base_url . 'web/inicio');
         }

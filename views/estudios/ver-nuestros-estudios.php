@@ -25,8 +25,11 @@
                     <td><?= $est->fecha_creacion ?></td>
 
                     <td>
-                                <a href="<?= base_url ?>estudio/modificarEstudio&id=<?= $est->id ?>" class="btn btn-success" style="width: 100%;" ><i class="fas fa-edit"></i> Editar</a>
-                                <a href="<?= base_url ?>estudio/delete&id=<?= $est->id ?>" class="btn btn-danger" style="margin-top: 5px;width: 100%;" ><i class="fas fa-trash-alt"></i> Eliminar</a>
+                        <a href="<?= base_url ?>estudio/modificarEstudio&id=<?= $est->id ?>" class="btn btn-success" style="width: 100%;" >
+                            <i class="fas fa-edit"></i> Editar</a>
+                            
+                        <a href="#modal-eliminar" data-toggle="modal" data-ruta="estudio/delete&id=" data-tipo="estudio" data-id="<?= $est->id ?>" class="btn btn-danger eliminar" 
+                           style="margin-top: 5px;width: 100%;" ><i class="fas fa-trash-alt"></i> Eliminar</a>
                     </td>
 
 
