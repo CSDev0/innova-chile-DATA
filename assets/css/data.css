@@ -7,11 +7,9 @@ and open the template in the editor.
     Created on : 06-05-2020, 21:05:32
     Author     : saez_
 */
-.carousel.slide.bg-light.destacados{
+.carousel.slide.destacados{
     border-radius: 5px;
-    -webkit-box-shadow: inset 1px -1px 24px 3px rgba(0,0,0,0.12);
-    -moz-box-shadow: inset 1px -1px 24px 3px rgba(0,0,0,0.12);
-    box-shadow: inset 1px -1px 24px 3px rgba(0,0,0,0.12);
+    background-color: #FFFFFF;
 }
 .carousel-indicators > li {
     width: 20px;
@@ -24,9 +22,6 @@ and open the template in the editor.
     padding-top: 30px;
     height: 550px;
 
-}
-.carousel-control-prev-icon{
-    background-color: red;
 }
 .fas.fa-angle-double-right.fa-5x.carousel{
     color: #0062AB;

@@ -36,7 +36,8 @@ $(".link-normal.estudios").click(function (e) {
     var estNombre = $(this).data('nombre');
     var estDescripcion = $(this).data('descripcion');
     var estTipo = $(this).data('tipo');
-    $("#modal-estudios-nombre").append("<h4 id='modal-estudios-nombre-txt'>" + estNombre + "</h4>");
+    $("#modal-estudios-nombre").append("<h2 id='modal-estudios-nombre-txt' style='text-align: center;'>" + estNombre + "</h2>");
+    $("#modal-estudios-nombre").append("<button type='button' id='modal-estudios-x' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>");
     $("#modal-estudios-descripcion").append("<p id='modal-estudios-descripcion-txt'>" + estDescripcion + "</p>");
     if (estTipo === 'estudio') {
         var estArchivo = $(this).data('archivo');
@@ -49,12 +50,15 @@ $(".link-normal.estudios").click(function (e) {
 });
 $('#modal-estudios').on('hidden.bs.modal', function () {
     $("#modal-estudios-nombre-txt").remove();
+    $("#modal-estudios-x").remove();
     $("#modal-estudios-descripcion-txt").remove();
     $("#modal-estudios-enlace").remove();
     $("#modal-estudios-archivo").remove();
     $("#modal-estudios-archivo-linea").remove();
 
 });
+
+
 $(".btn.btn-danger.eliminar").click(function (e) {
     var idEliminar = $(this).data('id');
     var tipo = $(this).data('tipo');

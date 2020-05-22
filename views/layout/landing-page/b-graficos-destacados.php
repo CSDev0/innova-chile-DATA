@@ -1,23 +1,23 @@
 <div class="row section" id="nav2">
     <div class="col-sm-12">
         <h1 >Graficos destacados</h1>
-        <br>
+        <br><br>
         <div class="row">
             <div class="col-sm-4">
-                <h2 class="destacado-naranja">$800 Millones</h2>
-                <h2 class="destacado-naranja">2010</h2>
+                <h2 class="destacado-naranja"><i class="fas fa-dollar-sign fa-2x"></i></h2>
+                <h2 class="destacado-naranja">$800 millones desde 2010</h2>
             </div>
             <div class="col-sm-4">
-                <h2 class="destacado-naranja">+2000</h2>
-                <h2 class="destacado-naranja">Iniciativas apoyadas</h2>
+                <h2 class="destacado-naranja"><i class="fas fa-chart-line fa-2x"></i></h2>
+                <h2 class="destacado-naranja">+2000 Iniciativas apoyadas</h2>
             </div>
             <div class="col-sm-4">
-                <h2 class="destacado-naranja">+1500</h2>
-                <h2 class="destacado-naranja">Empresas beneficiadas</h2>
+                <h2 class="destacado-naranja"><i class="fas fa-globe fa-2x"></i></h2>
+                <h2 class="destacado-naranja">+1500 Empresas beneficiadas</h2>
             </div>
         </div>
         <br>
-        <div id="graficos-crsl" class="carousel slide bg-light destacados" data-ride="carousel">
+        <div id="graficos-crsl" class="carousel slide destacados" data-ride="carousel">
 
             <!-- Indicators -->
           <ul class="carousel-indicators">

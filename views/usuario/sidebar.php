@@ -1,6 +1,20 @@
 <?php
 $nombre_completo = utils::getNombreCompleto();
 ?>
+<script>
+
+    $(document).ready(function () {
+        var delay = 0;
+        $('.panel').each(function () {
+            //^^ do for every instance less than the 16th (starting at 0)
+            $(this).delay(delay).animate({
+                opacity: 1
+            }, 200);
+            delay += 200;
+        });
+    });
+
+</script>
 <div class="row">
     <div class="col-sm-2">
         <div class="side-bar">

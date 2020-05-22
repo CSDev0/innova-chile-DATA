@@ -188,6 +188,7 @@ a{
     font-size: 30px;
     color: #F6875A;
     padding-left: 30px;
+    text-align: center;
 }
 #bg-footer{
     background-color: #D1ECFF;
@@ -257,4 +258,13 @@ a{
 -webkit-box-shadow: 2px 12px 40px -28px rgba(0,0,0,0.6);
 -moz-box-shadow: 2px 12px 40px -28px rgba(0,0,0,0.6);
 box-shadow: 2px 12px 40px -28px rgba(0,0,0,0.6);
+}
+
+
+
+
+@media (min-width: 992px) {
+  .modal-lg {
+    max-width: 55%;
+  }
 }
