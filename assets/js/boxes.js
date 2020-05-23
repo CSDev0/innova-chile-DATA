@@ -18,6 +18,7 @@ function mostrarMensaje(mensaje, titulo) {
     }, 2000);
 
 }
+//SWITCH GESTION ESTUDIOS
 $('#estudios-toggle').change(function () {
     if ($(this).prop('checked')) {
         $('#contenedor-nuestros-estudios').css('opacity', '1');

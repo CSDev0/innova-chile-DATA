@@ -49,7 +49,7 @@ class usuarioController {
         }
     }
 
-//  Funcion para guardar un usuario como admin.
+//  Funcion para guardar un usuario siendo un administrador.
     public function saveUsuario() {
         if (utils::isAdmin()) {
             if (isset($_POST)) {
