@@ -77,8 +77,9 @@ and open the template in the editor.
 
 #menubar-convocatorias{
     background-color: #F58457;
-    padding: 15px;
+    padding: 14px;
     transition: 0.5s;
+    width: 100%;
 }
 .convocatoria-link{
     font-size: 18px;

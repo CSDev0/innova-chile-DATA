@@ -1,15 +1,21 @@
-<nav id="menubar-convocatorias" class="navbar">
-    <div class="container">
-        <nav class="navbar-nav">
+<nav id="menubar-convocatorias" class="navbar navbar-expand-sm">
+    <div class="navbar-collapse justify-content-center ">
+        <ul class="navbar-nav">
             <div id="accordion1">
-                <div class="row">
-                    <div class="col-1-10">
-                        <a class="convocatoria-link boton active" data-toggle="collapse" data-target="#navbarPorAnos2" id='ultima-convocatoria' data-link='https://datainnovacion.github.io/llamado_3/' href="#">Ultima convocatoria</a>
+                <div class="row" >
+                    <div class="col-1-10 " >
+                        <a class="convocatoria-link boton active" data-toggle="collapse" data-target="#navbarPorAnos2" id='ultima-convocatoria' data-link='https://datainnovacion.github.io/llamado_3/' href="#">&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-award icono-blanco"></i> Ultima convocatoria&nbsp;&nbsp;&nbsp;&nbsp;</a>
                     </div>
-                    <div class="col-1-10">
-                        <a class="convocatoria-link boton" data-toggle="collapse" data-target="#navbarPorAnos" href="<?= base_url ?>web/todos-subsidios">Convocatorias por año</a>
+                    <div class="col-1-10" >
+                        <a class="convocatoria-link boton" data-toggle="collapse" data-target="#navbarPorAnos" href="#">&nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-calendar-alt icono-blanco"></i> Convocatorias por año&nbsp;&nbsp;&nbsp;&nbsp;</a>
                         <div class="collapse" id="navbarPorAnos2" data-parent="#accordion1">
                         </div>
+                    </div>
+                    <div class="col-sm-1" >
+                        
+                    </div>
+                    </div>
+                    <div class="row" >  
                         <div class="collapse" id="navbarPorAnos" data-parent="#accordion1">
                             <div id="accordion">
                                 <br>
@@ -41,8 +47,9 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                
             </div>
+        </ul>
     </div>
 </nav>
 

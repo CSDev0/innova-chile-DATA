@@ -141,11 +141,14 @@ a{
 }
 .navbar{
     background-color: #0062AB;
-
 }
 .navbar-nav{
-    margin-left: 10%;
     margin-bottom: 0px;
+}
+.nav-item{
+    margin-right: 4px;
+    margin-top: -5px;
+    margin-bottom: -5px;
 }
 .nav-link{
     font-size: 20px;
@@ -153,8 +156,8 @@ a{
     color: #FFFFFF;
     transition: 0.5s;
     border-radius: 5px;
-    margin-left: 40px;
-    margin-right: 35px;
+    margin-left: 0px;
+    margin-right: 20px;
     width: 100%;
     text-align: center;
 }
@@ -275,6 +278,9 @@ a{
 }
 .icono-naranja{
     color: #F58457;
+}
+.icono-celeste{
+    color: #D1ECFF;
 }
 
 
