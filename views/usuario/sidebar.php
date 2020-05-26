@@ -32,7 +32,7 @@ $nombre_completo = utils::getNombreCompleto();
                 <button class="btn btn-primary panel" onclick='window.location.href = "<?= base_url ?>gestion/estudios"'><i class="fas fa-file-alt"></i> Gestión estudios</button>
             </div>
             <div class="" style="margin-bottom:10px;">
-                <button class="btn btn-primary panel" onclick='window.location.href = "<?= base_url ?>gestion/textos"'><i class="fas fa-align-left"></i> Gestión textos</button>
+                <button class="btn btn-primary panel" onclick='window.location.href = "<?= base_url ?>gestion/contenidos"'><i class="fas fa-align-left"></i> Gestión textos</button>
             </div>
             <div class="" style="margin-bottom:10px;">
                 <button class="btn btn-danger panel" onclick='window.location.href = "<?= base_url ?>usuario/logout"'><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</button>

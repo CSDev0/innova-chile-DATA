@@ -9,7 +9,7 @@ require_once 'helpers/utils.php';
 class gestionController {
 
     function usuarios() {
-
+        
     }
 
     function estudios() {
@@ -25,18 +25,17 @@ class gestionController {
             require_once("views/estudios/modal-agregar-estudio.php");
             require_once("views/estudios/modal-agregar-lectura.php");
             require_once("views/mensajes/modal-eliminar.php");
-        }else{
+        } else {
             header("Location:" . base_url . 'web/inicio');
         }
     }
-    function textos() {
-      require_once('views/usuario/sidebar.php');
-      require_once('views/textos/contenido.php');
-      require_once('views/textos/modal-seccionA.php');
-      require_once('views/textos/modal-seccionB.php');
-      require_once('views/textos/modal-seccionC.php');
-      require_once('views/textos/modal-seccionD.php');
-      require_once('views/textos/modal-seccionE.php');
+
+    function contenidos() {
+        require_once("views/mensajes/mensajes-contenido.php");
+        
+        require_once('views/usuario/sidebar.php');
+        require_once('views/contenido/contenidos.php');
+        require_once('views/contenido/modal-contenidos.php');
     }
 
 }

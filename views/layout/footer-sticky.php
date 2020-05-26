@@ -1,12 +1,12 @@
 <section id="footer" class="footer-sticky">
-    
+
     <div id="bg-footer">
         <div class="text-center"><i class="fas fa-angle-up fa-3x icono-azul" id="flecha-animada"></i></div>
-        
+
         <div class="container">
-            
+
             <div class="row">
-                
+
                 <div class="col-sm-4">
                     <h4>Te puede interesar</h4>
                     <i class="fa fa-angle-double-right" style="color: #0062AB"></i><a class="link-normal" href="#"> Encuesta de Innovacion</a><br>

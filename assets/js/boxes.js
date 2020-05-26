@@ -77,3 +77,17 @@ $('#modal-eliminar').on('hidden.bs.modal', function () {
     $("#btn-modal-eliminar-cancelar").remove();
 
 });
+
+$(".btn-abrir-modal-contenido").click(function (e) {
+    var tipoContenido = $(this).data('tipo');
+    var textoContenido = $(this).data('texto');
+    $("#modal-contenido-nombre").append("<input type='text' id='input-contenido-nombre' class='form-control' name='txtNombre' value='" + tipoContenido + "' disabled>");
+    $("#modal-contenido-texto").append("<textarea id='input-contenido-texto' name='txtTexto' class='form-control' >" + textoContenido + "</textarea>");
+    $("#modal-contenido-texto").append("<input id='input-contenido-tipo' type='hidden' value='" + tipoContenido + "' name='txtTipo'>");
+   
+});
+$('#modal-contenido').on('hidden.bs.modal', function () {
+    $("#input-contenido-nombre").remove();
+    $("#input-contenido-texto").remove();
+    $("#input-contenido-tipo").remove();
+});

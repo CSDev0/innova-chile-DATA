@@ -1,15 +1,13 @@
 <div class="row section" id="nav3">
     <div class="col-sm-12">
         <h1 >Data</h1>
-        <!--<p style="padding-top:300px;">algo</p>-->
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla posuere suscipit nunc, eu efficitur nibh rutrum sed. Aenean a hendrerit quam. Pellentesque diam augue, pharetra quis tellus in, ultrices ultrices turpis. Vestibulum nulla diam, faucibus non risus ac, dapibus egestas augue. Duis fringilla a turpis ac ultrices. Duis aliquet eu elit ut luctus. Nunc mollis nibh dictum gravida placerat. Pellentesque neque diam, dictum ac orci et, dapibus posuere libero. Vivamus vestibulum tincidunt ullamcorper.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla posuere suscipit nunc, eu efficitur nibh rutrum sed. Aenean a hendrerit quam. Pellentesque diam augue, pharetra quis tellus in, ultrices ultrices turpis. Pellentesque neque diam, dictum ac orci et, dapibus posuere libero. Vivamus vestibulum tincidunt ullamcorper.</p>
+        <p><?=utils::getTextoByTipoContenido('Data')?></p>
         <br><br>
         <div class="row">
             <div class="col-sm-4 circle-link">
                 <a href="<?= base_url ?>web/apptest ">
                     <div class="circulo-data">
-                        <h3 class="texto-circulo-data">Todos los subsidios</h3>
+                        <h3 class="texto-circulo-data">Portafolio</h3>
                     </div>
                 </a>
             </div>

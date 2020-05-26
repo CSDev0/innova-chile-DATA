@@ -1,4 +1,5 @@
 <?php
+require_once('models/Contenido.php');
 
 class utils {
 
@@ -88,4 +89,15 @@ class utils {
         }
     }
 
+    public static function getTextoByTipoContenido($tipo){
+        $contenido = new Contenido();
+        $contenido->setTipo($tipo);
+        $cont = $contenido->getContenidoByTipo();
+        if($cont != null){
+            $texto = $cont->texto;
+        }else{
+            $texto = "No hay texto predefinido.";
+        }
+        return $texto;
+    }
 }
