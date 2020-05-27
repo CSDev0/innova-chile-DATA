@@ -13,7 +13,7 @@
                 <a class="nav-link" href="<?= base_url ?>web/ley-i+d"><i class="fas fa-microscope icono-celeste"></i> Ley I+D</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="<?= base_url ?>web/estudios"><i class="fas fa-book icono-celeste"></i> Estudios</a>
+                <a class="nav-link" href="<?= base_url ?>web/estudios"><i class="fas fa-bookmark icono-celeste"></i> Estudios</a>
             </li>
         </ul>
     </div>

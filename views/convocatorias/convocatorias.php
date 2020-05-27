@@ -2,7 +2,7 @@
 <script>
     $(document).ready(function () {
 
-        $("#jumbo").hide(1000);
+        $("#jumbo").hide();
         $('html, body, #main').css("overflow", "hidden");
         showSpinnerWhileIFrameLoads();
     });

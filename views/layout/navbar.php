@@ -5,7 +5,7 @@
                 <a class="nav-link" href="#nav1"><i class="fas fa-users icono-celeste"></i> Quiénes somos</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#nav2"><i class="fas fa-star icono-celeste"></i> Graficos destacados</a>
+                <a class="nav-link" href="#nav2"><i class="fas fa-star icono-celeste"></i> Datos destacados</a>
             </li>
             <li class="nav-item">
                 <div class="dropdown">
