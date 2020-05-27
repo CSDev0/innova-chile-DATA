@@ -1,6 +1,8 @@
 <div class="row section" id="nav5">
     <div class="col-sm-12">
-        <h1>Chile en el mundo</h1>
+        <h1 class="text-center">Chile en el mundo</h1>
+        <hr class="faded">
+        <br>
         <p><?=utils::getTextoByTipoContenido('Chile en el mundo')?></p>
         <br><br>
         <div class="row">
@@ -25,6 +27,7 @@
 
     </div>
 </div>
+<br><br><br><br><br><br><br><br><br><br><br>
 
 </div> <!--FIN DEL DIV DE CONTAINER-->
 

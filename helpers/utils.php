@@ -1,4 +1,5 @@
 <?php
+
 require_once('models/Contenido.php');
 
 class utils {
@@ -89,15 +90,48 @@ class utils {
         }
     }
 
-    public static function getTextoByTipoContenido($tipo){
+    public static function getTextoByTipoContenido($tipo) {
         $contenido = new Contenido();
         $contenido->setTipo($tipo);
         $cont = $contenido->getContenidoByTipo();
-        if($cont != null){
+        if ($cont != null) {
             $texto = $cont->texto;
-        }else{
+        } else {
             $texto = "No hay texto predefinido.";
         }
         return $texto;
     }
+
+    public static function getFechaByTipo($tipo) {
+        $contenido = new Contenido();
+        $contenido->setTipo($tipo);
+        $cont = $contenido->getContenidoByTipo();
+        if ($cont != null) {
+            
+            $fe = $cont->fecha_modificacion;
+            $t = strtotime($fe);
+            $fecha = date('d/m/y H:i',$t);
+            
+        } else {
+            $fecha = "Ninguna";
+        }
+        return $fecha;
+    }
+
+    public static function getUsuarioByTipoContenido($tipo) {
+        $contenido = new Contenido();
+        $contenido->setTipo($tipo);
+        $cont = $contenido->getContenidoByTipo();
+        if ($cont != null) {
+            $id_usu = $cont->Usuario_id;
+            $usuario = new Usuario();
+            $usuario->setId($id_usu);
+            $usu = $usuario->getUsuarioById()->fetch_object();
+            $nombre_usuario = $usu->nombre." ". $usu->apellido;
+        } else {
+            $nombre_usuario = "Desconocido.";
+        }
+        return $nombre_usuario;
+    }
+
 }

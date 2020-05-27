@@ -4,21 +4,18 @@ $nombre_completo = utils::getNombreCompleto();
 <script>
 
     $(document).ready(function () {
-        var delay = 0;
-        $('.panel').each(function () {
-            //^^ do for every instance less than the 16th (starting at 0)
-            $(this).delay(delay).animate({
+            $(".panel").animate({
                 opacity: 1
-            }, 200);
-            delay += 200;
-        });
+            }, 0);
     });
 
 </script>
-<div class="row">
+<div class="row gestion">
     <div class="col-sm-2">
         <div class="side-bar">
-            <h2 class='panel-nombre'><a href="<?= base_url ?>usuario/panel"><?= $nombre_completo ?></a></h2>
+            <div class='panel-nombre-contenedor' onclick="window.location=baseurl+'usuario/panel'">
+                <a class='panel-nombre' href="<?= base_url ?>usuario/panel"><?= $nombre_completo ?></a>
+            </div>
             <?php
             if ($_SESSION['tipo_usuario'] == 'admin') {
                 ?>

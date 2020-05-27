@@ -11,7 +11,6 @@ class gestionController {
     function usuarios() {
         
     }
-
     function estudios() {
         if (utils::isAdminOEmpleado()) {
             require_once("views/mensajes/mensajes-estudio.php");

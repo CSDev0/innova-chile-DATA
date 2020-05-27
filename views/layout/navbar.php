@@ -16,7 +16,7 @@
                 <div class="dropdown">
                     <a class="nav-link dropdown-toggle" href="#nav4"><i class="fas fa-bookmark icono-celeste"></i> Estudios</a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" id="dropdown-item-hover6" href="#navNuestrosEstuduios"><i class="fa fa-angle-double-right" id="nav-bar-dropdown-arrow6"></i> Nuestros estudios</a>
+                        <a class="dropdown-item" id="dropdown-item-hover6" href="#navNuestrosEstudios"><i class="fa fa-angle-double-right" id="nav-bar-dropdown-arrow6"></i> Nuestros estudios</a>
                         <a class="dropdown-item"  id="dropdown-item-hover7" href="#navLecturasRecomendadas"><i class="fa fa-angle-double-right" id="nav-bar-dropdown-arrow7"></i>Lecturas recomendadas</a>
                     </div>
                 </div>

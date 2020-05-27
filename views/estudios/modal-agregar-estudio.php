@@ -13,7 +13,7 @@
                         <input type="text" class="form-control" name="txtNombre" placeholder="Estudio de la natalidad" required="true">
                         <br>
                         <label for="txtDescripcion">Descripcion: </label>
-                        <textarea class="form-control" name="txtDescripcion">Ingrese una descripción..</textarea>
+                        <textarea class="form-control" id='input-estudio-texto'name="txtDescripcion">Ingrese una descripción..</textarea>
                         <br>
                         <label for="cbAno">Año del estudio:</label>
                         <?php

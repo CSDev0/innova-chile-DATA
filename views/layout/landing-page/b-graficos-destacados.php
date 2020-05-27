@@ -1,6 +1,7 @@
 <div class="row section" id="nav2">
     <div class="col-sm-12">
-        <h1 >Graficos destacados</h1>
+        <h1 class="text-center" >Datos destacados</h1>
+        <hr class="faded">
         <br><br>
         <div class="row">
             <div class="col-sm-4">

@@ -16,8 +16,8 @@ class contenidoController {
                 
                 if ($txtTipo && $txtTexto) {
                     $now = new DateTime();
-                    $date = $now->format("Y-m-d H:i");
-
+                    $date = $now->format("Y-m-d H:i:s");
+                    
                     $contenido = new Contenido();
 
                     $contenido->setTipo($txtTipo);

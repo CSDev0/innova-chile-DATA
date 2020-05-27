@@ -9,7 +9,6 @@ class usuarioController {
         if (utils::isAdminOEmpleado()) {
             require_once ('views/usuario/sidebar.php');
             require_once ('views/usuario/mi-perfil.php');
-            
         } else {
             header('Location:' . base_url . 'web/login');
         }
@@ -85,4 +84,3 @@ class usuarioController {
     }
 
 }
-

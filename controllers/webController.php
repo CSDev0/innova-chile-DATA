@@ -1,4 +1,5 @@
 <?php
+
 ob_start();
 /**
  * Description of inicioController
@@ -14,20 +15,22 @@ class webController {
         $estudio = new Estudio();
         $estudios1 = $estudio->getAllByAno();
         $estudios2 = $estudio->getAllByAno();
-        
+
         require_once('views/layout/navbar.php');
         require_once('views/layout/landing-page.php');
     }
-    
+
     function login() {
         require_once('views/layout/menubar.php');
         require_once('views/usuario/login.php');
     }
+
     function data() {
         require_once('views/layout/menubar.php');
         require_once('views/data/convocatoria-test.php');
     }
-    function convocatorias(){
+
+    function convocatorias() {
         require_once('views/layout/menubar.php');
         require_once('views/convocatorias/menubar-convocatorias.php');
         require_once('views/convocatorias/convocatorias.php');
@@ -37,6 +40,7 @@ class webController {
         require_once('views/layout/menubar.php');
         require_once('views/data/app.php');
     }
+
 }
 
 ob_end_flush();

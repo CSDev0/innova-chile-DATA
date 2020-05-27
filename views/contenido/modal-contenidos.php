@@ -15,7 +15,7 @@
                         <br>
                         <div id="modal-contenido-texto">
                         <label for="txtTexto">Texto a mostrar:</label>
-                        
+                        <textarea id='input-contenido-texto' name='txtTexto'></textarea>
                         </div>
                         <br>
                     </div>

@@ -7,6 +7,9 @@ and open the template in the editor.
     Created on : 18-05-2020, 16:57:41
     Author     : saez_
 */
+.row.gestion{
+    width: 100%;
+}
 .side-bar{
     width: 100%;
     margin-left:0%; 
@@ -15,6 +18,7 @@ and open the template in the editor.
     padding-top:10% ;
     padding-bottom: 500%;
     background-color:#F58457;
+    
 }
 .form-group.login{
     padding: 30px;
@@ -34,11 +38,37 @@ and open the template in the editor.
     z-index: -50;
     margin-top: -100px;
 }
-
 .panel-nombre{
     font-size: 25px;
     color: white;
     margin-bottom: 20px;
+    transition: 0.3s;
+    margin-bottom: 0px;
+    padding: 4px;
+    border-radius: 5px;
+}
+.panel-nombre:hover{
+    text-decoration: none;
+    color: white;
+}
+.panel-nombre-contenedor{
+    font-size: 25px;
+    color: white;
+    margin-bottom: 20px;
+    transition: 0.3s;
+    margin-bottom: 10px;
+    padding: 4px;
+    border-radius: 5px;
+    cursor: pointer
+}
+
+.panel-nombre-contenedor:hover{
+    transform: scale(1.1);
+    padding: 5px;
+    margin-left: 10px;
+    text-decoration: none;
+    color: white;
+    background-color: #0B65AB;
 }
 .panel{
     width: 99%;

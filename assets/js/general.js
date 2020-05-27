@@ -20,14 +20,14 @@ $(window).scroll(function () {
     } else {
         $('#back-to-top').fadeOut();
     }
-    if ($(this).scrollBottom() < 20) {
+    if ($(this).scrollBottom() < 100 && abierto === false) {
         var altura = $('.footer-sticky').get(0).scrollHeight;
         $('.footer-sticky').animate({height: altura}, 50);
         abierto = true;
         flecha_abajo();
 
     } else {
-        if ($(this).scrollBottom() > 20 && abierto === true) {
+        if ($(this).scrollBottom() > 100 && abierto === true) {
             $('.footer-sticky').animate({height: '40px'}, 50);
             abierto = false;
             flecha_arriba();
@@ -55,13 +55,20 @@ function flecha_arriba() {
 }
 $('.footer-sticky').mouseenter(function (e) {
     var altura = $('.footer-sticky').get(0).scrollHeight;
+
     $(this).animate({height: altura}, 50);
     abierto = true;
     flecha_abajo();
 }).mouseleave(function (e) {
-    $(this).animate({height: '40px'}, 50);
-    abierto = false;
-    flecha_arriba();
+    if ($(window).scrollBottom() < 100 && abierto === true) {
+        
+    } else {
+        $(this).animate({height: '40px'}, 50);
+        abierto = false;
+        flecha_arriba();
+    }
+
+
 
 });
 

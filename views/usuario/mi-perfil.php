@@ -1,4 +1,4 @@
-
+<div class='row'>
 <div class="col-sm-10 mi-perfil">
     <h2>Mi perfil</h2>
     <hr>
@@ -12,9 +12,4 @@
 </div>
 </div>
 </div>
-
-
-
-
-
-
+</div>

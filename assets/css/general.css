@@ -15,6 +15,9 @@
     border: 1px solid #49535E;
 }
 
+.text-justify {
+  text-align: justify;
+}
 h1{
     color: #2680BD;
     font-size: 40px;
@@ -30,7 +33,14 @@ h4{
 p{
     color: #49535E;
     font-size: 20px;
+    text-align: justify;
 }
+.dot-list {
+    list-style-type: disc !important;
+    color: #F58457;;
+    padding-left:1em !important;
+}
+
 p.white{
     color: #FFFFFF;
 }
@@ -84,12 +94,15 @@ p.white{
     margin-bottom: 0px;
 }
 .circulo-data{
-    width: 200px;
-    height: 200px;
+    width: 12em;
+    height: 12em;
     background-color: #48ACF1;
     border-radius: 100px;
     transform: scale(1.1);
     transition: 0.3s;
+    margin: auto;
+    margin-bottom: 2em;
+    
 }
 .circulo-data:hover{
     transform: scale(1.2);
@@ -106,6 +119,7 @@ p.white{
     text-align: center;
     display: block;
     vertical-align: middle;
+
 }
 
 .circle-link h3{
@@ -121,11 +135,14 @@ hr{
 }
 
 a{
-    color: white;
+    color: #0062AB;
+}
+a:hover{
+    color: #2680BD;
 }
 .link-normal{
     color: #0062AB;
-    font-size: 18px;
+    font-size: 20px;
 }
 .link-normal:hover{
     color: #2680BD;
@@ -134,6 +151,7 @@ a{
 .link-normal.estudios{
     color: #0062AB;
     font-size: 18px;
+    margin-left: 5px;
 }
 .link-normal.small{
     color: #0062AB;
@@ -173,8 +191,14 @@ a{
 .row.section{
     padding-top: 70px;
     margin-bottom: 100px;
+    
 }
-
+.row.section.quienes{
+    height: 600px;
+    padding-top: 70px;
+    margin-bottom: 100px;
+    
+}
 .bg-quienes-somos{
     width:100%;
     height: 900px;
@@ -283,7 +307,25 @@ a{
     color: #D1ECFF;
 }
 
-
+.bg-azul{
+    background-color: #0B65AB;
+    color: white;
+    padding: 10px;
+}
+.rounded-bottom{
+    border-radius: 0px 0px 5px 5px;
+}
+hr.faded {
+    border: 0;
+    height: 2px;
+    background-image: linear-gradient(to right, rgba(11,101,171,0.05), rgba(11,101,171,1), rgba(11,101,171,0.05));
+}
+.faded-naranja {
+    border-top: 1px solid #F58457;
+}
+.faded-naranja-alt {
+    border-top: 1px solid #F58457;
+}
 @media (min-width: 992px) {
     .modal-lg {
         max-width: 55%;

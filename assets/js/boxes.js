@@ -1,3 +1,4 @@
+
 function mostrarMensaje(mensaje, titulo) {
     $(".x-msg").text(mensaje);
     $("#x-titulo").text(titulo);
@@ -79,15 +80,24 @@ $('#modal-eliminar').on('hidden.bs.modal', function () {
 });
 
 $(".btn-abrir-modal-contenido").click(function (e) {
+    
     var tipoContenido = $(this).data('tipo');
     var textoContenido = $(this).data('texto');
+    var fechaModificacion = $(this).data('fecha');
+    var usuario = $(this).data('usuario');
+    
     $("#modal-contenido-nombre").append("<input type='text' id='input-contenido-nombre' class='form-control' name='txtNombre' value='" + tipoContenido + "' disabled>");
-    $("#modal-contenido-texto").append("<textarea id='input-contenido-texto' name='txtTexto' class='form-control' >" + textoContenido + "</textarea>");
+    $('#input-contenido-texto').summernote('code', '');
     $("#modal-contenido-texto").append("<input id='input-contenido-tipo' type='hidden' value='" + tipoContenido + "' name='txtTipo'>");
+    setTimeout(function(){ $('#input-contenido-texto').summernote('pasteHTML', textoContenido); }, 200);
+    $("#modal-contenido-texto").append("<h6 id='input-contenido-fecha' class='bg-azul rounded-bottom' name='txtTipo'> Ultima modificación: "+fechaModificacion+
+    " por "+ usuario + "</h6>");
+    
    
 });
 $('#modal-contenido').on('hidden.bs.modal', function () {
     $("#input-contenido-nombre").remove();
-    $("#input-contenido-texto").remove();
+    $('#input-contenido-texto').summernote('code', '');
     $("#input-contenido-tipo").remove();
+    $("#input-contenido-fecha").remove();
 });
