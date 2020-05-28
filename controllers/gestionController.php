@@ -9,7 +9,10 @@ require_once 'helpers/utils.php';
 class gestionController {
 
     function usuarios() {
-        
+      require_once('views/usuario/sidebar.php');
+      require_once('views/usuario/gestion-usuarios.php');
+      require_once('views/usuario/modal-agregar-usuario.php');
+      require_once('views/usuario/modal-buscar-usuario.php');
     }
     function estudios() {
         if (utils::isAdminOEmpleado()) {
@@ -31,7 +34,6 @@ class gestionController {
 
     function contenidos() {
         require_once("views/mensajes/mensajes-contenido.php");
-        
         require_once('views/usuario/sidebar.php');
         require_once('views/contenido/contenidos.php');
         require_once('views/contenido/modal-contenidos.php');
