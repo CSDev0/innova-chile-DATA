@@ -10,9 +10,9 @@ $chi = 'Chile en el mundo'
 <hr>
 
 <div class="row">
-    <p class="col-sm-9 estudios"> A continuación se encuentran los botones correspondientes a cada sección de la pagina principal, en la cual podrás editar los textos referentes a ellas.</p>
+    <p class="col-sm-10"> A continuación se encuentran los botones correspondientes a cada sección de la pagina principal, en la cual podrás editar los textos referentes a ellas.</p>
     
-    <div class="col-sm-10 estudios" id="contenedor-nuestros-estudios">
+    <div class="col-sm-10 contenedor-gestion">
         <button class="btn btn-primary btn-abrir-modal-contenido" href="#modal-contenido" data-toggle="modal" data-tipo="<?=$qui?>" data-texto='<?= utils::getTextoByTipoContenido($qui) ?>' data-usuario='<?=utils::getUsuarioByTipoContenido($qui)?>' data-fecha="<?=utils::getFechaByTipo($qui)?>">
             <i class="fas fa-edit"></i> Quienes somos</button>
         <button class="btn btn-primary btn-abrir-modal-contenido" href="#modal-contenido" data-toggle="modal" data-tipo="<?=$des?>" data-texto='<?= utils::getTextoByTipoContenido($des) ?>' data-usuario='<?=utils::getUsuarioByTipoContenido($des)?>' data-fecha="<?=utils::getFechaByTipo($des)?>">

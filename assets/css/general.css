@@ -1,4 +1,5 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css');
+
 .x-msg{
     text-align: left;
     font-size: 25px;
@@ -219,7 +220,7 @@ a:hover{
 }
 #bg-footer{
     background-color: #D1ECFF;
-    padding-bottom: 50px;
+    padding-bottom: 30px;
 }
 #footer{
     transition: 1s;
@@ -228,11 +229,8 @@ a:hover{
 #copyright{
     margin-top: 0px;
     padding-top: 10px;
-    padding-bottom: 50px;
-    align-content: center;
-    text-align: center;
+    padding-bottom: 5px;
     background-color: #11456B;
-
 }
 .dropdown{
     position: relative;
@@ -297,14 +295,34 @@ a:hover{
 .icono-blanco{
     color: white;
 }
+.color-blanco{
+    color: white;
+}
+
 .icono-azul{
     color: #0062AB;
+}
+.color-azul{
+    color: #0062AB;
+}
+.icono-azul-claro{
+    color: #48ACF1;
+}
+.color-azul-claro{
+    color: #48ACF1;
 }
 .icono-naranja{
     color: #F58457;
 }
 .icono-celeste{
     color: #D1ECFF;
+}
+.color-ig {
+  color: transparent;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  background: -webkit-radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  background-clip: text;
+  -webkit-background-clip: text;
 }
 
 .bg-azul{

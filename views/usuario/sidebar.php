@@ -4,16 +4,16 @@ $nombre_completo = utils::getNombreCompleto();
 <script>
 
     $(document).ready(function () {
-            $(".panel").animate({
-                opacity: 1
-            }, 0);
+        $(".panel").animate({
+            opacity: 1
+        }, 0);
     });
 
 </script>
 <div class="row gestion">
     <div class="col-sm-2">
         <div class="side-bar">
-            <div class='panel-nombre-contenedor' onclick="window.location=baseurl+'usuario/panel'">
+            <div class='panel-nombre-contenedor' onclick="window.location = baseurl + 'usuario/panel'">
                 <a class='panel-nombre' href="<?= base_url ?>usuario/panel"><?= $nombre_completo ?></a>
             </div>
             <?php
@@ -21,6 +21,9 @@ $nombre_completo = utils::getNombreCompleto();
                 ?>
                 <div class="" style="margin-bottom:10px;">
                     <button class="btn btn-primary panel" onclick='window.location.href = "<?= base_url ?>gestion/usuarios"'><i class="fas fa-users"></i> Gestión usuarios</button>
+                </div>
+                <div class="" style="margin-bottom:10px;">
+                    <button class="btn btn-primary panel" onclick='window.location.href = "<?= base_url ?>gestion/web"'><i class="fas fa-wrench"></i> Gestión sitio web</button>
                 </div>
                 <?php
             }
@@ -30,6 +33,9 @@ $nombre_completo = utils::getNombreCompleto();
             </div>
             <div class="" style="margin-bottom:10px;">
                 <button class="btn btn-primary panel" onclick='window.location.href = "<?= base_url ?>gestion/contenidos"'><i class="fas fa-align-left"></i> Gestión textos</button>
+            </div>
+            <div class="" style="margin-bottom:10px;">
+                <button class="btn btn-primary panel" onclick='window.location.href = "<?= base_url ?>gestion/data"'><i class="fas fa-star"></i> Gestión Data</button>
             </div>
             <div class="" style="margin-bottom:10px;">
                 <button class="btn btn-danger panel" onclick='window.location.href = "<?= base_url ?>usuario/logout"'><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</button>
