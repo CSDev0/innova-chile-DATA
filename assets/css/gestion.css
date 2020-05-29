@@ -3,22 +3,28 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
-/* 
+/*
     Created on : 18-05-2020, 16:57:41
     Author     : saez_
+
+    --main-color = Naranjo de side bar
 */
+
+:root {
+  --main-color:#F58457;
+}
 .row.gestion{
     width: 100%;
 }
 .side-bar{
     width: 100%;
-    margin-left:0%; 
+    margin-left:0%;
     padding-left: 3%;
     padding-right: 3%;
     padding-top:10% ;
     padding-bottom: 500%;
-    background-color:#F58457;
-    
+    background-color:var(--main-color);
+
 }
 .form-group.login{
     padding: 30px;
@@ -79,7 +85,7 @@ and open the template in the editor.
 .btn.btn-nuestros{
     font-size: 18px;
     font-weight: bold;
-    background-color: #F58457;
+    background-color: var(--main-color);
     color: white;
 }
 .btn.btn-nuestros:hover{
@@ -110,7 +116,7 @@ and open the template in the editor.
     margin-top: 190px;
     margin-left: 15px;
     margin-bottom: 10px;
-    
+
     top: 0;
     z-index: 100;
     opacity: 1;
@@ -129,7 +135,7 @@ and open the template in the editor.
 }
 .col-sm-10.lecturas{
     border-radius: 5px;
-    
+
     padding: 10px;
     border: 1px solid #D1ECFF;
     background-color: white;

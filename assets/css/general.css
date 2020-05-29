@@ -1,4 +1,16 @@
+/*
+ --main-color : azul en navbar y subtitulos
+ --secondary-color : azul botones
+ --third-coor : naranja titulos y lineas
+*/
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css');
+
+:root {
+  --main-color:#2680BD;
+  --secondary-color:#0062AB;
+  --third-color:#D1ECFF;
+}
+
 body{
     overflow-x: hidden;
 }
@@ -22,13 +34,13 @@ body{
     text-align: justify;
 }
 h1{
-    color: #2680BD;
+    color: var(--main-color);
     font-size: 50px;
     font-family: 'ScalaSansPro';
     font-weight: bold;
 }
 h2{
-    color: #2680BD;
+    color: var(--main-color);
     font-family: 'ScalaSansPro';
     font-weight: bold;
     font-style: italic;
@@ -39,7 +51,7 @@ h4{
     font-weight: bold;
     font-style: italic;
     font-size: 50px;
-    color: #2680BD;
+    color: var(--main-color);
     font-size: 20px;
 }
 p{
@@ -57,7 +69,7 @@ p.white{
     color: #FFFFFF;
 }
 .btn.btn-primary{
-    background-color: #0062AB;
+    background-color: var(--secondary-color);
     border: none;
     font-size: 20px;
     -webkit-transition: all 0.5s ease;
@@ -67,7 +79,7 @@ p.white{
 }
 .btn.btn-primary:hover{
     background-color: #FFFFFF;
-    color: #0062AB;
+    color: var(--secondary-color);
     -webkit-box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.23);
     -moz-box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.23);
     box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.23);
@@ -121,7 +133,7 @@ p.white{
     -webkit-box-shadow: 0px 0px 27px -5px rgba(0,97,171,1);
     -moz-box-shadow: 0px 0px 27px -5px rgba(0,97,171,1);
     box-shadow: 0px 0px 27px -5px rgba(0,97,171,1);
-    border: 5px solid #D1ECFF;
+    border: 5px solid var(--third-color);
 }
 .texto-circulo-data{
     margin: auto;
@@ -146,34 +158,34 @@ p.white{
 }
 
 hr{
-    border-color: #0062AB;
+    border-color: var(--secondary-color);
 }
 
 a{
-    color: #0062AB;
+    color: var(--secondary-color);
 }
 a:hover{
-    color: #2680BD;
+    color: var(--main-color);
 }
 .link-normal{
-    color: #0062AB;
+    color: var(--secondary-color);
     font-size: 20px;
 }
 .link-normal:hover{
-    color: #2680BD;
+    color: var(--main-color);
 
 }
 .link-normal.estudios{
-    color: #0062AB;
+    color: var(--secondary-color);
     font-size: 18px;
     margin-left: 5px;
 }
 .link-normal.small{
-    color: #0062AB;
+    color: var(--secondary-color);
     font-size: 15px;
 }
 .navbar{
-    background-color: #0062AB;
+    background-color: var(--secondary-color);
 }
 .navbar-nav{
     margin-bottom: 0px;
@@ -185,7 +197,7 @@ a:hover{
 }
 .nav-link{
     font-size: 24px;
-    background-color: #0062AB;
+    background-color: var(--secondary-color);
     color: #FFFFFF;
     transition: 0.5s;
     border-radius: 5px;
@@ -202,7 +214,7 @@ a:hover{
     font-size: 25px;
 }
 .nav-link:hover{
-    color: #0062AB;
+    color: var(--secondary-color);
     background-color: #FFFFFF;
 }
 
@@ -243,7 +255,7 @@ a:hover{
     text-align: center;
 }
 #bg-footer{
-    background-color: #D1ECFF;
+    background-color: var(--third-color);
     padding-bottom: 30px;
 }
 #footer{
@@ -269,11 +281,11 @@ a:hover{
 }
 .dropdown-item{
     font-size: 24px;
-    color: #0062AB;
+    color: var(--secondary-color);
 }
 .dropdown-item:hover{
     color: #FFFFFF;
-    background-color: #0062AB;
+    background-color: var(--secondary-color);
 
 }
 
@@ -324,10 +336,10 @@ a:hover{
 }
 
 .icono-azul{
-    color: #0062AB;
+    color: var(--secondary-color);
 }
 .color-azul{
-    color: #0062AB;
+    color: var(--secondary-color);
 }
 .icono-azul-claro{
     color: #48ACF1;
@@ -339,7 +351,7 @@ a:hover{
     color: #F58457;
 }
 .icono-celeste{
-    color: #D1ECFF;
+    color: var(--third-color);
 }
 .color-ig {
     color: transparent;
