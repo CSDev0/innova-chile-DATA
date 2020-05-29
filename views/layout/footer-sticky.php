@@ -1,4 +1,4 @@
-<section id="footer" class="footer-sticky">
+<section id="footer" class="seccion-extra footer-sticky">
     <div id="bg-footer">
         <div class="text-center"><i class="fas fa-angle-up fa-3x color-azul" id="flecha-animada"></i></div>
         <div class="container">

@@ -1,5 +1,7 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css');
-
+body{
+    overflow-x: hidden;
+}
 .x-msg{
     text-align: left;
     font-size: 25px;
@@ -8,26 +10,35 @@
     text-align: center;
     font-size: 30px;
 }
-.back-to-top {
+/*.back-to-top {
     position: fixed;
     bottom: 50px;
     right: 25px;
     display: none;
     border: 1px solid #49535E;
-}
+}*/
 
 .text-justify {
-  text-align: justify;
+    text-align: justify;
 }
 h1{
     color: #2680BD;
-    font-size: 40px;
+    font-size: 50px;
+    font-family: 'ScalaSansPro';
+    font-weight: bold;
 }
 h2{
     color: #2680BD;
-    font-size: 30px;
+    font-family: 'ScalaSansPro';
+    font-weight: bold;
+    font-style: italic;
+    font-size: 35px;
 }
 h4{
+        font-family: 'ScalaSansPro';
+    font-weight: bold;
+    font-style: italic;
+    font-size: 50px;
     color: #2680BD;
     font-size: 20px;
 }
@@ -103,7 +114,7 @@ p.white{
     transition: 0.3s;
     margin: auto;
     margin-bottom: 2em;
-    
+
 }
 .circulo-data:hover{
     transform: scale(1.2);
@@ -114,7 +125,10 @@ p.white{
 }
 .texto-circulo-data{
     margin: auto;
-    font-size: 20px
+    font-family: 'ScalaSansPro';
+    font-weight: bold;
+    font-style: italic;
+    font-size: 28px;
 }
 .circle-link{
     text-align: center;
@@ -170,7 +184,7 @@ a:hover{
     margin-bottom: -5px;
 }
 .nav-link{
-    font-size: 20px;
+    font-size: 24px;
     background-color: #0062AB;
     color: #FFFFFF;
     transition: 0.5s;
@@ -179,6 +193,13 @@ a:hover{
     margin-right: 20px;
     width: 100%;
     text-align: center;
+    font-family: 'ScalaSansPro';
+    font-weight: bold;
+}
+.dropdown-item{
+    font-family: 'ScalaSansPro';
+    font-weight: bold;
+    font-size: 25px;
 }
 .nav-link:hover{
     color: #0062AB;
@@ -191,14 +212,14 @@ a:hover{
 
 .row.section{
     padding-top: 70px;
-    margin-bottom: 100px;
-    
+    margin-bottom: 0px;
+
 }
 .row.section.quienes{
     height: 600px;
     padding-top: 70px;
     margin-bottom: 100px;
-    
+
 }
 .bg-quienes-somos{
     width:100%;
@@ -213,7 +234,10 @@ a:hover{
 }
 
 .destacado-naranja{
-    font-size: 30px;
+    font-family: 'ScalaSansPro';
+    font-weight: bold;
+    font-style: italic;
+    font-size: 35px;
     color: #F6875A;
     padding-left: 30px;
     text-align: center;
@@ -244,7 +268,7 @@ a:hover{
     box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.23);
 }
 .dropdown-item{
-    font-size: 20px;
+    font-size: 24px;
     color: #0062AB;
 }
 .dropdown-item:hover{
@@ -318,11 +342,11 @@ a:hover{
     color: #D1ECFF;
 }
 .color-ig {
-  color: transparent;
-  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-  background: -webkit-radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-  background-clip: text;
-  -webkit-background-clip: text;
+    color: transparent;
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    background: -webkit-radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    background-clip: text;
+    -webkit-background-clip: text;
 }
 
 .bg-azul{

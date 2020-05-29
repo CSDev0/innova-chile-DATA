@@ -2,14 +2,26 @@ $(document).ready(function () {
     bsCustomFileInput.init()
 });
 
-$(document).on('click', 'a[href^="#nav"]', function (event) {
-    event.preventDefault();
-
-    $('html, body, #main').animate({
-        scrollTop: $($.attr(this, 'href')).offset().top
-    }, 500);
-
+//$(document).on('click', 'a[href^="#nav"]', function (event) {
+//    event.preventDefault();
+//
+//    $('html, body, #main').animate({
+//        scrollTop: $($.attr(this, 'href')).offset().top
+//    }, 500);
+//
+//});
+$(".nav-link").on('click', function(e) {
+   $.scrollify.move($(this).attr('href')); 
 });
+
+$("#dropdown-item-hover6").on('click', function(e) {
+   $.scrollify.move($(this).attr('href')); 
+});
+$("#dropdown-item-hover7").on('click', function(e) {
+   $.scrollify.move($(this).attr('href')); 
+});
+
+
 $.fn.scrollBottom = function () {
     return $(document).height() - this.scrollTop() - this.height();
 };
@@ -20,14 +32,14 @@ $(window).scroll(function () {
     } else {
         $('#back-to-top').fadeOut();
     }
-    if ($(this).scrollBottom() < 100 && abierto === false) {
+    if ($(this).scrollBottom() < 1 && abierto === false) {
         var altura = $('.footer-sticky').get(0).scrollHeight;
         $('.footer-sticky').animate({height: altura}, 50);
         abierto = true;
         flecha_abajo();
 
     } else {
-        if ($(this).scrollBottom() > 100 && abierto === true) {
+        if ($(this).scrollBottom() > 1 && abierto === true) {
             $('.footer-sticky').animate({height: '40px'}, 50);
             abierto = false;
             flecha_arriba();

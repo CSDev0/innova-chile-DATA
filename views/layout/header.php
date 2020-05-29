@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="<?= base_url ?>assets/css/data.css">
         <link rel="stylesheet" href="<?= base_url ?>assets/css/logAdmin.css">
         <link rel="stylesheet" href="<?= base_url ?>assets/css/gestion.css">
+        <link rel="stylesheet" href="<?= base_url ?>assets/css/fonts/fonts.css">
 
 
 
@@ -23,7 +24,18 @@
         <script src="<?= base_url ?>assets/js/parameters.js"></script>
         <script src="<?= base_url ?>assets/js/general.js"></script>
         <script src="<?= base_url ?>assets/js/boxes.js"></script>
-
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollify/1.0.19/jquery.scrollify.min.js"></script>
+        <script>
+            $(function () {
+                $.scrollify({
+                    section: ".seccion",
+                    interstitialSection: ".seccion-extra",
+                    easing: "easeOutExpo",
+                    setHeights: false,
+                    scrollSpeed: 1500
+                });
+            });
+        </script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js"></script>
         <script>SmoothScroll({keyboardSupport: true})</script>
 
@@ -37,8 +49,8 @@
     <body>
         <?php require_once('views/mensajes/modal-mensajes.php'); ?>
 
-        <a id="back-to-top" href="#" class="btn btn-light btn-lg back-to-top" role="button"><i class="fas fa-chevron-up"></i></a>
-        <section class="header">
+<!--        <a id="back-to-top" href="#" class="btn btn-light btn-lg back-to-top" role="button"><i class="fas fa-chevron-up"></i></a>-->
+        <section class="seccion-extra">
             <div id="jumbo" class="jumbotron">
                 <div class="logo-corfo"></div>
                 <a href="<?= base_url ?>web/inicio"><div class="logo-innova"></div></a>

@@ -2,19 +2,26 @@
     <thead>
         <tr>
             <th scope="col">Usuario</th>
-            <th scope="col">Fecha</th>
             <th scope="col">Actividad</th>
-            <th scope="col">Gestion</th>
+            <th scope="col">Fecha</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <th>User1</th>
-            <td>DD-MM-AA</td>
-            <td>Modifico,Borro,Agrego</td>
-            <td>
-                Opciones
-            </td>
+            <th>Claudio Saez</th>
+            <td>Cerró sesión</td>
+            <td>DD-MM-AA HORA</td>
         </tr>
+        <tr>
+            <th>Claudio Saez</th>
+            <td>Modificó: <b>Estudios-></b>Manual de Oslo</td>
+            <td>DD-MM-AA HORA</td>
+        </tr>
+        <tr>
+            <th>Claudio Saez</th>
+            <td>Inicio sesión</td>
+            <td>DD-MM-AA HORA</td>
+        </tr>
+
     </tbody>
 </table>
