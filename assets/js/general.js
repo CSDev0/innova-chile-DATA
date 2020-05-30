@@ -1,6 +1,22 @@
 $(document).ready(function () {
     bsCustomFileInput.init()
+    
 });
+//Funcion para definir el tamaño de las secciones dependiendo del tamaño del dispositivo.
+//Esto Para solucionar bug de desplazamiento entre las secciones. (al usar viewport o height 100%).
+function resizeSecciones() {
+    
+    var w = window,
+            d = document,
+            e = d.documentElement,
+            g = d.getElementsByTagName('body')[0],
+            x = w.innerWidth || e.clientWidth || g.clientWidth,
+            y = w.innerHeight || e.clientHeight || g.clientHeight;
+    $('.seccion.fullview').css('width', x);
+    $('.seccion.fullview').css('height', y - 5); //Si se ocupa el height completo ocurre un extraño bug al desplazarse entre secciones, por lo que se le resta 5 y se soluciona.
+}
+    resizeSecciones();
+
 
 //$(document).on('click', 'a[href^="#nav"]', function (event) {
 //    event.preventDefault();
@@ -10,15 +26,15 @@ $(document).ready(function () {
 //    }, 500);
 //
 //});
-$(".nav-link").on('click', function(e) {
-   $.scrollify.move($(this).attr('href')); 
+$(".nav-link").on('click', function (e) {
+    $.scrollify.move($(this).attr('href'));
 });
 
-$("#dropdown-item-hover6").on('click', function(e) {
-   $.scrollify.move($(this).attr('href')); 
+$("#dropdown-item-hover6").on('click', function (e) {
+    $.scrollify.move($(this).attr('href'));
 });
-$("#dropdown-item-hover7").on('click', function(e) {
-   $.scrollify.move($(this).attr('href')); 
+$("#dropdown-item-hover7").on('click', function (e) {
+    $.scrollify.move($(this).attr('href'));
 });
 
 
@@ -72,8 +88,8 @@ $('.footer-sticky').mouseenter(function (e) {
     abierto = true;
     flecha_abajo();
 }).mouseleave(function (e) {
-    if ($(window).scrollBottom() < 100 && abierto === true) {
-        
+    if ($(window).scrollBottom() < 20 && abierto === true) {
+
     } else {
         $(this).animate({height: '40px'}, 50);
         abierto = false;

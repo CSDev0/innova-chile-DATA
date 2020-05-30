@@ -1,4 +1,4 @@
-<section id="footer" class="seccion-extra footer-sticky">
+<section id="footer" class="seccion-extra footer-sticky" >
     <div id="bg-footer">
         <div class="text-center"><i class="fas fa-angle-up fa-3x color-azul" id="flecha-animada"></i></div>
         <div class="container">
@@ -32,10 +32,10 @@
     </div>
 </section>
 
+
+
 <script src="<?= base_url ?>assets/js/general.js"></script>
 <script src="<?= base_url ?>assets/js/boxes.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js"></script>
-<script>SmoothScroll({keyboardSupport: true})</script>
 <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
 <script src="<?= base_url ?>assets/js/summernote-es-ES.js"></script>
@@ -70,5 +70,5 @@
             ['view', ['fullscreen', 'help']],
         ]
     });
+    
 </script>
-

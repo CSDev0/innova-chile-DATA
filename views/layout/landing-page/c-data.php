@@ -1,5 +1,5 @@
-<section class="seccion">
-    <div class="container d-flex vh-100">
+<section class="seccion fullview" data-section-name="data">
+    <div class="container d-flex ">
         <div class="row section justify-content-center vw-100">
             <div class="col-sm-12 align-self-top">
                     <h1 class="text-center">Data</h1>

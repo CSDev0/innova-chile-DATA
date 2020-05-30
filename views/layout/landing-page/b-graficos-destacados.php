@@ -1,7 +1,7 @@
-<section class="seccion">
-    <div class="container d-flex vh-100">
+<section class="seccion fullview" data-section-name="datos_destacados">
+    <div class="container d-flex">
         <div class="row section justify-content-center">
-            <div class="col-sm-12 align-self-top">
+            <div class="col-sm-12 align-self-top h-100">
                 <h1 class="text-center" >Datos destacados</h1>
                 <hr class="faded">
             </div>
@@ -24,8 +24,8 @@
         </div>
     </div>
 </section>
-<section class="seccion">
-    <div class="container-fluid d-flex vh-100">
+<section class="seccion" data-section-name="graficos_destacados">
+    <div class="container-fluid d-flex">
         <div class="row section">
             <div class="col-sm-12 align-self-top vw-100">
                 <div class="container">

@@ -1,4 +1,4 @@
-<section class="seccion">
+<section class="seccion fullview" data-section-name="quienes_somos">
     <div class="bg-quienes-somos">
     </div>
     <div class="container d-flex vh-100">

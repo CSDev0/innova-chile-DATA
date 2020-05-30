@@ -12,11 +12,26 @@
     display: none;
     border: 1px solid #49535E;
 }*/
-html{
-    scroll-behavior: smooth;
+/* Let's get this party started */
+::-webkit-scrollbar {
+    width: 12px;
 }
-body{
+ 
+/* Track */
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+ 
+/* Handle */
+body {
+    right: -1px;
+    overflow-y: scroll;
     overflow-x: hidden;
+}
+html{
+    scrollbar-color: @main-color white;
 }
 .x-msg{
     text-align: left;

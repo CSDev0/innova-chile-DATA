@@ -1,4 +1,4 @@
-<section class="seccion">
+<section class="seccion" data-section-name="estudios">
     <div class="container d-flex h-100">
         <div class="row section justify-content-center vw-100">
             <div class="col-sm-12 align-self-top ">
@@ -10,7 +10,7 @@
                 </div>
             </div>
             </section>
-            <section class="seccion">
+            <section class="seccion" data-section-name="nuestros_estudios">
                 <div class="row section">
                     <div class="col-sm-12 align-self-top vw-100">
                         <h2 class="text-center">Nuestros estudios</h2>
@@ -61,7 +61,7 @@
                     </div>
                 </div>
             </section>
-            <section class="seccion vh-100">
+            <section class="seccion fullview" data-section-name="lecturas_recomendadas">
                 <div class="row section ">
                     <div class="col-sm-12 align-self-top vw-100 ">
                         <h2 class="text-center">Lecturas recomendadas</h2>
