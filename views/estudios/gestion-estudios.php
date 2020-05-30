@@ -8,7 +8,7 @@
 <div class="row">
 
     <div class="col-sm-10 estudios" id="contenedor-nuestros-estudios">
-        <h4>Nuestros estudios</h4>
+        <h3>Nuestros estudios</h3>
         <button class="btn btn-primary" href="#modal-agregar-estudio" data-toggle="modal"><i class="fas fa-plus-square"></i> Agregar</button>
         <button class="btn btn-primary" href="#modal-buscar-estudio" data-toggle="modal"><i class="fas fa-search-plus"></i> Buscar</button>
         <br><br>
@@ -18,7 +18,7 @@
 </div>
 <div class="row">
     <div class="col-sm-10 lecturas" id="contenedor-lecturas-recomendadas">
-        <h4>Lecturas recomendadas</h4>
+        <h3>Lecturas recomendadas</h3>
         <button class="btn btn-primary" href="#modal-agregar-lectura" data-toggle="modal"><i class="fas fa-plus-square"></i> Agregar</button>
         <button class="btn btn-primary" href="#modal-agregar-lectura" data-toggle="modal"><i class="fas fa-search-plus"></i> Buscar</button>
         <br><br>

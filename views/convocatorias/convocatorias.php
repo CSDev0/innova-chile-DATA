@@ -25,6 +25,7 @@
             });
         }
     }
+    $.scrollify.disable();
 </script>
 
 <iframe id="contendedor-convocatorias" src="https://datainnovacion.github.io/llamado_3/">

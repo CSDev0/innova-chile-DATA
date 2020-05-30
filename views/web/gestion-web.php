@@ -8,7 +8,7 @@
         Esta Opcion en un futuro solo estara disponible para el administrador por lo tanto los usuarios normales no deberian tener esta opcion.
     </p>
     <div class="col-sm-10 contenedor-gestion">
-        <h4>General</h4>
+        <h3>General</h3>
         <button class="btn btn-primary btn-abrir-modal-web" href="#modal-web" data-toggle="modal" data-tipo="">
             <i class="fas fa-edit"></i> Nombre del sitio web</button>
         <button class="btn btn-primary btn-abrir-modal-web" href="#modal-web" data-toggle="modal" data-tipo="">
@@ -20,7 +20,7 @@
         <br><br>
     </div>
     <div class="col-sm-10 contenedor-gestion">
-        <h4>Pie de página</h4>
+        <h3>Pie de página</h3>
         <button class="btn btn-primary btn-abrir-modal-web" href="#modal-web" data-toggle="modal" data-tipo="">
             <i class="fas fa-edit"></i> Te puede interesar</button>
         <br><br>
