@@ -1,15 +1,17 @@
 <?php
 $nombre_completo = utils::getNombreCompleto();
 ?>
+
 <script>
 
     $(document).ready(function () {
         $(".panel").animate({
             opacity: 1
         }, 0);
+        $.scrollify.disable();
     });
-
 </script>
+
 <div class="row gestion">
     <div class="col-sm-2">
         <div class="side-bar">

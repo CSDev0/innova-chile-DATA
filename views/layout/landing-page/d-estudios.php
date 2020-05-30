@@ -1,7 +1,7 @@
 <section class="seccion">
-    <div class="container-fluid d-flex h-100">
-        <div class="row section justify-content-center">
-            <div class="col-sm-12 align-self-top vw-100">
+    <div class="container d-flex h-100">
+        <div class="row section justify-content-center vw-100">
+            <div class="col-sm-12 align-self-top ">
                 <div class="container">
                     <h1 class="text-center">Estudios</h1>
                     <hr class="faded" >
@@ -61,14 +61,14 @@
                     </div>
                 </div>
             </section>
-            <section class="seccion">
-                <div class="row section">
+            <section class="seccion vh-100">
+                <div class="row section ">
                     <div class="col-sm-12 align-self-top vw-100 ">
                         <h2 class="text-center">Lecturas recomendadas</h2>
                         <br>
                     </div>
                 </div>
-                <div class="col-sm-12 align-self-top vw-100  vh-100">
+                <div class="col-sm-12 align-self-top vw-100">
                     <div class="container">
                         <ul class="dot-list">
                             <?php

@@ -20,7 +20,7 @@ else{
             <form action="<?= base_url ?>usuario/loginRequest" method="POST" data-parsley-validate data-parsley-trigger="focusout" >
                 <div class="form-group login">
                     <div class="modal-header">
-                        <h4 class="modal-title">Iniciar sesión</h4>
+                        <h3 class="modal-title">Iniciar sesión</h3>
                     </div>
                     <br>
                     <label for="txtCorreo">Correo: </label>

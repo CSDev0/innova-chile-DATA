@@ -1,0 +1,373 @@
+/*
+ --main-color : azul en navbar y subtitulos
+ --secondary-color : azul botones
+ --third-coor : naranja titulos y lineas
+*/
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css');
+@import "style.less";
+/*.back-to-top {
+    position: fixed;
+    bottom: 50px;
+    right: 25px;
+    display: none;
+    border: 1px solid #49535E;
+}*/
+html{
+    scroll-behavior: smooth;
+}
+body{
+    overflow-x: hidden;
+}
+.x-msg{
+    text-align: left;
+    .m-text();
+}
+#x-titulo{
+    text-align: center;
+    .bold-font();
+    .m-text();
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+h1{
+    color: @main-color;
+    .bold-font();
+    .xl-text();
+}
+h2{
+    color: @main-color;
+    .bold-font();
+    .l-text();
+}
+h3{
+    color: @main-color;
+    .bold-font();
+    .m-text();
+}
+h4{
+    color: @main-color;
+    .bold-italic-font();
+    .s-text();
+}
+h5{
+    color: @main-color;
+    .normal-font();
+    .s-text();
+}
+h6{
+    color: @main-color;
+    .normal-font();
+    .xs-text();
+}
+
+p{
+    color: @text-color;
+    .s-text();
+}
+p.white{
+    color: white;
+}
+#header{
+    -webkit-box-shadow: 2px 12px 40px -28px rgba(0,0,0,0.6);
+    -moz-box-shadow: 2px 12px 40px -28px rgba(0,0,0,0.6);
+    box-shadow: 2px 12px 40px -28px rgba(0,0,0,0.6);
+}
+.logo-corfo{
+    background-image: url("../img/logos/corfo_logo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 300px;
+    height: 120px;
+    margin-top: -70px;
+    margin-left: 150px;
+}
+.logo-innova{
+    background-image: url("../img/logos/innova_logo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 450px;
+    height: 120px;
+    margin: auto;
+    margin-top: -110px;
+    .transition(1s);
+}
+.logo-innova:hover{
+    .scale(1.1);
+}
+.jumbotron{
+    width: 100%;
+    height: 10px;
+    background-color: white;
+    margin-bottom: 0px;
+}
+
+.btn.btn-primary{
+    background-color: @second-color;
+    .s-text();
+    .transition(0.5s);
+    border: none;
+}
+.btn.btn-primary:hover{
+    background-color: white;
+    color: @second-color;
+    .button-shadow();
+}
+
+.dot-list {
+    list-style-type: disc !important;
+    padding-left:1em !important;
+    color: @special-color;
+}
+
+.circulo-data{
+    width: 12em;
+    height: 12em;
+    background-color: @special-color;
+    margin: auto;
+    margin-bottom: 2em;
+    .border-radius(100px);
+    .scale(1.1);
+    .transition(0.3s);
+
+}
+.circulo-data:hover{
+    .scale(1.2);
+    .button-shadow();
+    border: 5px solid @special-second-color;
+}
+.texto-circulo-data{
+    margin: auto;
+    font-family: 'ScalaSansPro';
+    font-weight: bold;
+    font-style: italic;
+    font-size: 28px;
+}
+.circle-link{
+    text-align: center;
+    display: block;
+    vertical-align: middle;
+
+}
+
+.circle-link h3{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+hr{
+    border-color: @second-color;
+}
+
+a{
+    color: @second-color;
+}
+a:hover{
+    color: @main-color;
+}
+
+.link-normal{
+    color: @second-color;
+    .s-text();
+}
+.link-normal:hover{
+    color: @main-color;;
+}
+.link-normal.estudios{
+    .s-text();
+    margin-left: 1em;
+}
+.link-normal.small{
+    .xs-text();
+}
+
+/*---------------------------------------------------------------*/
+/*BARRA DE NAVEGACION*/
+
+.navbar{
+    background-color: @second-color;
+}
+.navbar-nav{
+    margin-bottom: 0px;
+}
+.nav-item{
+    margin-right: 4px;
+    margin-top: -5px;
+    margin-bottom: -5px;
+}
+.nav-link{
+    .m-text();
+    background-color: @second-color;
+    color: white;
+    .transition(0.5s);
+    .border-radius(5px);
+    margin-left: 0px;
+    margin-right: 20px;
+    width: 100%;
+    text-align: center;
+    .bold-font();
+}
+.nav-link:hover{
+    color: @second-color;
+    background-color: white;
+}
+.dropdown-item{
+    .bold-font();
+    .m-text();
+}
+.dropdown{
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+}
+.dropdown-menu{
+    .button-shadow();
+}
+.dropdown-item{
+    .m-text();
+    color: @second-color;
+}
+.dropdown-item:hover{
+    color: white;
+    background-color: @second-color;
+
+}
+#nav-bar-dropdown-arrow3{
+    .transition(0.5s);
+}
+.dropdown-menu{
+    background-color: white;
+}
+.dropdown>.dropdown-menu {
+    top: 200%;
+    margin-top: 0px;
+    margin-left: 8%;
+    .transition(0.3s);
+    vertical-align: middle;
+    left: 0%;
+}
+.dropdown:hover>.dropdown-menu {
+    display: block;
+    top: 100%;
+    left: 22%;
+}
+
+/*---------------------------------------------------------------*/
+
+
+.row.section{
+    padding-top: 70px;
+    margin-bottom: 0px;
+}
+
+.bg-quienes-somos{
+    width:100%;
+    height: 100%;
+    position: absolute;
+    background-image: url("../img/bg/conectados.jpg");
+    top: 20px;
+    opacity:0.2;
+    z-index: -5;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.destacado-naranja{
+    .bold-italic-font();
+    .l-text();
+    color: @special-color;
+    padding-left: 30px;
+    text-align: center;
+}
+
+/*---------------------------------------------------------------*/
+/*PIE DE PAGINA*/
+
+.footer-sticky{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    z-index: 100;
+}
+#bg-footer{
+    background-color: @third-color;
+    padding-bottom: 30px;
+}
+#footer{
+    .transition(1s);
+}
+
+#copyright{
+    margin-top: 0px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    background-color: @fourth-color;
+}
+
+/*---------------------------------------------------------------*/
+
+
+
+.icono-blanco{
+    color: white;
+}
+.color-blanco{
+    color: white;
+}
+
+.icono-azul{
+    color: @second-color;
+}
+.color-azul{
+    color: @second-color;
+}
+.icono-azul-claro{
+    color: @fifth-color;
+}
+.color-azul-claro{
+    color: @fifth-color;
+}
+.icono-naranja{
+    color: @special-color;
+}
+.icono-celeste{
+    color: @third-color;
+}
+.color-ig {
+    color: transparent;
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    background: -webkit-radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.bg-azul{
+    background-color: @fourth-color;
+    color: white;
+    padding: 10px;
+}
+.rounded-bottom{
+    .border-radius(0px 0px 5px 5px);
+}
+hr.faded {
+    border: 0;
+    height: 2px;
+    background-image: linear-gradient(to right, rgba(11,101,171,0.05), rgba(11,101,171,1), rgba(11,101,171,0.05));
+}
+.faded-naranja {
+    border-top: 1px solid @special-color;
+}
+.faded-naranja-alt {
+    border-top: 1px solid @special-color;
+}
+@media (min-width: 992px) {
+    .modal-lg {
+        max-width: 55%;
+    }
+}

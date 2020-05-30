@@ -1,0 +1,81 @@
+/*Azul claro*/
+@main-color: #2680BD; 
+
+/*Azul oscuro*/
+@second-color: #0062AB;
+
+/*Celeste claro */
+@third-color: #D1ECFF;
+
+/*Azul super oscuro */
+@fourth-color: #11456B;
+
+/*Celeste*/
+@fifth-color: #48ACF1;
+
+/*Naranja*/
+@special-color: #FA8A0B;
+@special-color-darker: #db7508;
+
+/*Color crema*/
+@special-second-color: #FFE9D2;
+
+/* Gris  */
+@text-color: #49535E;
+
+/*Fuentes*/
+.bold-font(){
+    font-family: 'ScalaSansPro';
+    font-weight: bold;
+    font-style: normal;
+}
+.bold-italic-font(){
+    font-family: 'ScalaSansPro';
+    font-weight: bold;
+    font-style: italic;
+}
+.normal-font(){
+    font-family: 'ScalaSansPro';
+    font-weight: normal;
+    font-style: normal;
+}
+
+.xl-text(){
+    font-size: 50px;
+}
+.l-text(){
+    font-size: 35px;
+}
+.m-text(){
+    font-size: 25px;
+}
+.s-text(){
+    font-size: 20px;
+}
+.xs-text(){
+    font-size: 15px;
+}
+
+.transition(@time){
+    -webkit-transition: all @time ease;
+    -moz-transition: all @time ease;
+    -o-transition: all @time ease;
+    transition: all @time ease;
+}
+
+.button-shadow(){
+    -webkit-box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.23);
+    -moz-box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.23);
+    box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.23);
+}
+
+.scale(@size){
+    -webkit-transform: scale(@size);
+    -o-transform: scale(@size);
+    transform: scale(@size);
+}
+.border-radius(@size){
+    -webkit-border-radius: @size; 
+    -moz-border-radius: @size; 
+    border-radius: @size; 
+}
