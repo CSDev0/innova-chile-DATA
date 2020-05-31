@@ -2,22 +2,24 @@
     <div class="container d-flex">
         <div class="row section justify-content-center">
             <div class="col-sm-12 align-self-top h-100">
-                <h1 class="text-center" >Datos destacados</h1>
-                <hr class="faded">
+                
+                <h1 class="text-center" id="datos_destacados_title">Datos destacados</h1>
+                
+                <hr class="faded " >
             </div>
             <div class="col-sm-12">
                 <div class="row align-self-center">
                     <div class="col-sm-4">
-                        <h2 class="destacado-naranja"><i class="fas fa-dollar-sign fa-2x"></i></h2>
-                        <h2 class="destacado-naranja">$800 millones desde 2010</h2>
+                        <h2 class="destacado-naranja "><i class="fas fa-dollar-sign fa-2x"></i></h2>
+                        <h2 class="destacado-naranja">$<span class="count">800</span> millones desde 2010</h2>
                     </div>
                     <div class="col-sm-4">
                         <h2 class="destacado-naranja"><i class="fas fa-chart-line fa-2x"></i></h2>
-                        <h2 class="destacado-naranja">+2000 Iniciativas apoyadas</h2>
+                        <h2 class="destacado-naranja"><span class="count">2000</span> Iniciativas apoyadas</h2>
                     </div>
                     <div class="col-sm-4">
                         <h2 class="destacado-naranja"><i class="fas fa-globe fa-2x"></i></h2>
-                        <h2 class="destacado-naranja">+1500 Empresas beneficiadas</h2>
+                        <h2 class="destacado-naranja""><span class="count">1500</span> Empresas beneficiadas</h2>
                     </div>
                 </div>
             </div>
@@ -29,7 +31,7 @@
         <div class="row section">
             <div class="col-sm-12 align-self-top vw-100">
                 <div class="container">
-                    <h1 class="text-center">Graficos destacados</h1>
+                    <h1 class="text-center" id="graficos_destacados_title">Graficos destacados</h1>
                     <hr class="faded" >
                 </div>
             </div>

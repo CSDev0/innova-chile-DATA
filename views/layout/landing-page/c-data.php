@@ -2,7 +2,7 @@
     <div class="container d-flex ">
         <div class="row section justify-content-center vw-100">
             <div class="col-sm-12 align-self-top">
-                    <h1 class="text-center">Data</h1>
+                    <h1 class="text-center" id="data_title">Data</h1>
                     <hr class="faded" >
                     <br>
                     <p><?= utils::getTextoByTipoContenido('Data') ?></p>

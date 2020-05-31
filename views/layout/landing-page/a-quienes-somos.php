@@ -1,10 +1,10 @@
-<section class="seccion fullview" data-section-name="quienes_somos">
+<section class="seccion fullview" data-section-name="quienes_somos" id="quienes_somos">
     <div class="bg-quienes-somos">
     </div>
     <div class="container d-flex vh-100">
         <div class="row section justify-content-center h-100">
             <div class="col-sm-12 align-self-top">
-                <h1 class="text-center">Quiénes somos</h1>
+                <h1 class="text-center" id="quienes_somos_title">Quiénes somos</h1>
                 <hr class="faded">
             </div>
             <div class="row align-self-center vh-100">

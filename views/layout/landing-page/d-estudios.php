@@ -3,17 +3,17 @@
         <div class="row section justify-content-center vw-100">
             <div class="col-sm-12 align-self-top ">
                 <div class="container">
-                    <h1 class="text-center">Estudios</h1>
+                    <h1 class="text-center" id="estudios_title">Estudios</h1>
                     <hr class="faded" >
                     <br>
                     <p><?= utils::getTextoByTipoContenido('Estudios') ?></p>
                 </div>
             </div>
             </section>
-            <section class="seccion" data-section-name="nuestros_estudios">
+            <section class="seccion" data-section-name="nuestros_estudios" id="nuestros_estudios">
                 <div class="row section">
                     <div class="col-sm-12 align-self-top vw-100">
-                        <h2 class="text-center">Nuestros estudios</h2>
+                        <h2 class="text-center" id="nuestros_title">Nuestros estudios</h2>
                         <br>
                     </div>
                 </div>
@@ -61,10 +61,10 @@
                     </div>
                 </div>
             </section>
-            <section class="seccion fullview" data-section-name="lecturas_recomendadas">
+            <section class="seccion fullview" data-section-name="lecturas_recomendadas" id="lecturas_recomendadas">
                 <div class="row section ">
                     <div class="col-sm-12 align-self-top vw-100 ">
-                        <h2 class="text-center">Lecturas recomendadas</h2>
+                        <h2 class="text-center"  id="lecturas_title">Lecturas recomendadas</h2>
                         <br>
                     </div>
                 </div>

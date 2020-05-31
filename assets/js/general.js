@@ -1,11 +1,12 @@
 $(document).ready(function () {
     bsCustomFileInput.init()
-    
+
+
 });
 //Funcion para definir el tamaño de las secciones dependiendo del tamaño del dispositivo.
 //Esto Para solucionar bug de desplazamiento entre las secciones. (al usar viewport o height 100%).
 function resizeSecciones() {
-    
+
     var w = window,
             d = document,
             e = d.documentElement,
@@ -14,10 +15,28 @@ function resizeSecciones() {
             y = w.innerHeight || e.clientHeight || g.clientHeight;
     $('.seccion.fullview').css('width', x);
     $('.seccion.fullview').css('height', y - 5); //Si se ocupa el height completo ocurre un extraño bug al desplazarse entre secciones, por lo que se le resta 5 y se soluciona.
+    $("#quienes_somos").removeClass('selected');
+    setTimeout(function () {
+        $("#quienes_somos").addClass('selected');
+    }, 1000);
+
 }
-    resizeSecciones();
+resizeSecciones();
 
-
+function datosDestacados() {
+    $('.count').each(function () {
+        $(this).prop('Counter', 0).animate({
+            Counter: $(this).text()
+        }, {
+            duration: 2000,
+            easing: 'easeOutExpo',
+            step: function (now) {
+                $(this).text(Math.ceil(now));
+            }
+        });
+    });
+}
+;
 //$(document).on('click', 'a[href^="#nav"]', function (event) {
 //    event.preventDefault();
 //
@@ -81,24 +100,27 @@ function flecha_arriba() {
     $('#flecha-animada').removeClass('fas fa-angle-down fa-3x icono-azul')
     $('#flecha-animada').addClass('fas fa-angle-up fa-3x icono-azul')
 }
-$('.footer-sticky').mouseenter(function (e) {
+$('.footer-sticky').mouseenter($.debounce(150, function (e) {
     var altura = $('.footer-sticky').get(0).scrollHeight;
 
     $(this).animate({height: altura}, 50);
     abierto = true;
     flecha_abajo();
-}).mouseleave(function (e) {
-    if ($(window).scrollBottom() < 20 && abierto === true) {
+})).mouseleave($.debounce(700, function (e) {
+//    if ($(window).scrollBottom() < 20 && abierto === true) {
+//
+//    } else {
+//        if (abierto === true) {
 
-    } else {
-        $(this).animate({height: '40px'}, 50);
-        abierto = false;
-        flecha_arriba();
-    }
-
-
-
-});
+            esconderFooter();
+//        }
+//    }
+}));
+function esconderFooter() {
+    $(".footer-sticky").animate({height: '40px'}, 50);
+    abierto = false;
+    flecha_arriba();
+}
 
 function loop_flecha_animada() {
     $('#flecha-animada').animate({

@@ -12,19 +12,15 @@
     display: none;
     border: 1px solid #49535E;
 }*/
-/* Let's get this party started */
-::-webkit-scrollbar {
-    width: 12px;
-}
- 
-/* Track */
-::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-}
- 
+
 /* Handle */
+.seccion-extra{
+    opacity: 1;
+}
+.seccion{
+    opacity: 1;
+    transition: 0.3s;
+}
 body {
     right: -1px;
     overflow-y: scroll;
@@ -51,6 +47,7 @@ h1{
     color: @main-color;
     .bold-font();
     .xl-text();
+    
 }
 h2{
     color: @main-color;
@@ -177,6 +174,7 @@ p.white{
 
 hr{
     border-color: @second-color;
+    
 }
 
 a{
