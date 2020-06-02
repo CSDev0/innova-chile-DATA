@@ -1,4 +1,6 @@
+
 <section class="seccion fullview" data-section-name="datos_destacados">
+    <div class="bg-datos-destacados">
     <div class="container d-flex">
         <div class="row section justify-content-center">
             <div class="col-sm-12 align-self-top h-100">
@@ -25,6 +27,7 @@
             </div>
         </div>
     </div>
+        </div>
 </section>
 <section class="seccion" data-section-name="graficos_destacados">
     <div class="container-fluid d-flex">

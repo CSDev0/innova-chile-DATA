@@ -1,4 +1,6 @@
+    <div class="bg-chile">
 <section class="seccion fullview" data-section-name="chile_en_el_mundo">
+
     <div class="container-fluid d-flex justify-content-center">
         <div class="row section vw-100">
             <div class="col-sm-12">
@@ -34,6 +36,8 @@
         
     </div>
     <br></br> <br></br> <br></br> 
+
 </section>
+    </div>
 
 
