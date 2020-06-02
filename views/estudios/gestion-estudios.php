@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 ?>
 <h2> Gestionar <b>Estudios</b></h2><input data-size="s"type="checkbox" id="estudios-toggle" checked data-toggle="toggle" data-on="Nuestros estudios" data-off="Lecturas recomendadas" data-onstyle="nuestros" data-offstyle="recomendadas">
@@ -20,7 +20,7 @@
     <div class="col-sm-10 lecturas" id="contenedor-lecturas-recomendadas">
         <h3>Lecturas recomendadas</h3>
         <button class="btn btn-primary" href="#modal-agregar-lectura" data-toggle="modal"><i class="fas fa-plus-square"></i> Agregar</button>
-        <button class="btn btn-primary" href="#modal-agregar-lectura" data-toggle="modal"><i class="fas fa-search-plus"></i> Buscar</button>
+        <button class="btn btn-primary" href="#modal-buscar-lectura" data-toggle="modal"><i class="fas fa-search-plus"></i> Buscar</button>
         <br><br>
         <?php require_once('views/estudios/ver-lecturas-recomendadas.php');?>
     </div>

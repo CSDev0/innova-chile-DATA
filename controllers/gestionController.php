@@ -12,7 +12,7 @@ class gestionController {
       require_once('views/usuario/sidebar.php');
       require_once('views/usuario/gestion-usuarios.php');
       require_once('views/usuario/modal-agregar-usuario.php');
-//      require_once('views/usuario/modal-buscar-usuario.php');
+      require_once('views/usuario/modal-buscar-usuario.php');
     }
     function web(){
         require_once('views/usuario/sidebar.php');
@@ -29,7 +29,9 @@ class gestionController {
             require_once('views/usuario/sidebar.php');
             require_once('views/estudios/gestion-estudios.php');
             require_once("views/estudios/modal-agregar-estudio.php");
+            require_once("views/estudios/modal-buscar-estudio.php");
             require_once("views/estudios/modal-agregar-lectura.php");
+            require_once("views/estudios/modal-buscar-lectura.php");
             require_once("views/mensajes/modal-eliminar.php");
         } else {
             header("Location:" . base_url . 'web/inicio');
@@ -46,6 +48,8 @@ class gestionController {
     function data(){
         require_once('views/usuario/sidebar.php');
         require_once('views/data/gestion-data.php');
+        require_once('views/data/modal-buscar-data.php');
+        require_once('views/data/modal-agregar-data.php');
     }
 
 }

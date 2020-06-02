@@ -1,8 +1,7 @@
-<?php $url_action = base_url . "estudio/save"; ?>
 <div id="modal-agregar-usuario" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form action="<?= $url_action ?>" method="post" enctype="multipart/form-data" >
+            <form action="#" method="post" enctype="multipart/form-data" >
                 <div class="modal-header">
                     <h4 class="modal-title">Agregar un Usuario</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
