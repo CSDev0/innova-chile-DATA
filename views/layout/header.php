@@ -10,6 +10,7 @@
         <link rel="stylesheet/less" href="<?= base_url ?>assets/css/data.less">
         <link rel="stylesheet/less" href="<?= base_url ?>assets/css/general.less">
         <link rel="stylesheet/less" href="<?= base_url ?>assets/css/gestion.less">
+        <link rel="stylesheet/less" href="<?= base_url ?>assets/css/tets-nav.css">
 
 <!--  Para mostrar errores de LESS si es que ocurriesen activar:       -->
 <!--  <script type="text/javascript">less = {env: 'development'};</script> -->
@@ -28,6 +29,8 @@
         <script src="<?= base_url ?>assets/js/parameters.js"></script>
         <script src="<?= base_url ?>assets/js/scrollify.js"></script>
         <script src="<?= base_url ?>assets/js/animations.js"></script>
+        <script src="<?= base_url ?>assets/js/nav-bar.js"></script>
+
 
 
         <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
@@ -36,9 +39,3 @@
     <body>
         <?php require_once('views/mensajes/modal-mensajes.php'); ?>
 <!--        <a id="back-to-top" href="#" class="btn btn-light btn-lg back-to-top" role="button"><i class="fas fa-chevron-up"></i></a>-->
-        <section class="seccion-extra" id="header" data-section-name="header">
-            <div id="jumbo" class="jumbotron">
-                <div class="logo-corfo"></div>
-                <a href="<?= base_url ?>web/inicio"><div class="logo-innova"></div></a>
-            </div>
-        </section>
