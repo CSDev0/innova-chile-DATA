@@ -64,14 +64,14 @@ $(window).scroll(function () {
     } else {
         $('#back-to-top').fadeOut();
     }
-    if ($(this).scrollBottom() < 50 && abierto === false) {
+    if ($(this).scrollBottom() <120 && abierto === false) {
         var altura = $('.footer-sticky').get(0).scrollHeight;
         $('.footer-sticky').animate({height: altura}, 50);
         abierto = true;
         flecha_abajo();
 
     } else {
-        if ($(this).scrollBottom() > 50 && abierto === true) {
+        if ($(this).scrollBottom() > 120 && abierto === true) {
             $('.footer-sticky').animate({height: '40px'}, 50);
             abierto = false;
             flecha_arriba();
