@@ -1,3 +1,4 @@
+
 $(function () {
 
     $.scrollify({
@@ -15,32 +16,44 @@ $(function () {
             if ($.scrollify.current().attr('data-section-name') == "quienes_somos")
             {
                 $("#quienes_somos_title").effect("slide", 800);
+                $(".landing-page-navbar").addClass("no-bg");
+                $(".landing-page-nav-link").addClass("initial-state")
 
             }
             if ($.scrollify.current().attr('data-section-name') == "datos_destacados")
             {
                 datosDestacados();
                 $("#datos_destacados_title").effect("slide", 800);
+                $(".landing-page-navbar").removeClass("no-bg");
+                $(".landing-page-nav-link").removeClass("initial-state")
             }
             if ($.scrollify.current().attr('data-section-name') == "graficos_destacados")
             {
                 $("#graficos_destacados_title").effect("slide", 800);
+                $(".landing-page-navbar").removeClass("no-bg");
+                $(".landing-page-nav-link").removeClass("initial-state")
             }
 
             if ($.scrollify.current().attr('data-section-name') == "data")
             {
                 $("#data_title").effect("slide", 800);
+                $(".landing-page-navbar").removeClass("no-bg");
+                $(".landing-page-nav-link").removeClass("initial-state")
             }
             if ($.scrollify.current().attr('data-section-name') == "estudios")
             {
                 $("#estudios_title").effect("slide", 800);
                 $("#nuestros_title").effect("slide", 800);
                 $("#lecturas_title").effect("slide", 800);
+                $(".landing-page-navbar").removeClass("no-bg");
+                $(".landing-page-nav-link").removeClass("initial-state")
 
             }
             if ($.scrollify.current().attr('data-section-name') == "chile_en_el_mundo")
             {
                 $("#chile_title").effect("slide", 800);
+                $(".landing-page-navbar").removeClass("no-bg");
+                $(".landing-page-nav-link").removeClass("initial-state")
 
             }
         },

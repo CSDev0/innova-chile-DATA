@@ -3,6 +3,7 @@ $(document).ready(function () {
 
 
 });
+
 //Funcion para definir el tamaño de las secciones dependiendo del tamaño del dispositivo.
 //Esto Para solucionar bug de desplazamiento entre las secciones. (al usar viewport o height 100%).
 function resizeSecciones() {
@@ -15,7 +16,7 @@ function resizeSecciones() {
             y = w.innerHeight || e.clientHeight || g.clientHeight;
     $('.seccion.fullview').css('width', x);
     $('.seccion.fullview').css('height', y - 5); //Si se ocupa el height completo ocurre un extraño bug al desplazarse entre secciones, por lo que se le resta 5 y se soluciona.
-    $(".bg-quienes-somos").css("height", y+y/4);
+    $(".bg-quienes-somos").css("height", y + y / 4);
 
 }
 resizeSecciones();
@@ -58,20 +59,17 @@ $.fn.scrollBottom = function () {
     return $(document).height() - this.scrollTop() - this.height();
 };
 var abierto = false;
+var header = false;
 $(window).scroll(function () {
-    if ($(this).scrollTop() > 700) {
-        $('#back-to-top').fadeIn();
-    } else {
-        $('#back-to-top').fadeOut();
-    }
-    if ($(this).scrollBottom() < 50 && abierto === false) {
+
+    if ($(this).scrollBottom() < 120 && abierto === false) {
         var altura = $('.footer-sticky').get(0).scrollHeight;
         $('.footer-sticky').animate({height: altura}, 50);
         abierto = true;
         flecha_abajo();
 
     } else {
-        if ($(this).scrollBottom() > 50 && abierto === true) {
+        if ($(this).scrollBottom() > 120 && abierto === true) {
             $('.footer-sticky').animate({height: '40px'}, 50);
             abierto = false;
             flecha_arriba();
@@ -109,7 +107,7 @@ $('.footer-sticky').mouseenter($.debounce(150, function (e) {
 //    } else {
 //        if (abierto === true) {
 
-            esconderFooter();
+    esconderFooter();
 //        }
 //    }
 }));

@@ -1,7 +1,8 @@
 <?php ?>
 <script>
     $(document).ready(function () {
-
+        $(".landing-page-navbar").removeClass("no-bg");
+        $(".landing-page-nav-link").removeClass("initial-state")
         $("#jumbo").hide();
         $('html, body, #main').css("overflow", "hidden");
         showSpinnerWhileIFrameLoads();
@@ -14,14 +15,16 @@
                 </div></div></div>');
             $(iframe).before(function () {
                 $('#menubar-convocatorias').css("opacity", 0);
-                setTimeout(function(){$('#menubar-convocatorias').css("visibility", "hidden"); }, 500);
+                setTimeout(function () {
+                    $('#menubar-convocatorias').css("visibility", "hidden");
+                }, 500);
             });
             $(iframe).on('load', function () {
                 $('.bg-iframe').css('opacity', '0');
                 $('.bg-iframe').css('visibility', 'hidden');
                 $('#menubar-convocatorias').css("visibility", "visible");
                 $('#menubar-convocatorias').css("opacity", "1");
-                
+
             });
         }
     }

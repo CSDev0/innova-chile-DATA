@@ -1,5 +1,5 @@
 
-<section class="seccion fullview" data-section-name="datos_destacados">
+<section class="seccion fullview" data-section-name="datos_destacados" id="datos-destacados">
     <div class="bg-datos-destacados">
     <div class="container d-flex">
         <div class="row section justify-content-center">

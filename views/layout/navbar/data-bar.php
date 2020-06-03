@@ -1,5 +1,5 @@
 
-<a class="nav-link dropdown-toggle" href="#data"><i class="fas fa-chart-bar icono-celeste"></i> Data</a>
+<a class="nav-link dropdown-toggle landing-page-nav-link" href="#data"><i class="fas fa-chart-bar icono-celeste"></i> Data</a>
 
 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
     <div class="move-drop">

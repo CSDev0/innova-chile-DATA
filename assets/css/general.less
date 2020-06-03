@@ -294,6 +294,8 @@ a:hover{
     background-image: url("../img/bg/bg-data.png");
     width:100%;
     height: 100%;
+    background: linear-gradient(rgba(255,255,255,.7), rgba(255,255,255,.7)), url("../img/bg/floor.png");
+    top: 20px;
     opacity:1;
     filter: brightness(100%);
     z-index: -5;
@@ -305,7 +307,7 @@ a:hover{
 .bg-datos-destacados{
     width:100%;
     height: 100%;
-    background: linear-gradient(rgba(255,255,255,.1), rgba(255,255,255,.1)), url("../img/bg/edit3.png");
+    
     top: 20px;
     opacity:1;
     filter: brightness(100%);
@@ -318,7 +320,7 @@ a:hover{
 .bg-data{
     width:100%;
     height: 100%;
-    background: linear-gradient(rgba(255,255,255,.1), rgba(255,255,255,.1)), url("../img/bg/edit4.png");
+    background: linear-gradient(rgba(255,255,255,.1), rgba(255,255,255,.1)), url("../img/bg/edit4.jpg");
     top: 20px;
     opacity:1;
     filter: brightness(100%);
@@ -331,7 +333,7 @@ a:hover{
 .bg-chile{
     width:100%;
     height: 100vh;
-    background: linear-gradient(rgba(255,255,255,.1), rgba(255,255,255,.1)), url("../img/bg/bg-chile.png");
+    background: linear-gradient(rgba(255,255,255,.3), rgba(255,255,255,.3)), url("../img/bg/bg-chile.png");
     top: 20px;
     opacity:1;
     filter: brightness(100%);
@@ -444,4 +446,20 @@ hr.faded-blanco {
 .no-bg{
   background-color: transparent;
   transition: background-color 0.5s ease 0s;
+}
+.initial-state{
+    .m-text();
+    background-color: white;
+    color: @main-color;
+    .transition(0.5s);
+    .border-radius(5px);
+    margin-left: 0px;
+    margin-right: 20px;
+    width: 100%;
+    text-align: center;
+    .bold-font();
+}
+.initial-state:hover{
+    color: @second-color;
+    background-color: white;
 }
