@@ -3,7 +3,7 @@
     <div class="container d-flex vh-100">
         <div class="row section justify-content-center h-100">
             <div class="col-sm-12 align-self-top">
-                <h1 class="text-center" id="quienes_somos_title">Data Innova</h1>
+                <div class="logo-innova"></div>
                 <hr class="faded">
             </div>
             <div class="row align-self-center vh-100">

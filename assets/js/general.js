@@ -3,7 +3,12 @@ $(document).ready(function () {
 
 
 });
-
+   var baloon = $('.logo-innova');
+   function runIt() {
+       baloon.animate({top:'+=100'}, 1000);
+       baloon.animate({top:'-=100'}, 1000, runIt);
+   }
+   runIt();
 //Funcion para definir el tamaño de las secciones dependiendo del tamaño del dispositivo.
 //Esto Para solucionar bug de desplazamiento entre las secciones. (al usar viewport o height 100%).
 function resizeSecciones() {
