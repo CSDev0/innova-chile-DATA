@@ -21,8 +21,8 @@ function resizeSecciones() {
             y = w.innerHeight || e.clientHeight || g.clientHeight;
     $('.seccion.fullview').css('width', x);
     $('.seccion.fullview').css('height', y - 5); //Si se ocupa el height completo ocurre un extraño bug al desplazarse entre secciones, por lo que se le resta 5 y se soluciona.
-    $(".bg-quienes-somos").css("height", y + y / 4);
-
+    $("#bg-quienes-somos").css("height", y );
+    $("#bg-quienes-somos").css("width", x);
 }
 resizeSecciones();
 

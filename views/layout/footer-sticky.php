@@ -35,40 +35,43 @@
 
 
 <script src="<?= base_url ?>assets/js/general.js"></script>
+<script>
+    particlesJS.load('bg-quienes-somos', baseurl + 'assets/particlesjs-config.json', function () {
+    });</script>
 <script src="<?= base_url ?>assets/js/boxes.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
 <script src="<?= base_url ?>assets/js/summernote-es-ES.js"></script>
 <script>
-    $('#input-contenido-texto').summernote({
-        lang: 'es-ES',
-        dialogsInBody: true,
-        placeholder: 'Ingrese un texto descriptivo.',
-        tabsize: 5,
-        height: 250,
-        toolbar: [
-            // [groupName, [list of button]]
-            ['style', ['bold', 'italic', 'underline', 'clear']],
-            ['font', ['strikethrough', 'superscript', 'subscript']],
-            ['para', ['ul', 'ol', 'paragraph']],
-            ['insert', ['link']],
-            ['view', ['fullscreen', 'codeview', 'help']],
-        ]
-    });
-    $('#input-estudio-texto').summernote({
-        lang: 'es-ES',
-        dialogsInBody: true,
-        placeholder: 'Ingrese un texto descriptivo.',
-        tabsize: 5,
-        height: 150,
-        toolbar: [
-            // [groupName, [list of button]]
-            ['style', ['bold', 'italic', 'underline', 'clear']],
-            ['font', ['strikethrough', 'superscript', 'subscript']],
-            ['para', ['ul', 'ol']],
-            ['insert', ['link']],
-            ['view', ['fullscreen', 'help']],
-        ]
-    });
-    
+                    $('#input-contenido-texto').summernote({
+                        lang: 'es-ES',
+                        dialogsInBody: true,
+                        placeholder: 'Ingrese un texto descriptivo.',
+                        tabsize: 5,
+                        height: 250,
+                        toolbar: [
+                            // [groupName, [list of button]]
+                            ['style', ['bold', 'italic', 'underline', 'clear']],
+                            ['font', ['strikethrough', 'superscript', 'subscript']],
+                            ['para', ['ul', 'ol', 'paragraph']],
+                            ['insert', ['link']],
+                            ['view', ['fullscreen', 'codeview', 'help']],
+                        ]
+                    });
+                    $('#input-estudio-texto').summernote({
+                        lang: 'es-ES',
+                        dialogsInBody: true,
+                        placeholder: 'Ingrese un texto descriptivo.',
+                        tabsize: 5,
+                        height: 150,
+                        toolbar: [
+                            // [groupName, [list of button]]
+                            ['style', ['bold', 'italic', 'underline', 'clear']],
+                            ['font', ['strikethrough', 'superscript', 'subscript']],
+                            ['para', ['ul', 'ol']],
+                            ['insert', ['link']],
+                            ['view', ['fullscreen', 'help']],
+                        ]
+                    });
+
 </script>
