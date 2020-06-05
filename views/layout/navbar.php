@@ -1,5 +1,8 @@
+
 <nav class="navbar sticky-top navbar-expand-sm landing-page-navbar">
+    <div class="logo-corfo"></div>
     <div class="navbar-collapse justify-content-center">
+        
         <ul class="navbar-nav">
             <li class="nav-item">
                 <a class="nav-link landing-page-nav-link" href="#quienes_somos"><i class="fas fa-users icono-celeste"></i> Quiénes somos</a>

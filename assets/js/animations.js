@@ -1,4 +1,3 @@
-
 $(function () {
 
     $.scrollify({
@@ -18,6 +17,7 @@ $(function () {
                 $("#quienes_somos_title").effect("slide", 800);
                 $(".landing-page-navbar").addClass("no-bg");
                 $(".landing-page-nav-link").addClass("initial-state")
+                $(".logo-corfo").css("opacity", "1");
 
             }
             if ($.scrollify.current().attr('data-section-name') == "datos_destacados")
@@ -26,12 +26,14 @@ $(function () {
                 $("#datos_destacados_title").effect("slide", 800);
                 $(".landing-page-navbar").removeClass("no-bg");
                 $(".landing-page-nav-link").removeClass("initial-state")
+                $(".logo-corfo").css("opacity", "0");
             }
             if ($.scrollify.current().attr('data-section-name') == "graficos_destacados")
             {
                 $("#graficos_destacados_title").effect("slide", 800);
                 $(".landing-page-navbar").removeClass("no-bg");
                 $(".landing-page-nav-link").removeClass("initial-state")
+                $(".logo-corfo").css("opacity", "0");
             }
 
             if ($.scrollify.current().attr('data-section-name') == "data")
@@ -39,6 +41,7 @@ $(function () {
                 $("#data_title").effect("slide", 800);
                 $(".landing-page-navbar").removeClass("no-bg");
                 $(".landing-page-nav-link").removeClass("initial-state")
+                $(".logo-corfo").css("opacity", "0");
             }
             if ($.scrollify.current().attr('data-section-name') == "estudios")
             {
@@ -47,6 +50,7 @@ $(function () {
                 $("#lecturas_title").effect("slide", 800);
                 $(".landing-page-navbar").removeClass("no-bg");
                 $(".landing-page-nav-link").removeClass("initial-state")
+                $(".logo-corfo").css("opacity", "0");
 
             }
             if ($.scrollify.current().attr('data-section-name') == "chile_en_el_mundo")
@@ -54,6 +58,7 @@ $(function () {
                 $("#chile_title").effect("slide", 800);
                 $(".landing-page-navbar").removeClass("no-bg");
                 $(".landing-page-nav-link").removeClass("initial-state")
+                $(".logo-corfo").css("opacity", "0");
 
             }
         },

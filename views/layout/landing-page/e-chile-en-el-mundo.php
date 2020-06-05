@@ -10,7 +10,7 @@
                     <br>
 
                     <p><?= utils::getTextoByTipoContenido('Chile en el mundo') ?></p>
-                    <br><br>
+                    <br>
                 </div>
                 <div class="container">
                     <div class="row">
@@ -19,25 +19,28 @@
                                 <iframe class="grafico-chile" src="<?= base_url ?>uploads/graficos/GCR_chile.html">
                                 </iframe>
                             </div>
-                            <br><br> <p class="text-center">Grafico Indice de Competitividad</p>
+                            <div class="small-br"></div>
+                            <h2 class="text-center">Grafico Indice de Competitividad</h2>
                         </div>
                         <div class="col-sm-6">
                             <div class="contenedor-grafico small">
                                 <iframe class="grafico-chile" src="<?= base_url ?>uploads/graficos/GII_chile.html">
                                 </iframe>
                             </div>
-                            <br><br> <p class="text-center">Grafico Indice de Innovación</p>
+                            <div class="small-br"></div>
+                            <h2 class="text-center">Grafico Indice de Innovación</h2>
                         </div>
                         <div class="col-sm-2"></div>
                     </div>
                 </div>
             </div>
         </div>
-        
+
     </div>
-    <br></br> <br></br> <br></br> 
+       
 
 </section>
+        <br> <br> <br>   <br>
     </div>
 
 

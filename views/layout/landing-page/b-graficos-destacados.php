@@ -1,4 +1,3 @@
-
 <section class="seccion fullview" data-section-name="datos_destacados" id="datos-destacados">
     <div class="bg-datos-destacados">
     <div class="container d-flex">
@@ -13,15 +12,15 @@
                 <div class="row align-self-center">
                     <div class="col-sm-4">
                         <h2 class="destacado-naranja "><i class="fas fa-dollar-sign fa-2x"></i></h2>
-                        <h2 class="destacado-naranja">$<span class="count">800</span> millones desde 2010</h2>
+                        <h2 class="destacado-naranja">+ $<span class="count">800</span> <br>millones</h2>
                     </div>
                     <div class="col-sm-4">
                         <h2 class="destacado-naranja"><i class="fas fa-chart-line fa-2x"></i></h2>
-                        <h2 class="destacado-naranja"><span class="count">2000</span> Iniciativas apoyadas</h2>
+                        <h2 class="destacado-naranja">+ <span class="count">2000</span> <br>Iniciativas apoyadas</h2>
                     </div>
                     <div class="col-sm-4">
                         <h2 class="destacado-naranja"><i class="fas fa-globe fa-2x"></i></h2>
-                        <h2 class="destacado-naranja""><span class="count">1500</span> Empresas beneficiadas</h2>
+                        <h2 class="destacado-naranja"">+ <span class="count">1500</span> <br>beneficiados</h2>
                     </div>
                 </div>
             </div>

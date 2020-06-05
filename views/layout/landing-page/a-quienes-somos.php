@@ -1,8 +1,6 @@
 <div class="bg-quienes-somos" id="bg-anim">
-    <section class="seccion fullview" data-section-name="quienes_somos" id="quienes_somos">
-
+    <section class="seccion fullview" data-section-name="quienes_somos" id="quienes_somos" >
         <div class="bg-quienes-somos" id="bg-quienes-somos">  </div>
-
         <div class="container d-flex vh-100">
             <div class="row section justify-content-center h-100">
                 <div class="col-sm-12 align-self-top">
@@ -20,6 +18,7 @@
                     </div>
                 </div>
             </div>
+        </div>
 
     </section>
 </div>

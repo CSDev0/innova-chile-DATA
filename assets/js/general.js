@@ -3,12 +3,7 @@ $(document).ready(function () {
 
 
 });
-   var baloon = $('.logo-innova');
-   function runIt() {
-       baloon.animate({top:'+=100'}, 1000);
-       baloon.animate({top:'-=100'}, 1000, runIt);
-   }
-   runIt();
+
 //Funcion para definir el tamaño de las secciones dependiendo del tamaño del dispositivo.
 //Esto Para solucionar bug de desplazamiento entre las secciones. (al usar viewport o height 100%).
 function resizeSecciones() {
@@ -19,10 +14,10 @@ function resizeSecciones() {
             g = d.getElementsByTagName('body')[0],
             x = w.innerWidth || e.clientWidth || g.clientWidth,
             y = w.innerHeight || e.clientHeight || g.clientHeight;
-    $('.seccion.fullview').css('width', x);
+    $('.seccion.fullview').css("width", "100vw" );
     $('.seccion.fullview').css('height', y - 5); //Si se ocupa el height completo ocurre un extraño bug al desplazarse entre secciones, por lo que se le resta 5 y se soluciona.
     $("#bg-quienes-somos").css("height", y );
-    $("#bg-quienes-somos").css("width", x);
+    $("#bg-quienes-somos").css("width", "100vw");
 }
 resizeSecciones();
 
@@ -40,14 +35,7 @@ function datosDestacados() {
     });
 }
 ;
-//$(document).on('click', 'a[href^="#nav"]', function (event) {
-//    event.preventDefault();
-//
-//    $('html, body, #main').animate({
-//        scrollTop: $($.attr(this, 'href')).offset().top
-//    }, 500);
-//
-//});
+
 $(".nav-link").on('click', function (e) {
     $.scrollify.move($(this).attr('href'));
 });
@@ -67,14 +55,14 @@ var abierto = false;
 var header = false;
 $(window).scroll(function () {
 
-    if ($(this).scrollBottom() < 120 && abierto === false) {
+    if ($(this).scrollBottom() < 70 && abierto === false) {
         var altura = $('.footer-sticky').get(0).scrollHeight;
         $('.footer-sticky').animate({height: altura}, 50);
         abierto = true;
         flecha_abajo();
 
     } else {
-        if ($(this).scrollBottom() > 120 && abierto === true) {
+        if ($(this).scrollBottom() > 70 && abierto === true) {
             $('.footer-sticky').animate({height: '40px'}, 50);
             abierto = false;
             flecha_arriba();

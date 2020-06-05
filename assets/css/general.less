@@ -12,6 +12,10 @@
     display: none;
     border: 1px solid #49535E;
 }*/
+
+.small-br{
+    height: 5px;
+}
 .modal-open {
     overflow-y: scroll;
 }
@@ -25,10 +29,18 @@
 body {
     right: -1px;
     overflow-y: scroll;
-    overflow-x: hidden;
+    overflow-x:  hidden;
 }
 html{
     scrollbar-color: @main-color white;
+}
+html,body
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
 }
 .x-msg{
     text-align: left;
@@ -94,16 +106,17 @@ p.white{
     background-image: url("../img/logos/corfo_logo.png");
     background-size: contain;
     background-repeat: no-repeat;
-    width: 300px;
-    height: 120px;
-    margin-top: -70px;
-    margin-left: 150px;
+    width: 100px;
+    height: 40px;
+    position: absolute;
+    top:0;
+    left: 5px;
 }
 .logo-innova{
-    background-image: url("../img/logos/DATAINNOVALOGO.png");
+    background: url("../img/logos/DATAINNOVALOGO.png") center no-repeat transparent;
     background-size: contain;
     background-repeat: no-repeat;
-    width: 850px;
+    width: 100%;
     height: 120px;
     margin: auto;
     margin-top: 0px;
@@ -295,12 +308,12 @@ a:hover{
     height: 100%;
     position: absolute;
     top: 0;
-    opacity:0.8;
+    opacity:1;
     z-index: -10;
 
 }
 #bg-anim{
-        width:100%;
+    width:100%;
     height: 100%;
     background: linear-gradient(rgba(255,255,255,.1), rgba(255,255,255,.1)), url("../img/bg/floor.png");
     top: 20px;
@@ -315,7 +328,6 @@ a:hover{
 .bg-datos-destacados{
     width:100%;
     height: 100%;
-    
     top: 20px;
     opacity:1;
     filter: brightness(100%);
@@ -341,7 +353,7 @@ a:hover{
 .bg-chile{
     width:100%;
     height: 100vh;
-    background: linear-gradient(rgba(255,255,255,.3), rgba(255,255,255,.3)), url("../img/bg/bg-chile.png");
+    background: linear-gradient(rgba(255,255,255,.3), rgba(255,255,255,.3)), url("../img/bg/floor.png");
     top: 20px;
     opacity:1;
     filter: brightness(100%);
@@ -358,7 +370,10 @@ a:hover{
     padding-left: 30px;
     text-align: center;
 }
-
+.count{
+    .xxl-text();
+    .bold-font();
+}
 /*---------------------------------------------------------------*/
 /*PIE DE PAGINA*/
 
