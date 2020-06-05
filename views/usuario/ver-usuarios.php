@@ -10,15 +10,21 @@
         </tr>
     </thead>
     <tbody>
+      <?php while ($us=$usuarios->fetch_object()) { ?>
         <tr>
-            <th scope="row">RUT</th>
-            <td>Nombre</td>
-            <td>Apellido</td>
-            <td>Correo</td>
-            <td>Estado</td>
+            <th scope="row"><?php echo $us->rut; ?></th>
+            <td><?php echo $us->nombre;  ?></td>
+            <td><?php echo $us->apellido;  ?></td>
+            <td><?php echo $us->correo; ?></td>
+            <td><?php if ($us->activado == '1') {
+              echo "Habilitado";
+            }else {
+              echo "Deshabilitado";
+            }  ?></td>
             <td>
                 Opciones
             </td>
         </tr>
+      <?php } ?>
     </tbody>
 </table>

@@ -49,6 +49,10 @@ class Usuario {
         return $this->activado;
     }
 
+    function getTipo() {
+        return $this->tipo;
+    }
+
     function setId($id) {
         $this->id = $id;
     }
@@ -75,6 +79,10 @@ class Usuario {
 
     function setActivado($activado) {
         $this->activado = $activado;
+    }
+
+    function setTipo($tipo) {
+        $this->tipo = $tipo;
     }
 
     public function login() {
@@ -106,14 +114,7 @@ class Usuario {
     //Metodos usuario
     //Registrar o Guardar un Usuario en la BD.
     public function save() {
-        $query = "INSERT INTO usuario VALUES (NULL, '{$this->getRut()}', '{$this->getNombre()}', '{$this->getApellidos()}', ";
-        if ($this->getTelefono() != null) {
-            $query .= "{$this->getTelefono()}, ";
-        } else {
-            $query .= "NULL, ";
-        }
-        $query .= "'{$this->getCorreo()}', '{$this->getClave()}', '0', '{$this->getTipo()}', '1');";
-
+        $query = "INSERT INTO usuario VALUES (NULL, '{$this->getRut()}', '{$this->getNombre()}', '{$this->getApellido()}','{$this->getCorreo()}', '{$this->getClave()}', '{$this->getTipo()}', '{$this->getActivado()}')";
         $save = $this->db->query($query);
         $result = false;
         if ($save) {
@@ -159,7 +160,7 @@ class Usuario {
         }
         return $result;
     }
-    
+
     //Obtener un usuario por su id.
     public function getOne() {
         $query = "SELECT * FROM usuario WHERE id = {$this->getId()};";
@@ -171,14 +172,14 @@ class Usuario {
         }
         return $usuario;
     }
-    
-        
+
+
     //Obtener todos los usuarios
     public function getAll() {
         $usuarios = $this->db->query("SELECT * FROM usuario;");
         return $usuarios;
     }
-    
+
     //Actualizar la clave del usuario.
     public function updateClave() {
         $query = "UPDATE usuario SET clave = '{$this->getClave()}' WHERE id = {$this->getId()}";
@@ -190,7 +191,7 @@ class Usuario {
         }
         return $result;
     }
-    
+
     //Buscar un usuario.
     public function find($busqueda) {
         $query = "SELECT * FROM usuario WHERE (nombre LIKE '%$busqueda%' OR rut LIKE '%$busqueda%' OR correo LIKE '%$busqueda%')";
@@ -199,7 +200,7 @@ class Usuario {
 
         return $usuarios;
     }
-    
+
     //Obtener un usuario por su correo.
     public function getUsuarioByCorreo() {
 
@@ -209,7 +210,7 @@ class Usuario {
 
         return $usuario;
     }
-    
+
     //Obtener un usuario por su id.
     public function getUsuarioById() {
         $query = "SELECT * FROM usuario WHERE id = '{$this->getId()}' LIMIT 1";

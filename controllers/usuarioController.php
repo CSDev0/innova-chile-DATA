@@ -1,5 +1,4 @@
 <?php
-
 require_once 'models/Usuario.php';
 require_once 'helpers/utils.php';
 
@@ -49,6 +48,7 @@ class usuarioController {
     }
 
 //  Funcion para guardar un usuario siendo un administrador.
+# setTipo-> $_POST['radioTipo'] en toria todos los nuevos usuarios son de tipo normal y no admins
     public function saveUsuario() {
         if (utils::isAdmin()) {
             if (isset($_POST)) {
@@ -58,29 +58,67 @@ class usuarioController {
                 $usuario->setApellido($_POST['txtApellido']);
                 $usuario->setCorreo($_POST['txtCorreoRegistro']);
                 $usuario->setClave($_POST['txtClaveRegistro']);
-                $usuario->setTipo($_POST['radioTipo']);
-                if (isset($_GET['id'])) {
-                    $id = $_GET['id'];
-                    $usuario->setId($id);
-                    $update = $usuario->update();
-                } else {
-                    $resultado = $usuario->save();
+                if ($_POST['slcEstado']=='Habilitado') {
+                  $usuario->setActivado('1');
+                }else {
+                  $usuario->setActivado('0');
                 }
+
+                $usuario->setTipo('empleado');
+                $resultado = $usuario->save();
                 if ($resultado) {
                     $_SESSION['usuario_mensaje'] = "exito crear";
+
                 } else {
                     $_SESSION['usuario_mensaje'] = "fallo crear";
-                }
-                if (isset($update) && $update == true) {
-                    $_SESSION['usuario_mensaje'] = 'exito modificar';
-                } elseif ($update == false & $update != null) {
-                    $_SESSION['usuario_mensaje'] = 'fallo modificar';
+
+                    echo $usuario->getActivado();
                 }
             }
-            header("Location:" . base_url . 'usuario/gestion');
+            header("Location:" . base_url . 'gestion/usuarios');
         } else {
             header('Location:' . base_url . 'web/inicio');
         }
+    }
+
+    #Borrar usuario??
+
+    public function deleteUsuario() {
+      if (utils::isAdmin()) {
+          if (isset($_POST)) {
+              $usuario = new Usuario();
+              if (isset($_GET['id'])) {
+                  $id = $_GET['id'];
+                  $usuario->setId($id);
+                  $delete = $usuario->delete($usuario->getId());
+              } else {
+                    $_SESSION['usuario_mensaje'] = "No se ah encontrado usuario";
+              }
+
+              if (isset($delete) && $delete == true) {
+                  $_SESSION['usuario_mensaje'] = 'exito al borrar';
+              } elseif ($update == false & $update != null) {
+                  $_SESSION['usuario_mensaje'] = 'fallo al borrar';
+              }
+          }
+          header("Location:" . base_url . 'usuario/gestion');
+      } else {
+            header('Location:' . base_url . 'web/inicio');
+        }
+    }
+
+
+    #ver usuarios??
+
+    public function showUsers()
+    {
+      if (utils::isAdmin()) {
+        $usuario = new Usuario();
+        $usuarios = $usuario->getAll();
+        require_once('views/usuario/ver-usuarios.php');
+      }else {
+        $_SESSION['usuario_mensaje'] = 'Funcion no autorizada';
+      }
     }
 
 }

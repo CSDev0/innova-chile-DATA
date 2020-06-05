@@ -9,6 +9,7 @@ require_once 'helpers/utils.php';
 class gestionController {
 
     function usuarios() {
+      
       require_once('views/usuario/sidebar.php');
       require_once('views/usuario/gestion-usuarios.php');
       require_once('views/usuario/modal-agregar-usuario.php');
