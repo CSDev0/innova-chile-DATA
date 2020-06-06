@@ -1,4 +1,4 @@
-<table class="table table-striped">
+<table class="table table-striped" id="tabla_usuarios">
     <thead>
         <tr>
             <th scope="col">RUT</th>
@@ -12,10 +12,10 @@
     <tbody>
       <?php while ($us=$usuarios->fetch_object()) { ?>
         <tr>
-            <th scope="row"><?php echo $us->rut; ?></th>
-            <td><?php echo $us->nombre;  ?></td>
-            <td><?php echo $us->apellido;  ?></td>
-            <td><?php echo $us->correo; ?></td>
+            <th scope="row"><?= $us->rut; ?></th>
+            <td><?= $us->nombre;  ?></td>
+            <td><?= $us->apellido;  ?></td>
+            <td><?= $us->correo; ?></td>
             <td><?php if ($us->activado == '1') {
               echo "Habilitado";
             }else {

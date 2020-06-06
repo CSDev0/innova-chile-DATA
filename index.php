@@ -20,7 +20,7 @@ if (isset($_GET['controller'])) {
     $nombre_controlador = $_GET['controller'] . 'Controller';
 } else {
     header("Location: " . base_url . "web/inicio");
-    require_once('views/layout/footer.php');
+    require_once('views/layout/footer-sticky.php');
     exit();
 }
 if (class_exists($nombre_controlador)) {

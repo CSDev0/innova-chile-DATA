@@ -33,6 +33,7 @@
         <script src="<?= base_url ?>assets/js/scrollify.js"></script>
         <script src="<?= base_url ?>assets/js/nav-bar.js"></script>
         <script src="<?= base_url ?>assets/js/animations.js"></script>
+        <script src="<?= base_url ?>assets/js/parsley.js"></script>
 
 
 

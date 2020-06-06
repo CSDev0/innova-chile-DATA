@@ -1,10 +1,10 @@
 <?php
+
 /**
  * Description of Usuario
  *
  * @author saez_
  */
-
 class Usuario {
 
     private $id;
@@ -173,7 +173,6 @@ class Usuario {
         return $usuario;
     }
 
-
     //Obtener todos los usuarios
     public function getAll() {
         $usuarios = $this->db->query("SELECT * FROM usuario;");
@@ -218,4 +217,26 @@ class Usuario {
         $usuario = $this->db->query($query);
         return $usuario;
     }
+
+    public function consulta($query) {
+        $resultado = $this->db->query($query);
+
+        return $resultado;
+    }
+
+    public function buscar($busqueda) {
+        if ($busqueda == 'all') {
+            $query = "SELECT * FROM usuario ORDER BY id;";
+        } else {
+            $query = "
+                   SELECT * FROM usuario
+	WHERE rut LIKE '%" . $busqueda . "%'
+	OR correo LIKE '%" . $busqueda . "%'
+	OR nombre LIKE '%" . $busqueda . "%'
+	OR apellido LIKE '%" . $busqueda . "%' ";
+        }
+        $resultado = $this->db->query($query);
+        return $resultado;
+    }
+
 }

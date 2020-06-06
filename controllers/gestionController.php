@@ -9,16 +9,24 @@ require_once 'helpers/utils.php';
 class gestionController {
 
     function usuarios() {
-      
-      require_once('views/usuario/sidebar.php');
-      require_once('views/usuario/gestion-usuarios.php');
-      require_once('views/usuario/modal-agregar-usuario.php');
-      require_once('views/usuario/modal-buscar-usuario.php');
+        if (utils::isAdmin()) {
+            $usuario = new Usuario();
+            $usuarios = $usuario->getAll();
+
+            require_once('views/usuario/sidebar.php');
+            require_once('views/usuario/gestion-usuarios.php');
+            require_once('views/usuario/modal-agregar-usuario.php');
+            require_once("views/mensajes/modal-eliminar.php");
+        } else {
+            header("Location:" . base_url . 'usuario/gestion');
+        }
     }
-    function web(){
+
+    function web() {
         require_once('views/usuario/sidebar.php');
         require_once('views/web/gestion-web.php');
     }
+
     function estudios() {
         if (utils::isAdminOEmpleado()) {
             require_once("views/mensajes/mensajes-estudio.php");
@@ -46,7 +54,7 @@ class gestionController {
         require_once('views/contenido/modal-contenidos.php');
     }
 
-    function data(){
+    function data() {
         require_once('views/usuario/sidebar.php');
         require_once('views/data/gestion-data.php');
         require_once('views/data/modal-buscar-data.php');

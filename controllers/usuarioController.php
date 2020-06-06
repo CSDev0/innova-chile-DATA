@@ -1,4 +1,5 @@
 <?php
+
 require_once 'models/Usuario.php';
 require_once 'helpers/utils.php';
 
@@ -58,17 +59,16 @@ class usuarioController {
                 $usuario->setApellido($_POST['txtApellido']);
                 $usuario->setCorreo($_POST['txtCorreoRegistro']);
                 $usuario->setClave($_POST['txtClaveRegistro']);
-                if ($_POST['slcEstado']=='Habilitado') {
-                  $usuario->setActivado('1');
-                }else {
-                  $usuario->setActivado('0');
+                if ($_POST['slcEstado'] == 'Habilitado') {
+                    $usuario->setActivado('1');
+                } else {
+                    $usuario->setActivado('0');
                 }
 
                 $usuario->setTipo('empleado');
                 $resultado = $usuario->save();
                 if ($resultado) {
                     $_SESSION['usuario_mensaje'] = "exito crear";
-
                 } else {
                     $_SESSION['usuario_mensaje'] = "fallo crear";
 
@@ -84,41 +84,27 @@ class usuarioController {
     #Borrar usuario??
 
     public function deleteUsuario() {
-      if (utils::isAdmin()) {
-          if (isset($_POST)) {
-              $usuario = new Usuario();
-              if (isset($_GET['id'])) {
-                  $id = $_GET['id'];
-                  $usuario->setId($id);
-                  $delete = $usuario->delete($usuario->getId());
-              } else {
+        if (utils::isAdmin()) {
+            if (isset($_POST)) {
+                $usuario = new Usuario();
+                if (isset($_GET['id'])) {
+                    $id = $_GET['id'];
+                    $usuario->setId($id);
+                    $delete = $usuario->delete($usuario->getId());
+                } else {
                     $_SESSION['usuario_mensaje'] = "No se ah encontrado usuario";
-              }
+                }
 
-              if (isset($delete) && $delete == true) {
-                  $_SESSION['usuario_mensaje'] = 'exito al borrar';
-              } elseif ($update == false & $update != null) {
-                  $_SESSION['usuario_mensaje'] = 'fallo al borrar';
-              }
-          }
-          header("Location:" . base_url . 'usuario/gestion');
-      } else {
-            header('Location:' . base_url . 'web/inicio');
+                if (isset($delete) && $delete == true) {
+                    $_SESSION['usuario_mensaje'] = 'exito al borrar';
+                } elseif ($update == false & $update != null) {
+                    $_SESSION['usuario_mensaje'] = 'fallo al borrar';
+                }
+            }
+            header("Location:" . base_url . 'usuario/gestion');
+        } else {
+            header('Location:' . base_url . 'usuario/panel');
         }
-    }
-
-
-    #ver usuarios??
-
-    public function showUsers()
-    {
-      if (utils::isAdmin()) {
-        $usuario = new Usuario();
-        $usuarios = $usuario->getAll();
-        require_once('views/usuario/ver-usuarios.php');
-      }else {
-        $_SESSION['usuario_mensaje'] = 'Funcion no autorizada';
-      }
     }
 
 }
