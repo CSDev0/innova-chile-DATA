@@ -1,4 +1,5 @@
 <?php
+
 //hola
 function borrar_autenticacion_mensaje() {
     unset($_SESSION['autenticacion_mensaje']);
@@ -9,11 +10,31 @@ if (isset($_SESSION['autenticacion_mensaje'])) {
     if (isset($_SESSION['identidad'])) {
         $nombre = $_SESSION['identidad']->nombre;
     }
-    if ($mensaje == 'exito login') {
+    if ($mensaje == 'exito login o') {
         ?>
         <script type="text/javascript">
             var titulo = "Exito!";
             var msg = "Bienvenido <?= $nombre ?>!";
+            mostrarMensaje(msg, titulo);
+        </script>
+        <?php
+        borrar_autenticacion_mensaje();
+    }
+    if ($mensaje == 'exito login a') {
+        ?>
+        <script type="text/javascript">
+            var titulo = "Exito!";
+            var msg = "Bienvenida <?= $nombre ?>!";
+            mostrarMensaje(msg, titulo);
+        </script>
+        <?php
+        borrar_autenticacion_mensaje();
+    }
+    if ($mensaje == 'exito login @') {
+        ?>
+        <script type="text/javascript">
+            var titulo = "Exito!";
+            var msg = "Bienvenid@ <?= $nombre ?>!";
             mostrarMensaje(msg, titulo);
         </script>
         <?php
@@ -57,7 +78,7 @@ if (isset($_SESSION['autenticacion_mensaje'])) {
         <?php
         borrar_autenticacion_mensaje();
     }
-    if($mensaje == 'fallo correo formato'){
+    if ($mensaje == 'fallo correo formato') {
         ?>
         <script type="text/javascript">
             var msg = "El correo ingresado no  es valido!";
@@ -66,7 +87,7 @@ if (isset($_SESSION['autenticacion_mensaje'])) {
         <?php
         borrar_autenticacion_mensaje();
     }
-    if($mensaje == 'fallo restringido'){
+    if ($mensaje == 'fallo restringido') {
         ?>
         <script type="text/javascript">
             var titulo = "Restringido!"
@@ -76,7 +97,7 @@ if (isset($_SESSION['autenticacion_mensaje'])) {
         <?php
         borrar_autenticacion_mensaje();
     }
-    if($mensaje == 'sesion no iniciada'){
+    if ($mensaje == 'sesion no iniciada') {
         ?>
         <script type="text/javascript">
             var titulo = "Error!"
@@ -86,7 +107,7 @@ if (isset($_SESSION['autenticacion_mensaje'])) {
         <?php
         borrar_autenticacion_mensaje();
     }
-    if($mensaje == 'exito logout'){
+    if ($mensaje == 'exito logout') {
         ?>
         <script type="text/javascript">
             var titulo = "Exito!"
@@ -96,7 +117,7 @@ if (isset($_SESSION['autenticacion_mensaje'])) {
         <?php
         borrar_autenticacion_mensaje();
     }
-    if($mensaje == 'fallo logout'){
+    if ($mensaje == 'fallo logout') {
         ?>
         <script type="text/javascript">
             var titulo = "Error!"
@@ -106,7 +127,7 @@ if (isset($_SESSION['autenticacion_mensaje'])) {
         <?php
         borrar_autenticacion_mensaje();
     }
-    if($mensaje == 'fallo no activada'){
+    if ($mensaje == 'fallo no activada') {
         ?>
         <script type="text/javascript">
             var msg = "Tu cuenta no esta activada!";
@@ -115,5 +136,4 @@ if (isset($_SESSION['autenticacion_mensaje'])) {
         <?php
         borrar_autenticacion_mensaje();
     }
-    
 }

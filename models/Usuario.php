@@ -14,6 +14,7 @@ class Usuario {
     private $correo;
     private $clave;
     private $tipo;
+    private $genero;
     private $activado;
     private $db;
 
@@ -84,8 +85,15 @@ class Usuario {
     function setTipo($tipo) {
         $this->tipo = $tipo;
     }
+    function getGenero() {
+        return $this->genero;
+    }
 
-    public function login() {
+    function setGenero($genero) {
+        $this->genero = $genero;
+    }
+
+        public function login() {
         $result = false;
         $correo = $this->correo;
         $clave = $this->clave;
@@ -114,7 +122,7 @@ class Usuario {
     //Metodos usuario
     //Registrar o Guardar un Usuario en la BD.
     public function save() {
-        $query = "INSERT INTO usuario VALUES (NULL, '{$this->getRut()}', '{$this->getNombre()}', '{$this->getApellido()}','{$this->getCorreo()}', '{$this->getClave()}', '{$this->getTipo()}', '{$this->getActivado()}')";
+        $query = "INSERT INTO usuario VALUES (NULL, '{$this->getRut()}', '{$this->getNombre()}', '{$this->getApellido()}','{$this->getCorreo()}', '{$this->getClave()}', '{$this->getTipo()}', '{$this->getGenero()}', '{$this->getActivado()}')";
         $save = $this->db->query($query);
         $result = false;
         if ($save) {
@@ -123,35 +131,27 @@ class Usuario {
         return $result;
     }
 
-    //Eliminar un Usuario de la BD por su ID.
-    public function delete($id) {
+    //Eliminar un Usuario de la BD.
+    public function delete() {
         $result = false;
         $query1 = "SET FOREIGN_KEY_CHECKS=0;";
         $this->db->query($query1);
-        $query = "DELETE FROM usuario WHERE id_usuario = '$id'";
+        $query = "DELETE FROM usuario WHERE id = '{$this->getId()}'";
         if ($this->db->query($query) == TRUE && $this->db->affected_rows > 0) {
-            require_once 'models/Direccion.php';
-            $direccion = new Direccion();
-            $dir = $direccion->deleteAllFrom($id);
-            $query2 = " SET FOREIGN_KEY_CHECKS=1;";
-            $this->db->query($query2);
             $result = true;
         } else {
             $result = false;
         }
-
         return $result;
     }
 
     //actualizar un usuario.
 
     public function update() {
-        $query = "UPDATE usuario SET nombre = '{$this->getNombre()}', apellido = '{$this->getApellido()}'";
-        if ($this->getCorreo() != NULL) {
-            $query .= ", correo = '{$this->getCorreo()}' ";
-        }
-        $query .= "WHERE id_usuario = {$this->getId()};";
-
+        $query = "UPDATE usuario SET rut='{$this->getRut()}', nombre = '{$this->getNombre()}', ";
+        $query .=  "apellido = '{$this->getApellido()}', correo='{$this->getCorreo()}', genero='{$this->getGenero()}', activado='{$this->getActivado()}' ";
+        $query .= "WHERE id = {$this->getId()};";
+        
         $save = $this->db->query($query);
 
         $result = false;
@@ -191,15 +191,6 @@ class Usuario {
         return $result;
     }
 
-    //Buscar un usuario.
-    public function find($busqueda) {
-        $query = "SELECT * FROM usuario WHERE (nombre LIKE '%$busqueda%' OR rut LIKE '%$busqueda%' OR correo LIKE '%$busqueda%')";
-
-        $usuarios = $this->db->query($query);
-
-        return $usuarios;
-    }
-
     //Obtener un usuario por su correo.
     public function getUsuarioByCorreo() {
 
@@ -217,13 +208,8 @@ class Usuario {
         $usuario = $this->db->query($query);
         return $usuario;
     }
-
-    public function consulta($query) {
-        $resultado = $this->db->query($query);
-
-        return $resultado;
-    }
-
+    
+    //Buscar un usuario.
     public function buscar($busqueda) {
         if ($busqueda == 'all') {
             $query = "SELECT * FROM usuario ORDER BY id;";

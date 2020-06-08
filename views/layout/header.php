@@ -23,7 +23,7 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
         <script src="https://pixijs.download/dev-graphics-batch-pool/pixi.js"></script>
         <script src="https://cdn.jsdelivr.net/gh/T-vK/SuperParticles@master/SuperParticles.js"></script>
-        
+
         <!--Funciones $.debounce: junta todas las peticiones y las ejecuta luego de unos milisegundos.
                                 $.throttle: solo permite la ejecucion de una peticion cada tantos milisegundos.
         -->
@@ -34,7 +34,7 @@
         <script src="<?= base_url ?>assets/js/nav-bar.js"></script>
         <script src="<?= base_url ?>assets/js/animations.js"></script>
         <script src="<?= base_url ?>assets/js/parsley.js"></script>
-
+        <script src="<?= base_url ?>assets/js/boxes.js"></script>
 
 
 
@@ -42,6 +42,6 @@
         <title>InnovaChile - Proyectos para el mañana.</title>
     </head>
     <body>
-        <div class="se-pre-con"></div>  
+        <!--Para utilizar var_dump y esas cosas de debug, colocar    style="display: none"   a este elemento (el loader)-->
+        <div class="se-pre-con" style="display: none"></div>  
         <?php require_once('views/mensajes/modal-mensajes.php'); ?>
-    <!--        <a id="back-to-top" href="#" class="btn btn-light btn-lg back-to-top" role="button"><i class="fas fa-chevron-up"></i></a>-->

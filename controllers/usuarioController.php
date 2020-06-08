@@ -24,7 +24,15 @@ class usuarioController {
             if ($identidad && is_object($identidad)) {
                 $_SESSION['identidad'] = $identidad;
                 $_SESSION['tipo_usuario'] = $identidad->tipo;
-                $_SESSION['autenticacion_mensaje'] = 'exito login';
+                if ($_SESSION['identidad']->genero == 1) {
+                    $_SESSION['autenticacion_mensaje'] = 'exito login a';
+                }
+                if ($_SESSION['identidad']->genero == 2) {
+                    $_SESSION['autenticacion_mensaje'] = 'exito login o';
+                }
+                if ($_SESSION['identidad']->genero == 3) {
+                    $_SESSION['autenticacion_mensaje'] = 'exito login @';
+                }
                 header('Location:' . base_url . 'usuario/panel');
             } else {
                 $_SESSION['autenticacion_mensaje'] = 'fallo login';
@@ -50,29 +58,47 @@ class usuarioController {
 
 //  Funcion para guardar un usuario siendo un administrador.
 # setTipo-> $_POST['radioTipo'] en toria todos los nuevos usuarios son de tipo normal y no admins
-    public function saveUsuario() {
+    public function save() {
         if (utils::isAdmin()) {
             if (isset($_POST)) {
                 $usuario = new Usuario();
                 $usuario->setRut($_POST['txtRut']);
                 $usuario->setNombre($_POST['txtNombre']);
                 $usuario->setApellido($_POST['txtApellido']);
-                $usuario->setCorreo($_POST['txtCorreoRegistro']);
-                $usuario->setClave($_POST['txtClaveRegistro']);
-                if ($_POST['slcEstado'] == 'Habilitado') {
-                    $usuario->setActivado('1');
-                } else {
-                    $usuario->setActivado('0');
-                }
-
+                $usuario->setCorreo($_POST['txtCorreo']);
+                $usuario->setClave($_POST['txtClave']);
+                $usuario->setGenero($_POST['slcGenero']);
+                $usuario->setActivado($_POST['slcActivado']);
                 $usuario->setTipo('empleado');
+                
                 $resultado = $usuario->save();
                 if ($resultado) {
                     $_SESSION['usuario_mensaje'] = "exito crear";
                 } else {
                     $_SESSION['usuario_mensaje'] = "fallo crear";
-
-                    echo $usuario->getActivado();
+                }
+            }
+            header("Location:" . base_url . 'gestion/usuarios');
+        } else {
+            header('Location:' . base_url . 'web/inicio');
+        }
+    }
+    public function update(){
+        if (utils::isAdmin()) {
+            if (isset($_POST)) {
+                $usuario = new Usuario();
+                $usuario->setId($_POST['txtId']);
+                $usuario->setRut($_POST['txtRut']);
+                $usuario->setNombre($_POST['txtNombre']);
+                $usuario->setApellido($_POST['txtApellido']);
+                $usuario->setCorreo($_POST['txtCorreo']);
+                $usuario->setGenero($_POST['slcGenero']);
+                $usuario->setActivado($_POST['slcActivado']);
+                $resultado = $usuario->update();
+                if ($resultado) {
+                    $_SESSION['usuario_mensaje'] = "exito modificar";
+                } else {
+                    $_SESSION['usuario_mensaje'] = "fallo modificar";
                 }
             }
             header("Location:" . base_url . 'gestion/usuarios');
@@ -83,25 +109,26 @@ class usuarioController {
 
     #Borrar usuario??
 
-    public function deleteUsuario() {
+    public function delete() {
         if (utils::isAdmin()) {
             if (isset($_POST)) {
                 $usuario = new Usuario();
                 if (isset($_GET['id'])) {
                     $id = $_GET['id'];
                     $usuario->setId($id);
-                    $delete = $usuario->delete($usuario->getId());
+                    $delete = $usuario->delete();
                 } else {
-                    $_SESSION['usuario_mensaje'] = "No se ah encontrado usuario";
+                    $_SESSION['usuario_mensaje'] = "no encontrado";
                 }
 
                 if (isset($delete) && $delete == true) {
-                    $_SESSION['usuario_mensaje'] = 'exito al borrar';
-                } elseif ($update == false & $update != null) {
-                    $_SESSION['usuario_mensaje'] = 'fallo al borrar';
+                    $_SESSION['usuario_mensaje'] = 'exito eliminar';
+                } elseif ($delete == false & $delete != null) {
+                    $_SESSION['usuario_mensaje'] = 'fallo eliminar';
                 }
             }
-            header("Location:" . base_url . 'usuario/gestion');
+
+            header("Location:" . base_url . 'gestion/usuarios');
         } else {
             header('Location:' . base_url . 'usuario/panel');
         }

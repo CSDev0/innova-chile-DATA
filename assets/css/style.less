@@ -23,6 +23,8 @@
 /* Gris  */
 @text-color: #49535E;
 
+@lightgray: #bbbbbb;
+
 /*Fuentes*/
 .bold-font(){
     font-family: 'ScalaSansPro';
@@ -114,3 +116,9 @@
 ::-webkit-scrollbar-corner {
   background: rgba(0,0,0,0);
 }
+
+.form-control::-webkit-input-placeholder { color: @lightgray; }  /* WebKit, Blink, Edge */
+.form-control:-moz-placeholder { color: @lightgray; }  /* Mozilla Firefox 4 to 18 */
+.form-control::-moz-placeholder { color: @lightgray; }  /* Mozilla Firefox 19+ */
+.form-control:-ms-input-placeholder { color: @lightgray; }  /* Internet Explorer 10-11 */
+.form-control::-ms-input-placeholder { color: @lightgray; }  /* Microsoft Edge */

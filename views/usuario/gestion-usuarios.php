@@ -14,12 +14,18 @@
         <button class="btn btn-primary" name="btn_todos_usuarios" id="btn_todos_usuarios"><i class="fas fa-eye"></i> Ver todos</button>
         <br><br>
         <hr>
-            <form class="ajaxform" data-parsley-validate data-parsley-trigger="focusout" >
-                <script>$('.ajaxform').submit(false);</script>
-                    <input type="text" name="txtBuscarUsuario" id="txtBuscarUsuario" placeholder="Buscar por RUT, Correo, Nombre o Apellido..." class="form-control mr-1" required minlength="3" data-parsley-error-message="Minimo 3 caracteres!" />
-                    <div class="small-br"></div>
-                    <button class="btn btn-primary" name="btn_buscar_usuarios" id="btn_buscar_usuarios"><i class="fas fa-search-plus"></i> Buscar</button>
-            </form>
+        <form class="ajaxform" data-parsley-validate data-parsley-trigger="focusout" >
+            <script>$('.ajaxform').submit(false);</script>
+            
+            <div class="input-group" id="show_hide_password">
+                <input type="text" name="txtBuscarUsuario" id="txtBuscarUsuario" placeholder="Buscar por RUT, Correo, Nombre o Apellido..." class="form-control mr-1" required minlength="3" data-parsley-error-message="La busqueda debe contener al menos 3 caracteres!" data-parsley-errors-container="#errorContainer" />
+                <div class="input-group-addon">
+                    <button class="btn btn-primary form-control ml-1" name="btn_buscar_usuarios" id="btn_buscar_usuarios"><i class="fas fa-search-plus"></i> Buscar</button>
+                </div>
+            </div>
+            <div class="small-br"></div>
+            <div id="errorContainer"></div>
+        </form>
         <br>
         <div id="lista_usuarios">
         </div>
@@ -66,10 +72,10 @@
                         } else {
                         }
                     } else {
-                        
+
                     }
                 }));
-                $('#btn_todos_usuarios').click($.debounce(400, function(){
+                $('#btn_todos_usuarios').click($.debounce(400, function () {
                     cargarUsuarios();
                 }));
             });

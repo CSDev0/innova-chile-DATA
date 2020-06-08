@@ -61,24 +61,51 @@ $('#modal-estudios').on('hidden.bs.modal', function () {
 });
 
 $(".btn-abrir-modal-contenido").click(function (e) {
-    
+
     var tipoContenido = $(this).data('tipo');
     var textoContenido = $(this).data('texto');
     var fechaModificacion = $(this).data('fecha');
     var usuario = $(this).data('usuario');
-    
+
     $("#modal-contenido-nombre").append("<input type='text' id='input-contenido-nombre' class='form-control' name='txtNombre' value='" + tipoContenido + "' disabled>");
     $('#input-contenido-texto').summernote('code', '');
     $("#modal-contenido-texto").append("<input id='input-contenido-tipo' type='hidden' value='" + tipoContenido + "' name='txtTipo'>");
-    setTimeout(function(){ $('#input-contenido-texto').summernote('pasteHTML', textoContenido); }, 200);
-    $("#modal-contenido-texto").append("<h6 id='input-contenido-fecha' class='bg-azul rounded-bottom' name='txtTipo'> Ultima modificación: "+fechaModificacion+
-    " por "+ usuario + "</h6>");
-    
-   
+    setTimeout(function () {
+        $('#input-contenido-texto').summernote('pasteHTML', textoContenido);
+    }, 200);
+    $("#modal-contenido-texto").append("<h6 id='input-contenido-fecha' class='bg-azul rounded-bottom' name='txtTipo'> Ultima modificación: " + fechaModificacion +
+            " por " + usuario + "</h6>");
+
+
 });
 $('#modal-contenido').on('hidden.bs.modal', function () {
     $("#input-contenido-nombre").remove();
     $('#input-contenido-texto').summernote('code', '');
     $("#input-contenido-tipo").remove();
     $("#input-contenido-fecha").remove();
+});
+
+
+$('#modal-modificar-usuario').on('show.bs.modal', function (e) {
+
+    var opener = e.relatedTarget;// esta variable contiene el objeto el cual llamo a abrir el modal.
+    //obtenemos los detalles de los atributos.
+    var id = $(opener).attr('id');
+    var rut = $(opener).attr('rut');
+    var nombre = $(opener).attr('nombre');
+    var apellido = $(opener).attr('apellido');
+    var correo = $(opener).attr('correo');
+    var genero = $(opener).attr('genero');
+    var activado = $(opener).attr('activado');
+    
+
+
+//Colocamos las variables dentro del formulario de modificar usuario.
+    $('#formulario-modificar-usuario').find('[name="txtId"]').val(id);
+    $('#formulario-modificar-usuario').find('[name="txtRut"]').val(rut);
+    $('#formulario-modificar-usuario').find('[name="txtNombre"]').val(nombre);
+    $('#formulario-modificar-usuario').find('[name="txtApellido"]').val(apellido);
+    $('#formulario-modificar-usuario').find('[name="txtCorreo"]').val(correo);
+    $('#formulario-modificar-usuario').find('[name="slcGenero"]').val(genero);
+    $('#formulario-modificar-usuario').find('[name="slcEstado"]').val(activado);
 });
