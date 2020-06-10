@@ -3,11 +3,10 @@
 </script>
 <h2> Gestionar <b>Usuarios</b></h2><input data-size="s"type="checkbox" id="estudios-toggle" checked data-toggle="toggle" data-on="Usuarios" data-off="Actividad" data-onstyle="nuestros" data-offstyle="recomendadas">
 <hr>
-
 <div class="row">
-    <p class="col-sm-9">Esta Opcion en un futuro solo estara disponible para el administrador.</p>
+    <p class="col-sm-9">Esta Opcion solo está disponible para el administrador.</p>
 
-    <div class="col-sm-10 contenedor-gestion">
+    <div class="col-sm-10 estudios" id="contenedor-nuestros-estudios">
         <div id="loading-div"></div>
         <h3>Usuarios</h3>
         <button class="btn btn-primary" href="#modal-agregar-usuario" data-toggle="modal"><i class="fas fa-plus-square"></i> Agregar</button>
@@ -16,7 +15,7 @@
         <hr>
         <form class="ajaxform" data-parsley-validate data-parsley-trigger="focusout" >
             <script>$('.ajaxform').submit(false);</script>
-            
+
             <div class="input-group" id="show_hide_password">
                 <input type="text" name="txtBuscarUsuario" id="txtBuscarUsuario" placeholder="Buscar por RUT, Correo, Nombre o Apellido..." class="form-control mr-1" required minlength="3" data-parsley-error-message="La busqueda debe contener al menos 3 caracteres!" data-parsley-errors-container="#errorContainer" />
                 <div class="input-group-addon">
