@@ -97,7 +97,7 @@ $('#modal-modificar-usuario').on('show.bs.modal', function (e) {
     var correo = $(opener).attr('correo');
     var genero = $(opener).attr('genero');
     var activado = $(opener).attr('activado');
-    
+
 
 
 //Colocamos las variables dentro del formulario de modificar usuario.
@@ -108,4 +108,22 @@ $('#modal-modificar-usuario').on('show.bs.modal', function (e) {
     $('#formulario-modificar-usuario').find('[name="txtCorreo"]').val(correo);
     $('#formulario-modificar-usuario').find('[name="slcGenero"]').val(genero);
     $('#formulario-modificar-usuario').find('[name="slcEstado"]').val(activado);
+});
+
+$('#modal-modificar-lectura').on('show.bs.modal', function (e) {
+
+    var opener = e.relatedTarget;// esta variable contiene el objeto el cual llamo a abrir el modal.
+    //obtenemos los detalles de los atributos.
+    var id = $(opener).attr('data-id');
+    var nombre = $(opener).attr('nombre');
+    var descripcion = $(opener).attr('descripcion');
+    var ano_lectura = $(opener).attr('ano_lectura');
+    var enlace = $(opener).attr('enlace');
+
+//Colocamos las variables dentro del formulario de modificar usuario.
+    $('#formulario-modificar-lectura').find('[name="txtId"]').val(id);
+    $('#formulario-modificar-lectura').find('[name="txtNombre"]').val(nombre);
+    $('#formulario-modificar-lectura').find('[name="txtDescripcion"]').html(descripcion);
+    $('#formulario-modificar-lectura').find('[name="slcAno"]').val(ano_lectura);
+    $('#formulario-modificar-lectura').find('[name="txtEnlace"]').val(enlace);
 });

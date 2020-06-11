@@ -12,7 +12,7 @@ class gestionController {
         if (utils::isAdmin()) {
             $usuario = new Usuario();
             $usuarios = $usuario->getAll();
-            
+
             require_once("views/mensajes/mensajes-usuario.php");
             require_once('views/usuario/sidebar.php');
             require_once('views/usuario/gestion-usuarios.php');
@@ -44,6 +44,7 @@ class gestionController {
             require_once("views/estudios/modal-agregar-lectura.php");
             require_once("views/estudios/modal-buscar-lectura.php");
             require_once("views/mensajes/modal-eliminar.php");
+            require_once("views/estudios/modal-modificar-lectura.php");
         } else {
             header("Location:" . base_url . 'web/inicio');
         }

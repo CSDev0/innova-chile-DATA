@@ -25,6 +25,18 @@ class estudioController {
                     $estudio->setAno_estudio($ano_estudio);
                     $estudio->setTipo($tipo);
 
+                    if (isset($_POST['txtId'])) {
+                      $id=$_POST['txtId'];
+                      $estudio->setId($id);
+                      $modify = $estudio->update();
+                      if ($modify) {
+                        header('www.google.cl');
+                      }
+                      else {
+                        header('www.youtube.com');
+                      }
+                    }
+
                     //Guardar el documento
                     //Preguntar si viene el parametro ID por get, si es asi, esto seria una modificacion del estudio.
                     if (isset($_GET['id'])) {
@@ -38,7 +50,7 @@ class estudioController {
 
                             if ($tipo_archivo == "application/msword" || $tipo_archivo == "application/pdf" || $tipo_archivo == "text/plain" ||
                                     $tipo_archivo == "application/vnd.ms-excel" || $tipo_archivo == "text/html" ||
-                                    $tipo_archivo == "application/vnd.ms-powerpoint" || 
+                                    $tipo_archivo == "application/vnd.ms-powerpoint" ||
                                     $tipo_archivo == "application/vnd.openxmlformats-officedocument.presentationml.presentation") {
                                 if (!is_dir('uploads/documentos/estudios/')) {
                                     mkdir('uploads/documentos/estudios/', 0777, true);
@@ -76,7 +88,7 @@ class estudioController {
 
                             if ($tipo_archivo == "application/msword" || $tipo_archivo == "application/pdf" || $tipo_archivo == "text/plain" ||
                                     $tipo_archivo == "application/vnd.ms-excel" || $tipo_archivo == "text/html" ||
-                                    $tipo_archivo == "application/vnd.ms-powerpoint" || 
+                                    $tipo_archivo == "application/vnd.ms-powerpoint" ||
                                     $tipo_archivo == "application/vnd.openxmlformats-officedocument.presentationml.presentation") {
                                 if (!file_exists('uploads/documentos/estudios')) {
                                     mkdir('uploads/documentos/estudios', 0777, true);
@@ -179,12 +191,28 @@ class estudioController {
                 $est = $estudio->getEstudioById();
                 require_once ('views/estudios/modal-ver-estudio.php');
             } else {
-                
+
             }
         } else {
             header("Location:" . base_url . home);
         }
     }
+
+    function modificarLectura()
+    {
+      if (utils::isAdminOEmpleado()) {
+        if (isset($_GET['id'])) {
+          $id = $_GET['id'];
+          header("Location:" . base_url . 'gestion/estudios&id='.$id );
+
+        }
+      } else {
+          header("Location:" . base_url . home);
+      }
+
+    }
+
+
 
 }
 
