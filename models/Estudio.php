@@ -159,4 +159,15 @@ class Estudio {
     }
 
 
+  public function update()
+    {
+      $query = "UPDATE estudio SET nombre='{$this->getNombre()}',descripcion='{$this->getDescripcion()}',ano_estudio='{$this->getAno_estudio()}',archivo='{$this->getArchivo()}',enlace='$this->getEnlace()',fecha_creacion='{$this->getFecha()}' WHERE id = {$this->getId()};";
+      $save = $this->db->query($query);
+      $result=false;
+      if ($save) {
+        $result=true;
+      }
+      return $result;
+    }
+
 }
