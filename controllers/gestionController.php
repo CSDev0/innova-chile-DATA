@@ -40,11 +40,10 @@ class gestionController {
             require_once('views/usuario/sidebar.php');
             require_once('views/estudios/gestion-estudios.php');
             require_once("views/estudios/modal-agregar-estudio.php");
-            require_once("views/estudios/modal-buscar-estudio.php");
+            require_once("views/estudios/modal-modificar-estudio.php");
             require_once("views/estudios/modal-agregar-lectura.php");
-            require_once("views/estudios/modal-buscar-lectura.php");
-            require_once("views/mensajes/modal-eliminar.php");
             require_once("views/estudios/modal-modificar-lectura.php");
+            require_once("views/mensajes/modal-eliminar.php");
         } else {
             header("Location:" . base_url . 'web/inicio');
         }

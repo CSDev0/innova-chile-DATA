@@ -110,6 +110,23 @@ $('#modal-modificar-usuario').on('show.bs.modal', function (e) {
     $('#formulario-modificar-usuario').find('[name="slcEstado"]').val(activado);
 });
 
+$('#modal-modificar-estudio').on('show.bs.modal', function (e) {
+
+    var opener = e.relatedTarget;// esta variable contiene el objeto el cual llamo a abrir el modal.
+    //obtenemos los detalles de los atributos.
+    var id = $(opener).attr('id');
+    var nombre = $(opener).attr('nombre');
+    var descripcion = $(opener).attr('descripcion');
+    var ano_lectura = $(opener).attr('ano_lectura');
+    var archivo = $(opener).attr('archivo');
+
+//Colocamos las variables dentro del formulario de modificar usuario.
+    $('#formulario-modificar-estudio').find('[name="txtId"]').val(id);
+    $('#formulario-modificar-estudio').find('[name="txtNombre"]').val(nombre);
+    $('#formulario-modificar-estudio').find('[name="txtDescripcion"]').html(descripcion);
+    $('#formulario-modificar-estudio').find('[name="slcAno"]').val(ano_lectura);
+    $('#formulario-modificar-estudio').find('[name="archivoAntiguo"]').attr("href",  archivo);
+});
 $('#modal-modificar-lectura').on('show.bs.modal', function (e) {
 
     var opener = e.relatedTarget;// esta variable contiene el objeto el cual llamo a abrir el modal.
