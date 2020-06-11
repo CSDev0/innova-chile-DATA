@@ -140,5 +140,23 @@ class Estudio {
         }
         return $result;
     }
+    public function search($busqueda) {
+        if ($busqueda == 'all') {
+            $query = "SELECT * FROM estudio ORDER BY fecha_creacion;";
+        } else {
+            if (is_numeric($busqueda)) {
+                $query = "SELECT * FROM estudio WHERE ano_estudio = " . $busqueda . ";";
+            } else {
+                $query = "
+                   SELECT * FROM estudio
+	WHERE nombre LIKE '%" . $busqueda . "%'
+	OR archivo LIKE '%" . $busqueda . "%'
+	OR fecha_creacion LIKE '%" . $busqueda . "%' ";
+            }
+        }
+        $resultado = $this->db->query($query);
+        return $resultado;
+    }
+
 
 }

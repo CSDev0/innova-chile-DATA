@@ -70,7 +70,7 @@ class usuarioController {
                 $usuario->setGenero($_POST['slcGenero']);
                 $usuario->setActivado($_POST['slcActivado']);
                 $usuario->setTipo('empleado');
-                
+
                 $resultado = $usuario->save();
                 if ($resultado) {
                     $_SESSION['usuario_mensaje'] = "exito crear";
@@ -83,7 +83,8 @@ class usuarioController {
             header('Location:' . base_url . 'web/inicio');
         }
     }
-    public function update(){
+
+    public function update() {
         if (utils::isAdmin()) {
             if (isset($_POST)) {
                 $usuario = new Usuario();
@@ -132,6 +133,10 @@ class usuarioController {
         } else {
             header('Location:' . base_url . 'usuario/panel');
         }
+    }
+    
+    public function buscar(){
+        return "error";
     }
 
 }

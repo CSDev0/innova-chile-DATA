@@ -26,16 +26,16 @@ if (mysqli_num_rows($resultado) > 0 && $resultado != null) {
                                                     <th>Gestión</th>
                                             </tr>';
     while ($usu = mysqli_fetch_array($resultado)) {
-        if($usu['genero'] == 1){
+        if ($usu['genero'] == 1) {
             $genero = "Femenino";
-        }elseif ($usu['genero'] == 2) {
+        } elseif ($usu['genero'] == 2) {
             $genero = "Masculino";
-        }elseif ($usu['genero'] == 3) {
+        } elseif ($usu['genero'] == 3) {
             $genero = "Sin especificar";
         }
-        if($usu['activado'] == 1){
+        if ($usu['activado'] == 1) {
             $activado = "Habilitado";
-        }else{
+        } else {
             $activado = "Deshabilitado";
         }
         $output .= '
@@ -44,11 +44,11 @@ if (mysqli_num_rows($resultado) > 0 && $resultado != null) {
                             <td>' . $usu["nombre"] . '</td>
                             <td>' . $usu["apellido"] . '</td>
                             <td>' . $usu["correo"] . '</td>
-                            <td>' . $genero. '</td>
-                            <td>' . $activado. '</td>
+                            <td>' . $genero . '</td>
+                            <td>' . $activado . '</td>
                             <td>
                         <a href="#modal-modificar-usuario" data-toggle="modal" class="btn btn-success" style="width: 100%;" 
- id=' . $usu['id'] . ' rut='.$usu['rut'].' nombre=' . $usu['nombre'] . ' apellido=' . $usu['apellido'] . ' correo=' . $usu['correo'] . ' genero=' . $usu['genero'] .' activado=' . $usu['activado'] . ' >
+ id=' . $usu['id'] . ' rut=' . $usu['rut'] . ' nombre=' . $usu['nombre'] . ' apellido=' . $usu['apellido'] . ' correo=' . $usu['correo'] . ' genero=' . $usu['genero'] . ' activado=' . $usu['activado'] . ' >
                             <i class="fas fa-edit"></i> Modificar</a>
                             
                         <a href="#modal-eliminar" data-toggle="modal" data-tipo="Usuario" data-ruta="usuario/delete&id=" data-id=' . $usu['id'] . ' class="btn btn-danger eliminar" 
@@ -63,3 +63,4 @@ if (mysqli_num_rows($resultado) > 0 && $resultado != null) {
 } else {
     echo '<h3><i class="far fa-sad-cry"></i> No hay resultados, intente otra busqueda.</h3>';
 }
+    

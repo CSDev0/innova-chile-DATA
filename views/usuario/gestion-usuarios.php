@@ -47,7 +47,7 @@
                 function cargarUsuarios(query)
                 {
                     $.ajax({
-                        url: baseurl + "ajax/buscar_usuario.php",
+                        url: "../ajax/buscar_usuario.php",
                         method: "post",
                         data: {query: query},
                         success: function (data)

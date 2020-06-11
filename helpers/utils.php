@@ -1,6 +1,6 @@
 <?php
 
-require_once('models/Contenido.php');
+
 
 class utils {
 
@@ -91,6 +91,7 @@ class utils {
     }
 
     public static function getTextoByTipoContenido($tipo) {
+        require_once('models/Contenido.php');
         $contenido = new Contenido();
         $contenido->setTipo($tipo);
         $cont = $contenido->getContenidoByTipo();
@@ -103,6 +104,7 @@ class utils {
     }
 
     public static function getFechaByTipo($tipo) {
+        require_once('models/Contenido.php');
         $contenido = new Contenido();
         $contenido->setTipo($tipo);
         $cont = $contenido->getContenidoByTipo();
@@ -119,6 +121,7 @@ class utils {
     }
 
     public static function getUsuarioByTipoContenido($tipo) {
+        require_once('models/Contenido.php');
         $contenido = new Contenido();
         $contenido->setTipo($tipo);
         $cont = $contenido->getContenidoByTipo();
