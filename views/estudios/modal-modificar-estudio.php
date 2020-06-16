@@ -1,4 +1,4 @@
-<?php $url_action2 = base_url . "estudio/update"; ?>
+<?php $url_action2 = base_url . "estudio/save"; ?>
 <div id="modal-modificar-estudio" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
