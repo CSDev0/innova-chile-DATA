@@ -40,6 +40,13 @@ class webController {
         require_once('views/layout/menubar.php');
         require_once('views/data/app.php');
     }
+    function faq(){
+        require_once 'models/Contenido.php';
+        $preguntas = new Contenido();
+        $preguntas = $preguntas->searchPregunta('all');
+        require_once('views/layout/menubar.php');
+        require_once('views/preguntas/preguntas-frecuentes.php');
+    }
 
 }
 

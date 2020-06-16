@@ -28,14 +28,16 @@ class utils {
     }
 
     public static function isAdminOEmpleado() {
-        if (isset($_SESSION['tipo_usuario'])) {
-            if ($_SESSION['tipo_usuario'] == 'admin' || $_SESSION['tipo_usuario'] == 'empleado') {
+        if (isset($_SESSION['tipo_usuario']) & isset($_SESSION['identidad']) & $_SESSION['identidad']->nombre != null) {
+            if ($_SESSION['tipo_usuario'] == 'admin' || $_SESSION['tipo_usuario'] == 'empleado' ) {
                 return true;
             } else {
                 $_SESSION['autenticacion_mensaje'] = 'fallo restringido';
                 return false;
             }
         } else {
+            unset($_SESSION['identidad']);
+            unset($_SESSION['tipo_usuario']);
             $_SESSION['autenticacion_mensaje'] = 'sesion no iniciada';
             return false;
         }
