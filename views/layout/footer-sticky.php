@@ -11,10 +11,16 @@
                     <i class="fa fa-angle-double-right color-azul"></i><a class="link-normal" href="#"> Observatiorio MINECON</a>
                 </div>
                 <div class="col-sm-4 text-center">
+                    <div class="col-sm">
+                        <a class="link-normal" href="<?= base_url ?>web/faq"> <i class="fa fa-angle-double-right color-azul"></i> Preguntas frecuentes (FAQ) <i class="fa fa-angle-double-left color-azul"></i></a><br>
+                    </div>
+                    <br>
+                    <div class="col-sm">
                     <h4>Siguenos en nuestras redes</h4>
                     <i class="fab fa-facebook-square fa-4x color-azul"></i>
                     <i class="fab fa-instagram-square fa-4x color-ig"></i>
                     <i class="fab fa-twitter-square fa-4x color-azul-claro"></i>
+                    </div>
 
                 </div>
                 <div class="col-sm-4">
@@ -82,7 +88,7 @@
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
 <script src="<?= base_url ?>assets/js/summernote-es-ES.js"></script>
 <script>
-    $('#input-contenido-texto').summernote({
+    $('.input-contenido-texto').summernote({
         lang: 'es-ES',
         dialogsInBody: true,
         placeholder: 'Ingrese un texto descriptivo.',
@@ -93,6 +99,7 @@
             ['style', ['bold', 'italic', 'underline', 'clear']],
             ['font', ['strikethrough', 'superscript', 'subscript']],
             ['para', ['ul', 'ol', 'paragraph']],
+            ['table', ['table']],
             ['insert', ['link']],
             ['view', ['fullscreen', 'codeview', 'help']],
         ]

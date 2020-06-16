@@ -32,8 +32,8 @@ input.parsley-error
     height: 100%;
     background-color: white;
     position: absolute;
-     z-index: 100;
-     background: url('../img/preloader.gif') center no-repeat #fff;
+    z-index: 100;
+    background: url('../img/preloader.gif') center no-repeat #fff;
 }
 .form-control{
     .s-text();
@@ -427,7 +427,17 @@ a:hover{
 }
 
 /*---------------------------------------------------------------*/
-
+/*---------------------------FAQ------------------------------------*/
+/*---------------------------------------------------------------*/
+.panel-title-faq{
+    background-color: @third-color;
+    padding: 5px;
+    border: 1px solid lightgray;
+}
+.panel-body-faq{
+    border: 1px solid lightgray;
+    margin-top: -0.5em;
+}
 
 
 .icono-blanco{
@@ -494,8 +504,8 @@ hr.faded-blanco {
 }
 
 .no-bg{
-  background-color: transparent;
-  transition: background-color 0.5s ease 0s;
+    background-color: transparent;
+    transition: background-color 0.5s ease 0s;
 }
 .initial-state{
     .m-text();
@@ -512,4 +522,13 @@ hr.faded-blanco {
 .initial-state:hover{
     color: @second-color;
     background-color: white;
+}
+
+.drag-icon{
+    color: @main-color;
+    cursor: pointer;
+    .transition(0.3s);
+}
+.drag-icon:hover{
+    .scale(1.5);
 }

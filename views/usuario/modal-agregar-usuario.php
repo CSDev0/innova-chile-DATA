@@ -1,4 +1,4 @@
-<?php $url_action = base_url . "usuario/saveUsuario"; ?>
+<?php $url_action = base_url . "usuario/save"; ?>
 <div id="modal-agregar-usuario" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">

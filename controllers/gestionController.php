@@ -20,13 +20,22 @@ class gestionController {
             require_once('views/usuario/modal-modificar-usuario.php');
             require_once("views/mensajes/modal-eliminar.php");
         } else {
-            header("Location:" . base_url . 'usuario/gestion');
+            header("Location:" . base_url . 'usuario/panel');
         }
     }
 
     function web() {
-        require_once('views/usuario/sidebar.php');
-        require_once('views/web/gestion-web.php');
+        if (utils::isAdminOEmpleado()) {
+            require_once('views/usuario/sidebar.php');
+            require_once("views/mensajes/mensajes-contenido.php");
+            require_once('views/web/gestion-web.php');
+            require_once('views/web/modal-agregar-pregunta.php');
+            require_once('views/web/modal-modificar-pregunta.php');
+            require_once("views/mensajes/modal-eliminar.php");
+            
+        } else {
+            header("Location:" . base_url . 'web/login');
+        }
     }
 
     function estudios() {
