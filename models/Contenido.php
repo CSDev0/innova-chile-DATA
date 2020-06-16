@@ -9,6 +9,7 @@ class Contenido {
 
     private $id;
     private $tipo;
+    private $nombre;
     private $texto;
     private $fecha_modificacion;
     private $Usuario_id;
@@ -58,9 +59,17 @@ class Contenido {
         $this->Usuario_id = $Usuario_id;
     }
 
+    function getNombre() {
+        return $this->nombre;
+    }
+
+    function setNombre($nombre) {
+        $this->nombre = $nombre;
+    }
+
     public function save() {
 
-        $query = "INSERT INTO contenido VALUES (NULL, '{$this->getTipo()}', '{$this->getTexto()}', '{$this->getFecha_modificacion()}', '{$this->getUsuario_id()}');";
+        $query = "INSERT INTO contenido VALUES (NULL, '{$this->getTipo()}', '{$this->getNombre()}', '{$this->getTexto()}', '{$this->getFecha_modificacion()}', '{$this->getUsuario_id()}');";
 
         $save = $this->db->query($query);
         $result = false;
@@ -72,17 +81,24 @@ class Contenido {
 
     public function update() {
         $result = false;
-        $query = "UPDATE contenido SET texto='{$this->getTexto()}', fecha_modificacion='{$this->getFecha_modificacion()}', Usuario_id='{$this->getUsuario_id()}' WHERE tipo = '{$this->getTipo()}';";
-        
-
-        $save = $this->db->query($query);
+        $query = "UPDATE contenido SET nombre='{$this->getNombre()}', texto='{$this->getTexto()}', fecha_modificacion='{$this->getFecha_modificacion()}', Usuario_id='{$this->getUsuario_id()}' WHERE tipo = '{$this->getTipo()}';";
+        $update = $this->db->query($query);
         $result = false;
-        if ($save) {
+        if ($update) {
             $result = true;
         }
         return $result;
     }
-
+    public function updateById() {
+        $result = false;
+        $query = "UPDATE contenido SET nombre='{$this->getNombre()}', texto='{$this->getTexto()}', fecha_modificacion='{$this->getFecha_modificacion()}', Usuario_id='{$this->getUsuario_id()}' WHERE id = '{$this->getId()}';";
+        $update = $this->db->query($query);
+        $result = false;
+        if ($update) {
+            $result = true;
+        }
+        return $result;
+    }
     public function getContenidoByTipo() {
         $result = false;
         $query = "SELECT * FROM contenido WHERE tipo='{$this->getTipo()}' LIMIT 1;";
@@ -92,5 +108,21 @@ class Contenido {
         }
         return $result;
     }
-
+    
+    public function searchPregunta($busqueda) {
+        if ($busqueda == 'all') {
+            $query = "SELECT * FROM contenido WHERE tipo='pregunta' ORDER BY posicion;";
+        } else {
+            $query = "
+                   SELECT * FROM contenido
+	WHERE (nombre LIKE '%" . $busqueda . "%') AND tipo = 'pregunta'";
+        }
+        $resultado = $this->db->query($query);
+        return $resultado;
+    }
+    
+    public function query($query){
+        $resultado = $this->db->query($query);
+        return $resultado;
+    }
 }

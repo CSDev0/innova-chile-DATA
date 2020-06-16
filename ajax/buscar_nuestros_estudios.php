@@ -37,8 +37,8 @@ if (mysqli_num_rows($resultado) > 0 && $resultado != null) {
                             <td>' . utils::acortador($obj['archivo'], 30) . '</td>
                             <td>' . $obj['fecha_creacion'] . '</td>
                             <td>
-                        <a href="#modal-modificar-estudio" data-toggle="modal" class="btn btn-success" style="width: 100%;"
- id=' . $obj['id'] . ' nombre="' . $obj['nombre'] . '" descripcion="'.$obj['descripcion'].'" ano_estudio=' . $obj['ano_estudio'] . ' archivo="' . base_url."uploads/documentos/estudios/".$obj['archivo'] . '" fecha_creacion=' . $obj['fecha_creacion'] . ' >
+                        <a href="#modal-modificar-estudio" data-toggle="modal" class="btn btn-success" style="width: 100%;" 
+ id=' . $obj['id'] . ' nombre="' . $obj['nombre'] . '" descripcion="'.$obj['descripcion'].'" ano_estudio="' . $obj['ano_estudio'] . '" archivo="' . base_url."uploads/documentos/estudios/".$obj['archivo'] . '" fecha_creacion=' . $obj['fecha_creacion'] . ' >
                             <i class="fas fa-edit"></i> Modificar</a>
 
                         <a href="#modal-eliminar" data-toggle="modal" data-tipo="Estudio" data-ruta="estudio/delete&id=" data-id=' . $obj['id'] . ' class="btn btn-danger eliminar"
