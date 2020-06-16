@@ -12,7 +12,7 @@
         <hr>
         <form class="ajaxform" data-parsley-validate data-parsley-trigger="focusout" >
             <script>$('.ajaxform').submit(false);</script>
-            <div class="input-group"">
+            <div class="input-group">
                 <input type="text" name="txtBuscarNuestrosEstudios" id="txtBuscarNuestrosEstudios" placeholder="Buscar por Nombre, Año o Archivo..." class="form-control mr-1" required minlength="3" data-parsley-error-message="La busqueda debe contener al menos 3 caracteres!" data-parsley-errors-container="#errorContainer" />
                 <div class="input-group-addon">
                     <button class="btn btn-primary form-control ml-1" name="btn_buscar_nuestros_estudios" id="btn_buscar_nuestros_estudios"><i class="fas fa-search-plus"></i> Buscar</button>
