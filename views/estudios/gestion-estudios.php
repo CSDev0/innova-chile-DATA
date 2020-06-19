@@ -13,13 +13,13 @@
         <form class="ajaxform" data-parsley-validate data-parsley-trigger="focusout" >
             <script>$('.ajaxform').submit(false);</script>
             <div class="input-group">
-                <input type="text" name="txtBuscarNuestrosEstudios" id="txtBuscarNuestrosEstudios" placeholder="Buscar por Nombre, Año o Archivo..." class="form-control mr-1" required minlength="3" data-parsley-error-message="La busqueda debe contener al menos 3 caracteres!" data-parsley-errors-container="#errorContainer" />
+                <input type="text" name="txtBuscarNuestrosEstudios" id="txtBuscarNuestrosEstudios" placeholder="Buscar por Nombre, Año o Archivo..." class="form-control mr-1" required minlength="3" data-parsley-error-message="La busqueda debe contener al menos 3 caracteres!" data-parsley-errors-container="#errorContainer1" />
                 <div class="input-group-addon">
                     <button class="btn btn-primary form-control ml-1" name="btn_buscar_nuestros_estudios" id="btn_buscar_nuestros_estudios"><i class="fas fa-search-plus"></i> Buscar</button>
                 </div>
             </div>
             <div class="small-br"></div>
-            <div id="errorContainer"></div>
+            <div id="errorContainer1"></div>
         </form>
         <div id="lista_nuestros_estudios">
         </div>
@@ -86,13 +86,13 @@
         <form class="ajaxform" data-parsley-validate data-parsley-trigger="focusout" >
             <script>$('.ajaxform').submit(false);</script>
             <div class="input-group" id="show_hide_password">
-                <input type="text" name="txtBuscarNuestrasLecturas" id="txtBuscarNuestrasLecturas" placeholder="Buscar por Nombre, Año o Archivo..." class="form-control mr-1" required minlength="3" data-parsley-error-message="La busqueda debe contener al menos 3 caracteres!" data-parsley-errors-container="#errorContainer" />
+                <input type="text" name="txtBuscarNuestrasLecturas" id="txtBuscarNuestrasLecturas" placeholder="Buscar por Nombre, Año o Archivo..." class="form-control mr-1" required minlength="3" data-parsley-error-message="La busqueda debe contener al menos 3 caracteres!" data-parsley-errors-container="#errorContainer2" />
                 <div class="input-group-addon">
                     <button class="btn btn-primary form-control ml-1" name="btn_buscar_nuestras_lecturas" id="btn_buscar_nuestras_lecturas"><i class="fas fa-search-plus"></i> Buscar</button>
                 </div>
             </div>
             <div class="small-br"></div>
-            <div id="errorContainer"></div>
+            <div id="errorContainer2"></div>
         </form>
         <div id="lista_nuestras_lecturas">
         </div>

@@ -19,6 +19,7 @@ function mostrarMensaje(mensaje, titulo) {
     }, 2000);
 
 }
+
 //SWITCH GESTION ESTUDIOS
 $('#estudios-toggle').change(function () {
     if ($(this).prop('checked')) {
@@ -60,29 +61,23 @@ $('#modal-estudios').on('hidden.bs.modal', function () {
 
 });
 
-$(".btn-abrir-modal-contenido").click(function (e) {
+$('#modal-contenido').on('show.bs.modal', function (e) {
+    var opener = e.relatedTarget;// esta variable contiene el objeto el cual llamo a abrir el modal.
+    //obtenemos los detalles de los atributos.
+    var nombre = $(opener).attr('nombre')
+    var tipo = $(opener).attr('tipo');
+    var texto = $(opener).attr('texto');
+    var ultima_modificacion = $(opener).attr('ultima_modificacion');
+    var usuario_modificacion = $(opener).attr('usuario_modificacion');
 
-    var tipoContenido = $(this).data('tipo');
-    var textoContenido = $(this).data('texto');
-    var fechaModificacion = $(this).data('fecha');
-    var usuario = $(this).data('usuario');
-
-    $("#modal-contenido-nombre").append("<input type='text' id='input-contenido-nombre' class='form-control' name='txtNombre' value='" + tipoContenido + "' disabled>");
-    $('#input-contenido-texto').summernote('code', '');
-    $("#modal-contenido-texto").append("<input id='input-contenido-tipo' type='hidden' value='" + tipoContenido + "' name='txtTipo'>");
-    setTimeout(function () {
-        $('#input-contenido-texto').summernote('pasteHTML', textoContenido);
-    }, 200);
-    $("#modal-contenido-texto").append("<h6 id='input-contenido-fecha' class='bg-azul rounded-bottom' name='txtTipo'> Ultima modificación: " + fechaModificacion +
-            " por " + usuario + "</h6>");
-
-
-});
-$('#modal-contenido').on('hidden.bs.modal', function () {
-    $("#input-contenido-nombre").remove();
-    $('#input-contenido-texto').summernote('code', '');
-    $("#input-contenido-tipo").remove();
-    $("#input-contenido-fecha").remove();
+    $('#formulario-texto').find('[name="txtNombre"]').val(nombre);
+    $('#formulario-texto').find('[name="txtTexto"]').summernote('code', texto);
+    if (ultima_modificacion.length < 1) {
+        $('#formulario-texto').find('[name="txtUltimaModificacion"]').html('Ultima modificación: No ha sido modificado nunca');
+    } else {
+        $('#formulario-texto').find('[name="txtUltimaModificacion"]').html('Ultima modificación: ' + ultima_modificacion + ' por ' + usuario_modificacion);
+    }
+    $('#formulario-texto').find('[name="txtTipo"]').val(tipo);
 });
 
 
@@ -94,7 +89,7 @@ $('#modal-modificar-usuario').on('show.bs.modal', function (e) {
     var rut = $(opener).attr('rut');
     var nombre = $(opener).attr('nombre');
     var apellido = $(opener).attr('apellido');
-    var correo = $(opener).attr('correo');
+    var correo = $(opener).attr('correos');
     var genero = $(opener).attr('genero');
     var activado = $(opener).attr('activado');
 
@@ -117,32 +112,50 @@ $('#modal-modificar-estudio').on('show.bs.modal', function (e) {
     var id = $(opener).attr('id');
     var nombre = $(opener).attr('nombre');
     var descripcion = $(opener).attr('descripcion');
-    var ano_lectura = $(opener).attr('ano_lectura');
+    var ano_estudio = $(opener).attr('ano_estudio');
     var archivo = $(opener).attr('archivo');
+    var ultima_modificacion = $(opener).attr('ultima_modificacion');
+    var usuario_modificacion = $(opener).attr('usuario_modificacion');
 
 //Colocamos las variables dentro del formulario de modificar usuario.
     $('#formulario-modificar-estudio').find('[name="txtId"]').val(id);
     $('#formulario-modificar-estudio').find('[name="txtNombre"]').val(nombre);
-    $('#formulario-modificar-estudio').find('[name="txtDescripcion"]').html(descripcion);
-    $('#formulario-modificar-estudio').find('[name="slcAno"]').val(ano_lectura);
-    $('#formulario-modificar-estudio').find('[name="archivoAntiguo"]').attr("href",  archivo);
+    $('#formulario-modificar-estudio').find('[name="txtDescripcion"]').summernote('code', descripcion);
+    $('#slcAno-estudio').val(ano_estudio);
+    if (archivo == null || archivo == '') {
+        $('#formulario-modificar-estudio').find('[name="archivoAntiguo"]').html("No hay archivo asignado");
+        $('#formulario-modificar-estudio').find('[name="archivoAntiguo"]').css('pointer-events', 'none');
+    } else {
+        $('#formulario-modificar-estudio').find('[name="archivoAntiguo"]').html("Ver archivo actual");
+        $('#formulario-modificar-estudio').find('[name="archivoAntiguo"]').css('pointer-events', 'auto');
+        $('#formulario-modificar-estudio').find('[name="archivoAntiguo"]').attr("href", baseurl + "uploads/documentos/estudios/" + archivo);
+
+    }
+    $('#formulario-modificar-estudio').find('[name="txtUltimaModificacion"]').html('Ultima modificacion: ' + ultima_modificacion + ' por ' + usuario_modificacion + ' ');
+
+
+
+
 });
 $('#modal-modificar-lectura').on('show.bs.modal', function (e) {
 
     var opener = e.relatedTarget;// esta variable contiene el objeto el cual llamo a abrir el modal.
     //obtenemos los detalles de los atributos.
-    var id = $(opener).attr('data-id');
+    var id = $(opener).attr('id');
     var nombre = $(opener).attr('nombre');
     var descripcion = $(opener).attr('descripcion');
     var ano_lectura = $(opener).attr('ano_lectura');
     var enlace = $(opener).attr('enlace');
+    var ultima_modificacion = $(opener).attr('ultima_modificacion');
+    var usuario_modificacion = $(opener).attr('usuario_modificacion');
 
 //Colocamos las variables dentro del formulario de modificar usuario.
     $('#formulario-modificar-lectura').find('[name="txtId"]').val(id);
     $('#formulario-modificar-lectura').find('[name="txtNombre"]').val(nombre);
-    $('#formulario-modificar-lectura').find('[name="txtDescripcion"]').html(descripcion);
-    $('#formulario-modificar-lectura').find('[name="slcAno"]').val(ano_lectura);
+    $('#formulario-modificar-lectura').find('[name="txtDescripcion"]').summernote('code', descripcion);
+    $('#slcAno-lectura').val(ano_lectura);
     $('#formulario-modificar-lectura').find('[name="txtEnlace"]').val(enlace);
+    $('#formulario-modificar-lectura').find('[name="txtUltimaModificacion"]').html('Ultima modificacion: ' + ultima_modificacion + ' por ' + usuario_modificacion + ' ');
 });
 
 $('#modal-modificar-pregunta').on('show.bs.modal', function (e) {
@@ -150,7 +163,7 @@ $('#modal-modificar-pregunta').on('show.bs.modal', function (e) {
     //obtenemos los detalles de los atributos.
     var id = $(opener).attr('id');
     var nombre = $(opener).attr('pregunta');
-    var texto= $(opener).attr('respuesta');
+    var texto = $(opener).attr('respuesta');
 
     var fecha_modificacion = $(opener).attr('fecha_modificacion');
 

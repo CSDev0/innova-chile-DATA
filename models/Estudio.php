@@ -13,8 +13,9 @@ class Estudio {
     private $ano_estudio;
     private $archivo;
     private $enlace;
-    private $fecha;
+    private $ultima_modificacion;
     private $tipo;
+    private $Usuario_id;
     private $db;
 
     public function __construct() {
@@ -49,8 +50,8 @@ class Estudio {
         return $this->archivo;
     }
 
-    function getFecha() {
-        return $this->fecha;
+    function getUltima_modificacion() {
+        return $this->ultima_modificacion;
     }
 
     function getTipo() {
@@ -77,17 +78,25 @@ class Estudio {
         $this->archivo = $this->db->real_escape_string($archivo);
     }
 
-    function setFecha($fecha) {
-        $this->fecha = $this->db->real_escape_string($fecha);
+    function setUltima_modificacion($ultima_modificacion) {
+        $this->ultima_modificacion = $this->db->real_escape_string($ultima_modificacion);
     }
 
     function setTipo($tipo) {
         $this->tipo = $this->db->real_escape_string($tipo);
     }
 
+    function getUsuario_id() {
+        return $this->Usuario_id;
+    }
+
+    function setUsuario_id($Usuario_id) {
+        $this->Usuario_id = $Usuario_id;
+    }
+
     public function save() {
         $now = new DateTime();
-        $date = $now->format("Y-m-d H:i");
+        $date = $now->format("Y-m-d H:i:s");
 
         $query = "INSERT INTO estudio VALUES (NULL, '{$this->getNombre()}', '{$this->getDescripcion()}', '{$this->getAno_estudio()}', ";
         if ($this->getTipo() == 'estudio') {
@@ -100,7 +109,7 @@ class Estudio {
         } else {
             $query .= "NULL, ";
         }
-        $query .= "'" . $date . "', '{$this->getTipo()}', '1');";
+        $query .= "'" . $date . "', '{$this->getTipo()}', '{$this->getUsuario_id()}');";
 
         $save = $this->db->query($query);
         $result = false;
@@ -111,9 +120,10 @@ class Estudio {
     }
 
     public function getAll() {
-        $estudios = $this->db->query("SELECT * FROM estudio ORDER BY UNIX_TIMESTAMP(fecha_creacion) DESC");
+        $estudios = $this->db->query("SELECT * FROM estudio ORDER BY UNIX_TIMESTAMP(ultima_modificacion) DESC;");
         return $estudios;
     }
+
     public function getAllByAno() {
         $estudios = $this->db->query("SELECT * FROM estudio ORDER BY ano_estudio DESC");
         return $estudios;
@@ -140,9 +150,10 @@ class Estudio {
         }
         return $result;
     }
+
     public function search($busqueda) {
         if ($busqueda == 'all') {
-            $query = "SELECT * FROM estudio ORDER BY fecha_creacion;";
+            $query = "SELECT * FROM estudio ORDER BY ultima_modificacion DESC;";
         } else {
             if (is_numeric($busqueda)) {
                 $query = "SELECT * FROM estudio WHERE ano_estudio = " . $busqueda . ";";
@@ -151,23 +162,28 @@ class Estudio {
                    SELECT * FROM estudio
 	WHERE nombre LIKE '%" . $busqueda . "%'
 	OR archivo LIKE '%" . $busqueda . "%'
-	OR fecha_creacion LIKE '%" . $busqueda . "%' ";
+	OR ultima_modificacion LIKE '%" . $busqueda . "%' ";
             }
         }
         $resultado = $this->db->query($query);
         return $resultado;
     }
 
+    public function update() {
+        $now = new DateTime();
+        $date = $now->format("Y-m-d H:i:s");
+        $query = "UPDATE estudio SET nombre='{$this->getNombre()}', descripcion='{$this->getDescripcion()}', ano_estudio='{$this->getAno_estudio()}', ";
+        if($this->getArchivo() != null & $this->getArchivo() != false){
+            $query .= "archivo='{$this->getArchivo()}', ";
+        }
+        $query .="enlace='{$this->getEnlace()}', ultima_modificacion='{$date}', Usuario_id ='{$this->getUsuario_id()}' WHERE id = {$this->getId()};";
 
-  public function update()
-    {
-      $query = "UPDATE estudio SET nombre='{$this->getNombre()}',descripcion='{$this->getDescripcion()}',ano_estudio='{$this->getAno_estudio()}',archivo='{$this->getArchivo()}',enlace='$this->getEnlace()',fecha_creacion='{$this->getFecha()}' WHERE id = {$this->getId()};";
-      $save = $this->db->query($query);
-      $result=false;
-      if ($save) {
-        $result=true;
-      }
-      return $result;
+        $save = $this->db->query($query);
+        $result = false;
+        if ($save) {
+            $result = true;
+        }
+        return $result;
     }
 
 }

@@ -11,11 +11,14 @@ class estudioController {
         if (utils::isAdminOEmpleado()) {
 
             if (isset($_POST)) {
+                $id = isset($_POST['txtId']) ? $_POST['txtId'] : false;
                 $nombre = isset($_POST['txtNombre']) ? $_POST['txtNombre'] : false;
                 $descripcion = isset($_POST['txtDescripcion']) ? $_POST['txtDescripcion'] : false;
-                $ano_estudio = isset($_POST['cbAno']) ? $_POST['cbAno'] : false;
+                $ano_estudio = isset($_POST['slcAno']) ? $_POST['slcAno'] : false;
                 $enlace = isset($_POST['txtEnlace']) ? $_POST['txtEnlace'] : false;
                 $tipo = isset($_POST['tipo']) ? $_POST['tipo'] : false;
+                $fileArchivo = isset($_FILES['fileArchivo']) ? $_FILES['fileArchivo'] : false;
+
 //            $img1 = isset($_POST['img1']) ? $_POST['img1'] : false;
 
                 if ($nombre && $descripcion && $ano_estudio) {
@@ -24,26 +27,15 @@ class estudioController {
                     $estudio->setDescripcion($descripcion);
                     $estudio->setAno_estudio($ano_estudio);
                     $estudio->setTipo($tipo);
-
-                    if (isset($_POST['txtId'])) {
-                      $id=$_POST['txtId'];
-                      $estudio->setId($id);
-                      $modify = $estudio->update();
-                      if ($modify) {
-                        header('www.google.cl');
-                      }
-                      else {
-                        header('www.youtube.com');
-                      }
-                    }
+                    $estudio->setUsuario_id($_SESSION['identidad']->id);
 
                     //Guardar el documento
-                    //Preguntar si viene el parametro ID por get, si es asi, esto seria una modificacion del estudio.
-                    if (isset($_GET['id'])) {
-                        $id = $_GET['id'];
+                    //Preguntar si viene el parametro ID, si es asi, esto seria una modificacion del estudio.
+                    if ($id != null && $id != false) {
+
                         $estudio->setId($id);
-                        if ($_FILES['archivo'] != false) {
-                            $archivo = $_FILES['archivo'];
+                        if ($fileArchivo) {
+                            $archivo = $fileArchivo;
                             $nombre_archivo_raw = $archivo['name'];
                             $nombre_archivo = preg_replace('/\s+/', '', $nombre_archivo_raw);
                             $tipo_archivo = $archivo['type'];
@@ -62,7 +54,7 @@ class estudioController {
                                     $est->setId($id);
                                     $est1 = $est->getEstudioById();
                                     $archivo_antiguo = $est1->archivo;
-                                    unlink('uploads/documentos/estudios/' . $archivo_antiguo . '');
+
                                     $estudio->setArchivo($nombre_archivo);
                                 } else {
                                     move_uploaded_file($archivo['tmp_name'], 'uploads/documentos/estudios/' . $nombre_archivo);
@@ -191,28 +183,23 @@ class estudioController {
                 $est = $estudio->getEstudioById();
                 require_once ('views/estudios/modal-ver-estudio.php');
             } else {
-
+                
             }
         } else {
             header("Location:" . base_url . home);
         }
     }
 
-    function modificarLectura()
-    {
-      if (utils::isAdminOEmpleado()) {
-        if (isset($_GET['id'])) {
-          $id = $_GET['id'];
-          header("Location:" . base_url . 'gestion/estudios&id='.$id );
-
+    function modificarLectura() {
+        if (utils::isAdminOEmpleado()) {
+            if (isset($_GET['id'])) {
+                $id = $_GET['id'];
+                header("Location:" . base_url . 'gestion/estudios&id=' . $id);
+            }
+        } else {
+            header("Location:" . base_url . home);
         }
-      } else {
-          header("Location:" . base_url . home);
-      }
-
     }
-
-
 
 }
 

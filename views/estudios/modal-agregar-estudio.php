@@ -1,6 +1,6 @@
 <?php $url_action = base_url . "estudio/save"; ?>
 <div id="modal-agregar-estudio" class="modal fade">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <form action="<?= $url_action ?>" method="post" enctype="multipart/form-data" >
                 <div class="modal-header">

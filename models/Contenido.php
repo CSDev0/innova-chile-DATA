@@ -11,7 +11,7 @@ class Contenido {
     private $tipo;
     private $nombre;
     private $texto;
-    private $fecha_modificacion;
+    private $ultima_modificacion;
     private $Usuario_id;
     private $db;
 
@@ -31,8 +31,8 @@ class Contenido {
         return $this->texto;
     }
 
-    function getFecha_modificacion() {
-        return $this->fecha_modificacion;
+    function getUltima_modificacion() {
+        return $this->Ultima_modificacion;
     }
 
     function getUsuario_id() {
@@ -51,8 +51,8 @@ class Contenido {
         $this->texto = $texto;
     }
 
-    function setFecha_modificacion($fecha_modificacion) {
-        $this->fecha_modificacion = $fecha_modificacion;
+    function setUltima_modificacion($Ultima_modificacion) {
+        $this->Ultima_modificacion = $Ultima_modificacion;
     }
 
     function setUsuario_id($Usuario_id) {
@@ -68,9 +68,7 @@ class Contenido {
     }
 
     public function save() {
-
-        $query = "INSERT INTO contenido VALUES (NULL, '{$this->getTipo()}', '{$this->getNombre()}', '{$this->getTexto()}', '{$this->getFecha_modificacion()}', '{$this->getUsuario_id()}');";
-
+        $query = "INSERT INTO contenido VALUES (NULL, '{$this->getTipo()}', '{$this->getNombre()}', '{$this->getTexto()}', '{$this->getUltima_modificacion()}', '{$this->getUsuario_id()}');";
         $save = $this->db->query($query);
         $result = false;
         if ($save) {
@@ -81,7 +79,8 @@ class Contenido {
 
     public function update() {
         $result = false;
-        $query = "UPDATE contenido SET nombre='{$this->getNombre()}', texto='{$this->getTexto()}', fecha_modificacion='{$this->getFecha_modificacion()}', Usuario_id='{$this->getUsuario_id()}' WHERE tipo = '{$this->getTipo()}';";
+        $query = "UPDATE contenido SET nombre='{$this->getNombre()}', texto='{$this->getTexto()}', ultima_modificacion='{$this->getUltima_modificacion()}', Usuario_id='{$this->getUsuario_id()}' WHERE tipo = '{$this->getTipo()}';";
+
         $update = $this->db->query($query);
         $result = false;
         if ($update) {

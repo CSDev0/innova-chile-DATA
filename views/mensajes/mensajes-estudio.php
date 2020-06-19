@@ -62,4 +62,26 @@ if (isset($_SESSION['estudio_mensaje'])) {
 
         borrar_estudio_mensaje();
     }
+        if ($mensaje == 'exito_modificar') {
+        ?>
+        <script type="text/javascript">
+            var titulo = "Exito!";
+            var msg = "Estudio modificado correctamente.";
+            mostrarMensaje(msg, titulo);
+        </script>
+        <?php
+
+        borrar_estudio_mensaje();
+    }
+    if ($mensaje == 'fallo_modificar') {
+        ?>
+        <script type="text/javascript">
+            var titulo = "Error!";
+            var msg = "No se ha podido modificar el estudio.";
+            mostrarMensaje(msg, titulo);
+        </script>
+        <?php
+
+        borrar_estudio_mensaje();
+    }
 }

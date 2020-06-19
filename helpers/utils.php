@@ -1,7 +1,5 @@
 <?php
 
-
-
 class utils {
 
     public static function isActived() {
@@ -29,7 +27,7 @@ class utils {
 
     public static function isAdminOEmpleado() {
         if (isset($_SESSION['tipo_usuario']) & isset($_SESSION['identidad']) & $_SESSION['identidad']->nombre != null) {
-            if ($_SESSION['tipo_usuario'] == 'admin' || $_SESSION['tipo_usuario'] == 'empleado' ) {
+            if ($_SESSION['tipo_usuario'] == 'admin' || $_SESSION['tipo_usuario'] == 'empleado') {
                 return true;
             } else {
                 $_SESSION['autenticacion_mensaje'] = 'fallo restringido';
@@ -92,51 +90,48 @@ class utils {
         }
     }
 
-    public static function getTextoByTipoContenido($tipo) {
-        require_once('models/Contenido.php');
+    public static function getContenidoByTipo($tipo) {
+        require_once ('models/Contenido.php');
         $contenido = new Contenido();
         $contenido->setTipo($tipo);
         $cont = $contenido->getContenidoByTipo();
-        if ($cont != null) {
-            $texto = $cont->texto;
-        } else {
-            $texto = "No hay texto predefinido.";
+        if($cont != null){
+            $resultado = $cont;
+        }else{
+            $resultado = false;
         }
-        return $texto;
+        return $resultado;
     }
 
-    public static function getFechaByTipo($tipo) {
-        require_once('models/Contenido.php');
-        $contenido = new Contenido();
-        $contenido->setTipo($tipo);
-        $cont = $contenido->getContenidoByTipo();
-        if ($cont != null) {
-            
-            $fe = $cont->fecha_modificacion;
-            $t = strtotime($fe);
-            $fecha = date('d/m/y H:i',$t);
-            
-        } else {
-            $fecha = "Ninguna";
-        }
-        return $fecha;
-    }
-
-    public static function getUsuarioByTipoContenido($tipo) {
-        require_once('models/Contenido.php');
-        $contenido = new Contenido();
-        $contenido->setTipo($tipo);
-        $cont = $contenido->getContenidoByTipo();
-        if ($cont != null) {
-            $id_usu = $cont->Usuario_id;
-            $usuario = new Usuario();
-            $usuario->setId($id_usu);
-            $usu = $usuario->getUsuarioById()->fetch_object();
-            $nombre_usuario = $usu->nombre." ". $usu->apellido;
+    public static function getUsuarioNombre($id) {
+        $usuario = new Usuario();
+        $usuario->setId($id);
+        $usu = $usuario->getUsuarioById()->fetch_object();
+        if ($usu != null) {
+            $nombre_usuario = $usu->nombre . " " . $usu->apellido;
         } else {
             $nombre_usuario = "Desconocido.";
         }
         return $nombre_usuario;
+    }
+
+    public static function getTiempo($ultima_modificacion) {
+        $ultima_modificacion = new DateTime();
+        $fecha = $ultima_modificacion->format('Y-m-d');
+        $hora = $ultima_modificacion->format('H:i A');
+        $now = new DateTime;
+        $now->setTime(0, 0, 0);
+        $ultima_modificacion->setTime(0, 0, 0);
+        if ($now->diff($ultima_modificacion)->days === 0) {
+            $fecha_dia = 'Hoy a las ' . $hora;
+        } elseif ($now->diff($ultima_modificacion)->days === -1) {
+            $fecha_dia = 'Ayer a las ' . $hora;
+        } elseif ($now->diff($ultima_modificacion)->days === 1) {
+            $fecha_dia = 'Mañana a las ' . $hora;
+        } else {
+            $fecha_dia = $fecha . ' a las ' . $hora;
+        }
+        return $fecha_dia;
     }
 
 }

@@ -1,6 +1,6 @@
 <?php
 date_default_timezone_set('America/Santiago');
-define("base_url", "http://192.168.1.12:80/innova-chile-data/");
+define("base_url", "http://192.168.0.14:8085/innova-chile-data/");
 define("home", "web/inicio");
 define("controller_default", "webController");
 define("action_default", "inicio");

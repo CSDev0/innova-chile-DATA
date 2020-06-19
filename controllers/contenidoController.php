@@ -24,7 +24,7 @@ class contenidoController {
                     $contenido->setTipo($txtTipo);
                     $contenido->setNombre($txtNombre);
                     $contenido->setTexto($txtTexto);
-                    $contenido->setFecha_modificacion($date);
+                    $contenido->setUltima_modificacion($date);
                     $contenido->setUsuario_id($_SESSION['identidad']->id);
 
                     if ($txtTipo != "pregunta") {

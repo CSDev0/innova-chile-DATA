@@ -3,6 +3,7 @@ require_once "../config/db.php";
 require_once "../helpers/utils.php";
 require_once "../config/parameters.php";
 require_once "../models/Contenido.php";
+require_once '../models/Usuario.php';
 
 $usuario = new Contenido();
 $output = '';
@@ -61,16 +62,17 @@ if ($resultado != null) {
                                             <tbody>
 ';
         while ($obj = mysqli_fetch_array($resultado)) {
+            $ultima_modificacion = utils::getTiempo($obj['ultima_modificacion']);
             $output .= '
                     
                     <tr id="pregunta-' . $obj['id'] . '">
                             <td><i class="fas fa-arrows-alt fa-lg drag-icon"></i></td>
                             <td>' . $obj["nombre"] . '</td>
                             <td>' . utils::acortador(htmlentities($obj["texto"]), 100) . '</td>
-                            <td>' . $obj["fecha_modificacion"] . '</td>
+                            <td>' .$ultima_modificacion. '</td>
                             <td>
                         <a href="#modal-modificar-pregunta" data-toggle="modal" class="btn btn-success" style="width: 100%;" 
- id="' . $obj['id'] . '" pregunta="' . $obj['nombre'] . '" respuesta="' . htmlentities($obj['texto']) . '" fecha_modificacion="' . $obj['fecha_modificacion'] . '" usuario="' . $obj['Usuario_id'] . '">
+ id="' . $obj['id'] . '" pregunta="' . $obj['nombre'] . '" respuesta="' . htmlentities($obj['texto']) . '" ultima_modificacion="' . $ultima_modificacion . '" usuario_modificacion="' . utils::getUsuarioNombre($obj['Usuario_id']) . '">
                             <i class="fas fa-edit"></i> Modificar</a>
                             
                         <a href="#modal-eliminar" data-toggle="modal" data-tipo="Pregunta" data-ruta="contenido/delete&id=" data-id=' . $obj['id'] . ' class="btn btn-danger eliminar" 
