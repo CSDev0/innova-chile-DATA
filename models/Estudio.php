@@ -163,7 +163,7 @@ class Estudio {
             $log->setFecha($date);
             $log->setTipo('Eliminar');
             $log->setActividad('Estudios->' . $est_eliminado->nombre);
-            $log->setTxt_nuevo($est_eliminado->descripcion);
+            $log->setTxt_antiguo($est_eliminado->descripcion);
             $log->setUsuario_id($est_eliminado->Usuario_id);
             $log->save();
             $result = true;
@@ -199,10 +199,22 @@ class Estudio {
             $query .= "archivo='{$this->getArchivo()}', ";
         }
         $query .= "enlace='{$this->getEnlace()}', ultima_modificacion='{$date}', Usuario_id ='{$this->getUsuario_id()}' WHERE id = {$this->getId()};";
-
+        $estudio = new Estudio();
+        $estudio->setId($this->id);
+        $est_antiguo = $estudio->getEstudioById();
+        
         $save = $this->db->query($query);
         $result = false;
         if ($save) {
+            require_once 'models/Log.php';
+            $log = new Log();
+            $log->setFecha($date);
+            $log->setTipo('Modificar');
+            $log->setActividad('Estudios->' . $est_antiguo->getNombre());
+            $log->setTxt_antiguo($est_antiguo->descripcion);
+            $log->setTxt_nuevo($this->getDescripcion());
+            $log->setUsuario_id($this->getUsuario_id());
+            $log->save();
             $result = true;
         }
         return $result;

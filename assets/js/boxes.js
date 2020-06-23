@@ -164,11 +164,41 @@ $('#modal-modificar-pregunta').on('show.bs.modal', function (e) {
     var id = $(opener).attr('id');
     var nombre = $(opener).attr('pregunta');
     var texto = $(opener).attr('respuesta');
-
-    var fecha_modificacion = $(opener).attr('fecha_modificacion');
+    var usuario_modificacion = $(opener).attr('usuario_modificacion');
+    var ultima_modificacion = $(opener).attr('ultima_modificacion');
 
 //Colocamos las variables dentro del formulario de modificar usuario.
     $('#formulario-modificar-pregunta').find('[name="txtId"]').val(id);
     $('#formulario-modificar-pregunta').find('[name="txtNombre"]').val(nombre);
     $('#formulario-modificar-pregunta').find('[name="txtTexto"]').summernote('code', texto);
+    $('#formulario-modificar-pregunta').find('[name="txtUltimaModificacion"]').html('Ultima modificación por ' + usuario_modificacion + ' ' + ultima_modificacion);
+});
+
+$('#modal-ver-actividad').on('show.bs.modal', function (e) {
+
+    var opener = e.relatedTarget;// esta variable contiene el objeto el cual llamo a abrir el modal.
+    //obtenemos los detalles de los atributos.
+    var actividad = $(opener).attr('actividad');
+    var tipo = $(opener).attr('tipo');
+    var usuario = $(opener).attr('usuario');
+    var fecha = $(opener).attr('fecha');
+    var txt_antiguo = $(opener).attr('txt_antiguo');
+    var txt_nuevo = $(opener).attr('txt_nuevo');
+
+//Colocamos las variables dentro del formulario de modificar usuario.
+    $('#formulario-actividad').find('[name="titulo-actividad"]').html('<b>'+usuario+'</b> realizo la acción <b>'+tipo+'</b> '+actividad);
+    if(txt_antiguo.length > 0){
+        $('#conten-texto-antiguo').show();
+            $('#formulario-actividad').find('[name="txt_antiguo"]').summernote('code', txt_antiguo);
+    }else{
+        $('#conten-texto-antiguo').hide();
+    }
+    if(txt_nuevo.length > 0){
+        $('#conten-texto-nuevo').show();
+        $('#formulario-actividad').find('[name="txt_nuevo"]').summernote('code', txt_nuevo);
+    }else{
+        $('#conten-texto-nuevo').hide();
+    }
+     $('#formulario-actividad').find('[name="txtUltimaModificacion"]').html('Acción realizada por: '+usuario+' con fecha: '+fecha + ' ');
+
 });

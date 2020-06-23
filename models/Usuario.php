@@ -85,6 +85,7 @@ class Usuario {
     function setTipo($tipo) {
         $this->tipo = $tipo;
     }
+
     function getGenero() {
         return $this->genero;
     }
@@ -93,7 +94,7 @@ class Usuario {
         $this->genero = $genero;
     }
 
-        public function login() {
+    public function login() {
         $result = false;
         $correo = $this->correo;
         $clave = $this->clave;
@@ -113,6 +114,14 @@ class Usuario {
             } else {
                 if ($clave == $usuario->clave) {
                     $result = $usuario;
+                    $now = new DateTime();
+                    $date = $now->format("Y-m-d H:i:s");
+                    require_once 'models/Log.php';
+                    $log = new Log();
+                    $log->setFecha($date);
+                    $log->setTipo('Iniciar sesión');
+                    $log->setUsuario_id($usuario->id);
+                    $log->save();
                 }
             }
         }
@@ -122,10 +131,19 @@ class Usuario {
     //Metodos usuario
     //Registrar o Guardar un Usuario en la BD.
     public function save() {
+        $now = new DateTime();
+        $date = $now->format("Y-m-d H:i:s");
         $query = "INSERT INTO usuario VALUES (NULL, '{$this->getRut()}', '{$this->getNombre()}', '{$this->getApellido()}','{$this->getCorreo()}', '{$this->getClave()}', '{$this->getTipo()}', '{$this->getGenero()}', '{$this->getActivado()}')";
         $save = $this->db->query($query);
         $result = false;
         if ($save) {
+            require_once 'models/Log.php';
+            $log = new Log();
+            $log->setFecha($date);
+            $log->setTipo('Agregar');
+            $log->setActividad('Usuario->' . $this->getNombre());
+            $log->setUsuario_id($_SESSION['identidad']->id);
+            $log->save();
             $result = true;
         }
         return $result;
@@ -133,11 +151,24 @@ class Usuario {
 
     //Eliminar un Usuario de la BD.
     public function delete() {
+        $now = new DateTime();
+        $date = $now->format("Y-m-d H:i:s");
         $result = false;
         $query1 = "SET FOREIGN_KEY_CHECKS=0;";
         $this->db->query($query1);
         $query = "DELETE FROM usuario WHERE id = '{$this->getId()}'";
+        $usuario = new Usuario();
+        $usuario->setId($this->getId());
+        $usu_eliminado = $usuario->getUsuarioById()->fetch_object();
+
         if ($this->db->query($query) == TRUE && $this->db->affected_rows > 0) {
+            require_once 'models/Log.php';
+            $log = new Log();
+            $log->setFecha($date);
+            $log->setTipo('Eliminar');
+            $log->setActividad('Usuario->' . $usu_eliminado->nombre);
+            $log->setUsuario_id($_SESSION['identidad']->id);
+            $log->save();
             $result = true;
         } else {
             $result = false;
@@ -148,14 +179,25 @@ class Usuario {
     //actualizar un usuario.
 
     public function update() {
+        $now = new DateTime();
+        $date = $now->format("Y-m-d H:i:s");
         $query = "UPDATE usuario SET rut='{$this->getRut()}', nombre = '{$this->getNombre()}', ";
-        $query .=  "apellido = '{$this->getApellido()}', correo='{$this->getCorreo()}', genero='{$this->getGenero()}', activado='{$this->getActivado()}' ";
+        $query .= "apellido = '{$this->getApellido()}', correo='{$this->getCorreo()}', genero='{$this->getGenero()}', activado='{$this->getActivado()}' ";
         $query .= "WHERE id = {$this->getId()};";
-        
+        $usuario = new Usuario();
+        $usuario->setId($this->getId());
+        $usu_antiguo = $usuario->getUsuarioById();
         $save = $this->db->query($query);
 
         $result = false;
         if ($save) {
+            require_once 'models/Log.php';
+            $log = new Log();
+            $log->setFecha($date);
+            $log->setTipo('Modificar');
+            $log->setActividad('Usuario->' . $usu_modificado->nombre);
+            $log->setUsuario_id($_SESSION['identidad']->id);
+            $log->save();
             $result = true;
         }
         return $result;
@@ -208,7 +250,7 @@ class Usuario {
         $usuario = $this->db->query($query);
         return $usuario;
     }
-    
+
     //Buscar un usuario.
     public function buscar($busqueda) {
         if ($busqueda == 'all') {

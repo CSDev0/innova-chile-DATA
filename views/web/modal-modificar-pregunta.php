@@ -14,6 +14,7 @@
                         <br>
                         <label for="txtTexto">Respuesta: </label>
                         <textarea class="form-control input-contenido-texto" name="txtTexto">Ingrese una respuesta..</textarea>
+                        <h6 id='input-contenido-fecha' class='bg-azul rounded-bottom' name='txtUltimaModificacion'> </h6>
                         <br>
                         <label for="">Tipo: Pregunta</label>
                         <input type="hidden" value="pregunta" name="txtTipo">

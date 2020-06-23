@@ -32,7 +32,7 @@ class Contenido {
     }
 
     function getUltima_modificacion() {
-        return $this->Ultima_modificacion;
+        return $this->ultima_modificacion;
     }
 
     function getUsuario_id() {
@@ -51,8 +51,8 @@ class Contenido {
         $this->texto = $texto;
     }
 
-    function setUltima_modificacion($Ultima_modificacion) {
-        $this->Ultima_modificacion = $Ultima_modificacion;
+    function setUltima_modificacion($ultima_modificacion) {
+        $this->ultima_modificacion = $ultima_modificacion;
     }
 
     function setUsuario_id($Usuario_id) {
@@ -68,10 +68,24 @@ class Contenido {
     }
 
     public function save() {
-        $query = "INSERT INTO contenido VALUES (NULL, '{$this->getTipo()}', '{$this->getNombre()}', '{$this->getTexto()}', '{$this->getUltima_modificacion()}', '{$this->getUsuario_id()}');";
+        $query = "INSERT INTO contenido VALUES (NULL, '{$this->getTipo()}', '{$this->getNombre()}', '{$this->getTexto()}', '{$this->getUltima_modificacion()}', '{$this->getUsuario_id()}', NULL);";
+
         $save = $this->db->query($query);
         $result = false;
         if ($save) {
+            require_once 'models/Log.php';
+            $log = new Log();
+            $log->setFecha($this->getUltima_modificacion());
+            $log->setTipo('Agregar');
+            if ($this->getTipo() == 'pregunta') {
+                $log->setActividad('Pregunta frecuente->' . $this->getNombre());
+            } else {
+                $log->setActividad('Texto->' . $this->getNombre());
+            }
+            $log->setTxt_nuevo($this->getTexto());
+            $log->setUsuario_id($this->getUsuario_id());
+            $log->save();
+
             $result = true;
         }
         return $result;
@@ -80,24 +94,59 @@ class Contenido {
     public function update() {
         $result = false;
         $query = "UPDATE contenido SET nombre='{$this->getNombre()}', texto='{$this->getTexto()}', ultima_modificacion='{$this->getUltima_modificacion()}', Usuario_id='{$this->getUsuario_id()}' WHERE tipo = '{$this->getTipo()}';";
+        $contenido = new Contenido();
+        $contenido->setTipo($this->getTipo());
+        $cont_antiguo = $contenido->getContenidoByTipo();
 
         $update = $this->db->query($query);
         $result = false;
         if ($update) {
+            require_once 'models/Log.php';
+            $log = new Log();
+            $log->setFecha($this->getUltima_modificacion());
+            $log->setTipo('Modificar');
+            if ($this->getTipo() == 'pregunta') {
+                $log->setActividad('Pregunta frecuente->' . $this->getNombre());
+            } else {
+                $log->setActividad('Texto->' . $this->getNombre());
+            }
+            $log->setTxt_antiguo($cont_antiguo->texto);
+            $log->setTxt_nuevo($this->getTexto());
+            $log->setUsuario_id($this->getUsuario_id());
+            $log->save();
             $result = true;
         }
         return $result;
     }
+
     public function updateById() {
         $result = false;
-        $query = "UPDATE contenido SET nombre='{$this->getNombre()}', texto='{$this->getTexto()}', fecha_modificacion='{$this->getFecha_modificacion()}', Usuario_id='{$this->getUsuario_id()}' WHERE id = '{$this->getId()}';";
+        $query = "UPDATE contenido SET nombre='{$this->getNombre()}', texto='{$this->getTexto()}', ultima_modificacion='{$this->getUltima_modificacion()}', Usuario_id='{$this->getUsuario_id()}' WHERE id = '{$this->getId()}';";
+        $contenido = new Contenido();
+        $contenido->setId($this->getId());
+        $cont_antiguo = $contenido->getContenidoById();
+
         $update = $this->db->query($query);
         $result = false;
         if ($update) {
+            require_once 'models/Log.php';
+            $log = new Log();
+            $log->setFecha($this->getUltima_modificacion());
+            $log->setTipo('Modificar');
+            if ($this->getTipo() == 'pregunta') {
+                $log->setActividad('Pregunta frecuente->' . $this->getNombre());
+            } else {
+                $log->setActividad('Texto->' . $this->getNombre());
+            }
+            $log->setTxt_antiguo($cont_antiguo->texto);
+            $log->setTxt_nuevo($this->getTexto());
+            $log->setUsuario_id($this->getUsuario_id());
+            $log->save();
             $result = true;
         }
         return $result;
     }
+
     public function getContenidoByTipo() {
         $result = false;
         $query = "SELECT * FROM contenido WHERE tipo='{$this->getTipo()}' LIMIT 1;";
@@ -107,7 +156,17 @@ class Contenido {
         }
         return $result;
     }
-    
+
+    public function getContenidoById() {
+        $result = false;
+        $query = "SELECT * FROM contenido WHERE id='{$this->getId()}' LIMIT 1;";
+        $contenido = $this->db->query($query);
+        if ($contenido) {
+            $result = $contenido->fetch_object();
+        }
+        return $result;
+    }
+
     public function searchPregunta($busqueda) {
         if ($busqueda == 'all') {
             $query = "SELECT * FROM contenido WHERE tipo='pregunta' ORDER BY posicion;";
@@ -119,9 +178,14 @@ class Contenido {
         $resultado = $this->db->query($query);
         return $resultado;
     }
-    
-    public function query($query){
+
+    public function query($query) {
         $resultado = $this->db->query($query);
         return $resultado;
     }
+
+    public function delete() {
+        
+    }
+
 }

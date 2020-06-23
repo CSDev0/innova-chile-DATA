@@ -40,15 +40,15 @@ class contenidoController {
                     }
 
                     if (isset($save) && $save == true) {
-                        $_SESSION['contenido_mensaje'] = 'exito';
+                        $_SESSION['contenido_mensaje'] = 'exito agregar';
                     } elseif ($save == false & $save != null) {
-                        $_SESSION['contenido_mensaje'] = 'fallo';
+                        $_SESSION['contenido_mensaje'] = 'fallo agregar';
                     }
 
                     if (isset($update) && $update == true) {
-                        $_SESSION['contenido_mensaje'] = 'exito';
+                        $_SESSION['contenido_mensaje'] = 'exito modificar';
                     } elseif ($update == false & $update != null) {
-                        $_SESSION['contenido_mensaje'] = 'fallo';
+                        $_SESSION['contenido_mensaje'] = 'fallo modificar';
                     }
                     if ($txtTipo == "pregunta") {
                         header("Location:" . base_url . 'gestion/web');
@@ -88,7 +88,7 @@ class contenidoController {
                     $contenido->setTipo($txtTipo);
                     $contenido->setNombre($txtNombre);
                     $contenido->setTexto($txtTexto);
-                    $contenido->setFecha_modificacion($date);
+                    $contenido->setUltima_modificacion($date);
                     $contenido->setUsuario_id($_SESSION['identidad']->id);
                     $update = $contenido->updateById();
 

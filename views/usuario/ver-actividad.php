@@ -16,11 +16,11 @@
 
                 <tr>
                     <th scope="row"><?=$usuario  ?></th>
-                    <td><b><?= $log->tipo ?>:</b> <?= $log->actividad ?></td>
+                    <td><b><?= $log->tipo ?> </b> <?= $log->actividad ?></td>
                     <td><?= $fecha ?></td>
                     <td><a class='btn btn-info' data-toggle="modal" href="#modal-ver-actividad"
                            usuario="<?= $usuario  ?>" tipo="<?=$log->tipo?>" actividad="<?=$log->actividad?>"
-                           fecha="<?=$fecha?>" txt_antiguo="<?=htlmentities($log->txt_antiguo)?>" txt_nuevo="<?= htmlentities($log->txt_nuevo)?>">Ver detalles</a></td>
+                           fecha="<?=$fecha?>" txt_antiguo="<?=htmlentities($log->txt_antiguo)?>" txt_nuevo="<?= htmlentities($log->txt_nuevo)?>">Ver detalles</a></td>
                 </tr>
 
                 <?php

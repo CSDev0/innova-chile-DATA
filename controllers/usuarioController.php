@@ -33,6 +33,7 @@ class usuarioController {
                 if ($_SESSION['identidad']->genero == 3) {
                     $_SESSION['autenticacion_mensaje'] = 'exito login @';
                 }
+
                 header('Location:' . base_url . 'usuario/panel');
             } else {
                 $_SESSION['autenticacion_mensaje'] = 'fallo login';
@@ -45,9 +46,18 @@ class usuarioController {
     public function logout() {
         if (utils::isLogged()) {
             if (isset($_SESSION['identidad'])) {
+                $now = new DateTime();
+                $date = $now->format("Y-m-d H:i:s");
+                require_once 'models/Log.php';
+                $log = new Log();
+                $log->setFecha($date);
+                $log->setTipo('Cerrar sesión');
+                $log->setUsuario_id($_SESSION['identidad']->id);
+                $log->save();
                 unset($_SESSION['identidad']);
                 unset($_SESSION['tipo_usuario']);
                 $_SESSION['autenticacion_mensaje'] = 'exito logout';
+
                 header("Location:" . base_url . 'web/inicio');
             }
         } else {
@@ -134,8 +144,8 @@ class usuarioController {
             header('Location:' . base_url . 'usuario/panel');
         }
     }
-    
-    public function buscar(){
+
+    public function buscar() {
         return "error";
     }
 

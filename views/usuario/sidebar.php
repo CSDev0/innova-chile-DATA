@@ -45,5 +45,5 @@ $nombre_completo = utils::getNombreCompleto();
         </div>
     </div>
     <div class="col-sm-10">
-        <div class="" style=" padding-top:2% ;padding-bottom: 20%;">
+        
 

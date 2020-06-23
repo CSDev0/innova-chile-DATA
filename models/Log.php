@@ -87,7 +87,7 @@ class Log {
         return $result;
     }
     public function getAll() {
-        $logs = $this->db->query("SELECT * FROM log LIMIT 1000;");
+        $logs = $this->db->query("SELECT * FROM log ORDER BY UNIX_TIMESTAMP(fecha) DESC LIMIT 1000 ;");
         return $logs;
     }
 }

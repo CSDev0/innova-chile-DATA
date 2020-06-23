@@ -129,7 +129,8 @@ class utils {
     }
 
     public static function getTiempo($ultima_modificacion) {
-        $ultima_modificacion = new DateTime();
+        $ultima_modificacion = new DateTime($ultima_modificacion);
+
         $fecha = $ultima_modificacion->format('Y-m-d');
         $hora = $ultima_modificacion->format('H:i A');
         $now = new DateTime;

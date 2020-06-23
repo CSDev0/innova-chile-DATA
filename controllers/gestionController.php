@@ -20,6 +20,7 @@ class gestionController {
             require_once('views/usuario/gestion-usuarios.php');
             require_once('views/usuario/modal-agregar-usuario.php');
             require_once('views/usuario/modal-modificar-usuario.php');
+            require_once('views/usuario/modal-ver-actividad.php');
             require_once("views/mensajes/modal-eliminar.php");
         } else {
             header("Location:" . base_url . 'usuario/panel');
