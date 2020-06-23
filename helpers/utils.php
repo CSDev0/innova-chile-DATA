@@ -148,4 +148,31 @@ class utils {
         return $fecha_dia;
     }
 
+    public static function getTitulo() {
+      require_once ('models/Web.php');
+      $web = new Web();
+      $web->setId(1);
+      $info=$web->getOne();
+      $titulo=$info->nombre_web;
+      echo $titulo;
+    }
+
+    public static function getOtros() {
+      require_once ('models/Web.php');
+      $web = new Web();
+      $web->setId(1);
+      $info=$web->getOne();
+      $otros=explode(',',$info->pie_pagina);
+      for ($i=0; $i < count($otros) ; $i++) {
+        echo '<i class="fa fa-angle-double-right" style="color: #0062AB"></i><a class="link-normal" href="#">'.$otros[$i].'</a><br>';
+      }
+    }
+    public static function getLinks() {
+      require_once ('models/Web.php');
+      $web = new Web();
+      $web->setId(1);
+      $info=$web->getOne();
+      echo '<i class="fab fa-facebook-square fa-4x color-azul">'.$info->fb_link.'</i><i class="fab fa-instagram-square fa-4x color-ig">'.$info->ig_link.'</i><i class="fab fa-twitter-square fa-4x color-azul-claro">'.$info->twt_link.'</i>';
+    }
+
 }

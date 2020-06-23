@@ -5,10 +5,7 @@
             <div class="row">
                 <div class="col-sm-4">
                     <h4>Te puede interesar</h4>
-                    <i class="fa fa-angle-double-right color-azul"></i><a class="link-normal" href="#"> Encuesta de Innovacion</a><br>
-                    <i class="fa fa-angle-double-right color-azul"></i><a class="link-normal" href="#"> Data Emprendimiento</a><br>
-                    <i class="fa fa-angle-double-right color-azul"></i><a class="link-normal" href="#"> Observatiorio CTCI</a><br>
-                    <i class="fa fa-angle-double-right color-azul"></i><a class="link-normal" href="#"> Observatiorio MINECON</a>
+                    <?php utils::getOtros(); ?>
                 </div>
                 <div class="col-sm-4 text-center">
                     <div class="col-sm">
@@ -17,9 +14,7 @@
                     <br>
                     <div class="col-sm">
                     <h4>Siguenos en nuestras redes</h4>
-                    <i class="fab fa-facebook-square fa-4x color-azul"></i>
-                    <i class="fab fa-instagram-square fa-4x color-ig"></i>
-                    <i class="fab fa-twitter-square fa-4x color-azul-claro"></i>
+                    <?php utils::getLinks(); ?>
                     </div>
 
                 </div>
