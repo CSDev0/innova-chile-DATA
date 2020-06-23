@@ -90,14 +90,27 @@ class utils {
         }
     }
 
+    public static function getTextoByTipoContenido($tipo) {
+        require_once ('models/Contenido.php');
+        $contenido = new Contenido();
+        $contenido->setTipo($tipo);
+        $cont = $contenido->getContenidoByTipo();
+        if ($cont != null) {
+            $resultado = $cont->texto;
+        } else {
+            $resultado = false;
+        }
+        return $resultado;
+    }
+
     public static function getContenidoByTipo($tipo) {
         require_once ('models/Contenido.php');
         $contenido = new Contenido();
         $contenido->setTipo($tipo);
         $cont = $contenido->getContenidoByTipo();
-        if($cont != null){
+        if ($cont != null) {
             $resultado = $cont;
-        }else{
+        } else {
             $resultado = false;
         }
         return $resultado;

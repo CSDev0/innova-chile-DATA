@@ -4,6 +4,7 @@ ob_start();
 
 require_once 'models/Usuario.php';
 require_once 'models/Estudio.php';
+require_once 'models/Log.php';
 require_once 'helpers/utils.php';
 
 class gestionController {
@@ -12,7 +13,8 @@ class gestionController {
         if (utils::isAdmin()) {
             $usuario = new Usuario();
             $usuarios = $usuario->getAll();
-
+            $log = new Log();
+            $logs = $log->getAll();
             require_once("views/mensajes/mensajes-usuario.php");
             require_once('views/usuario/sidebar.php');
             require_once('views/usuario/gestion-usuarios.php');

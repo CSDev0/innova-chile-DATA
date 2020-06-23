@@ -72,7 +72,7 @@ class estudioController {
                         $modify = null;
                         //Si no recibe por get, entonces es por post, entonces es para agregar un nuevo estudio.
 
-                        if ($_FILES['fileArchivo'] != null) {
+                        if ($fileArchivo) {
                             $archivo = $_FILES['fileArchivo'];
                             $tipo_archivo = $archivo['type'];
                             $nombre_archivo_raw = $archivo['name'];
@@ -92,7 +92,6 @@ class estudioController {
                                 } else {
                                     move_uploaded_file($archivo['tmp_name'], 'uploads/documentos/estudios/' . $nombre_archivo);
                                     $estudio->setArchivo($nombre_archivo);
-                                    ;
                                 }
                             } else {
                                 $_SESSION['estudio_mensaje'] = "fallo_tipo_archivo";
