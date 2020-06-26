@@ -210,7 +210,7 @@ class Estudio {
             $log = new Log();
             $log->setFecha($date);
             $log->setTipo('Modificar');
-            $log->setActividad('Estudios->' . $est_antiguo->getNombre());
+            $log->setActividad('Estudios->' . $est_antiguo->nombre);
             $log->setTxt_antiguo($est_antiguo->descripcion);
             $log->setTxt_nuevo($this->getDescripcion());
             $log->setUsuario_id($this->getUsuario_id());

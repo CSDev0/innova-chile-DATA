@@ -141,7 +141,7 @@ class utils {
         } elseif ($now->diff($ultima_modificacion)->days === -1) {
             $fecha_dia = 'Ayer a las ' . $hora;
         } elseif ($now->diff($ultima_modificacion)->days === 1) {
-            $fecha_dia = 'Mañana a las ' . $hora;
+            $fecha_dia = 'Ayer a las ' . $hora;
         } else {
             $fecha_dia = $fecha . ' a las ' . $hora;
         }

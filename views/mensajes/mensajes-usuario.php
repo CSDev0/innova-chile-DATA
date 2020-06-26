@@ -74,6 +74,17 @@ if (isset($_SESSION['usuario_mensaje'])) {
 
         borrar_usuario_mensaje();
     }
+    if ($mensaje == 'fallo admin') {
+        ?>
+        <script type="text/javascript">
+            var titulo = "Error!"
+            var msg = "No se puede eliminar al administrador.";
+            mostrarMensaje(msg, titulo);
+        </script>
+        <?php
+
+        borrar_usuario_mensaje();
+    }
     if ($mensaje == 'exito modificar perfil') {
         ?>
         <script type="text/javascript">

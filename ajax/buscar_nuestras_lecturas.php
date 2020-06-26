@@ -40,10 +40,10 @@ if (mysqli_num_rows($resultado) > 0 && $resultado != null) {
                             <td>' . $ultima_modificacion. '</td>
                             <td>
                         <a href="#modal-modificar-lectura" data-toggle="modal" class="btn btn-success" style="width: 100%;"
- id=' . $obj['id'] . ' nombre="' . $obj['nombre'] . '" descripcion="' . htmlentities($obj['descripcion']) . '" ano_lectura=' . $obj['ano_estudio'] . ' enlace="' . $obj['enlace'] . '" ultima_modificacion="'.$ultima_modificacion.'" usuario_modificacion="' . utils::getUsuarioNombre($obj['Usuario_id']) . '" >
+ id="' . $obj['id'] . '" nombre="'.$obj['nombre'].'" descripcion="' . htmlentities($obj['descripcion']) . '" ano_lectura=' . $obj['ano_estudio'] . ' enlace="' . $obj['enlace'] . '" ultima_modificacion="'.$ultima_modificacion.'" usuario_modificacion="' . utils::getUsuarioNombre($obj['Usuario_id']) . '" >
                             <i class="fas fa-edit"></i> Modificar</a>
 
-                        <a href="#modal-eliminar" data-toggle="modal" data-tipo="lectura" data-ruta="estudio/delete&id=" data-id=' . $obj['id'] . ' class="btn btn-danger eliminar"
+                        <a href="#modal-eliminar" data-toggle="modal" ruta="estudio/delete&id=" id="' . $obj['id'] . '" nombre="' . utils::acortador($obj['nombre'], 60) .'" tipo="'.$obj['tipo'].'" class="btn btn-danger eliminar"
                            style="margin-top: 5px; width: 100%;" >
                            <i class="fas fa-trash-alt"></i> Eliminar</a>
                             </td>
@@ -53,7 +53,6 @@ if (mysqli_num_rows($resultado) > 0 && $resultado != null) {
     if ($contador == 0) {
         echo '<h3><i class="far fa-sad-cry"></i> No hay resultados, intente otra busqueda.</h3>';
     } else {
-        $output .= '<script src="' . base_url . 'assets/js/modal-eliminar.js"></script>';
         $output .= '<script src="' . base_url . 'assets/js/boxes.js"></script>';
         echo $output;
     }

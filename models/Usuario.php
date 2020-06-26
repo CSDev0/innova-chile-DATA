@@ -246,8 +246,8 @@ class Usuario {
     //Obtener un usuario por su id.
     public function getUsuarioById() {
         $query = "SELECT * FROM usuario WHERE id = '{$this->getId()}' LIMIT 1";
-
         $usuario = $this->db->query($query);
+
         return $usuario;
     }
 

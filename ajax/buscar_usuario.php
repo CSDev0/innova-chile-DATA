@@ -2,6 +2,7 @@
 
 require_once "../config/db.php";
 require_once "../config/parameters.php";
+require_once "../helpers/utils.php";
 require_once "../models/Usuario.php";
 
 $usuario = new Usuario();
@@ -51,7 +52,7 @@ if (mysqli_num_rows($resultado) > 0 && $resultado != null) {
  id=' . $usu['id'] . ' rut=' . $usu['rut'] . ' nombre=' . $usu['nombre'] . ' apellido=' . $usu['apellido'] . ' correo=' . $usu['correo'] . ' genero=' . $usu['genero'] . ' activado=' . $usu['activado'] . ' >
                             <i class="fas fa-edit"></i> Modificar</a>
                             
-                        <a href="#modal-eliminar" data-toggle="modal" data-tipo="Usuario" data-ruta="usuario/delete&id=" data-id=' . $usu['id'] . ' class="btn btn-danger eliminar" 
+                        <a href="#modal-eliminar" data-toggle="modal" ruta="usuario/delete&id=" id="' . $usu['id'] . '" nombre="' . utils::acortador($usu['nombre'].' '.$usu['apellido'], 60) .'" tipo="'.$usu['tipo'].'"class="btn btn-danger eliminar" 
                            style="margin-top: 5px; width: 100%;" >
                            <i class="fas fa-trash-alt"></i> Eliminar</a>
                             </td>

@@ -202,3 +202,18 @@ $('#modal-ver-actividad').on('show.bs.modal', function (e) {
      $('#formulario-actividad').find('[name="txtUltimaModificacion"]').html('Acción realizada por: '+usuario+' con fecha: '+fecha + ' ');
 
 });
+
+
+
+$("#modal-eliminar").on('show.bs.modal', function (e) {
+    var opener = e.relatedTarget;// esta variable contiene el objeto el cual llamo a abrir el modal.
+    //obtenemos los detalles de los atributos.
+    var id = $(opener).attr('id');
+    var nombre = $(opener).attr('nombre');
+    var tipo = $(opener).attr('tipo');
+    var ruta = $(opener).attr('ruta');
+
+    $(this).find('[id="titulo-eliminar"]').html('Eliminar ' + tipo);
+    $(this).find('[id="pregunta-eliminar"]').html('¿Estas seguro de eliminar ' + tipo + ': <span class="color-azul">"' + nombre + '"</span>?');
+    $(this).find('[id="boton-eliminar"]').attr('href', baseurl + ruta + id);
+});

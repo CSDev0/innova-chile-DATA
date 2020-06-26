@@ -127,7 +127,14 @@ class usuarioController {
                 if (isset($_GET['id'])) {
                     $id = $_GET['id'];
                     $usuario->setId($id);
-                    $delete = $usuario->delete();
+                    $usu = $usuario->getUsuarioById()->fetch_object();
+                    if($usu->tipo === 'admin'){
+                        $_SESSION['usuario_mensaje'] = "fallo admin";
+                        header("Location:" . base_url . 'gestion/usuarios');
+                    }else{
+                        $delete = $usuario->delete();
+                    }
+                    
                 } else {
                     $_SESSION['usuario_mensaje'] = "no encontrado";
                 }

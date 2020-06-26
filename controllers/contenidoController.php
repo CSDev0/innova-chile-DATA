@@ -93,9 +93,9 @@ class contenidoController {
                     $update = $contenido->updateById();
 
                     if (isset($update) && $update == true) {
-                        $_SESSION['contenido_mensaje'] = 'exito';
+                        $_SESSION['contenido_mensaje'] = 'exito modificar';
                     } elseif ($update == false & $update != null) {
-                        $_SESSION['contenido_mensaje'] = 'fallo';
+                        $_SESSION['contenido_mensaje'] = 'fallo modificar';
                     }
                     header("Location:" . base_url . 'gestion/web');
                 } else {

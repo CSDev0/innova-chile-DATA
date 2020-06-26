@@ -14,12 +14,12 @@
                         <label for="txtDescripcion">Descripcion: </label>
                         <textarea class="form-control" name="txtDescripcion">Ingrese una descripción..</textarea>
                         <br>
-                        <label for="cbAno">Año de la lectura:</label>
+                        <label for="slcAno">Año de la lectura:</label>
                         <?php
                         $seleccionado = 2010;
                         $antiguedad = 1900;
 
-                        print '<select class="form-control" name="cbAno">';
+                        print '<select class="form-control" name="slcAno">';
                         foreach (range(date('Y'), $antiguedad) as $x) {
                             print '<option value="' . $x . '"' . ($x === $seleccionado ? ' selected="selected"' : '') . '>' . $x . '</option>';
                         }

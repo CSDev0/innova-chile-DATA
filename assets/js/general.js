@@ -111,16 +111,14 @@ function esconderFooter() {
 }
 
 function loop_flecha_animada() {
-    $('#flecha-animada').animate({
-        color: '#0062AB'
-    }, 5000, 'linear', function () {
+
         if ($("#flecha-animada").hasClass('fas fa-angle-up fa-3x icono-azul')) {
             $("#flecha-animada").effect("bounce", {times: 10}, 1500);
         }
 
         loop_flecha_animada();
-    });
-}
+    }
+
 loop_flecha_animada();
 
 //--------------------------------------------------------------
