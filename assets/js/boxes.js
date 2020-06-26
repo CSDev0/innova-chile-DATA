@@ -217,3 +217,54 @@ $("#modal-eliminar").on('show.bs.modal', function (e) {
     $(this).find('[id="pregunta-eliminar"]').html('¿Estas seguro de eliminar ' + tipo + ': <span class="color-azul">"' + nombre + '"</span>?');
     $(this).find('[id="boton-eliminar"]').attr('href', baseurl + ruta + id);
 });
+
+//Agrgar o remover imputs para los link de pie de pagina
+var counter=$('#counter').val();
+savePie(counter);
+$('#addButton').click(function () {
+  addInput(counter);
+  counter++;
+});
+$('#removeButton').click(function () {
+  counter--;
+  removeInput(counter);
+});
+
+$('#saveBtnPie').click(function () {
+  savePie(counter);
+});
+
+function addInput() {
+  if (counter>6){
+    alert("Maximo de 6 links alcanzados");
+    return false;
+  }
+  var newTextBoxDivA = $(document.createElement('div')).attr('id','TextBoxDivA'+counter);
+  newTextBoxDivA.after().html('<input type="text" class="form-control" placeholder="titulo'+(counter+1)+'" name="textboxA'+counter+'" id="textboxA'+counter+'"><hr>');
+  newTextBoxDivA.appendTo('#TextBoxesGroupA');
+
+  var newTextBoxDivB = $(document.createElement('div')).attr('id','TextBoxDivB'+counter);
+  newTextBoxDivB.after().html('<input type="text" class="form-control" placeholder="titulo'+(counter+1)+'" name="textboxB'+counter+'" id="textboxB'+counter+'"><hr>');
+  newTextBoxDivB.appendTo('#TextBoxesGroupB');
+
+}
+
+function removeInput() {
+  if(counter==0){
+    alert("No hay mas que remover");
+    return false;
+  }
+  $('#TextBoxDivA'+counter).remove();
+  $('#TextBoxDivB'+counter).remove();
+}
+
+function savePie() {
+  var titulos=[];
+  var links=[];
+  for (var i = 0; i <counter; i++) {
+     titulos[i]=$('#textboxA'+i).val();
+     links[i]=$('#textboxB'+i).val();
+  }
+  $('#pie_title').val(titulos.toString());
+  $('#pie_link').val(links.toString());
+}

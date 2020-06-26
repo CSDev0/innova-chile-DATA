@@ -5,6 +5,7 @@ ob_start();
 require_once 'models/Usuario.php';
 require_once 'models/Estudio.php';
 require_once 'models/Log.php';
+require_once 'models/Web.php';
 require_once 'helpers/utils.php';
 
 class gestionController {
@@ -29,13 +30,14 @@ class gestionController {
 
     function web() {
         if (utils::isAdminOEmpleado()) {
+            $web = new Web();
             require_once('views/usuario/sidebar.php');
             require_once("views/mensajes/mensajes-contenido.php");
             require_once('views/web/gestion-web.php');
             require_once('views/web/modal-agregar-pregunta.php');
             require_once('views/web/modal-modificar-pregunta.php');
             require_once("views/mensajes/modal-eliminar.php");
-            
+
         } else {
             header("Location:" . base_url . 'web/login');
         }

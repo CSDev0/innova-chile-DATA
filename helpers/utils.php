@@ -163,8 +163,9 @@ class utils {
       $web->setId(1);
       $info=$web->getOne();
       $otros=explode(',',$info->pie_pagina);
+      $links=explode(',',$info->pie_link);
       for ($i=0; $i < count($otros) ; $i++) {
-        echo '<i class="fa fa-angle-double-right" style="color: #0062AB"></i><a class="link-normal" href="#">'.$otros[$i].'</a><br>';
+        echo '<i class="fa fa-angle-double-right" style="color: #0062AB"></i><a class="link-normal" href="'.$links[$i].'">'.$otros[$i].'</a><br>';
       }
     }
     public static function getLinks() {
@@ -172,7 +173,35 @@ class utils {
       $web = new Web();
       $web->setId(1);
       $info=$web->getOne();
-      echo '<i class="fab fa-facebook-square fa-4x color-azul">'.$info->fb_link.'</i><i class="fab fa-instagram-square fa-4x color-ig">'.$info->ig_link.'</i><i class="fab fa-twitter-square fa-4x color-azul-claro">'.$info->twt_link.'</i>';
+      echo '<a href="'.$info->fb_link.'"><i class="fab fa-facebook-square fa-4x color-azul"></i></a><a href="'.$info->ig_link.'"><i class="fab fa-instagram-square fa-4x color-ig"></i></a><a href="'.$info->twt_link.'"><i class="fab fa-twitter-square fa-4x color-azul-claro"></i></a>';
+    }
+    public static function getLinksB() {
+      require_once ('models/Web.php');
+      $web = new Web();
+      $web->setId(1);
+      $info=$web->getOne();
+      return $info;
+    }
+    public static function getTitulos() {
+      require_once ('models/Web.php');
+      $web = new Web();
+      $web->setId(1);
+      $info=$web->getOne();
+      $otros=explode(',',$info->pie_pagina);
+      echo '<input type="hidden" id="counter" value="'.count($otros).'">';
+      for ($i=0; $i < count($otros) ; $i++) {
+        echo '<div id="TextBoxesGroupA"><div id="TextBoxDivA'.$i.'"><input type="text" class="form-control" name="textboxA'.$i.'" id="textboxA'.$i.'" placeholder="link'.$i.'" value="'.$otros[$i].'"><hr></div></div>';
+      }
+    }
+    public static function getEnlace() {
+      require_once ('models/Web.php');
+      $web = new Web();
+      $web->setId(1);
+      $info=$web->getOne();
+      $links=explode(',',$info->pie_link);
+      for ($i=0; $i < count($links) ; $i++) {
+        echo '<div id="TextBoxesGroupB"><div id="TextBoxDivB'.$i.'"><input type="text" class="form-control" name="textboxB'.$i.'" id="textboxB'.$i.'" placeholder="link'.$i.'" value="'.$links[$i].'"><hr></div></div>';
+      }
     }
 
 }

@@ -2,7 +2,7 @@
 require_once 'models/Web.php';
 require_once 'helpers/utils.php';
 
-class gWebController{
+class gwebController{
   public function update(){
     if (utils::isAdmin()) {
       if (isset($_POST)) {
@@ -12,17 +12,21 @@ class gWebController{
         $web->setIgLink($_POST['txtIgLink']);
         $web->setFbLink($_POST['txtFbLink']);
         $web->setTwtLink($_POST['txtTwtLink']);
-        #$pie_pag = $_POST['txtPiePag'];
-        $pie_pag = ['Encuesta Innovacion','Data Emprendimiento','Observatorio CTCI','Observatorio MINECOM'];
+
+        #$pie_pag = ['Encuesta Innovacion','Data Emprendimiento','Observatorio CTCI','Observatorio MINECOM'];
+        $pie_pag = $_POST['txtPiePag'];
         $web->setPiePagina(explode(',',$pie_pag));
+        $pie_link = $_POST['txtPieLink'];
+        $web->setPieLink(explode(',',$pie_link));
+
         $resultado = $web->update();
         if ($resultado) {
-            $_SESSION['usuario_mensaje'] = "exito modificar";
+            $_SESSION['contenido_mensaje'] = "exito";
         } else {
-            $_SESSION['usuario_mensaje'] = "fallo modificar";
+            $_SESSION['contenido_mensaje'] = "fallo";
         }
       }
-      header("Location:" . base_url . 'gestion/usuarios');
+      header("Location:" . base_url . 'gestion/web');
     }
     else {
       header('Location:' . base_url . 'web/inicio');

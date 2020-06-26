@@ -11,6 +11,7 @@ class Web {
   private $fb_link;
   private $twt_link;
   private $pie_pagina;
+  private $pie_link;
   private $db;
 
   function __construct() {
@@ -34,6 +35,10 @@ class Web {
   function getPiePagina() {
     return $this->pie_pagina;
   }
+  function getPieLink() {
+    return $this->pie_link;
+  }
+
 
   function setId($id) {
     $this->id = $id;
@@ -52,6 +57,9 @@ class Web {
   }
   function setPiePagina($pie_pagina) {
     $this->pie_pagina = $pie_pagina;
+  }
+  function setPieLink($pie_link) {
+    $this->pie_link = $pie_link;
   }
 
   public function getOne() {
@@ -100,7 +108,8 @@ class Web {
   public function update()
   {
     $pie_pagina = implode(",",$this->getPiePagina());
-    $query = "UPDATE web SET nombre_web='{$this->getNombreWeb()}',ig_link='{$this->getIgLink()}',fb_link='{$this->getFbLink()}',twt_link='{$this->getTwtLink()}',pie_pagina='{$pie_pagina}';";
+    $pie_link = implode(",",$this->getPieLink());
+    $query = "UPDATE web SET nombre_web='{$this->getNombreWeb()}',ig_link='{$this->getIgLink()}',fb_link='{$this->getFbLink()}',twt_link='{$this->getTwtLink()}',pie_pagina='{$pie_pagina}',pie_link='{$pie_link}';";
     $save = $this->db->query($query);
     $result = false;
     if ($save) {
