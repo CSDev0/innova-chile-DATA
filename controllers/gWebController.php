@@ -12,13 +12,9 @@ class gwebController{
         $web->setIgLink($_POST['txtIgLink']);
         $web->setFbLink($_POST['txtFbLink']);
         $web->setTwtLink($_POST['txtTwtLink']);
-
         #$pie_pag = ['Encuesta Innovacion','Data Emprendimiento','Observatorio CTCI','Observatorio MINECOM'];
         $pie_pag = $_POST['txtPiePag'];
-        $web->setPiePagina(explode(',',$pie_pag));
-        $pie_link = $_POST['txtPieLink'];
-        $web->setPieLink(explode(',',$pie_link));
-
+        $web->setPiePagina(json_decode($pie_pag, true));
         $resultado = $web->update();
         if ($resultado) {
             $_SESSION['contenido_mensaje'] = "exito";

@@ -162,10 +162,9 @@ class utils {
       $web = new Web();
       $web->setId(1);
       $info=$web->getOne();
-      $otros=explode(',',$info->pie_pagina);
-      $links=explode(',',$info->pie_link);
+      $otros=json_decode($info->pie_pagina, true);
       for ($i=0; $i < count($otros) ; $i++) {
-        echo '<i class="fa fa-angle-double-right" style="color: #0062AB"></i><a class="link-normal" href="'.$links[$i].'">'.$otros[$i].'</a><br>';
+        echo '<i class="fa fa-angle-double-right" style="color: #0062AB"></i><a class="link-normal" href="'.$otros["".$i.""][1].'">'.$otros["".$i.""][0].'</a><br>';
       }
     }
     public static function getLinks() {
@@ -187,10 +186,12 @@ class utils {
       $web = new Web();
       $web->setId(1);
       $info=$web->getOne();
-      $otros=explode(',',$info->pie_pagina);
+      $otros=json_decode($info->pie_pagina, true);
+      $v=1;
       echo '<input type="hidden" id="counter" value="'.count($otros).'">';
       for ($i=0; $i < count($otros) ; $i++) {
-        echo '<div id="TextBoxesGroupA"><div id="TextBoxDivA'.$i.'"><input type="text" class="form-control" name="textboxA'.$i.'" id="textboxA'.$i.'" placeholder="link'.$i.'" value="'.$otros[$i].'"><hr></div></div>';
+        echo '<div id="TextBoxDivA'.$v.'"><input type="text" class="form-control" name="textboxA'.$v.'" id="textboxA'.$v.'" placeholder="titulo'.$v.'" value="'.$otros["".$i.""][0].'"><hr></div>';
+        $v++;
       }
     }
     public static function getEnlace() {
@@ -198,9 +199,11 @@ class utils {
       $web = new Web();
       $web->setId(1);
       $info=$web->getOne();
-      $links=explode(',',$info->pie_link);
+      $links=json_decode($info->pie_pagina, true);
+      $v=1;
       for ($i=0; $i < count($links) ; $i++) {
-        echo '<div id="TextBoxesGroupB"><div id="TextBoxDivB'.$i.'"><input type="text" class="form-control" name="textboxB'.$i.'" id="textboxB'.$i.'" placeholder="link'.$i.'" value="'.$links[$i].'"><hr></div></div>';
+        echo '<div id="TextBoxDivB'.$v.'"><input type="text" class="form-control" name="textboxB'.$v.'" id="textboxB'.$v.'" placeholder="link'.$v.'" value="'.$links["".$i.""][1].'"><hr></div>';
+        $v++;
       }
     }
 
