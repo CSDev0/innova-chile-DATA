@@ -95,6 +95,11 @@ class Web {
   public function update()
   {
     $pie_pagina = json_encode($this->getPiePagina());
+    if ($pie_pagina != null) {
+    }else {
+      $pie_pagina = '{"0":["null","null"]}';
+    }
+
     $query = "UPDATE web SET nombre_web='{$this->getNombreWeb()}',ig_link='{$this->getIgLink()}',fb_link='{$this->getFbLink()}',twt_link='{$this->getTwtLink()}',pie_pagina='{$pie_pagina}';";
     $save = $this->db->query($query);
     $result = false;

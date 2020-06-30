@@ -163,6 +163,10 @@ class utils {
       $web->setId(1);
       $info=$web->getOne();
       $otros=json_decode($info->pie_pagina, true);
+      if ($otros != null) {
+      }else {
+        $otros = json_decode('{"0":["null","null"]}', true);
+      }
       for ($i=0; $i < count($otros) ; $i++) {
         echo '<i class="fa fa-angle-double-right" style="color: #0062AB"></i><a class="link-normal" href="'.$otros["".$i.""][1].'">'.$otros["".$i.""][0].'</a><br>';
       }
@@ -187,6 +191,10 @@ class utils {
       $web->setId(1);
       $info=$web->getOne();
       $otros=json_decode($info->pie_pagina, true);
+      if ($otros != null) {
+      }else {
+        $otros = json_decode('{"0":["null","null"]}', true);
+      }
       $v=1;
       echo '<input type="hidden" id="counter" value="'.count($otros).'">';
       for ($i=0; $i < count($otros) ; $i++) {
@@ -200,6 +208,10 @@ class utils {
       $web->setId(1);
       $info=$web->getOne();
       $links=json_decode($info->pie_pagina, true);
+      if ($links != null) {
+      }else {
+        $links =json_decode('{"0":["null","null"]}', true);
+      }
       $v=1;
       for ($i=0; $i < count($links) ; $i++) {
         echo '<div id="TextBoxDivB'.$v.'"><input type="text" class="form-control" name="textboxB'.$v.'" id="textboxB'.$v.'" placeholder="link'.$v.'" value="'.$links["".$i.""][1].'"><hr></div>';
