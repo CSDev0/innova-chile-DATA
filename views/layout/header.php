@@ -34,6 +34,7 @@
         <script src="<?= base_url ?>assets/js/animations.js"></script>
         <script src="<?= base_url ?>assets/js/parsley.js"></script>
         <script src="<?= base_url ?>assets/js/boxes.js"></script>
+        
 <script src="<?= base_url ?>assets/js/general.js"></script>
         <?php #InnovaChile - Proyectos para el mañana. ?>
 

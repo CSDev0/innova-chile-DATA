@@ -1,6 +1,6 @@
 <h3>Pie de página</h3>
 <div class="row">
-  <input type="hidden" class="form-control" name="txtPiePag" id="pie_title">
+  <input type="text" class="form-control" name="txtPiePag" id="pie_title">
   <div class="col-sm-6">
     <label for="txtPiePag"><i class="fas fa-edit"></i> Te puede interesar (Beta)</label>
     <div id="TextBoxesGroupA">

@@ -196,7 +196,7 @@ class utils {
         $otros = json_decode('{"0":["null","null"]}', true);
       }
       $v=1;
-      echo '<input type="hidden" id="counter" value="'.count($otros).'">';
+      echo '<input type="text" id="counter" value="'.count($otros).'">';
       for ($i=0; $i < count($otros) ; $i++) {
         echo '<div id="TextBoxDivA'.$v.'"><input type="text" class="form-control" name="textboxA'.$v.'" id="textboxA'.$v.'" placeholder="titulo'.$v.'" value="'.$otros["".$i.""][0].'"><hr></div>';
         $v++;
