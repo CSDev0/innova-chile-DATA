@@ -71,8 +71,15 @@ class gestionController {
     }
 
     function data() {
+        require_once 'models/Repositorio.php';
+        require_once("views/mensajes/mensajes-repo.php");
+        $repositorio = new Repositorio();
+        $repositorio->setId('1');
+        $repo = $repositorio->getRepoById()->fetch_object();
+        
         require_once('views/usuario/sidebar.php');
         require_once('views/data/gestion-data.php');
+        require_once 'views/data/modal-repositorio.php';
         require_once('views/data/modal-buscar-data.php');
         require_once('views/data/modal-agregar-data.php');
     }

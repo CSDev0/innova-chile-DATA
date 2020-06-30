@@ -195,7 +195,7 @@ class Usuario {
             $log = new Log();
             $log->setFecha($date);
             $log->setTipo('Modificar');
-            $log->setActividad('Usuario->' . $usu_modificado->nombre);
+            $log->setActividad('Usuario->' . $usu_antiguo->nombre);
             $log->setUsuario_id($_SESSION['identidad']->id);
             $log->save();
             $result = true;

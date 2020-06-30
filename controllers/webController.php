@@ -28,6 +28,7 @@ class webController {
     function data() {
         require_once('views/layout/menubar.php');
         require_once('views/data/convocatoria-test.php');
+        
     }
 
     function convocatorias() {

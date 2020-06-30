@@ -77,7 +77,7 @@
         });
     });</script>
 <script src="<?= base_url ?>assets/js/general.js"></script>
-<script src="<?= base_url ?>assets/js/modal-eliminar.js"></script>
+<script src="<?= base_url ?>assets/js/boxes.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
 <script src="<?= base_url ?>assets/js/summernote-es-ES.js"></script>

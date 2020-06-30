@@ -2,8 +2,6 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
-
-
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" crossorigin="anonymous">
         <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
         <link rel="stylesheet" href="<?= base_url ?>assets/css/force-bootstrap.css">

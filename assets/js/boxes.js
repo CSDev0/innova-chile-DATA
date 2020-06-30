@@ -202,9 +202,19 @@ $('#modal-ver-actividad').on('show.bs.modal', function (e) {
      $('#formulario-actividad').find('[name="txtUltimaModificacion"]').html('Acción realizada por: '+usuario+' con fecha: '+fecha + ' ');
 
 });
+$("#modal-repositorio").on('show.bs.modal', function (e) {
+    var opener = e.relatedTarget;// esta variable contiene el objeto el cual llamo a abrir el modal.
+    //obtenemos los detalles de los atributos.
+    var usuario = $(opener).attr('usuario');
+    var repositorio = $(opener).attr('repositorio');
+    var usuario_modificacion = $(opener).attr('usuario_modificacion');
+    var ultima_modificacion = $(opener).attr('ultima_modificacion');
 
-
-
+//Colocamos las variables dentro del formulario de modificar usuario.
+    $('#formulario-repositorio').find('[name="txtUsuario"]').val(usuario);
+    $('#formulario-repositorio').find('[name="txtRepositorio"]').val(repositorio);
+    $('#formulario-repositorio').find('[name="txtUltimaModificacion"]').html('Ultima modificación por ' + usuario_modificacion + ' ' + ultima_modificacion);
+});
 $("#modal-eliminar").on('show.bs.modal', function (e) {
     var opener = e.relatedTarget;// esta variable contiene el objeto el cual llamo a abrir el modal.
     //obtenemos los detalles de los atributos.
