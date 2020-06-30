@@ -1,9 +1,7 @@
 <h2> Gestionar <b>Sitio Web</b></h2>
 <hr>
 <div class="row">
-    <p class="col-sm-10">
-        Esta Opcion en un futuro solo estara disponible para el administrador por lo tanto los usuarios normales no deberian tener esta opcion.
-    </p>
+
     <div class="col-sm-10 contenedor-gestion">
       <form action="<?php echo base_url.'gweb/update';?>" method="post" enctype="multipart/form-data" >
       <div class="row">
@@ -14,12 +12,12 @@
           <?php require_once('pie-pagina.php') ?>
         </div>
       </div>
-      <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-      <button type="submit" class="btn btn-success">Agregar</button>
+          <hr class="bc-celeste">
+          <div class="row justify-content-end">
+      <a href="<?=base_url.'gestion/web'?>" type="button" class="btn btn-danger mr-2" ><i class="fas fa-times"></i> Cancelar</a>
+      <button type="submit" class="btn btn-success mr-3" id="saveBtnPie"><i class="fas fa-save"></i> Guardar cambios</button>
+          </div>
       </form>
-    </div>
-    <div class="col-sm-10 contenedor-gestion">
-        <?php require_once('pie-pagina.php') ?>
     </div>
     <div class="col-sm-10 contenedor-gestion">
         <div id="loading-div"></div>

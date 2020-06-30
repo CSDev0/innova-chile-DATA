@@ -196,9 +196,9 @@ class utils {
         $otros = json_decode('{"0":["null","null"]}', true);
       }
       $v=1;
-      echo '<input type="text" id="counter" value="'.count($otros).'">';
+      echo '<input type="hidden" id="counter" value="'.count($otros).'">';
       for ($i=0; $i < count($otros) ; $i++) {
-        echo '<div id="TextBoxDivA'.$v.'"><input type="text" class="form-control" name="textboxA'.$v.'" id="textboxA'.$v.'" placeholder="titulo'.$v.'" value="'.$otros["".$i.""][0].'"><hr></div>';
+        echo '<div id="TextBoxDivA'.$v.'"><input type="text" class="form-control" name="textboxA'.$v.'" id="textboxA'.$v.'" placeholder="titulo" value="'.$otros["".$i.""][0].'"><hr class="bc-celeste"></div>';
         $v++;
       }
     }
@@ -214,7 +214,7 @@ class utils {
       }
       $v=1;
       for ($i=0; $i < count($links) ; $i++) {
-        echo '<div id="TextBoxDivB'.$v.'"><input type="text" class="form-control" name="textboxB'.$v.'" id="textboxB'.$v.'" placeholder="link'.$v.'" value="'.$links["".$i.""][1].'"><hr></div>';
+        echo '<div id="TextBoxDivB'.$v.'"><input type="text" class="form-control" name="textboxB'.$v.'" id="textboxB'.$v.'" placeholder="enlace" value="'.$links["".$i.""][1].'"><hr class="bc-celeste"></div>';
         $v++;
       }
     }

@@ -3,7 +3,6 @@ var counter=$('#counter').val();
 savePie(counter);
 $('#addButton').click(function () {
   addInput(counter);
-  console.log('naaaaaa');
   counter++;
 });
 $('#removeButton').click(function () {
@@ -23,11 +22,11 @@ function addInput() {
   }
   var v = parseInt(counter)+1;
   var newTextBoxDivA = $(document.createElement('div')).attr('id','TextBoxDivA'+v);
-  newTextBoxDivA.after().html('<input type="text" class="form-control" placeholder="titulo'+v+'" name="textboxA'+v+'" id="textboxA'+v+'"><hr>');
+  newTextBoxDivA.after().html('<input type="text" class="form-control" placeholder="titulo" name="textboxA'+v+'" id="textboxA'+v+'"><hr class="bc-celeste">');
   newTextBoxDivA.appendTo('#TextBoxesGroupA');
 
   var newTextBoxDivB = $(document.createElement('div')).attr('id','TextBoxDivB'+v);
-  newTextBoxDivB.after().html('<input type="text" class="form-control" placeholder="titulo'+v+'" name="textboxB'+v+'" id="textboxB'+v+'"><hr>');
+  newTextBoxDivB.after().html('<input type="text" class="form-control" placeholder="enlace" name="textboxB'+v+'" id="textboxB'+v+'"><hr class="bc-celeste">');
   newTextBoxDivB.appendTo('#TextBoxesGroupB');
 
 }
@@ -37,7 +36,6 @@ function removeInput() {
     alert("No hay mas que remover");
     return false;
   }
-  console.log('pero kieeee?');
   var v = parseInt(counter)+1;
   $('#TextBoxDivA'+v).remove();
   $('#TextBoxDivB'+v).remove();
