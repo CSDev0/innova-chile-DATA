@@ -8,14 +8,17 @@ ob_start();
  */
 date_default_timezone_set('Etc/UTC');
 require_once ('models/Estudio.php');
-
+require_once 'models/Grafico_destacado.php';
+                            
 class webController {
 
     function inicio() {
+        $grafico_destacado = new Grafico_destacado();
+        $graficos = $grafico_destacado->getAll();
         $estudio = new Estudio();
         $estudios1 = $estudio->getAllByAno();
         $estudios2 = $estudio->getAllByAno();
-
+        
         require_once('views/layout/navbar.php');
         require_once('views/layout/landing-page.php');
     }

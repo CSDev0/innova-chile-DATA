@@ -10,7 +10,6 @@ foreach ($_POST['pregunta'] as $value) {
     $query = "UPDATE contenido SET posicion = '{$i}' WHERE id = '{$value}'";
     $contenido = new Contenido();
     $contenido->query($query);
-    
     $i++;
 
 }

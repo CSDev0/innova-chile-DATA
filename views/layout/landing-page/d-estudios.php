@@ -10,7 +10,7 @@
                 </div>
             </div>
             </section>
-            <section class="seccion" data-section-name="nuestros_estudios" id="nuestros_estudios">
+            <section class="seccion" data-section-name="nuestros_estudios" id="nuestros-estudios">
                 <div class="row section">
                     <div class="col-sm-12 align-self-top vw-100">
                         <h2 class="text-center" id="nuestros_title">Nuestros estudios</h2>
@@ -61,7 +61,7 @@
                     </div>
                 </div>
             </section>
-            <section class="seccion fullview" data-section-name="lecturas_recomendadas" id="lecturas_recomendadas">
+            <section class="seccion fullview" data-section-name="lecturas_recomendadas" id="lecturas-recomendadas">
                 <div class="row section ">
                     <div class="col-sm-12 align-self-top vw-100 ">
                         <h2 class="text-center"  id="lecturas_title">Lecturas recomendadas</h2>

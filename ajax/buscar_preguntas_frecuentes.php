@@ -51,7 +51,6 @@ if ($resultado != null) {
         $output .= '<h4 id="resultado_orden"></h4>
             <div class="table-responsive">
                                     <table class="table table-striped"">
-                                    
                                             <tr>
                                                     <th>Ordenar</th>
                                                     <th>Pregunta</th>
@@ -83,16 +82,15 @@ if ($resultado != null) {
                    ';
         }
         $output .= '</tbody>';
-        $output .= '<script src="' . base_url . 'assets/js/modal-eliminar.js"></script>';
-        $output .= '<link rel="stylesheet/less" href="<?= base_url ?>assets/css/ajax.css">';
-        $output .= '<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>';
+        $output .= '</table>';
+        $output .= '</div>';
         $output .= '<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>';
         $output .= '<script src="' . base_url . 'assets/js/boxes.js"></script>';
         echo $output;
     } else {
-        echo '<h3><i class="far fa-sad-cry"></i> No hay preguntas registradas, añade una!.</h3>';
+        echo '<h3><i class="far fa-sad-cry"></i> No se han encontrado preguntas.</h3>';
     }
 } else {
-    echo '<h3><i class="far fa-sad-cry"></i> No hay resultados, intente otra busqueda.</h3>';
+    echo '<h3><i class="far fa-sad-cry"></i> No se han encontrado preguntas.</h3>';
 }
     

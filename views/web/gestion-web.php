@@ -22,6 +22,7 @@
         <?php require_once('pie-pagina.php') ?>
     </div>
     <div class="col-sm-10 contenedor-gestion">
+        <div id="loading-div"></div>
         <h3>Preguntas frecuentes</h3>
         <button class="btn btn-primary btn-abrir-modal-web" href="#modal-agregar-pregunta" data-toggle="modal" data-tipo="">
             <i class="fas fa-plus-square"></i> Agregar</button>
@@ -29,13 +30,12 @@
         <br><br>
         <form class="ajaxform" data-parsley-validate data-parsley-trigger="focusout" >
             <script>$('.ajaxform').submit(false);</script>
-            <div class="input-group"">
+            <div class="input-group mb-2">
                 <input type="text" name="txtBuscarPreguntas" id="txtBuscarPreguntas" placeholder="Buscar por pregunta..." class="form-control mr-1" required minlength="3" data-parsley-error-message="La busqueda debe contener al menos 3 caracteres!" data-parsley-errors-container="#errorContainer" />
                 <div class="input-group-addon">
                     <button class="btn btn-primary form-control ml-1" id="btn_buscar_preguntas"><i class="fas fa-search-plus"></i> Buscar</button>
                 </div>
             </div>
-            <div class="small-br"></div>
             <div id="errorContainer"></div>
         </form>
         <div id="lista_preguntas">

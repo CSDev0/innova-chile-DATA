@@ -1,34 +1,34 @@
 <section class="seccion fullview" data-section-name="datos_destacados" id="datos-destacados">
     <div class="bg-datos-destacados">
-    <div class="container d-flex">
-        <div class="row section justify-content-center">
-            <div class="col-sm-12 align-self-top h-100">
-                
-                <h1 class="text-center" id="datos_destacados_title">Datos destacados</h1>
-                
-                <hr class="faded " >
-            </div>
-            <div class="col-sm-12">
-                <div class="row align-self-center">
-                    <div class="col-sm-4">
-                        <h2 class="destacado-naranja "><i class="fas fa-dollar-sign fa-2x"></i></h2>
-                        <h2 class="destacado-naranja">+ $<span class="count">800</span> <br>millones</h2>
-                    </div>
-                    <div class="col-sm-4">
-                        <h2 class="destacado-naranja"><i class="fas fa-chart-line fa-2x"></i></h2>
-                        <h2 class="destacado-naranja">+ <span class="count">2000</span> <br>Iniciativas apoyadas</h2>
-                    </div>
-                    <div class="col-sm-4">
-                        <h2 class="destacado-naranja"><i class="fas fa-globe fa-2x"></i></h2>
-                        <h2 class="destacado-naranja"">+ <span class="count">1500</span> <br>beneficiados</h2>
+        <div class="container d-flex">
+            <div class="row section justify-content-center">
+                <div class="col-sm-12 align-self-top h-100">
+
+                    <h1 class="text-center" id="datos_destacados_title">Datos destacados</h1>
+
+                    <hr class="faded " >
+                </div>
+                <div class="col-sm-12">
+                    <div class="row align-self-center">
+                        <div class="col-sm-4">
+                            <h2 class="destacado-naranja "><i class="fas fa-dollar-sign fa-2x"></i></h2>
+                            <h2 class="destacado-naranja">+ $<span class="count">800</span> <br>millones</h2>
+                        </div>
+                        <div class="col-sm-4">
+                            <h2 class="destacado-naranja"><i class="fas fa-chart-line fa-2x"></i></h2>
+                            <h2 class="destacado-naranja">+ <span class="count">2000</span> <br>Iniciativas apoyadas</h2>
+                        </div>
+                        <div class="col-sm-4">
+                            <h2 class="destacado-naranja"><i class="fas fa-globe fa-2x"></i></h2>
+                            <h2 class="destacado-naranja"">+ <span class="count">1500</span> <br>beneficiados</h2>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-        </div>
 </section>
-<section class="seccion" data-section-name="graficos_destacados">
+<section class="seccion" data-section-name="graficos_destacados" id="graficos-destacados">
     <div class="container-fluid d-flex">
         <div class="row section">
             <div class="col-sm-12 align-self-top vw-100">
@@ -44,57 +44,48 @@
                         <!--Indicadores-->
                         <ul class="carousel-indicators">
                             <li data-target="#graficos-crsl" data-slide-to="0" class="active"></li>
-                            <li data-target="#graficos-crsl" data-slide-to="1"></li>
-                            <li data-target="#graficos-crsl" data-slide-to="2"></li>
-                            <li data-target="#graficos-crsl" data-slide-to="3"></li>
-                            <li data-target="#graficos-crsl" data-slide-to="4"></li>
+                            <?php
+                            $cantidad_graficos = mysqli_num_rows($graficos);
+                            if ($cantidad_graficos > 1) {
+                                for ($x = 1; $x < $cantidad_graficos; $x++) {
+                                    echo '<li data-target="#graficos-crsl" data-slide-to="' . $x . '"></li>';
+                                }
+                            }
+                            ?>
                         </ul>
-
                         <!--SlideShow-->
                         <div class="carousel-inner">
-                            <div class="carousel-item active">
+                            <?php
+                            $contador = 0;
+                            while ($gra = $graficos->fetch_object()) {
+                                if ($contador == 0) {
+                                    echo '<div class="carousel-item active">';
+                                } else {
+                                    echo '<div class="carousel-item">';
+                                }
+                                $contador++;
+                                ?>
                                 <div class="contenedor-grafico">
-                                    <iframe scroll="no" class="grafico-destacado" src="<?= base_url ?>uploads/graficos/plot_test_1.html">
+                                    <iframe class="grafico-destacado" src="<?= base_url . $gra->archivo ?>">
                                     </iframe>
+                                </div>
+                            </div>
+                            <?php
+                        }
+                        ?>
 
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="contenedor-grafico">
-                                    <iframe class="grafico-destacado" src="<?= base_url ?>uploads/graficos/plot_test_1.html">
-                                    </iframe>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="contenedor-grafico">
-                                    <iframe class="grafico-destacado" src="<?= base_url ?>uploads/graficos/plot_test_1.html">
-                                    </iframe>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="contenedor-grafico">
-                                    <iframe class="grafico-destacado" src="<?= base_url ?>uploads/graficos/plot_test_1.html">
-                                    </iframe>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="contenedor-grafico">
-                                    <iframe class="grafico-destacado" src="<?= base_url ?>uploads/graficos/plot_test_1.html">
-                                    </iframe>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!--Controles del carousel-->
-                        <a class="carousel-control-prev" href="#graficos-crsl" data-slide="prev">
-                            <i class="fas fa-angle-double-left fa-5x carousel"></i>
-                        </a>
-                        <a class="carousel-control-next" href="#graficos-crsl" data-slide="next">
-                            <i class="fas fa-angle-double-right fa-5x carousel"></i>
-                        </a>
                     </div>
+
+                    <!--Controles del carousel-->
+                    <a class="carousel-control-prev" href="#graficos-crsl" data-slide="prev">
+                        <i class="fas fa-angle-double-left fa-5x carousel"></i>
+                    </a>
+                    <a class="carousel-control-next" href="#graficos-crsl" data-slide="next">
+                        <i class="fas fa-angle-double-right fa-5x carousel"></i>
+                    </a>
                 </div>
             </div>
         </div>
     </div>
+</div>
 </section>

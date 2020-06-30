@@ -1,22 +1,23 @@
 $(document).ready(function () {
     bsCustomFileInput.init()
-
-
+    if (sessionStorage.scrollTop != "undefined") {
+        $(window).scrollTop(sessionStorage.scrollTop);
+    }
+    loop_flecha_animada();
 });
 
 //Funcion para definir el tamaño de las secciones dependiendo del tamaño del dispositivo.
 //Esto Para solucionar bug de desplazamiento entre las secciones. (al usar viewport o height 100%).
 function resizeSecciones() {
-
     var w = window,
             d = document,
             e = d.documentElement,
             g = d.getElementsByTagName('body')[0],
             x = w.innerWidth || e.clientWidth || g.clientWidth,
             y = w.innerHeight || e.clientHeight || g.clientHeight;
-    $('.seccion.fullview').css("width", "100vw" );
+    $('.seccion.fullview').css("width", "100vw");
     $('.seccion.fullview').css('height', y - 5); //Si se ocupa el height completo ocurre un extraño bug al desplazarse entre secciones, por lo que se le resta 5 y se soluciona.
-    $("#bg-quienes-somos").css("height", y );
+    $("#bg-quienes-somos").css("height", y);
     $("#bg-quienes-somos").css("width", "100vw");
 }
 resizeSecciones();
@@ -49,12 +50,14 @@ $("#dropdown-item-hover7").on('click', function (e) {
 
 
 $.fn.scrollBottom = function () {
-    return $(document).height() - this.scrollTop() - this.height();
+    var scroll = $(document).height() - this.scrollTop() - this.height();
+    return scroll;
 };
 var abierto = false;
 var header = false;
-$(window).scroll(function () {
 
+$(window).scroll(function () {
+    sessionStorage.scrollTop = $(this).scrollTop();
     if ($(this).scrollBottom() < 70 && abierto === false) {
         var altura = $('.footer-sticky').get(0).scrollHeight;
         $('.footer-sticky').animate({height: altura}, 50);
@@ -70,14 +73,6 @@ $(window).scroll(function () {
     }
 });
 
-// scroll body to 0px on click
-$('#back-to-top').click(function () {
-    $('body,html').animate({
-        scrollTop: 0
-    }, 400);
-    return false;
-});
-
 //FOOTER STICKY------------------------------------------------
 function flecha_abajo() {
     $('#flecha-animada').removeClass('fas fa-angle-up fa-3x icono-azul')
@@ -88,13 +83,13 @@ function flecha_arriba() {
     $('#flecha-animada').removeClass('fas fa-angle-down fa-3x icono-azul')
     $('#flecha-animada').addClass('fas fa-angle-up fa-3x icono-azul')
 }
-$('.footer-sticky').mouseenter($.debounce(150, function (e) {
+$('.footer-sticky').mouseenter($.debounce(350, function (e) {
     var altura = $('.footer-sticky').get(0).scrollHeight;
 
     $(this).animate({height: altura}, 50);
     abierto = true;
     flecha_abajo();
-})).mouseleave($.debounce(700, function (e) {
+})).mouseleave($.throttle(700, function (e) {
 //    if ($(window).scrollBottom() < 20 && abierto === true) {
 //
 //    } else {
@@ -112,14 +107,15 @@ function esconderFooter() {
 
 function loop_flecha_animada() {
 
-        if ($("#flecha-animada").hasClass('fas fa-angle-up fa-3x icono-azul')) {
+    if ($("#flecha-animada").hasClass('fas fa-angle-up')) {
+        setTimeout(function () {
             $("#flecha-animada").effect("bounce", {times: 10}, 1500);
-        }
-
-        loop_flecha_animada();
+            loop_flecha_animada();
+        }, 8000);
     }
+}
 
-loop_flecha_animada();
+
 
 //--------------------------------------------------------------
 $('#dropdown-item-hover').mouseenter(function (e) {

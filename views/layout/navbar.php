@@ -1,5 +1,5 @@
 
-<nav class="navbar sticky-top navbar-expand-sm landing-page-navbar">
+<nav class="navbar fixed-top navbar-expand-sm landing-page-navbar">
     <div class="logo-corfo"></div>
     <div class="navbar-collapse justify-content-center">
         

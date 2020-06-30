@@ -54,7 +54,6 @@ if (mysqli_num_rows($resultado) > 0 && $resultado != null) {
     if ($contador == 0) {
         echo '<h3><i class="far fa-sad-cry"></i> No hay resultados, intente otra busqueda.</h3>';
     } else {
-        $output .= '<script src="' . base_url . 'assets/js/modal-eliminar.js"></script>';
         $output .= '<script src="' . base_url . 'assets/js/boxes.js"></script>';
         echo $output;
     }

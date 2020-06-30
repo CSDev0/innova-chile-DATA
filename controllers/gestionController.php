@@ -7,6 +7,7 @@ require_once 'models/Estudio.php';
 require_once 'models/Log.php';
 require_once 'models/Web.php';
 require_once 'helpers/utils.php';
+require_once 'models/Repositorio.php';
 
 class gestionController {
 
@@ -37,7 +38,6 @@ class gestionController {
             require_once('views/web/modal-agregar-pregunta.php');
             require_once('views/web/modal-modificar-pregunta.php');
             require_once("views/mensajes/modal-eliminar.php");
-
         } else {
             header("Location:" . base_url . 'web/login');
         }
@@ -71,17 +71,18 @@ class gestionController {
     }
 
     function data() {
-        require_once 'models/Repositorio.php';
         require_once("views/mensajes/mensajes-repo.php");
+        require_once("views/mensajes/mensajes-grafico.php");
+        
         $repositorio = new Repositorio();
         $repositorio->setId('1');
         $repo = $repositorio->getRepoById()->fetch_object();
-        
+
         require_once('views/usuario/sidebar.php');
         require_once('views/data/gestion-data.php');
         require_once 'views/data/modal-repositorio.php';
-        require_once('views/data/modal-buscar-data.php');
-        require_once('views/data/modal-agregar-data.php');
+        require_once('views/data/modal-agregar-grafico.php');
+        require_once 'views/mensajes/modal-eliminar.php';
     }
 
 }

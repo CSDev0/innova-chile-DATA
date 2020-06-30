@@ -10,7 +10,7 @@ $(function () {
         updateHash: true,
         touchScroll: true,
         offset: 0,
-        before: function (index)
+        before: function ()
         {
             if ($.scrollify.current().attr('data-section-name') == "quienes_somos")
             {

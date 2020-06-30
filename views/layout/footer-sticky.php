@@ -13,8 +13,8 @@
                     </div>
                     <br>
                     <div class="col-sm">
-                    <h4>Siguenos en nuestras redes</h4>
-                    <?php utils::getLinks(); ?>
+                        <h4>Siguenos en nuestras redes</h4>
+                        <?php utils::getLinks(); ?>
                     </div>
 
                 </div>

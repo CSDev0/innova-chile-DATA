@@ -185,7 +185,31 @@ class Contenido {
     }
 
     public function delete() {
-        
+        $now = new DateTime();
+        $date = $now->format("Y-m-d H:i:s");
+        $result = false;
+        $query = "DELETE FROM contenido WHERE id = '$this->id'";
+        $contenido = new Contenido();
+        $contenido->setId($this->id);
+        $cont_eliminado = $contenido->getContenidoById();
+        if ($this->db->query($query) == TRUE && $this->db->affected_rows > 0) {
+            require_once 'models/Log.php';
+            $log = new Log();
+            $log->setFecha($date);
+            $log->setTipo('Eliminar');
+            if($cont_eliminado->tipo == "pregunta"){
+                $log->setActividad('Pregunta frecuente->' . $cont_eliminado->nombre);
+            }else{
+                $log->setActividad('Contenido->' . $cont_eliminado->nombre);
+            }
+            $log->setTxt_antiguo($cont_eliminado->texto);
+            $log->setUsuario_id($cont_eliminado->Usuario_id);
+            $log->save();
+            $result = true;
+        } else {
+            $result = false;
+        }
+        return $result;
     }
 
 }
