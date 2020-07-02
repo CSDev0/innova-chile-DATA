@@ -17,7 +17,6 @@
                         <div class="col-sm mb-2">
                             <label for="txtDescripcion">Descripcion: </label>
                             <textarea class="form-control input-contenido-texto" name="txtDescripcion"></textarea>
-                            <h6 class='bg-azul rounded-bottom' name='txtUltimaModificacion'> </h6>
                         </div>
                         <div class="col-sm mb-2">
                             <label for="slcAno">Año de la lectura:</label>
@@ -39,9 +38,10 @@
                         </div>
                     </div>
                 </div>
+                <h6 id='input-contenido-fecha' class='bg-ultima-modificacion text-center mb-0' name='txtUltimaModificacion'> </h6>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                    <button type="submit" class="btn btn-success">Guardar cambios</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fas fa-times"></i> Cancelar</button>
+                    <button type="submit" class="btn btn-success"><i class="fas fa-save"></i> Guardar cambios</button>
                 </div>
             </form>
         </div>

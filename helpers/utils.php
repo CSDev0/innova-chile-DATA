@@ -6,7 +6,7 @@ class utils {
         if ($_SESSION['identidad']->ACTIVADO == 1) {
             return true;
         } else {
-            $_SESSION['autenticacion_mensaje'] = 'fallo no activada';
+            $_SESSION['aut_msg'] = 'f_habilitada';
             return false;
         }
     }
@@ -16,11 +16,11 @@ class utils {
             if ($_SESSION['tipo_usuario'] == 'admin') {
                 return true;
             } else {
-                $_SESSION['autenticacion_mensaje'] = 'fallo restringido';
+                $_SESSION['aut_msg'] = 'f_restringido';
                 return false;
             }
         } else {
-            $_SESSION['autenticacion_mensaje'] = 'sesion no iniciada';
+            $_SESSION['aut_msg'] = 'f_no_login';
             return false;
         }
     }
@@ -30,13 +30,13 @@ class utils {
             if ($_SESSION['tipo_usuario'] == 'admin' || $_SESSION['tipo_usuario'] == 'empleado') {
                 return true;
             } else {
-                $_SESSION['autenticacion_mensaje'] = 'fallo restringido';
+                $_SESSION['aut_msg'] = 'f_restringido';
                 return false;
             }
         } else {
             unset($_SESSION['identidad']);
             unset($_SESSION['tipo_usuario']);
-            $_SESSION['autenticacion_mensaje'] = 'sesion no iniciada';
+            $_SESSION['aut_msg'] = 'f_no_login';
             return false;
         }
     }
@@ -46,11 +46,11 @@ class utils {
             if ($_SESSION['tipo_usuario'] == 'empleado') {
                 return true;
             } else {
-                $_SESSION['autenticacion_mensaje'] = 'fallo restringido';
+                $_SESSION['aut_msg'] = 'f_restringido';
                 return false;
             }
         } else {
-            $_SESSION['autenticacion_mensaje'] = 'sesion no iniciada';
+            $_SESSION['aut_msg'] = 'f_no_login';
             return false;
         }
     }
@@ -59,7 +59,7 @@ class utils {
         if (isset($_SESSION['identidad'])) {
             return true;
         } else {
-            $_SESSION['autenticacion_mensaje'] = 'sesion no iniciada';
+            $_SESSION['aut_msg'] = 'f_no_login';
             return false;
         }
     }
@@ -176,7 +176,7 @@ class utils {
       $web = new Web();
       $web->setId(1);
       $info=$web->getOne();
-      echo '<a href="'.$info->fb_link.'"><i class="fab fa-facebook-square fa-4x color-azul"></i></a><a href="'.$info->ig_link.'"><i class="fab fa-instagram-square fa-4x color-ig"></i></a><a href="'.$info->twt_link.'"><i class="fab fa-twitter-square fa-4x color-azul-claro"></i></a>';
+      echo '<a href="'.$info->fb_link.'"><i class="fab fa-facebook-square fa-4x color-azul mr-2"></i></a><a href="'.$info->ig_link.'"><i class="fab fa-instagram-square fa-4x color-ig mr-2"></i></a><a href="'.$info->twt_link.'"><i class="fab fa-twitter-square fa-4x color-azul-claro mr-2"></i></a>';
     }
     public static function getLinksB() {
       require_once ('models/Web.php');

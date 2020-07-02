@@ -74,7 +74,7 @@ if ($resultado != null) {
  id="' . $obj['id'] . '" pregunta="' . $obj['nombre'] . '" respuesta="' . htmlentities($obj['texto']) . '" ultima_modificacion="' . $ultima_modificacion . '" usuario_modificacion="' . utils::getUsuarioNombre($obj['Usuario_id']) . '">
                             <i class="fas fa-edit"></i> Modificar</a>
                             
-                        <a href="#modal-eliminar" data-toggle="modal" ruta="contenido/delete&id=" id="' . $obj['id'] .'" nombre="' . utils::acortador($obj['nombre'], 60) .'" tipo="'.$obj['tipo'].'" class="btn btn-danger eliminar" 
+                        <a href="#modal-eliminar" data-toggle="modal" ruta="contenido/deletePregunta&id=" id="' . $obj['id'] .'" nombre="' . utils::acortador($obj['nombre'], 60) .'" tipo="'.$obj['tipo'].'" class="btn btn-danger eliminar" 
                            style="margin-top: 5px; width: 100%;" >
                            <i class="fas fa-trash-alt"></i> Eliminar</a>
                             </td>

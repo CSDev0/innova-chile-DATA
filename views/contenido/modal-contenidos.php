@@ -9,20 +9,20 @@
                 <div class="modal-body">
                     <div class="form-group" >
                         <div class="col-sm mb-2">
-                        <label for="txtNombre">Nombre seccion: </label>
-                        <input type="text" class="form-control" name="txtNombre" placeholder="Nombre de la sección..">
+                            <label for="txtNombre">Nombre seccion: </label>
+                            <input type="text" class="form-control" name="txtNombre" placeholder="Nombre de la sección..">
                         </div>
                         <div class="col-sm mb-2">
                             <label for="txtTexto">Texto a mostrar:</label>
                             <textarea class='input-contenido-texto' name='txtTexto'></textarea>
-                            <h6 id='input-contenido-fecha' class='bg-azul rounded-bottom' name='txtUltimaModificacion'> </h6>
                         </div>
-                            <input type="hidden" value="" name="txtTipo">
+                        <input type="hidden" value="" name="txtTipo">
                     </div>
                 </div>
+                <h6 id='input-contenido-fecha' class='bg-ultima-modificacion text-center mb-0' name='txtUltimaModificacion'> </h6>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                    <button type="submit" class="btn btn-success">Modificar</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fas fa-times"></i> Cancelar</button>
+                    <button type="submit" class="btn btn-success"><i class="fas fa-save"></i> Guardar cambios</button>
                 </div>
             </form>
         </div>

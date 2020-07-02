@@ -37,7 +37,10 @@
 <script>
     $(window).on('load', function () {
         // Animate loader off screen
-        $(".se-pre-con").fadeOut("slow");
+        setTimeout(function(){
+            $(".se-pre-con").fadeOut("slow");
+        }, 300);
+        
 //        particlesJS.load('bg-quienes-somos', baseurl + 'assets/particlesjs-config.json', function () {
 //        });
         var divContainer = '#bg-quienes-somos'

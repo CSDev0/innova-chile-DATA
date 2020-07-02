@@ -1,5 +1,6 @@
 <?php ?>
 <script>
+    $(".se-pre-con").fadeOut("slow");
     $(document).ready(function () {
         $(".landing-page-navbar").removeClass("no-bg");
         $(".landing-page-nav-link").removeClass("initial-state")

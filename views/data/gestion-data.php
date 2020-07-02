@@ -1,4 +1,4 @@
-<h2> Gestionar <b>Data</b></h2>
+<h2 class='mt-2'> Gestionar <b>Data</b></h2>
 <hr>
 <div class="row">
     <div class="col-sm-10 contenedor-gestion">
@@ -24,13 +24,13 @@ if (file_exists('uploads/repo/' . $repo->repositorio . '-master')) {
 ?>
     </div>
     <div class="col-sm-10 contenedor-gestion">
-        <div id="loading-div"></div>
+        <div id="loading-div" class='loading-div'></div>
         <h3><b>Graficos destacados</b></h3>
         <p>Aquí podras agregar, modificar y eliminar los graficos destacados de la sección <b class="color-azul">Graficos destacados</b>, para esto, primero se debe descargar el repositorio de <b class="color-azul">Github</b> que contiene los graficos.</p>
 
         <button class="btn btn-primary" href="#modal-agregar-grafico" data-toggle="modal"><i class="fas fa-plus-square"></i> Agregar</button>
         <button class="btn btn-primary" id="btn_todos_graficos"><i class="fas fa-eye"></i> Ver todos</button>
-        <br><br>
+        <hr>
         <form class="ajaxform" data-parsley-validate data-parsley-trigger="focusout" >
             <script>$('.ajaxform').submit(false);</script>
             <div class="input-group"">
@@ -113,7 +113,7 @@ if (file_exists('uploads/repo/' . $repo->repositorio . '-master')) {
     
 
 </div>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </div>
 </div>
 

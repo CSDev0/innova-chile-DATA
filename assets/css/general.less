@@ -27,7 +27,7 @@ input.parsley-error
     margin-top: 0px;
     margin-left: -35px;
 }
-#loading-div{
+.loading-div{
     width: 100%;
     height: 100%;
     background-color: white;
@@ -102,8 +102,8 @@ h3{
 }
 h4{
     color: @main-color;
-    .bold-italic-font();
-    .s-text();
+    .bold-font();
+    .m-text();
 }
 h5{
     color: @main-color;
@@ -112,7 +112,6 @@ h5{
 }
 h6{
     color: @main-color;
-    .normal-font();
     .xs-text();
 }
 
@@ -157,27 +156,45 @@ p.white{
     background-color: white;
     margin-bottom: 0px;
 }
-
-.btn.btn-primary{
+.btn{
+    -webkit-transition: width 1s ease-in-out;
+    -moz-transition: width 1s ease-in-out;
+    -o-transition: width 1s ease-in-out;
+    transition: width 1s ease-in-out;
+}
+.btn-primary{
     background-color: @second-color;
     .s-text();
-    .transition(0.5s);
     border: none;
 }
-
-.btn.btn-primary:hover{
-    background-color: white;
-    color: @second-color;
-    .button-shadow();
+.btn-primary:hover{
+    background-color: @main-color;
+    color: white;
 }
-.btn.btn-warning{
+.btn-primary:active, .btn-primary:focus{
+    color: @second-color;
+    background-color: @third-color;
+}
+.btn:active, .btn:focus{
+    outline: none !important;
+    box-shadow: none !important;
+}
+.btn-success{
+    border: none;
+    .s-text();
+}
+.btn-danger{
+    border: none;
+    .s-text();
+}
+.btn-warning{
     background-color: #ffbf00;
     color: white;
     .s-text();
     .transition(0.5s);
     border: none;
 }
-.btn.btn-warning:hover{
+.btn-warning:hover{
     background-color: #E0A800;
     color: black;
     .s-text();

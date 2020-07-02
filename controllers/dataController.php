@@ -25,9 +25,9 @@ class dataController {
                     $repo->setUsuario_id($usuario_id);
                     $resultado = $repo->update();
                     if (isset($resultado) && $resultado == true) {
-                        $_SESSION['repo_mensaje'] = 'exito_modificar';
+                        $_SESSION['repo_mensaje'] = 'e_modificar';
                     } elseif ($resultado == false & $resultado != null) {
-                        $_SESSION['repo_mensaje'] = 'fallo_modificar';
+                        $_SESSION['repo_mensaje'] = 'f_modificar';
                     }
                     header("Location:" . base_url . 'gestion/data');
                 }
@@ -42,17 +42,21 @@ class dataController {
             $repositorio = new Repositorio();
             $repositorio->setId('1');
             $repo = $repositorio->getRepoById()->fetch_object();
-            file_put_contents("uploads/repo/master.zip",
-                    file_get_contents("https://github.com/" . $repo->usuario . "/" . $repo->repositorio . "/archive/master.zip")
-            );
+            try {
+                file_put_contents("uploads/repo/master.zip",
+                        file_get_contents("https://github.com/" . $repo->usuario . "/" . $repo->repositorio . "/archive/master.zip")
+                );
+            } catch (Exception $ex) {
+                $_SESSION['repo_mensaje'] = 'f_repositorio';
+            }
             $zip = new ZipArchive;
             if ($zip->open('uploads/repo/master.zip') === TRUE) {
                 $zip->extractTo('uploads/repo/');
                 $zip->close();
-                $_SESSION['repo_mensaje'] = 'exito_unzip';
+                $_SESSION['repo_mensaje'] = 'e_unzip';
                 header("Location:" . base_url . 'gestion/data');
             } else {
-                $_SESSION['repo_mensaje'] = 'error_unzip';
+                $_SESSION['repo_mensaje'] = 'f_unzip';
                 header("Location:" . base_url . 'gestion/data');
             }
         } else {
@@ -68,9 +72,9 @@ class dataController {
                 $grafico->setPosicion('0');
                 $resultado = $grafico->save();
                 if ($resultado) {
-                    $_SESSION['grafico_mensaje'] = 'exito_agregar';
+                    $_SESSION['graf_msg'] = 'e_agregar';
                 } else {
-                    $_SESSION['grafico_mensaje'] = 'fallo_agregar';
+                    $_SESSION['graf_msg'] = 'f_agregar';
                 }
                 header("Location:" . base_url . 'gestion/data');
             } else {
@@ -80,23 +84,23 @@ class dataController {
             header("Location:" . base_url . 'web/login');
         }
     }
-    
-    function deleteGrafico(){
-        if(utils::isAdminOEmpleado()){
-            if(isset($_GET['id'])){
+
+    function deleteGrafico() {
+        if (utils::isAdminOEmpleado()) {
+            if (isset($_GET['id'])) {
                 $id = $_GET['id'];
                 $grafico = new Grafico_destacado();
-                $grafico ->setId($id);
+                $grafico->setId($id);
                 $resultado = $grafico->delete();
-                if($resultado){
+                if ($resultado) {  
+                    $_SESSION['graf_msg'] = 'e_eliminar';
                     header("Location:" . base_url . 'gestion/data');
-                    $_SESSION['grafico_mensaje'] = 'exito_eliminar';
                 }
-            }else{
-                $_SESSION['grafico_mensaje'] = 'fallo_eliminar';
+            } else {
+                $_SESSION['graf_msg'] = 'f_eliminar';
                 header("Location:" . base_url . 'gestion/data');
             }
-        }else{
+        } else {
             header("Location:" . base_url . 'web/login');
         }
     }

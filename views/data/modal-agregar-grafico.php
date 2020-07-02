@@ -31,8 +31,8 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                    <button type="submit" class="btn btn-success">Agregar</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fas fa-times"></i> Cancelar</button>
+                    <button type="submit" class="btn btn-success"><i class="fas fa-check"></i> Agregar</button>
                 </div>
             </form>
         </div>

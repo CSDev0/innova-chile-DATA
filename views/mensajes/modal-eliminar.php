@@ -12,8 +12,8 @@
                     <p class="text-danger"><small>Esta acción no se podra revertir.</small></p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-success" data-dismiss="modal">Cancelar</button>
-                    <a href="" class="btn btn-danger" id='boton-eliminar'><font class="color-blanco">Eliminar</font></a>
+                    <button type="button" class="btn btn-success" data-dismiss="modal"><i class="fas fa-times"></i> Cancelar</button>
+                    <a href="" class="btn btn-danger" id='boton-eliminar'><font class="color-blanco"><i class="fas fa-trash-alt"></i> Eliminar</font></a>
                 </div>
             </form>
         </div>

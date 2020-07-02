@@ -18,9 +18,6 @@ class estudioController {
                 $enlace = isset($_POST['txtEnlace']) ? $_POST['txtEnlace'] : false;
                 $tipo = isset($_POST['tipo']) ? $_POST['tipo'] : false;
                 $fileArchivo = isset($_FILES['fileArchivo']) ? $_FILES['fileArchivo'] : false;
-
-//            $img1 = isset($_POST['img1']) ? $_POST['img1'] : false;
-
                 if ($nombre && $descripcion && $ano_estudio) {
                     $estudio = new Estudio();
                     $estudio->setNombre($nombre);
@@ -61,7 +58,7 @@ class estudioController {
                                     $estudio->setArchivo($nombre_archivo);
                                 }
                             } else {
-                                $_SESSION['resultado_crear_producto'] = "fallo_tipo_archivo";
+                                $_SESSION['estu_msg'] = "f_tipo_archivo";
                             }
                         } else {
                             $estudio->setEnlace($enlace);
@@ -94,7 +91,7 @@ class estudioController {
                                     $estudio->setArchivo($nombre_archivo);
                                 }
                             } else {
-                                $_SESSION['estudio_mensaje'] = "fallo_tipo_archivo";
+                                $_SESSION['estu_msg'] = "f_tipo_archivo";
                                 header("Location:" . base_url . 'gestion/estudios');
                             }
                         } else {
@@ -104,18 +101,18 @@ class estudioController {
                     }
 
                     if (isset($save) && $save == true) {
-                        $_SESSION['estudio_mensaje'] = 'exito_crear';
+                        $_SESSION['estu_msg'] = 'e_agregar';
                     } elseif ($save == false & $save != null) {
-                        $_SESSION['estudio_mensaje'] = 'fallo_crear';
+                        $_SESSION['estu_msg'] = 'f_agregar';
                     }
 
                     if (isset($modify) && $modify == true) {
-                        $_SESSION['estudio_mensaje'] = 'exito_modificar';
+                        $_SESSION['estu_msg'] = 'e_modificar';
                     } elseif ($modify == false & $modify != null) {
-                        $_SESSION['estudio_mensaje'] = 'fallo_modificar';
+                        $_SESSION['estu_msg'] = 'f_modificar';
                     }
                 } else {
-                    $_SESSION['estudio_mensaje'] = 'fallo_crear_datos';
+                    $_SESSION['estu_msg'] = 'f_datos';
                     header("Location:" . base_url . home);
                 }
                 header("Location:" . base_url . 'gestion/estudios');
@@ -134,39 +131,18 @@ class estudioController {
                 $est = $estudio->getEstudioById();
                 $resultado = $estudio->delete();
                 if ($resultado) {
-                    $_SESSION['estudio_mensaje'] = "exito_eliminar";
+                    $_SESSION['estu_msg'] = "e_eliminar";
                     if ($est->tipo == "estudio") {
                         if (file_exists('uploads/documentos/estudios/' . $est->archivo)) {
                             unlink('uploads/documentos/estudios/' . $est->archivo);
                         }
                     }
                 } else {
-                    $_SESSION['estudio_mensaje'] = "fallo_eliminar";
+                    $_SESSION['estu_msg'] = "f_eliminar";
                 }
                 header("Location:" . base_url . 'gestion/estudios');
             } else {
-//                if (isset($_POST)) {
-//                    $cancion = new Cancion();
-//                    $id = $_POST['txtId'];
-//                    $cancion->setIdCancion($id);
-//                    $can = $cancion->getCancionById();
-//
-//                    $resultado = $cancion->delete();
-//                    if ($resultado) {
-//                        $_SESSION['producto_mensaje'] = "exito eliminar";
-//                        $gen = utils::getGeneroById($can->Genero_idGenero);
-//                        $genero_nombre = $gen->Genero;
-//                        $_SESSION['producto_mensaje'] = "exito eliminar";
-//                        if (file_exists('uploads/images/portadas/' . $genero_nombre . '/' . $can->Imagen)) {
-//                            unlink('uploads/images/' . $genero_nombre . '/' . $can->Imagen);
-//                        }
-//                    } else {
-//                        $_SESSION['producto_mensaje'] = "fallo eliminar";
-//                    }
-//                    header("Location:" . base_url . 'cancion/gestion');
-//                } else {
-//                    header("Location:" . base_url . 'cancion/gestion');
-//                }
+                header("Location:" . base_url . home);
             }
         } else {
             header("Location:" . base_url . home);

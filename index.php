@@ -9,8 +9,8 @@ require_once 'helpers/utils.php';
 
 require_once 'config/db.php';
 require_once 'views/layout/header.php';
-require_once 'views/mensajes/mensajes-usuario.php';
-require_once 'views/mensajes/mensajes-autenticacion.php';
+require_once 'views/mensajes/usu_msg.php';
+require_once 'views/mensajes/aut_msg.php';
 
 function mostrar_error() {
     $error = new errorController();

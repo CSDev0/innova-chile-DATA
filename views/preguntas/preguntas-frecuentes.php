@@ -11,8 +11,8 @@
 </script>
 <?php
 ?>
-<div class="container">
-    <div class="row justify-content-center">
+<div class="container vh-100">
+    <div class="row justify-content-center mt-2">
         <h1> Preguntas frecuentes </h1>
     </div>
     <div class="row justify-content-center">
@@ -41,4 +41,5 @@
         ?>
     </div>
 </div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 

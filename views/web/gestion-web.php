@@ -3,7 +3,7 @@
 <div class="row">
 
     <div class="col-sm-10 contenedor-gestion">
-      <form action="<?php echo base_url.'gweb/update';?>" method="post" enctype="multipart/form-data" >
+      <form action="<?php echo base_url.'web/update';?>" method="post" enctype="multipart/form-data" >
       <div class="row">
         <div class="col-sm-6">
           <?php require_once('general.php') ?>
@@ -20,15 +20,15 @@
       </form>
     </div>
     <div class="col-sm-10 contenedor-gestion">
-        <div id="loading-div"></div>
+        <div id="loading-div" class='loading-div'></div>
         <h3>Preguntas frecuentes</h3>
         <button class="btn btn-primary btn-abrir-modal-web" href="#modal-agregar-pregunta" data-toggle="modal" data-tipo="">
             <i class="fas fa-plus-square"></i> Agregar</button>
         <button class="btn btn-primary" id="btn_todas_preguntas"><i class="fas fa-eye"></i> Ver todos</button>
-        <br><br>
+        <hr>
         <form class="ajaxform" data-parsley-validate data-parsley-trigger="focusout" >
             <script>$('.ajaxform').submit(false);</script>
-            <div class="input-group mb-2">
+            <div class="input-group mb-2 pr-1">
                 <input type="text" name="txtBuscarPreguntas" id="txtBuscarPreguntas" placeholder="Buscar por pregunta..." class="form-control mr-1" required minlength="3" data-parsley-error-message="La busqueda debe contener al menos 3 caracteres!" data-parsley-errors-container="#errorContainer" />
                 <div class="input-group-addon">
                     <button class="btn btn-primary form-control ml-1" id="btn_buscar_preguntas"><i class="fas fa-search-plus"></i> Buscar</button>
@@ -40,8 +40,6 @@
         </div>
         <script>
             $(document).ready(function () {
-
-
 //              Funcion para mostrar un spinner loading para AJAX.
                 $('#loading-div').hide();
                 var $loading = $('#loading-div');
@@ -50,7 +48,9 @@
                             $loading.show();
                         })
                         .ajaxStop(function () {
-                            $loading.hide();
+                            setTimeout(function(){
+                                $loading.hide();
+                            }, 300);
                         });
 //                 Llama a la funcion Cargar los usuarios al cargar la pagina por AJAX.
                 cargarPreguntas();
@@ -87,6 +87,7 @@
                     }
                 }));
                 $('#btn_todas_preguntas').click($.debounce(400, function () {
+                    $('#txtBuscarPreguntas').parsley().reset();
                     cargarPreguntas();
                 }));
             });
@@ -94,7 +95,7 @@
         </script>
     </div>
 </div>
-
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </div>
 </div>
 </div>

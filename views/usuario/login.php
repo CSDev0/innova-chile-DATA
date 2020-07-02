@@ -10,6 +10,8 @@ if (isset($_SESSION['identidad'])) {
             $("#modal-fade").css("opacity", "1");
             $("#modal-fade").css("margin-top", "0");
             $("#footer").css("margin-top", "350px");
+            $(".landing-page-navbar").removeClass("no-bg");
+        $(".landing-page-nav-link").removeClass("initial-state")
         });
         $(document).ready(function () {
             $("#show_hide_password a").on('click', function (event) {

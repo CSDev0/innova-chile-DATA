@@ -186,16 +186,15 @@ class Usuario {
         $query .= "WHERE id = {$this->getId()};";
         $usuario = new Usuario();
         $usuario->setId($this->getId());
-        $usu_antiguo = $usuario->getUsuarioById();
+        $usu_antiguo = $usuario->getUsuarioById()->fetch_object();
         $save = $this->db->query($query);
-
         $result = false;
         if ($save) {
             require_once 'models/Log.php';
             $log = new Log();
             $log->setFecha($date);
             $log->setTipo('Modificar');
-            $log->setActividad('Usuario->' . $usu_antiguo->nombre);
+            $log->setActividad('Usuario->' . $usu_antiguo->nombre.' '.$usu_antiguo->apellido);
             $log->setUsuario_id($_SESSION['identidad']->id);
             $log->save();
             $result = true;

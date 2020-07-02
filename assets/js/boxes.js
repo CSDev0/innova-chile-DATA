@@ -1,25 +1,3 @@
-
-function mostrarMensaje(mensaje, titulo) {
-    $(".x-msg").text(mensaje);
-    $("#x-titulo").text(titulo);
-    $('#modal-mensajes').modal('show');
-
-    setTimeout(function () {
-
-        $(".x-msg").text("");
-        $("#x-titulo").text("");
-        $('#modal-mensajes').modal('hide');
-        $('#modal-mensajes').hide();
-        $('.modal-backdrop').css('transition', '1');
-        $('.modal-backdrop').css('opacity', '0');
-        setTimeout(function () {
-            $('.modal-backdrop').hide();
-            $('body').css("overflow", "scroll")
-        }, 100);
-    }, 2000);
-
-}
-
 //SWITCH GESTION ESTUDIOS
 $('#estudios-toggle').change(function () {
     if ($(this).prop('checked')) {
@@ -58,7 +36,6 @@ $('#modal-estudios').on('hidden.bs.modal', function () {
     $("#modal-estudios-enlace").remove();
     $("#modal-estudios-archivo").remove();
     $("#modal-estudios-archivo-linea").remove();
-
 });
 
 $('#modal-contenido').on('show.bs.modal', function (e) {
@@ -82,19 +59,15 @@ $('#modal-contenido').on('show.bs.modal', function (e) {
 
 
 $('#modal-modificar-usuario').on('show.bs.modal', function (e) {
-
     var opener = e.relatedTarget;// esta variable contiene el objeto el cual llamo a abrir el modal.
     //obtenemos los detalles de los atributos.
     var id = $(opener).attr('id');
     var rut = $(opener).attr('rut');
     var nombre = $(opener).attr('nombre');
     var apellido = $(opener).attr('apellido');
-    var correo = $(opener).attr('correos');
+    var correo = $(opener).attr('correo');
     var genero = $(opener).attr('genero');
     var activado = $(opener).attr('activado');
-
-
-
 //Colocamos las variables dentro del formulario de modificar usuario.
     $('#formulario-modificar-usuario').find('[name="txtId"]').val(id);
     $('#formulario-modificar-usuario').find('[name="txtRut"]').val(rut);
@@ -106,7 +79,6 @@ $('#modal-modificar-usuario').on('show.bs.modal', function (e) {
 });
 
 $('#modal-modificar-estudio').on('show.bs.modal', function (e) {
-
     var opener = e.relatedTarget;// esta variable contiene el objeto el cual llamo a abrir el modal.
     //obtenemos los detalles de los atributos.
     var id = $(opener).attr('id');
@@ -116,7 +88,6 @@ $('#modal-modificar-estudio').on('show.bs.modal', function (e) {
     var archivo = $(opener).attr('archivo');
     var ultima_modificacion = $(opener).attr('ultima_modificacion');
     var usuario_modificacion = $(opener).attr('usuario_modificacion');
-
 //Colocamos las variables dentro del formulario de modificar usuario.
     $('#formulario-modificar-estudio').find('[name="txtId"]').val(id);
     $('#formulario-modificar-estudio').find('[name="txtNombre"]').val(nombre);
@@ -132,13 +103,8 @@ $('#modal-modificar-estudio').on('show.bs.modal', function (e) {
 
     }
     $('#formulario-modificar-estudio').find('[name="txtUltimaModificacion"]').html('Ultima modificacion: ' + ultima_modificacion + ' por ' + usuario_modificacion + ' ');
-
-
-
-
 });
 $('#modal-modificar-lectura').on('show.bs.modal', function (e) {
-
     var opener = e.relatedTarget;// esta variable contiene el objeto el cual llamo a abrir el modal.
     //obtenemos los detalles de los atributos.
     var id = $(opener).attr('id');
@@ -148,7 +114,6 @@ $('#modal-modificar-lectura').on('show.bs.modal', function (e) {
     var enlace = $(opener).attr('enlace');
     var ultima_modificacion = $(opener).attr('ultima_modificacion');
     var usuario_modificacion = $(opener).attr('usuario_modificacion');
-
 //Colocamos las variables dentro del formulario de modificar usuario.
     $('#formulario-modificar-lectura').find('[name="txtId"]').val(id);
     $('#formulario-modificar-lectura').find('[name="txtNombre"]').val(nombre);
@@ -166,7 +131,6 @@ $('#modal-modificar-pregunta').on('show.bs.modal', function (e) {
     var texto = $(opener).attr('respuesta');
     var usuario_modificacion = $(opener).attr('usuario_modificacion');
     var ultima_modificacion = $(opener).attr('ultima_modificacion');
-
 //Colocamos las variables dentro del formulario de modificar usuario.
     $('#formulario-modificar-pregunta').find('[name="txtId"]').val(id);
     $('#formulario-modificar-pregunta').find('[name="txtNombre"]').val(nombre);
@@ -175,7 +139,6 @@ $('#modal-modificar-pregunta').on('show.bs.modal', function (e) {
 });
 
 $('#modal-ver-actividad').on('show.bs.modal', function (e) {
-
     var opener = e.relatedTarget;// esta variable contiene el objeto el cual llamo a abrir el modal.
     //obtenemos los detalles de los atributos.
     var actividad = $(opener).attr('actividad');
@@ -184,7 +147,6 @@ $('#modal-ver-actividad').on('show.bs.modal', function (e) {
     var fecha = $(opener).attr('fecha');
     var txt_antiguo = $(opener).attr('txt_antiguo');
     var txt_nuevo = $(opener).attr('txt_nuevo');
-
 //Colocamos las variables dentro del formulario de modificar usuario.
     $('#formulario-actividad').find('[name="titulo-actividad"]').html('<b>'+usuario+'</b> realizo la acción <b>'+tipo+'</b> '+actividad);
     if(txt_antiguo.length > 0){
@@ -209,7 +171,6 @@ $("#modal-repositorio").on('show.bs.modal', function (e) {
     var repositorio = $(opener).attr('repositorio');
     var usuario_modificacion = $(opener).attr('usuario_modificacion');
     var ultima_modificacion = $(opener).attr('ultima_modificacion');
-
 //Colocamos las variables dentro del formulario de modificar usuario.
     $('#formulario-repositorio').find('[name="txtUsuario"]').val(usuario);
     $('#formulario-repositorio').find('[name="txtRepositorio"]').val(repositorio);
@@ -222,7 +183,6 @@ $("#modal-eliminar").on('show.bs.modal', function (e) {
     var nombre = $(opener).attr('nombre');
     var tipo = $(opener).attr('tipo');
     var ruta = $(opener).attr('ruta');
-
     $(this).find('[id="titulo-eliminar"]').html('Eliminar ' + tipo);
     $(this).find('[id="pregunta-eliminar"]').html('¿Estas seguro de eliminar ' + tipo + ': <span class="color-azul">"' + nombre + '"</span>?');
     $(this).find('[id="boton-eliminar"]').attr('href', baseurl + ruta + id);

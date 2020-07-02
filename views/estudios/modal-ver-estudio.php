@@ -5,7 +5,7 @@ if ($est->archivo == "" || $est->archivo == null) {
     $nombre_archivo = utils::acortador($est->archivo, 100);
 }
 ?>
-<div class="modal-dialog" role="document">
+<div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
         <div class="modal-header">
             <h3 class="modal-title"><?= $est->nombre ?></h3>

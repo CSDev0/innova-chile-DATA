@@ -39,16 +39,27 @@ class contenidoController {
                         $save = $contenido->save();
                     }
 
-                    if (isset($save) && $save == true) {
-                        $_SESSION['contenido_mensaje'] = 'exito agregar';
-                    } elseif ($save == false & $save != null) {
-                        $_SESSION['contenido_mensaje'] = 'fallo agregar';
+                    if (isset($save) && $save == true && $txtTipo == 'pregunta') {
+                        $_SESSION['preg_msg'] = 'e_agregar';
+                    } elseif ($save == false & $save != null && $txtTipo == 'pregunta') {
+                        $_SESSION['preg_msg'] = 'f_agregar';
+                    }else{
+                        if (isset($save) && $save == true){
+                            $_SESSION['cont_msg'] = 'e_agregar';
+                        }elseif ($save == false & $save != null) {
+                            $_SESSION['cont_msg'] = 'f_agregar';
+                        }
                     }
-
-                    if (isset($update) && $update == true) {
-                        $_SESSION['contenido_mensaje'] = 'exito modificar';
-                    } elseif ($update == false & $update != null) {
-                        $_SESSION['contenido_mensaje'] = 'fallo modificar';
+                    if (isset($update) && $update == true && $txtTipo == 'pregunta') {
+                        $_SESSION['preg_msg'] = 'e_modificar';
+                    } elseif ($update == false & $update != null && $txtTipo == 'pregunta') {
+                        $_SESSION['preg_msg'] = 'f_modificar';
+                    }else{
+                        if (isset($update) && $update == true){
+                            $_SESSION['cont_msg'] = 'e_modificar';
+                        }elseif ($update == false & $update != null) {
+                            $_SESSION['cont_msg'] = 'f_modificar';
+                        }
                     }
                     if ($txtTipo == "pregunta") {
                         header("Location:" . base_url . 'gestion/web');
@@ -56,7 +67,6 @@ class contenidoController {
                         header("Location:" . base_url . 'gestion/contenidos');
                     }
                 } else {
-                    $_SESSION['contenido_mensaje'] = 'fallo_datos';
                     if ($txtTipo == "pregunta") {
                         header("Location:" . base_url . 'gestion/web');
                     } else {
@@ -93,17 +103,36 @@ class contenidoController {
                     $update = $contenido->updateById();
 
                     if (isset($update) && $update == true) {
-                        $_SESSION['contenido_mensaje'] = 'exito modificar';
+                        $_SESSION['preg_msg'] = 'e_modificar';
                     } elseif ($update == false & $update != null) {
-                        $_SESSION['contenido_mensaje'] = 'fallo modificar';
+                        $_SESSION['preg_msg'] = 'f_modificar';
                     }
                     header("Location:" . base_url . 'gestion/web');
                 } else {
-                    $_SESSION['contenido_mensaje'] = 'fallo_datos';
+                    $_SESSION['preg_msg'] = 'f_datos';
                         header("Location:" . base_url . 'gestion/web');
                     }
             } else {
                 header("Location:" . base_url . 'usuario/panel');
+            }
+        } else {
+            header("Location:" . base_url . 'web/login');
+        }
+    }
+    public function deletePregunta() {
+        if (utils::isAdminOEmpleado()) {
+            if (isset($_GET['id'])) {
+                $id = $_GET['id'];
+                $contenido = new Contenido();
+                $contenido->setId($id);
+                $resultado = $contenido->delete();
+                if ($resultado) {
+                    $_SESSION['preg_msg'] = 'e_eliminar';
+                    header("Location:" . base_url . 'gestion/web');
+                }
+            } else {
+                $_SESSION['preg_msg'] = 'f_eliminar';
+                header("Location:" . base_url . 'gestion/web');
             }
         } else {
             header("Location:" . base_url . 'web/login');

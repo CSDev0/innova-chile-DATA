@@ -1,6 +1,6 @@
 <?php $url_action = base_url . "usuario/save"; ?>
 <div id="modal-agregar-usuario" class="modal fade">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <form action="<?= $url_action ?>" method="post" enctype="multipart/form-data" data-parsley-validate data-parsley-trigger="focusout" >
                 <div class="modal-header">
@@ -42,8 +42,8 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                    <button type="submit" class="btn btn-success">Agregar</button>
+                                        <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fas fa-times"></i> Cancelar</button>
+                    <button type="submit" class="btn btn-success"><i class="fas fa-check"></i> Agregar</button>
                 </div>
             </form>
         </div>
