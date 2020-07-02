@@ -6,19 +6,20 @@ require_once 'models/Usuario.php';
 require_once 'models/Estudio.php';
 require_once 'models/Log.php';
 require_once 'models/Web.php';
+require_once 'models/Dato_destacado.php';
 require_once 'models/Repositorio.php';
 
 class gestionController {
 
     function usuarios() {
-        
+
         if (utils::isAdmin()) {
             $usuario = new Usuario();
             $usuarios = $usuario->getAll();
             $log = new Log();
             $logs = $log->getAll();
             require_once("views/mensajes/usu_msg.php");
-            
+
             require_once('views/usuario/sidebar.php');
             require_once('views/usuario/gestion-usuarios.php');
             require_once('views/usuario/modal-agregar-usuario.php');
@@ -75,7 +76,7 @@ class gestionController {
     function data() {
         require_once("views/mensajes/repo_msg.php");
         require_once("views/mensajes/graf_msg.php");
-        
+
         $repositorio = new Repositorio();
         $repositorio->setId('1');
         $repo = $repositorio->getRepoById()->fetch_object();
@@ -85,6 +86,15 @@ class gestionController {
         require_once 'views/data/modal-repositorio.php';
         require_once('views/data/modal-agregar-grafico.php');
         require_once 'views/mensajes/modal-eliminar.php';
+    }
+
+    function datos_destacados() {
+      require_once('views/usuario/sidebar.php');
+      require_once('views/datos-destacados/gestion-datos.php');
+
+
+      
+
     }
 
 }

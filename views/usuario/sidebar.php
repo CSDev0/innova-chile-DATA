@@ -34,6 +34,9 @@ $nombre_completo = utils::getNombreCompleto();
                 <button class="btn btn-primary panel" onclick='window.location.href = "<?= base_url ?>gestion/estudios"'><i class="fas fa-file-alt"></i> Gestión estudios</button>
             </div>
             <div class="" style="margin-bottom:10px;">
+                <button class="btn btn-primary panel" onclick='window.location.href = "<?= base_url ?>gestion/datos_destacados"'><i class="fas fa-file-alt"></i> Datos destacados</button>
+            </div>
+            <div class="" style="margin-bottom:10px;">
                 <button class="btn btn-primary panel" onclick='window.location.href = "<?= base_url ?>gestion/contenidos"'><i class="fas fa-align-left"></i> Gestión textos</button>
             </div>
             <div class="" style="margin-bottom:10px;">
@@ -45,5 +48,3 @@ $nombre_completo = utils::getNombreCompleto();
         </div>
     </div>
     <div class="col-sm-10">
-        
-
