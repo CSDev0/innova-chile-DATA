@@ -14,14 +14,14 @@
             <a class="btn btn-warning" href="<?= base_url . 'data/downloadAndUnzip' ?>"><i class="fas fa-exclamation-triangle"></i></i> Descargar el repositorio y descomprimir todo <i class="fas fa-exclamation-triangle"></i></a>
         </div>
         <hr>
-<?php
-if (file_exists('uploads/repo/' . $repo->repositorio . '-master')) {
-    echo '<p class="xs-text">Estos son los archivos actuales del repositorio descargado: <br>';
-    require_once('views/data/ver-repositorio.php');
-} else {
-    echo '<p class="xs-text">No hay repositorio descargado y descomprimido aún. <br>';
-}
-?>
+        <?php
+        if (file_exists('uploads/repo/' . $repo->repositorio . '-master')) {
+            echo '<p class="xs-text">Estos son los archivos actuales del repositorio descargado: <br>';
+            require_once('views/data/ver-repositorio.php');
+        } else {
+            echo '<p class="xs-text">No hay repositorio descargado y descomprimido aún. <br>';
+        }
+        ?>
     </div>
     <div class="col-sm-10 contenedor-gestion">
         <div id="loading-div" class='loading-div'></div>
@@ -57,7 +57,7 @@ if (file_exists('uploads/repo/' . $repo->repositorio . '-master')) {
                             $loading.show();
                         })
                         .ajaxStop(function () {
-                            setTimeout(function(){
+                            setTimeout(function () {
                                 $loading.hide();
                             }, 500);
                         });
@@ -106,15 +106,41 @@ if (file_exists('uploads/repo/' . $repo->repositorio . '-master')) {
     <div class="col-sm-10 contenedor-gestion">
         <h3><b>Datos destacados</b></h3>
         <p>Aquí podras modificar las variables ubicadas en <b class="color-azul">Datos destacados</b>.</p>
-        <button class="btn btn-primary" href="#modal-agregar-data" data-toggle="modal"><i class="fas fa-dollar-sign fa-1x"></i> Millones</button>
-        <button class="btn btn-primary" href="#modal-buscar-data" data-toggle="modal"><i class="fas fa-chart-line fa-1x"></i> Iniciativas apoyadas</button>
-        <button class="btn btn-primary" href="#modal-buscar-data" data-toggle="modal"><i class="fas fa-globe fa-1x"></i> Beneficiados</button>
+        <form action="<?php echo base_url . 'contenido/updateDatos'; ?>" method="post" enctype="multipart/form-data" >
+            <div class="row">
+                <div class="col-sm-2 text-right align-self-center">
+                    <label class="">Millones aportados: </label>
+                </div>
+                <div class="col-sm-2 text-left">
+                    <input type="number" value="<?php if(isset($dato_millones) && $dato_millones->texto != ''){echo $dato_millones->texto;}?>" name="txtDatoMillones" class="form-control"/> 
+                </div>
+                <div class="col-sm-2 text-right align-self-center">
+                    <label class="">Iniciativas apoyadas: </label>
+                </div>
+                <div class="col-sm-2 text-left">
+                    <input type="number" value="<?php if(isset($dato_iniciativas) && $dato_iniciativas->texto != '' ){echo $dato_iniciativas->texto;}?>" name="txtDatoIniciativas"  class="form-control"/> 
+                </div>
+                <div class="col-sm-2 text-right align-self-center">
+                    <label class="">Beneficiados: </label>
+                </div>
+                <div class="col-sm-2 text-left">
+                    <input type="number" value="<?php if(isset($dato_beneficiados) && $dato_beneficiados->texto != '' ){echo $dato_beneficiados->texto;}?>" name="txtDatoBeneficiados" class="form-control"/> 
+                </div>
+            </div>
+            <hr class="bc-celeste">
+            <div class="row justify-content-end">
+                <a href="<?= base_url . 'gestion/data' ?>" type="button" class="btn btn-danger mr-2" ><i class="fas fa-times"></i> Cancelar</a>
+                <button type="submit" class="btn btn-success mr-3"><i class="fas fa-save"></i> Guardar cambios</button>
+            </div>
+        </form>
     </div>
-    
+
 
 </div>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </div>
+
 </div>
+
 
 

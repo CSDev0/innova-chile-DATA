@@ -22,27 +22,27 @@ $nombre_completo = utils::getNombreCompleto();
             if ($_SESSION['tipo_usuario'] == 'admin') {
                 ?>
                 <div class="" style="margin-bottom:10px;">
-                    <button class="btn btn-primary panel" onclick='window.location.href = "<?= base_url ?>gestion/usuarios"'><i class="fas fa-users"></i> Gestión usuarios</button>
+                    <button class="btn btn-primary panel" onclick='window.location.href = "<?= base_url ?>gestion/usuarios"'><i class="fas fa-users"></i> Gestionar Usuarios y actividad</button>
                 </div>
                 <div class="" style="margin-bottom:10px;">
-                    <button class="btn btn-primary panel" onclick='window.location.href = "<?= base_url ?>gestion/web"'><i class="fas fa-wrench"></i> Gestión sitio web</button>
+                    <button class="btn btn-primary panel" onclick='window.location.href = "<?= base_url ?>gestion/web"'><i class="fas fa-wrench"></i> Gestionar la pagina web</button>
                 </div>
                 <?php
             }
             ?>
-            <div class="" style="margin-bottom:10px;">
-                <button class="btn btn-primary panel" onclick='window.location.href = "<?= base_url ?>gestion/estudios"'><i class="fas fa-file-alt"></i> Gestión estudios</button>
+            <div class="mt-2">
+                <button class="btn btn-primary panel" onclick='window.location.href = "<?= base_url ?>gestion/estudios"'><i class="fas fa-file-alt"></i> Gestionar Estudios y lecturas</button>
             </div>
-            <div class="" style="margin-bottom:10px;">
-                <button class="btn btn-primary panel" onclick='window.location.href = "<?= base_url ?>gestion/datos_destacados"'><i class="fas fa-file-alt"></i> Datos destacados</button>
+            <div class="mt-2">
+                <button class="btn btn-primary panel" onclick='window.location.href = "<?= base_url ?>gestion/contenidos"'><i class="fas fa-align-left"></i> Gestionar textos y archivos </button>
             </div>
-            <div class="" style="margin-bottom:10px;">
-                <button class="btn btn-primary panel" onclick='window.location.href = "<?= base_url ?>gestion/contenidos"'><i class="fas fa-align-left"></i> Gestión textos</button>
+            <div class="mt-2">
+                <button class="btn btn-primary panel" onclick='window.location.href = "<?= base_url ?>gestion/data"'><i class="fas fa-star"></i> Gestionar datos y graficos destacados</button>
             </div>
-            <div class="" style="margin-bottom:10px;">
-                <button class="btn btn-primary panel" onclick='window.location.href = "<?= base_url ?>gestion/data"'><i class="fas fa-star"></i> Gestión Data</button>
+            <div class="mt-2">
+                <button class="btn btn-primary panel" onclick='window.location.href = "<?= base_url ?>gestion/convocatorias"'><i class="fas fa-calendar-alt"></i> Gestionar Convocatorias</button>
             </div>
-            <div class="" style="margin-bottom:10px;">
+            <div class="mt-2">
                 <button class="btn btn-danger panel" onclick='window.location.href = "<?= base_url ?>usuario/logout"'><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</button>
             </div>
         </div>

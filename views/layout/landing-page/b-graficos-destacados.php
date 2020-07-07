@@ -10,13 +10,26 @@
                 </div>
                 <div class="col-sm-12">
                     <div class="row align-self-center">
-                        <?php utils::getDatos_destacados(); ?>
+                        <div class="col-sm-4">
+                            <h2 class="destacado-naranja "><i class="fas fa-dollar-sign fa-2x"></i></h2>
+                            <h2 class="destacado-naranja">+ $<span class="count"><?php if(isset($dato_millones) && $dato_millones->texto != ''){echo $dato_millones->texto;}?></span>
+                                <br>millones</h2>
+                        </div>
+                        <div class="col-sm-4">
+                            <h2 class="destacado-naranja"><i class="fas fa-chart-line fa-2x"></i></h2>
+                            <h2 class="destacado-naranja">+ <span class="count"><?php if(isset($dato_iniciativas) && $dato_iniciativas->texto != '' ){echo $dato_iniciativas->texto;}?></span>
+                                <br>Iniciativas apoyadas</h2>
+                        </div>
+                        <div class="col-sm-4">
+                            <h2 class="destacado-naranja"><i class="fas fa-globe fa-2x"></i></h2>
+                            <h2 class="destacado-naranja"">+ <span class="count"><?php if(isset($dato_beneficiados) && $dato_beneficiados->texto != '' ){echo $dato_beneficiados->texto;}?></span>
+                                <br>beneficiados</h2>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</section>
 <section class="seccion" data-section-name="graficos_destacados" id="graficos-destacados">
     <div class="container-fluid d-flex">
         <div class="row section">

@@ -19,7 +19,8 @@ class webController {
         $estudio = new Estudio();
         $estudios1 = $estudio->getAllByAno();
         $estudios2 = $estudio->getAllByAno();
-
+        $datos = utils::getDatosDestacados();
+        list($dato_millones, $dato_iniciativas, $dato_beneficiados) = $datos;
         require_once('views/layout/navbar.php');
         require_once('views/layout/landing-page.php');
     }

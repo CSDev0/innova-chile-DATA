@@ -6,7 +6,6 @@ require_once 'models/Usuario.php';
 require_once 'models/Estudio.php';
 require_once 'models/Log.php';
 require_once 'models/Web.php';
-require_once 'models/Dato_destacado.php';
 require_once 'models/Repositorio.php';
 
 class gestionController {
@@ -71,9 +70,14 @@ class gestionController {
         require_once('views/usuario/sidebar.php');
         require_once('views/contenido/gestion-contenidos.php');
         require_once('views/contenido/modal-contenidos.php');
+        require_once('views/contenido/modal-agregar-archivo.php');
+        require_once('views/mensajes/modal-eliminar.php');
     }
 
     function data() {
+        $datos = utils::getDatosDestacados();
+        list($dato_millones, $dato_iniciativas, $dato_beneficiados) = $datos;
+        require_once("views/mensajes/cont_msg.php");
         require_once("views/mensajes/repo_msg.php");
         require_once("views/mensajes/graf_msg.php");
 
@@ -86,15 +90,6 @@ class gestionController {
         require_once 'views/data/modal-repositorio.php';
         require_once('views/data/modal-agregar-grafico.php');
         require_once 'views/mensajes/modal-eliminar.php';
-    }
-
-    function datos_destacados() {
-      require_once('views/usuario/sidebar.php');
-      require_once('views/datos-destacados/gestion-datos.php');
-
-
-      
-
     }
 
 }

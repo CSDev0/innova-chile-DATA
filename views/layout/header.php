@@ -15,7 +15,7 @@
         <!--  <script type="text/javascript">less = {env: 'development'};</script> -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/3.11.1/less.min.js" ></script>
         <script src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.min.js"></script>
-
+        
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
@@ -23,6 +23,7 @@
         <script src="https://pixijs.download/dev-graphics-batch-pool/pixi.js"></script>
         <script src="https://cdn.jsdelivr.net/gh/T-vK/SuperParticles@master/SuperParticles.js"></script>
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js"></script>
         <!--Funciones $.debounce: junta todas las peticiones y las ejecuta luego de unos milisegundos.
                                 $.throttle: solo permite la ejecucion de una peticion cada tantos milisegundos.
         -->
@@ -34,7 +35,7 @@
         <script src="<?= base_url ?>assets/js/animations.js"></script>
         <script src="<?= base_url ?>assets/js/parsley.js"></script>
         <script src="<?= base_url ?>assets/js/boxes.js"></script>
-
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js"></script>
         <script src="<?= base_url ?>assets/js/general.js"></script>
         <?php #InnovaChile - Proyectos para el mañana. ?>
 

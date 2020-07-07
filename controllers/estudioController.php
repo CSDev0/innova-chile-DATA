@@ -67,7 +67,7 @@ class estudioController {
                         $modify = $estudio->update();
                     } else {
                         $modify = null;
-                        //Si no recibe por get, entonces es por post, entonces es para agregar un nuevo estudio.
+                        //Si no recibe la id, entonces es nuevo, entonces es para agregar un nuevo estudio.
 
                         if ($fileArchivo) {
                             $archivo = $_FILES['fileArchivo'];

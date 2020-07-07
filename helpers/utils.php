@@ -149,126 +149,98 @@ class utils {
     }
 
     public static function getTitulo() {
-      require_once ('models/Web.php');
-      $web = new Web();
-      $web->setId(1);
-      $info=$web->getOne();
-      $titulo=$info->nombre_web;
-      echo $titulo;
+        require_once ('models/Web.php');
+        $web = new Web();
+        $web->setId(1);
+        $info = $web->getOne();
+        $titulo = $info->nombre_web;
+        echo $titulo;
     }
 
     public static function getOtros() {
-      require_once ('models/Web.php');
-      $web = new Web();
-      $web->setId(1);
-      $info=$web->getOne();
-      $otros=json_decode($info->pie_pagina, true);
-      if ($otros != null) {
-      }else {
-        $otros = json_decode('{"0":["null","null"]}', true);
-      }
-      for ($i=0; $i < count($otros) ; $i++) {
-        echo '<i class="fa fa-angle-double-right" style="color: #0062AB"></i><a class="link-normal" href="'.$otros["".$i.""][1].'">'.$otros["".$i.""][0].'</a><br>';
-      }
+        require_once ('models/Web.php');
+        $web = new Web();
+        $web->setId(1);
+        $info = $web->getOne();
+        $otros = json_decode($info->pie_pagina, true);
+        if ($otros != null) {
+            
+        } else {
+            $otros = json_decode('{"0":["null","null"]}', true);
+        }
+        for ($i = 0; $i < count($otros); $i++) {
+            echo '<i class="fa fa-angle-double-right" style="color: #0062AB"></i><a class="link-normal" href="' . $otros["" . $i . ""][1] . '">' . $otros["" . $i . ""][0] . '</a><br>';
+        }
     }
+
     public static function getLinks() {
-      require_once ('models/Web.php');
-      $web = new Web();
-      $web->setId(1);
-      $info=$web->getOne();
-      echo '<a href="'.$info->fb_link.'"><i class="fab fa-facebook-square fa-4x color-azul mr-2"></i></a><a href="'.$info->ig_link.'"><i class="fab fa-instagram-square fa-4x color-ig mr-2"></i></a><a href="'.$info->twt_link.'"><i class="fab fa-twitter-square fa-4x color-azul-claro mr-2"></i></a>';
+        require_once ('models/Web.php');
+        $web = new Web();
+        $web->setId(1);
+        $info = $web->getOne();
+        echo '<a href="' . $info->fb_link . '"><i class="fab fa-facebook-square fa-4x color-azul mr-2"></i></a><a href="' . $info->ig_link . '"><i class="fab fa-instagram-square fa-4x color-ig mr-2"></i></a><a href="' . $info->twt_link . '"><i class="fab fa-twitter-square fa-4x color-azul-claro mr-2"></i></a>';
     }
+
     public static function getLinksB() {
-      require_once ('models/Web.php');
-      $web = new Web();
-      $web->setId(1);
-      $info=$web->getOne();
-      return $info;
+        require_once ('models/Web.php');
+        $web = new Web();
+        $web->setId(1);
+        $info = $web->getOne();
+        return $info;
     }
+
     public static function getTitulos() {
-      require_once ('models/Web.php');
-      $web = new Web();
-      $web->setId(1);
-      $info=$web->getOne();
-      $otros=json_decode($info->pie_pagina, true);
-      if ($otros != null) {
-      }else {
-        $otros = json_decode('{"0":["null","null"]}', true);
-      }
-      $v=1;
-      echo '<input type="hidden" id="counter" value="'.count($otros).'">';
-      for ($i=0; $i < count($otros) ; $i++) {
-        echo '<div id="TextBoxDivA'.$v.'"><input type="text" class="form-control" name="textboxA'.$v.'" id="textboxA'.$v.'" placeholder="titulo" value="'.$otros["".$i.""][0].'"><hr class="bc-celeste"></div>';
-        $v++;
-      }
+        require_once ('models/Web.php');
+        $web = new Web();
+        $web->setId(1);
+        $info = $web->getOne();
+        $otros = json_decode($info->pie_pagina, true);
+        if ($otros != null) {
+            
+        } else {
+            $otros = json_decode('{"0":["null","null"]}', true);
+        }
+        $v = 1;
+        echo '<input type="hidden" id="counter" value="' . count($otros) . '">';
+        for ($i = 0; $i < count($otros); $i++) {
+            echo '<div id="TextBoxDivA' . $v . '"><input type="text" class="form-control" name="textboxA' . $v . '" id="textboxA' . $v . '" placeholder="titulo" value="' . $otros["" . $i . ""][0] . '"><hr class="bc-celeste"></div>';
+            $v++;
+        }
     }
+
     public static function getEnlace() {
-      require_once ('models/Web.php');
-      $web = new Web();
-      $web->setId(1);
-      $info=$web->getOne();
-      $links=json_decode($info->pie_pagina, true);
-      if ($links != null) {
-      }else {
-        $links =json_decode('{"0":["null","null"]}', true);
-      }
-      $v=1;
-      for ($i=0; $i < count($links) ; $i++) {
-        echo '<div id="TextBoxDivB'.$v.'"><input type="text" class="form-control" name="textboxB'.$v.'" id="textboxB'.$v.'" placeholder="enlace" value="'.$links["".$i.""][1].'"><hr class="bc-celeste"></div>';
-        $v++;
-      }
+        require_once ('models/Web.php');
+        $web = new Web();
+        $web->setId(1);
+        $info = $web->getOne();
+        $links = json_decode($info->pie_pagina, true);
+        if ($links != null) {
+            
+        } else {
+            $links = json_decode('{"0":["null","null"]}', true);
+        }
+        $v = 1;
+        for ($i = 0; $i < count($links); $i++) {
+            echo '<div id="TextBoxDivB' . $v . '"><input type="text" class="form-control" name="textboxB' . $v . '" id="textboxB' . $v . '" placeholder="enlace" value="' . $links["" . $i . ""][1] . '"><hr class="bc-celeste"></div>';
+            $v++;
+        }
     }
 
-    public static function getNombres() {
-      require_once ('models/Dato_destacado.php');
-      $dato = new Dato_destacado();
-      $dato->setId(1);
-      $datos=$dato->getOne();
-      $ldatos=json_decode($datos->datos, true);
-      if ($ldatos != null) {
-      }else {
-        $ldatos = json_decode('{"0":["null","null"]}', true);
-      }
-      $v=1;
+    public static function getDatosDestacados() {
+        require_once ('models/Contenido.php');
+        $contenido = new Contenido();
+        $contenido->setTipo('dato_millones');
+        $dato_millones = $contenido->getContenidoByTipo();
 
-      for ($i=0; $i < count($ldatos) ; $i++) {
-        echo '<div id="TextBoxDivA'.$v.'"><input type="text" class="form-control" name="textboxA'.$v.'" id="textboxA'.$v.'" placeholder="titulo" value="'.$ldatos["".$i.""][0].'"><hr class="bc-celeste"></div>';
-        $v++;
-      }
-    }
+        $contenido = new Contenido();
+        $contenido->setTipo('dato_iniciativas');
+        $dato_iniciativas = $contenido->getContenidoByTipo();
 
-     public static function getValores() {
-      require_once ('models/Dato_destacado.php');
-      $dato = new Dato_destacado();
-      $dato->setId(1);
-      $datos=$dato->getOne();
-      $ldatos=json_decode($datos->datos, true);
-      if ($ldatos != null) {
-      }else {
-        $ldatos = json_decode('{"0":["null","null"]}', true);
-      }
-      $v=1;
-      echo '<input type="hidden" id="counter" value="'.count($ldatos).'">';
-      for ($i=0; $i < count($ldatos) ; $i++) {
-        echo '<div id="TextBoxDivB'.$v.'"><input type="text" class="form-control" name="textboxB'.$v.'" id="textboxB'.$v.'" placeholder="titulo" value="'.$ldatos["".$i.""][1].'"><hr class="bc-celeste"></div>';
-        $v++;
-      }
-    }
-
-    public static function getDatos_destacados() {
-      require_once ('models/Dato_destacado.php');
-      $dato = new Dato_destacado();
-      $dato->setId(1);
-      $datos=$dato->getOne();
-      $ldatos=json_decode($datos->datos, true);
-      if ($ldatos != null) {
-      }else {
-        $ldatos = json_decode('{"0":["null","null"]}', true);
-      }
-
-      for ($i=0; $i < count($ldatos) ; $i++) {
-        echo '<div class="col-sm-4"> <h2 class="destacado-naranja "><i class="fas fa-chart-line fa-2x"></i></h2> <h2 class="destacado-naranja">+ $<span class="count">'.$ldatos["".$i.""][1].'</span> <br>'.$ldatos["".$i.""][0].'</h2> </div>';
-      }
+        $contenido = new Contenido();
+        $contenido->setTipo('dato_beneficiados');
+        $dato_beneficiados = $contenido->getContenidoByTipo();
+        $datos = array($dato_millones, $dato_iniciativas, $dato_beneficiados);
+        return $datos;
     }
 
 }

@@ -17,7 +17,9 @@ function resizeSecciones() {
             y = w.innerHeight || e.clientHeight || g.clientHeight;
     $('.seccion.fullview').css("width", "100vw");
     $('.seccion.fullview').css('height', y - 5); //Si se ocupa el height completo ocurre un extraño bug al desplazarse entre secciones, por lo que se le resta 5 y se soluciona.
+    $('.seccion.fullview.chile_mundo').css('height', '120%'); 
     $("#bg-quienes-somos").css("height", y);
+    $("#bg-chile").css('height', '120%'); 
     $("#bg-quienes-somos").css("width", "100vw");
 }
 resizeSecciones();
@@ -212,3 +214,8 @@ $('.convocatoria-link.llamado').on('click', function (e) {
         $(this).addClass('active');
     }
 });
+$('button').tooltip({
+  trigger: 'click',
+  placement: 'bottom'
+});
+
