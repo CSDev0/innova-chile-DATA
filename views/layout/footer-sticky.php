@@ -2,7 +2,7 @@
     <div id="bg-footer">
         <div class="text-center"><i class="fas fa-angle-up fa-3x color-azul" id="flecha-animada"></i></div>
         <div class="container">
-            <div class="row">
+            <div class="row w-100">
                 <div class="col-sm-4">
                     <h4>Te puede interesar</h4>
                     <?php utils::getOtros(); ?>
@@ -33,14 +33,28 @@
     </div>
 </section>
 
-
+<script type="text/javascript">
+    var CaptchaCallback = function () {
+        jQuery('.g-recaptcha').each(function (index, el) {
+            grecaptcha.render(el, {
+                'sitekey': jQuery(el).attr('data-sitekey')
+                , 'theme': jQuery(el).attr('data-theme')
+                , 'size': jQuery(el).attr('data-size')
+                , 'tabindex': jQuery(el).attr('data-tabindex')
+                , 'callback': jQuery(el).attr('data-callback')
+                , 'expired-callback': jQuery(el).attr('data-expired-callback')
+                , 'error-callback': jQuery(el).attr('data-error-callback')
+            });
+        });
+    };
+</script>
 <script>
     $(window).on('load', function () {
         // Animate loader off screen
-        setTimeout(function(){
+        setTimeout(function () {
             $(".se-pre-con").fadeOut("slow");
         }, 300);
-        
+
 //        particlesJS.load('bg-quienes-somos', baseurl + 'assets/particlesjs-config.json', function () {
 //        });
         var divContainer = '#bg-quienes-somos'
@@ -59,17 +73,17 @@
                 "resolution": 1
             },
             "particles": {
-                "amount": 60,
+                "amount": 30,
                 "radius": 2,
-                "velocity": 15,
-                "color": "0x0062AB",
+                "velocity": 5,
+                "color": "0x2680BD",
                 "fadeInDuration": 3000,
                 "fadeOutDuration": 600,
                 "keepRelativePositionOnResize": true
             },
             "lines": {
-                "minDistance": 0.17,
-                "color": "0x0062AB",
+                "minDistance": 0.20,
+                "color": "0xE8505B",
                 "maxOpacity": 0.3,
                 "thickness": 1,
                 "distanceBasedTransparency": true
@@ -79,9 +93,12 @@
             }
         });
     });</script>
+
 <script src="<?= base_url ?>assets/js/general.js"></script>
 <script src="<?= base_url ?>assets/js/boxes.js"></script>
 <script src="<?= base_url ?>assets/js/inputsWeb.js"></script>
+<script src="<?= base_url ?>assets/js/scrollify.js"></script>
+<script src="<?= base_url ?>assets/js/animations.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
 <script src="<?= base_url ?>assets/js/summernote-es-ES.js"></script>

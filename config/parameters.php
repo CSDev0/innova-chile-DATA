@@ -5,7 +5,7 @@ define("home", "web/inicio");
 define("controller_default", "webController");
 define("action_default", "inicio");
 define("correo", "innova@corfo.cl");
-
+define("soporte_correo", "soporte@datainnovacion.cl");
 //Enalces Redes sociales
 define("fb_link", "");
 define("ig_link", "");

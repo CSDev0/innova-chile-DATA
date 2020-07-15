@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="es" dir="ltr">
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://www.google.com/recaptcha/api.js?onload=CaptchaCallback&render=explicit" async defer></script>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" crossorigin="anonymous">
         <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
         <link rel="stylesheet" href="<?= base_url ?>assets/css/force-bootstrap.css">
@@ -10,12 +12,12 @@
         <link rel="stylesheet/less" href="<?= base_url ?>assets/css/general.less">
         <link rel="stylesheet/less" href="<?= base_url ?>assets/css/gestion.less">
         <link rel="stylesheet" href="<?= base_url ?>assets/css/loader.css">
-
+        <link rel="stylesheet/less" href="<?= base_url ?>assets/css/navbar.less">
         <!--  Para mostrar errores de LESS si es que ocurriesen activar:       -->
         <!--  <script type="text/javascript">less = {env: 'development'};</script> -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/3.11.1/less.min.js" ></script>
         <script src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.min.js"></script>
-        
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
@@ -30,19 +32,12 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-throttle-debounce/1.1/jquery.ba-throttle-debounce.min.js"></script>
         <script src="<?= base_url ?>assets/js/particles.min.js"></script>
         <script src="<?= base_url ?>assets/js/parameters.js"></script>
-        <script src="<?= base_url ?>assets/js/scrollify.js"></script>
         <script src="<?= base_url ?>assets/js/nav-bar.js"></script>
-        <script src="<?= base_url ?>assets/js/animations.js"></script>
         <script src="<?= base_url ?>assets/js/parsley.js"></script>
-        <script src="<?= base_url ?>assets/js/boxes.js"></script>
-         <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js"></script>
-        <script src="<?= base_url ?>assets/js/general.js"></script>
-        <?php #InnovaChile - Proyectos para el mañana. ?>
-
         <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
         <title><?php utils::getTitulo() ?></title>
     </head>
     <body>
-        
+
         <!--Para utilizar var_dump y esas cosas de debug, colocar    style="display: none"   a este elemento (el loader)-->
-        <div class="se-pre-con"></div>
+                <div class="se-pre-con"></div>

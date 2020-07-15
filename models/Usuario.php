@@ -15,7 +15,8 @@ class Usuario {
     private $clave;
     private $tipo;
     private $genero;
-    private $activado;
+    private $habilitado;
+    private $verificado;
     private $db;
 
     public function __construct() {
@@ -46,10 +47,6 @@ class Usuario {
         return password_hash($this->db->real_escape_string($this->clave), PASSWORD_BCRYPT, ['cost' => 4]);
     }
 
-    function getActivado() {
-        return $this->activado;
-    }
-
     function getTipo() {
         return $this->tipo;
     }
@@ -78,10 +75,6 @@ class Usuario {
         $this->clave = $this->db->real_escape_string($clave);
     }
 
-    function setActivado($activado) {
-        $this->activado = $activado;
-    }
-
     function setTipo($tipo) {
         $this->tipo = $tipo;
     }
@@ -92,6 +85,22 @@ class Usuario {
 
     function setGenero($genero) {
         $this->genero = $genero;
+    }
+
+    function getHabilitado() {
+        return $this->habilitado;
+    }
+
+    function getVerificado() {
+        return $this->verificado;
+    }
+
+    function setHabilitado($habilitado) {
+        $this->habilitado = $habilitado;
+    }
+
+    function setVerificado($verificado) {
+        $this->verificado = $verificado;
     }
 
     public function login() {
@@ -133,7 +142,7 @@ class Usuario {
     public function save() {
         $now = new DateTime();
         $date = $now->format("Y-m-d H:i:s");
-        $query = "INSERT INTO usuario VALUES (NULL, '{$this->getRut()}', '{$this->getNombre()}', '{$this->getApellido()}','{$this->getCorreo()}', '{$this->getClave()}', '{$this->getTipo()}', '{$this->getGenero()}', '{$this->getActivado()}')";
+        $query = "INSERT INTO usuario VALUES (NULL, '{$this->getRut()}', '{$this->getNombre()}', '{$this->getApellido()}','{$this->getCorreo()}', '{$this->getClave()}', '{$this->getTipo()}', '{$this->getGenero()}', '{$this->getHabilitado()}', '0')";
         $save = $this->db->query($query);
         $result = false;
         if ($save) {
@@ -182,7 +191,7 @@ class Usuario {
         $now = new DateTime();
         $date = $now->format("Y-m-d H:i:s");
         $query = "UPDATE usuario SET rut='{$this->getRut()}', nombre = '{$this->getNombre()}', ";
-        $query .= "apellido = '{$this->getApellido()}', correo='{$this->getCorreo()}', genero='{$this->getGenero()}', activado='{$this->getActivado()}' ";
+        $query .= "apellido = '{$this->getApellido()}', correo='{$this->getCorreo()}', genero='{$this->getGenero()}', habilitado='{$this->getHabilitado()}' ";
         $query .= "WHERE id = {$this->getId()};";
         $usuario = new Usuario();
         $usuario->setId($this->getId());
@@ -194,7 +203,7 @@ class Usuario {
             $log = new Log();
             $log->setFecha($date);
             $log->setTipo('Modificar');
-            $log->setActividad('Usuario->' . $usu_antiguo->nombre.' '.$usu_antiguo->apellido);
+            $log->setActividad('Usuario->' . $usu_antiguo->nombre . ' ' . $usu_antiguo->apellido);
             $log->setUsuario_id($_SESSION['identidad']->id);
             $log->save();
             $result = true;
@@ -266,4 +275,13 @@ class Usuario {
         return $resultado;
     }
 
+    public function verificar() {
+        $query = "UPDATE usuario SET verificado = 1 WHERE correo = '{$this->getCorreo()}'";
+        $save = $this->db->query($query);
+        $result = false;
+        if ($save) {
+            $result = true;
+        }
+        return $result;
+    }
 }

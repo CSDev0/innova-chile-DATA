@@ -23,7 +23,8 @@ if (mysqli_num_rows($resultado) > 0 && $resultado != null) {
                                                     <th>Apellido</th>
                                                     <th>Correo</th>
                                                     <th>Genero</th>
-                                                    <th>Estado</th>
+                                                    <th>Estado de cuenta</th>
+                                                    <th>Verificado</th>
                                                     <th>Gestión</th>
                                             </tr>';
     while ($usu = mysqli_fetch_array($resultado)) {
@@ -34,10 +35,15 @@ if (mysqli_num_rows($resultado) > 0 && $resultado != null) {
         } elseif ($usu['genero'] == 3) {
             $genero = "Sin especificar";
         }
-        if ($usu['activado'] == 1) {
-            $activado = "Habilitado";
+        if ($usu['habilitado'] == 1) {
+            $habilitado = "Habilitado";
         } else {
-            $activado = "Deshabilitado";
+            $habilitado = "Deshabilitado";
+        }
+        if ($usu['verificado'] == 1) {
+            $verificado = "<i class='fas fa-check color-verde'></i> Correo verificado";
+        } else {
+            $verificado = "<i class='fas fa-times color-rojo'></i> Correo aún no verificado <a href='".base_url.'usuario/enviarCodigoActivar&id='.$usu['id']."' class='btn btn-success xs-text' ><i class='fas fa-envelope'></i> Enviar codigo</a>";
         }
         $output .= '
                     <tr>
@@ -46,13 +52,14 @@ if (mysqli_num_rows($resultado) > 0 && $resultado != null) {
                             <td>' . $usu["apellido"] . '</td>
                             <td>' . $usu["correo"] . '</td>
                             <td>' . $genero . '</td>
-                            <td>' . $activado . '</td>
+                            <td>' . $habilitado . '</td>
+                            <td>' . $verificado . '</td>
                             <td>
                         <a href="#modal-modificar-usuario" data-toggle="modal" class="btn btn-success" style="width: 100%;" 
- id=' . $usu['id'] . ' rut=' . $usu['rut'] . ' nombre=' . $usu['nombre'] . ' apellido=' . $usu['apellido'] . ' correo=' . $usu['correo'] . ' genero=' . $usu['genero'] . ' activado=' . $usu['activado'] . ' >
+ id=' . $usu['id'] . ' rut=' . $usu['rut'] . ' nombre=' . $usu['nombre'] . ' apellido=' . $usu['apellido'] . ' correo=' . $usu['correo'] . ' genero=' . $usu['genero'] . ' habilitado=' . $usu['habilitado'] . ' >
                             <i class="fas fa-edit"></i> Modificar</a>
                             
-                        <a href="#modal-eliminar" data-toggle="modal" ruta="usuario/delete&id=" id="' . $usu['id'] . '" nombre="' . utils::acortador($usu['nombre'].' '.$usu['apellido'], 60) .'" tipo="'.$usu['tipo'].'"class="btn btn-danger eliminar" 
+                        <a href="#modal-eliminar" data-toggle="modal" ruta="usuario/delete&id=" id="' . $usu['id'] . '" nombre="' . utils::acortador($usu['nombre'] . ' ' . $usu['apellido'], 60) . '" tipo="' . $usu['tipo'] . '"class="btn btn-danger eliminar" 
                            style="margin-top: 5px; width: 100%;" >
                            <i class="fas fa-trash-alt"></i> Eliminar</a>
                             </td>

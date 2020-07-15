@@ -1,20 +1,20 @@
 /*Azul claro*/
-@main-color: #2680BD;
+@main-color: #4999cf;
 
 /*Azul oscuro*/
-@second-color: #0062AB;
+@second-color: #34729d;
 
 /*Celeste claro */
-@third-color: #D1ECFF;
+@third-color: #c2e7ff;
 
 /*Azul super oscuro */
-@fourth-color: #11456B;
+@fourth-color: #1e3f51;
 
 /*Celeste*/
 @fifth-color: #48ACF1;
 
-/*Naranja*/
-@special-color: #FA8A0B;
+/*Naranja (ahora es rojo))*/
+@special-color: #E8505B;
 @special-color-darker: #db7508;
 
 /*Color crema*/
@@ -27,31 +27,31 @@
 
 /*Fuentes*/
 .bold-font(){
-    font-family: 'ScalaSansPro';
-    font-weight: bold;
+    font-family:"Riona Sans W01 Regular" !important;
+    font-weight: normal;
     font-style: normal;
 }
 .bold-italic-font(){
-    font-family: 'ScalaSansPro';
+    font-family:"Riona Sans W01 Regular" !important;
     font-weight: bold;
     font-style: italic;
 }
 .normal-font(){
-    font-family: 'ScalaSansPro';
-    font-weight: normal;
+    font-family:"Riona Sans W01 Regular" !important;
+    font-weight: 300;
     font-style: normal;
 }
 .xxl-text(){
-    font-size: 65px;
-}
-.xl-text(){
     font-size: 50px;
 }
+.xl-text(){
+    font-size:40px;
+}
 .l-text(){
-    font-size: 35px;
+    font-size: 30px;
 }
 .m-text(){
-    font-size: 25px;
+    font-size: 22px;
 }
 .s-text(){
     font-size: 18px;
@@ -184,6 +184,9 @@
 .color-rojo{
     color: red;
 }
+.color-verde{
+    color: #28A745;
+}
 .icono-naranja{
     color: @special-color;
 }
@@ -225,4 +228,24 @@
 }
 .bc-celeste{
     border-color: @third-color;
+}
+@media (min-width: 544px) {  
+    .s-text(){
+        font-size: 18px;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {  
+    .class-name {font-size: 30px;}
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+    .class-name {font-size: 40px;}
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {  
+    .class-name {font-size: 48px;}
 }

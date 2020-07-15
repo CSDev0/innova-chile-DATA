@@ -15,7 +15,7 @@
     <h4>Privilegios: <?= $_SESSION['identidad']->tipo ?></h4>
     <hr>
     <button class="btn btn-primary" onclick='window.location.href = "<?= base_url ?>usuario/modificarPerfil&id="'><i class="fas fa-user-edit"></i> Modificar perfil</button>
-    <button class="btn btn-primary" onclick='window.location.href = "<?= base_url ?>usuario/modificarPerfil&id="'><i class="fas fa-unlock-alt"></i> Restablecer clave</button>
+    <button class="btn btn-primary" onclick='window.location.href = "<?= base_url ?>usuario/solicitarRestablecerAutenticado"'><i class="fas fa-unlock-alt"></i> Restablecer clave</button>
 </div>
 </div>
 </div>

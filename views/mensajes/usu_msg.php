@@ -20,6 +20,7 @@
 function d_usuario() {
     unset($_SESSION['usu_msg']);
 }
+
 if (isset($_SESSION['usu_msg'])) {
 
     $msg = $_SESSION['usu_msg'];
@@ -169,14 +170,14 @@ if (isset($_SESSION['usu_msg'])) {
         <?php
         d_usuario();
     }
-    if ($msg == 'e_activar') {
+    if ($msg == 'e_verificar') {
         ?>
         <script>
             var randomExito = Math.floor(Math.random() * exitoTitle.length);
             var title = exitoTitle[randomExito];
             swal({
                 title: title,
-                text: "Tu cuenta ha sido activada, empieza tu travesia!",
+                text: "Tu cuenta ha sido verificada, empieza tu travesia!",
                 icon: "success",
                 buttons: false,
                 timer: 2500,
@@ -192,7 +193,7 @@ if (isset($_SESSION['usu_msg'])) {
             var title = falloTitle[randomFallo];
             swal({
                 title: title,
-                text: "No se ha logrado activar tu cuenta, intentalo nuevamente.",
+                text: "No se ha logrado verificar tu cuenta, intentalo nuevamente.",
                 icon: "error",
                 buttons: false,
                 timer: 2500,
@@ -208,7 +209,7 @@ if (isset($_SESSION['usu_msg'])) {
             var title = exitoTitle[randomExito];
             swal({
                 title: title,
-                text: "Se ha enviado un codigo a tu correo, revisalo!",
+                text: "Se ha enviado un codigo al correo, revisalo!",
                 icon: "success",
                 buttons: false,
                 timer: 2500,
@@ -224,10 +225,116 @@ if (isset($_SESSION['usu_msg'])) {
             var title = falloTitle[randomFallo];
             swal({
                 title: title,
-                text: "No se ha podido enviar el codigo a tu correo, intentalo nuevamente.",
+                text: "No se ha podido enviar el codigo al correo, intentalo nuevamente.",
                 icon: "error",
                 buttons: false,
                 timer: 2500,
+            });
+        </script>
+        <?php
+        d_usuario();
+    }
+    if ($msg == 'w_debes_verificar') {
+        ?>
+        <script>
+            swal({
+                title: 'Debes verificar tu correo electronico!',
+                text: "Ingresa el codigo enviado a tu correo electronico.",
+                icon: "warning",
+                buttons: false,
+                timer: 2500
+            });
+        </script>
+        <?php
+        d_usuario();
+    }
+    if ($msg == 'f_token') {
+        ?>
+        <script>
+            swal({
+                title: 'Ay no! el codigo no es el mismo',
+                text: "El codigo ingresado no coincide con nuestra base de datos.",
+                icon: "error",
+                buttons: false,
+                timer: 2500
+            });
+        </script>
+        <?php
+        d_usuario();
+    }
+    if ($msg == 'f_no_encontrado') {
+        ?>
+        <script>
+            swal({
+                title: 'Ay no! no lo encontramos',
+                text: "Este correo no esta asociado a ninguna cuenta.",
+                icon: "error",
+                buttons: false,
+                timer: 2500
+            });
+        </script>
+        <?php
+        d_usuario();
+    }
+    if ($msg == 'e_guardar_clave') {
+        ?>
+        <script>
+            var randomExito = Math.floor(Math.random() * exitoTitle.length);
+            var title = exitoTitle[randomExito];
+            swal({
+                title: title,
+                text: "Tu clave ha sido modificada exitosamente!",
+                icon: "success",
+                buttons: false,
+                timer: 2500
+            });
+        </script>
+        <?php
+        d_usuario();
+    }
+    if ($msg == 'f_guardar_clave') {
+        ?>
+        <script>
+            var randomFallo = Math.floor(Math.random() * falloTitle.length);
+            var title = falloTitle[randomFallo];
+            swal({
+                title: title
+                text: "No se ha podido modificar la clave.",
+                icon: "error",
+                buttons: false,
+                timer: 2500
+            });
+        </script>
+        <?php
+        d_usuario();
+    }
+    if ($msg == 'e_cancelar_restablecer') {
+        ?>
+        <script>
+            var randomExito = Math.floor(Math.random() * exitoTitle.length);
+            var title = exitoTitle[randomExito];
+            swal({
+                title: title,
+                text: "Has cancelado restablecer tu clave exitosamente!",
+                icon: "success",
+                buttons: false,
+                timer: 2500
+            });
+        </script>
+        <?php
+        d_usuario();
+    }
+    if ($msg == 'f_cancelar_restablecer') {
+        ?>
+        <script>
+            var randomFallo = Math.floor(Math.random() * falloTitle.length);
+            var title = falloTitle[randomFallo];
+            swal({
+                title: title
+                text: "No se ha podido cancelar el restablecimiento de la clave.",
+                icon: "error",
+                buttons: false,
+                timer: 2500
             });
         </script>
         <?php

@@ -1,17 +1,13 @@
-/*
- --main-color : azul en navbar y subtitulos
- --secondary-color : azul botones
- --third-coor : naranja titulos y lineas
-*/
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css');
 @import "style.less";
-/*.back-to-top {
-    position: fixed;
-    bottom: 50px;
-    right: 25px;
-    display: none;
-    border: 1px solid #49535E;
+/* Esto le da un estilo a todos los objetos para poder detectar los bordes de cada elemento y si sobresalen.*/
+
+/** {
+  background: #000 !important;
+  color: #0f0 !important;
+  outline: solid #f00 1px !important;
 }*/
+
 input.parsley-error
 {
     color: #B94A48 !important;
@@ -27,19 +23,10 @@ input.parsley-error
     margin-top: 0px;
     margin-left: -35px;
 }
-.loading-div{
-    width: 100%;
-    height: 100%;
-    background-color: white;
-    position: absolute;
-    z-index: 100;
-    background: url('../img/preloader.gif') center no-repeat #fff;
-}
+
 .form-control{
     .s-text();
-
 }
-
 .small-br{
     height: 8px;
 }
@@ -55,30 +42,17 @@ input.parsley-error
 }
 body {
     right: -1px;
-    overflow-y: scroll;
-    overflow-x:  hidden;
+
 }
 html{
     scrollbar-color: @main-color white;
-    scroll-behavior: smooth;
 }
 html,body
 {
-    width: 100%;
-    height: 100%;
     margin: 0px;
     padding: 0px;
+    /*    overflow-x: hidden; */
 }
-.x-msg{
-    text-align: left;
-    .m-text();
-}
-#x-titulo{
-    text-align: center;
-    .bold-font();
-    .m-text();
-}
-
 .text-justify {
     text-align: justify;
 }
@@ -89,7 +63,6 @@ h1{
     color: @main-color;
     .bold-font();
     .xl-text();
-
 }
 h2{
     color: @main-color;
@@ -118,6 +91,7 @@ h6{
 
 p{
     color: @text-color;
+    .normal-font();
     .s-text();
 }
 p.white{
@@ -180,6 +154,10 @@ p.white{
     outline: none !important;
     box-shadow: none !important;
 }
+button:active, button:focus{
+    outline: none !important;
+    box-shadow: none !important;
+}
 .btn-success{
     border: none;
     .s-text();
@@ -226,10 +204,7 @@ p.white{
 }
 .texto-circulo-data{
     margin: auto;
-    font-family: 'ScalaSansPro';
-    font-weight: bold;
-    font-style: italic;
-    font-size: 28px;
+    .m-text();
 }
 .circle-link{
     text-align: center;
@@ -251,6 +226,7 @@ hr{
 }
 
 a{
+    .normal-font();
     color: @second-color;
 }
 a:hover{
@@ -280,84 +256,14 @@ a:hover{
     .xs-text();
 }
 
-/*---------------------------------------------------------------*/
-/*BARRA DE NAVEGACION*/
-
-.navbar{
-    background-color: @second-color;
-    transition: background-color 0.5s ease 0s;
-}
-.navbar-nav{
-    margin-bottom: 0px;
-}
-.nav-item{
-    margin-right: 4px;
-    margin-top: -5px;
-    margin-bottom: -5px;
-}
-.nav-link{
-    .m-text();
-    background-color: @second-color;
-    color: white;
-    .transition(0.5s);
-    .border-radius(5px);
-    margin-left: 0px;
-    margin-right: 20px;
-    width: 100%;
-    text-align: center;
-    .bold-font();
-}
-.nav-link:hover{
-    color: @second-color;
-    background-color: white;
-}
-.dropdown-item{
-    .bold-font();
-    .m-text();
-}
-.dropdown{
-    position: relative;
-    display: inline-block;
-    vertical-align: middle;
-}
-.dropdown-menu{
-    .button-shadow();
-}
-.dropdown-item{
-    .m-text();
-    color: @second-color;
-}
-.dropdown-item:hover{
-    color: white;
-    background-color: @second-color;
-
-}
-#nav-bar-dropdown-arrow3{
-    .transition(0.5s);
-}
-.dropdown-menu{
-    background-color: white;
-}
-.dropdown>.dropdown-menu {
-    top: 200%;
-    margin-top: 0px;
-    margin-left: 8%;
-    .transition(0.3s);
-    vertical-align: middle;
-    left: 0%;
-}
-.dropdown:hover>.dropdown-menu {
-    display: block;
-    top: 100%;
-    left: 22%;
-}
-
-/*---------------------------------------------------------------*/
-
-
 .row.section{
+    width: 100%;
+    padding: 0px;
     padding-top: 70px;
     margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin: 0px;
 }
 
 #bg-quienes-somos{
@@ -372,7 +278,7 @@ a:hover{
 #bg-anim{
     width:100%;
     height: 100%;
-    background: linear-gradient(rgba(255,255,255,.1), rgba(255,255,255,.1)), url("../img/bg/floor.png");
+    background: linear-gradient(rgba(255,255,255,.9), rgba(255,255,255,.8)), url("../img/bg/floor.png");
     top: 20px;
     opacity:1;
     filter: brightness(100%);
@@ -409,7 +315,7 @@ a:hover{
 }
 .bg-chile{
     width:100%;
-    background: linear-gradient(rgba(255,255,255,.3), rgba(255,255,255,.3)), url("../img/bg/floor.png");
+    background: linear-gradient(rgba(255,255,255,.9), rgba(255,255,255,.8)), url("../img/bg/floor.png");
     top: 20px;
     opacity:1;
     filter: brightness(100%);
@@ -429,6 +335,27 @@ a:hover{
 .count{
     .xxl-text();
     .bold-font();
+}
+
+.no-bg{
+    background-color: white !important;
+    transition: background-color 0.5s ease 0s !important;
+}
+.initial-state{
+    .m-text() !important;
+    background-color: white !important;
+    color: @main-color !important;
+    .transition(0.5s) !important;
+    .border-radius(5px);
+    margin-left: 0px;
+    margin-right: 20px;
+    width: 100%;
+    text-align: center;
+    .bold-font();
+}
+.initial-state:hover{
+    color: @second-color;
+    background-color: white;
 }
 /*---------------------------------------------------------------*/
 /*PIE DE PAGINA*/
@@ -494,28 +421,6 @@ hr.faded-blanco {
         max-width: 55%;
     }
 }
-
-.no-bg{
-    background-color: transparent;
-    transition: background-color 0.5s ease 0s;
-}
-.initial-state{
-    .m-text();
-    background-color: white;
-    color: @main-color;
-    .transition(0.5s);
-    .border-radius(5px);
-    margin-left: 0px;
-    margin-right: 20px;
-    width: 100%;
-    text-align: center;
-    .bold-font();
-}
-.initial-state:hover{
-    color: @second-color;
-    background-color: white;
-}
-
 .drag-icon{
     color: @main-color;
     cursor: pointer;
@@ -526,8 +431,67 @@ hr.faded-blanco {
 }
 
 .break-text span{
-word-wrap: break-word;
-min-width: 50px;max-width: 450px;
-  word-wrap: break-word;
-  display:block;
+    word-wrap: break-word;
+    min-width: 50px;
+    max-width: 450px;
+    word-wrap: break-word;
+    display:block;
+}
+@media(max-width:991px){
+    header .full-nav {
+        display: none;
+    }
+    p{
+        font-size: 15px;
+    }
+    .initial-state{
+        .m-text();
+        background-color: @second-color;
+        color: @main-color;
+        .transition(0.5s);
+        .border-radius(5px);
+        margin-left: 0px;
+        margin-right: 20px;
+        width: 100%;
+        text-align: center;
+        .bold-font();
+    }
+    .destacado-naranja{
+        .s-text();
+    }
+    .count{
+        .l-text();
+    }
+    h1{
+        .l-text();
+    }
+    .container{
+        padding-left: 5px;
+        padding-right: 5px;
+        margin: 0px;
+    }
+    .row.section{
+        width: 100%;
+        padding: 0px;
+        padding-top: 50px;
+        margin-bottom: 0px;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin: 0px;
+    }
+    .logo-innova{
+        background: url("../img/logos/DATAINNOVALOGO.png") center no-repeat transparent;
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 80px;
+        margin: auto;
+        margin-top: 0px;
+        .transition(1s);
+    }
+}
+@media(min-width:992px){
+    header .mobile {
+        display: none;   
+    }
 }

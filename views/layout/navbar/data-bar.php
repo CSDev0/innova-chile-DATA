@@ -3,7 +3,7 @@
 
 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
     <div class="move-drop">
-        <a class="dropdown-item" id="dropdown-item-hover" href="#"><i class="fa fa-angle-double-right" id="nav-bar-dropdown-arrow"></i> Portafolio</a>
+        <a class="dropdown-item" id="dropdown-item-hover" href="<?= base_url ?>web/portafolio"><i class="fa fa-angle-double-right" id="nav-bar-dropdown-arrow"></i> Portafolio</a>
         <a class="dropdown-item"  id="dropdown-item-hover2" href="#"><i class="fa fa-angle-double-right" id="nav-bar-dropdown-arrow2"></i> Ley I+D</a>
         <div class="dropdown">
             <a class="dropdown-item" id="dropdown-item-hover3"href="#"><i class="fa fa-angle-double-right" id="nav-bar-dropdown-arrow3"></i> Subsidios</a>

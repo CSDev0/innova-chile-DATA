@@ -1,36 +1,124 @@
 @font-face {
-    font-family: 'ScalaSansPro';
-    src: url('ScalaSansPro-BoldItalic.eot');
-    src: url('ScalaSansPro-BoldItalic.eot?#iefix') format('embedded-opentype'),
-        url('ScalaSansPro-BoldItalic.woff2') format('woff2'),
-        url('ScalaSansPro-BoldItalic.woff') format('woff'),
-        url('ScalaSansPro-BoldItalic.ttf') format('truetype'),
-        url('ScalaSansPro-BoldItalic.svg#ScalaSansPro-BoldItalic') format('svg');
-    font-weight: bold;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'ScalaSansPro';
-    src: url('ScalaSansPro-Bold.eot');
-    src: url('ScalaSansPro-Bold.eot?#iefix') format('embedded-opentype'),
-        url('ScalaSansPro-Bold.woff2') format('woff2'),
-        url('ScalaSansPro-Bold.woff') format('woff'),
-        url('ScalaSansPro-Bold.ttf') format('truetype'),
-        url('ScalaSansPro-Bold.svg#ScalaSansPro-Bold') format('svg');
-    font-weight: bold;
+    font-family: 'Panton Black Caps';
+    src: url('PantonDemo-Black.eot');
+    src: url('PantonDemo-Black.eot?#iefix') format('embedded-opentype'),
+        url('PantonDemo-Black.woff2') format('woff2'),
+        url('PantonDemo-Black.woff') format('woff'),
+        url('PantonDemo-Black.ttf') format('truetype'),
+        url('PantonDemo-Black.svg#PantonDemo-Black') format('svg');
+    font-weight: 900;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-    font-family: 'ScalaSansPro';
-    src: url('ScalaSansPro-Regular.eot');
-    src: url('ScalaSansPro-Regular.eot?#iefix') format('embedded-opentype'),
-        url('ScalaSansPro-Regular.woff2') format('woff2'),
-        url('ScalaSansPro-Regular.woff') format('woff'),
-        url('ScalaSansPro-Regular.ttf') format('truetype'),
-        url('ScalaSansPro-Regular.svg#ScalaSansPro-Regular') format('svg');
+    font-family: 'Panton Black Italic Caps';
+    src: url('PantonDemo-BlackItalic.eot');
+    src: url('PantonDemo-BlackItalic.eot?#iefix') format('embedded-opentype'),
+        url('PantonDemo-BlackItalic.woff2') format('woff2'),
+        url('PantonDemo-BlackItalic.woff') format('woff'),
+        url('PantonDemo-BlackItalic.ttf') format('truetype'),
+        url('PantonDemo-BlackItalic.svg#PantonDemo-BlackItalic') format('svg');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Panton Narrow Black Italic Caps';
+    src: url('PantonNarrowDemo-BlackItalic.eot');
+    src: url('PantonNarrowDemo-BlackItalic.eot?#iefix') format('embedded-opentype'),
+        url('PantonNarrowDemo-BlackItalic.woff2') format('woff2'),
+        url('PantonNarrowDemo-BlackItalic.woff') format('woff'),
+        url('PantonNarrowDemo-BlackItalic.ttf') format('truetype'),
+        url('PantonNarrowDemo-BlackItalic.svg#PantonNarrowDemo-BlackItalic') format('svg');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Panton Light Italic Caps';
+    src: url('PantonDemo-LightItalic.eot');
+    src: url('PantonDemo-LightItalic.eot?#iefix') format('embedded-opentype'),
+        url('PantonDemo-LightItalic.woff2') format('woff2'),
+        url('PantonDemo-LightItalic.woff') format('woff'),
+        url('PantonDemo-LightItalic.ttf') format('truetype'),
+        url('PantonDemo-LightItalic.svg#PantonDemo-LightItalic') format('svg');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Panton Narrow Black Caps';
+    src: url('PantonNarrowDemo-Black.eot');
+    src: url('PantonNarrowDemo-Black.eot?#iefix') format('embedded-opentype'),
+        url('PantonNarrowDemo-Black.woff2') format('woff2'),
+        url('PantonNarrowDemo-Black.woff') format('woff'),
+        url('PantonNarrowDemo-Black.ttf') format('truetype'),
+        url('PantonNarrowDemo-Black.svg#PantonNarrowDemo-Black') format('svg');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Panton Narrow Light Italic Caps';
+    src: url('PantonNarrowDemo-LightItalic.eot');
+    src: url('PantonNarrowDemo-LightItalic.eot?#iefix') format('embedded-opentype'),
+        url('PantonNarrowDemo-LightItalic.woff2') format('woff2'),
+        url('PantonNarrowDemo-LightItalic.woff') format('woff'),
+        url('PantonNarrowDemo-LightItalic.ttf') format('truetype'),
+        url('PantonNarrowDemo-LightItalic.svg#PantonNarrowDemo-LightItalic') format('svg');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Panton Light Caps';
+    src: url('PantonDemo-Light.eot');
+    src: url('PantonDemo-Light.eot?#iefix') format('embedded-opentype'),
+        url('PantonDemo-Light.woff2') format('woff2'),
+        url('PantonDemo-Light.woff') format('woff'),
+        url('PantonDemo-Light.ttf') format('truetype'),
+        url('PantonDemo-Light.svg#PantonDemo-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Panton Narrow Light Caps';
+    src: url('PantonNarrowDemo-Light.eot');
+    src: url('PantonNarrowDemo-Light.eot?#iefix') format('embedded-opentype'),
+        url('PantonNarrowDemo-Light.woff2') format('woff2'),
+        url('PantonNarrowDemo-Light.woff') format('woff'),
+        url('PantonNarrowDemo-Light.ttf') format('truetype'),
+        url('PantonNarrowDemo-Light.svg#PantonNarrowDemo-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Simplifica';
+    src: url('Simplifica.eot');
+    src: url('Simplifica.eot?#iefix') format('embedded-opentype'),
+        url('Simplifica.woff2') format('woff2'),
+        url('Simplifica.woff') format('woff'),
+        url('Simplifica.ttf') format('truetype'),
+        url('Simplifica.svg#Simplifica') format('svg');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
-
+@font-face {font-family: "Riona Sans W01 Regular";
+  src: url("6caf4d27e271767286c1ddbf1a582b44.eot"); /* IE9*/
+  src: url("6caf4d27e271767286c1ddbf1a582b44.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+  url("6caf4d27e271767286c1ddbf1a582b44.woff2") format("woff2"), /* chrome、firefox */
+  url("6caf4d27e271767286c1ddbf1a582b44.woff") format("woff"), /* chrome、firefox */
+  url("6caf4d27e271767286c1ddbf1a582b44.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url("6caf4d27e271767286c1ddbf1a582b44.svg#Riona Sans W01 Regular") format("svg"); /* iOS 4.1- */
+}

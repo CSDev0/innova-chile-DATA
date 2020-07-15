@@ -1,0 +1,119 @@
+@import "style.less";
+
+.icon-bar {
+    width: 22px; 
+    height: 3px;
+    background-color: WHITE;
+    display: block;
+    transition: all 0.2s;
+    margin-top: 4px
+}
+
+.navbar-toggler {
+    border: none;
+    background: transparent !important;
+}
+.navbar-toggler .top-bar {
+  transform: rotate(45deg);
+  transform-origin: 10% 10%;
+}
+ 
+.navbar-toggler .middle-bar {
+  opacity: 0;
+}
+ 
+.navbar-toggler .bottom-bar {
+  transform: rotate(-45deg);
+  transform-origin: 0% 90%;
+}
+ 
+.navbar-toggler.collapsed .top-bar {
+  transform: rotate(0);
+}
+ 
+.navbar-toggler.collapsed .middle-bar {
+  opacity: 1;
+}
+ 
+.navbar-toggler.collapsed .bottom-bar {
+  transform: rotate(0);
+}
+
+
+
+/*---------------------------------------------------------------*/
+/*BARRA DE NAVEGACION*/
+
+.navbar{
+    background-color: @second-color;
+    transition: background-color 0.5s ease 0s;
+    width: 100%;
+}
+.navbar-nav{
+    margin-bottom: 0px;
+}
+.nav-item{
+    margin-right: 0px;
+    margin-top: -5px;
+    margin-bottom: -5px;
+}
+.nav-link{
+    .m-text();
+    background-color: @second-color;
+    color: white;
+    .transition(0.5s);
+    .border-radius(5px);
+    margin-left: 0px;
+    margin-right: 20px;
+    width: 100%;
+    text-align: center;
+    .bold-font();
+}
+.nav-link:hover{
+    color: @second-color;
+    background-color: white;
+}
+.dropdown-item{
+    .bold-font();
+    .m-text();
+}
+.dropdown{
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+}
+.dropdown-menu{
+    .button-shadow();
+}
+.dropdown-item{
+    .m-text();
+    color: @second-color;
+}
+.dropdown-item:hover{
+    color: white;
+    background-color: @second-color;
+
+}
+#nav-bar-dropdown-arrow3{
+    .transition(0.5s);
+}
+.dropdown-menu{
+    background-color: white;
+}
+.dropdown>.dropdown-menu {
+    top: 200%;
+    margin-top: 0px;
+    margin-left: 8%;
+    .transition(0.3s);
+    vertical-align: middle;
+    left: 0%;
+}
+.dropdown:hover>.dropdown-menu {
+    display: block;
+    top: 100%;
+    left: 22%;
+}
+
+/*---------------------------------------------------------------*/
+
+

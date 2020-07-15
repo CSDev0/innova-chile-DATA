@@ -2,11 +2,11 @@
 
 class utils {
 
-    public static function isActived() {
-        if ($_SESSION['identidad']->ACTIVADO == 1) {
+    public static function isVerified() {
+        if ($_SESSION['identidad']->verificado == 1) {
             return true;
         } else {
-            $_SESSION['aut_msg'] = 'f_habilitada';
+            $_SESSION['usu_msg'] = 'w_debes_verificar';
             return false;
         }
     }
@@ -242,5 +242,26 @@ class utils {
         $datos = array($dato_millones, $dato_iniciativas, $dato_beneficiados);
         return $datos;
     }
+    
+    public static function post_captcha($user_response) {
+        $fields_string = '';
+        $fields = array(
+            'secret' => '6LdDIbAZAAAAAJD0-7Nk8sqYxo1_UVAfPyZJ01La',
+            'response' => $user_response
+        );
+        foreach($fields as $key=>$value)
+        $fields_string .= $key . '=' . $value . '&';
+        $fields_string = rtrim($fields_string, '&');
 
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, 'https://www.google.com/recaptcha/api/siteverify');
+        curl_setopt($ch, CURLOPT_POST, count($fields));
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $fields_string);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, True);
+
+        $result = curl_exec($ch);
+        curl_close($ch);
+
+        return json_decode($result, true);
+    }
 }

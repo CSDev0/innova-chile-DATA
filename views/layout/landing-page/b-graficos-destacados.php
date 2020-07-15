@@ -1,46 +1,55 @@
-<section class="seccion fullview" data-section-name="datos_destacados" id="datos-destacados">
+<section class="seccion fullview datos_destacados" data-section-name="datos_destacados" id="datos-destacados">
     <div class="bg-datos-destacados">
-        <div class="container d-flex">
+        <div class="container">
             <div class="row section justify-content-center">
                 <div class="col-sm-12 align-self-top h-100">
-
                     <h1 class="text-center" id="datos_destacados_title">Datos destacados</h1>
-
                     <hr class="faded " >
                 </div>
-                <div class="col-sm-12">
-                    <div class="row align-self-center">
-                        <div class="col-sm-4">
-                            <h2 class="destacado-naranja "><i class="fas fa-dollar-sign fa-2x"></i></h2>
+                <div class="col-sm">
+                    <div class="row">
+                        <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+                            <div class="row justify-content-center">
+                            <h2 class="destacado-naranja"><i class="fas fa-dollar-sign fa-2x"></i></h2>
+                            </div>
+                            <div class="row justify-content-center">
                             <h2 class="destacado-naranja">+ $<span class="count"><?php if(isset($dato_millones) && $dato_millones->texto != ''){echo $dato_millones->texto;}?></span>
                                 <br>millones</h2>
+                            </div>
                         </div>
-                        <div class="col-sm-4">
+                        <div class="col-6 col-sm-6 col-md-6 col-lg-6 ">
+                            <div class="row justify-content-center">
+                            <h2 class="destacado-naranja"><i class="fas fa-globe fa-2x"></i></h2>
+                            </div>
+                            <div class="row justify-content-center">
+                                    <h2 class="destacado-naranja"">+ <span class="count"><?php if(isset($dato_beneficiados) && $dato_beneficiados->texto != '' ){echo $dato_beneficiados->texto;}?></span>
+                                        <br>beneficiados</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-sm-12 col-md-4 col-lg-4">
                             <h2 class="destacado-naranja"><i class="fas fa-chart-line fa-2x"></i></h2>
                             <h2 class="destacado-naranja">+ <span class="count"><?php if(isset($dato_iniciativas) && $dato_iniciativas->texto != '' ){echo $dato_iniciativas->texto;}?></span>
                                 <br>Iniciativas apoyadas</h2>
                         </div>
-                        <div class="col-sm-4">
-                            <h2 class="destacado-naranja"><i class="fas fa-globe fa-2x"></i></h2>
-                            <h2 class="destacado-naranja"">+ <span class="count"><?php if(isset($dato_beneficiados) && $dato_beneficiados->texto != '' ){echo $dato_beneficiados->texto;}?></span>
-                                <br>beneficiados</h2>
-                        </div>
+                    </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-<section class="seccion" data-section-name="graficos_destacados" id="graficos-destacados">
+<section class="seccion fullview" data-section-name="graficos_destacados" id="graficos-destacados">
     <div class="container-fluid d-flex">
         <div class="row section">
-            <div class="col-sm-12 align-self-top vw-100">
+            <div class="col-sm-12 align-self-top w-100">
                 <div class="container">
                     <h1 class="text-center" id="graficos_destacados_title">Graficos destacados</h1>
                     <hr class="faded" >
                 </div>
             </div>
             <div class="row ">
-                <div class="col-sm-12 vw-100">
+                <div class="col-sm-12" style="width: 98vw">
                     <div id="graficos-crsl" class="carousel slide destacados" data-ride="carousel">
 
                         <!--Indicadores-->

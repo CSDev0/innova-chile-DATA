@@ -13,7 +13,7 @@ if (isset($_SESSION['aut_msg'])) {
     if ($msg == 'e_login_o') {
         ?>
         <script>
-            swal({  
+            swal({
                 title: "Has iniciado sesión!",
                 text: "Bienvenido <?= $nombre ?>.",
                 icon: "success",
@@ -27,7 +27,7 @@ if (isset($_SESSION['aut_msg'])) {
     if ($msg == 'e_login_a') {
         ?>
         <script>
-            swal({  
+            swal({
                 title: "Has iniciado sesión!",
                 text: "Bienvenida <?= $nombre ?>.",
                 icon: "success",
@@ -41,7 +41,7 @@ if (isset($_SESSION['aut_msg'])) {
     if ($msg == 'e_login_@') {
         ?>
         <script>
-            swal({  
+            swal({
                 title: "Has iniciado sesión!",
                 text: "Bienvenid@ <?= $nombre ?>.",
                 icon: "success",
@@ -55,9 +55,23 @@ if (isset($_SESSION['aut_msg'])) {
     if ($msg == 'f_login') {
         ?>
         <script>
-            swal({  
+            swal({
                 title: "Oops, Algo salió mal!",
                 text: "No se ha encontrado al usuario o has ingresado datos incorrectos.",
+                icon: "error",
+                buttons: false,
+                timer: 2500,
+            });
+        </script>
+        <?php
+        d_autenticacion();
+    }
+    if ($msg == 'f_captcha') {
+        ?>
+        <script>
+            swal({
+                title: "¿Acaso eres un robot?",
+                text: "No has verificado la casilla de 'No soy un robot'.",
                 icon: "error",
                 buttons: false,
                 timer: 2500,
@@ -69,7 +83,7 @@ if (isset($_SESSION['aut_msg'])) {
     if ($msg == 'f_formulario') {
         ?>
         <script>
-            swal({  
+            swal({
                 title: "Oops, Algo salió mal!",
                 text: "No has ingresado todos los datos.",
                 icon: "error",
@@ -83,7 +97,7 @@ if (isset($_SESSION['aut_msg'])) {
     if ($msg == 'f_restringido') {
         ?>
         <script>
-            swal({  
+            swal({
                 title: "Hey! ¿Para donde vas?!",
                 text: "No tienes permisos para ir por ahí.",
                 icon: "warning",
@@ -97,7 +111,7 @@ if (isset($_SESSION['aut_msg'])) {
     if ($msg == 'f_no_login') {
         ?>
         <script>
-            swal({  
+            swal({
                 title: "Hey! ¿Para donde vas?!",
                 text: "Necesitas iniciar sesión primero.",
                 icon: "warning",
@@ -111,7 +125,7 @@ if (isset($_SESSION['aut_msg'])) {
     if ($msg == 'e_logout') {
         ?>
         <script>
-            swal({  
+            swal({
                 title: "Has cerrado tu sesión!",
                 text: "Esperamos que vuelvas pronto.",
                 icon: "success",
@@ -125,7 +139,7 @@ if (isset($_SESSION['aut_msg'])) {
     if ($msg == 'f_logout') {
         ?>
         <script>
-            swal({  
+            swal({
                 title: "Oops, algo salió mal!",
                 text: "No se ha podido cerrar tu sesión.",
                 icon: "error",
@@ -139,7 +153,7 @@ if (isset($_SESSION['aut_msg'])) {
     if ($msg == 'f_habilitada') {
         ?>
         <script>
-            swal({  
+            swal({
                 title: "Tu cuenta no esta habilitada!",
                 text: "Contacta con un administrador.",
                 icon: "warning",

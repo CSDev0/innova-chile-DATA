@@ -1,5 +1,4 @@
 $(function () {
-
     $.scrollify({
         section: ".seccion",
         interstitialSection: ".seccion-extra",
@@ -14,61 +13,71 @@ $(function () {
         {
             if ($.scrollify.current().attr('data-section-name') == "quienes_somos")
             {
-                $("#quienes_somos_title").effect("slide", 800);
+                $("#quienes_somos_title").show("puff", 800);
                 $(".landing-page-navbar").addClass("no-bg");
                 $(".landing-page-nav-link").addClass("initial-state")
                 $(".logo-corfo").css("opacity", "1");
+                $("#datos_destacados_title").hide("puff", 0);
 
             }
             if ($.scrollify.current().attr('data-section-name') == "datos_destacados")
             {
                 datosDestacados();
-                $("#datos_destacados_title").effect("slide", 800);
+                $("#datos_destacados_title").show("puff", 800);
                 $(".landing-page-navbar").removeClass("no-bg");
                 $(".landing-page-nav-link").removeClass("initial-state")
                 $(".logo-corfo").css("opacity", "0");
+                $("#graficos_destacados_title").hide("puff", 0);
             }
             if ($.scrollify.current().attr('data-section-name') == "graficos_destacados")
             {
-                $("#graficos_destacados_title").effect("slide", 800);
+                $("#datos_destacados_title").hide("puff", 0);
+                $("#graficos_destacados_title").show("puff", 800);
                 $(".landing-page-navbar").removeClass("no-bg");
                 $(".landing-page-nav-link").removeClass("initial-state")
                 $(".logo-corfo").css("opacity", "0");
+                $("#data_title").hide("puff", 0);
             }
 
             if ($.scrollify.current().attr('data-section-name') == "data")
             {
-                $("#data_title").effect("slide", 800);
+                $("#graficos_destacados_title").hide("puff", 0);
+                $("#data_title").show("puff", 800);
                 $(".landing-page-navbar").removeClass("no-bg");
                 $(".landing-page-nav-link").removeClass("initial-state")
                 $(".logo-corfo").css("opacity", "0");
+                $("#estudios_title").hide("puff", 0);
+                
+                $("#nuestros_title").hide("puff", 0);
+                $("#lecturas_title").hide("puff", 0);
+                
             }
             if ($.scrollify.current().attr('data-section-name') == "estudios")
             {
-                $("#estudios_title").effect("slide", 800);
-                $("#nuestros_title").effect("slide", 800);
-                $("#lecturas_title").effect("slide", 800);
+                $("#data_title").hide("puff", 0);
+                $("#estudios_title").show("puff", 800);
+                
+                $("#nuestros_title").show("puff", 800);
+                $("#lecturas_title").show("puff", 800);
+                
                 $(".landing-page-navbar").removeClass("no-bg");
-                $(".landing-page-nav-link").removeClass("initial-state")
+                $(".landing-page-nav-link").removeClass("initial-state");
                 $(".logo-corfo").css("opacity", "0");
+                $("#chile_title").hide("puff", 0);
 
             }
-            if ($.scrollify.current().attr('data-section-name') == "chile_en_el_mundo")
+            if ($.scrollify.current().attr('data-section-name') === "chile_en_el_mundo")
             {
-                $("#chile_title").effect("slide", 800);
+                $("#chile_title").show("puff", 800);
                 $(".landing-page-navbar").removeClass("no-bg");
-                $(".landing-page-nav-link").removeClass("initial-state")
+                $(".landing-page-nav-link").removeClass("initial-state");
                 $(".logo-corfo").css("opacity", "0");
-
             }
         },
         after: function (index)
         {
-        },
-        afterRender: function () {
-            $.scrollify.update();
+        }
 
-        },
 
     });
 });

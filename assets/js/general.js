@@ -1,8 +1,5 @@
 $(document).ready(function () {
     bsCustomFileInput.init()
-    if (sessionStorage.scrollTop != "undefined") {
-        $(window).scrollTop(sessionStorage.scrollTop);
-    }
     loop_flecha_animada();
 });
 
@@ -15,14 +12,15 @@ function resizeSecciones() {
             g = d.getElementsByTagName('body')[0],
             x = w.innerWidth || e.clientWidth || g.clientWidth,
             y = w.innerHeight || e.clientHeight || g.clientHeight;
-    $('.seccion.fullview').css("width", "100vw");
+    $('.seccion.fullview').css("width", "100%");
     $('.seccion.fullview').css('height', y - 5); //Si se ocupa el height completo ocurre un extraño bug al desplazarse entre secciones, por lo que se le resta 5 y se soluciona.
     $('.seccion.fullview.chile_mundo').css('height', '120%'); 
     $("#bg-quienes-somos").css("height", y);
     $("#bg-chile").css('height', '120%'); 
-    $("#bg-quienes-somos").css("width", "100vw");
+    $("#bg-quienes-somos").css("width", "100%");
 }
 resizeSecciones();
+window.onresize = resizeSecciones();
 
 function datosDestacados() {
     $('.count').each(function () {
@@ -57,17 +55,15 @@ $.fn.scrollBottom = function () {
 };
 var abierto = false;
 var header = false;
-
 $(window).scroll(function () {
-    sessionStorage.scrollTop = $(this).scrollTop();
-    if ($(this).scrollBottom() < 70 && abierto === false) {
+    if ($(this).scrollBottom() < 60 && abierto === false) {
         var altura = $('.footer-sticky').get(0).scrollHeight;
         $('.footer-sticky').animate({height: altura}, 50);
         abierto = true;
         flecha_abajo();
 
     } else {
-        if ($(this).scrollBottom() > 70 && abierto === true) {
+        if ($(this).scrollBottom() > 50 && abierto === true) {
             $('.footer-sticky').animate({height: '40px'}, 50);
             abierto = false;
             flecha_arriba();
