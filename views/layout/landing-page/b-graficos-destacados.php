@@ -13,7 +13,7 @@
                             <h2 class="destacado-naranja"><i class="fas fa-dollar-sign fa-2x"></i></h2>
                             </div>
                             <div class="row justify-content-center">
-                            <h2 class="destacado-naranja">+ $<span class="count"><?php if(isset($dato_millones) && $dato_millones->texto != ''){echo $dato_millones->texto;}?></span>
+                            <h2 class="destacado-naranja"><span class="count"><?php if(isset($dato_millones) && $dato_millones->texto != ''){echo $dato_millones->texto;}?></span>
                                 <br>millones</h2>
                             </div>
                         </div>
@@ -22,7 +22,7 @@
                             <h2 class="destacado-naranja"><i class="fas fa-globe fa-2x"></i></h2>
                             </div>
                             <div class="row justify-content-center">
-                                    <h2 class="destacado-naranja"">+ <span class="count"><?php if(isset($dato_beneficiados) && $dato_beneficiados->texto != '' ){echo $dato_beneficiados->texto;}?></span>
+                                    <h2 class="destacado-naranja"><span class="count"><?php if(isset($dato_beneficiados) && $dato_beneficiados->texto != '' ){echo $dato_beneficiados->texto;}?></span>
                                         <br>beneficiados</h2>
                             </div>
                         </div>
@@ -30,7 +30,7 @@
                     <div class="row justify-content-center">
                         <div class="col-12 col-sm-12 col-md-4 col-lg-4">
                             <h2 class="destacado-naranja"><i class="fas fa-chart-line fa-2x"></i></h2>
-                            <h2 class="destacado-naranja">+ <span class="count"><?php if(isset($dato_iniciativas) && $dato_iniciativas->texto != '' ){echo $dato_iniciativas->texto;}?></span>
+                            <h2 class="destacado-naranja"><span class="count"><?php if(isset($dato_iniciativas) && $dato_iniciativas->texto != '' ){echo $dato_iniciativas->texto;}?></span>
                                 <br>Iniciativas apoyadas</h2>
                         </div>
                     </div>
@@ -86,13 +86,10 @@
                         ?>
 
                     </div>
-
                     <!--Controles del carousel-->
                     <a class="carousel-control-prev" href="#graficos-crsl" data-slide="prev">
-                        <i class="fas fa-angle-double-left fa-5x carousel"></i>
                     </a>
                     <a class="carousel-control-next" href="#graficos-crsl" data-slide="next">
-                        <i class="fas fa-angle-double-right fa-5x carousel"></i>
                     </a>
                 </div>
             </div>

@@ -8,12 +8,9 @@
                     <hr class="faded">
                 </div>
                 <div class="row align-self-center h-100 w-100">
-                    <div class="col-sm-12   ">
-                        <br>
-                        <p>En esta página encontrarás datos públicos de los más de 7000 proyectos de Innovación apoyados desde el año 2010. ¿Quieres saber qué tipo de iniciativas hemos financiado? ¿A quiénes hemos apoyado? Estás en el lugar correcto.
-                            <br><br>El portafolio de nuestra Gerencia maneja tanto los <b><a class="link-normal" href="subsidios.html">Subsidios de apoyo a la Innovación</a></b> como la <b><a class="link-normal" href="leyid.html">Ley de Incentivo Tributario a la I+D</a></b>. ¿Qué información necesitas?
-                        </p>
-                        <div class="color-blanco"><?= utils::getTextoByTipoContenido('Quienes somos') ?></div>
+                    <div class="col-sm-12">
+                      <br><br>
+                      <div class="color-blanco"><?= utils::getTextoByTipoContenido('Quienes somos') ?></div>
                     </div>
                 </div>
             </div>
