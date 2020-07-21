@@ -123,4 +123,27 @@ class gestionController {
         }
     }
 
+    function convocatorias()
+    {
+      if (utils::isVerified()) {
+          if (utils::isAdminOEmpleado()) {
+              require_once("views/mensajes/cont_msg.php");
+
+              $repositorio = new Repositorio();
+              $repositorio->setId('2');
+              $repo = $repositorio->getRepoById()->fetch_object();
+
+              require_once('views/usuario/sidebar.php');
+              require_once('views/convocatorias/gestion-convocatorias.php');
+              require_once('views/convocatorias/modal-repositorio.php');
+              require_once('views/convocatorias/modal-agregar-convocatoria.php');
+
+          } else {
+              header("Location:" . base_url . 'web/inicio');
+          }
+      } else {
+          header("Location:" . base_url . 'usuario/verificarMiCuenta');
+      }
+    }
+
 }

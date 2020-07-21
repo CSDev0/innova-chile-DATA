@@ -8,9 +8,9 @@
                 repositorio="<?= $repo->repositorio ?>" ultima_modificacion="<?= $repo->ultima_modificacion ?>" usuario_modificacion="<?= utils::getUsuarioNombre($repo->Usuario_id) ?>">
             <i class="fab fa-github fa-2x mr-2"></i>Gestionar repositorio</button>
         <br>
-        <div class="col-sm bg-gris rounded p-2 mb-3"> 
+        <div class="col-sm bg-gris rounded p-2 mb-3">
             <p >Una vez hayas guardado los datos del repositorio, debemos descargarlo y descomprimirlo para poder utilizar los graficos en la sección de Graficos destacados <br>
-                <b class="color-rojo xs-text">Utiliza esta función para cuando se hayan realizado cambios en el repositorio o cuando se haya configurado un nuevo repositorio.</b></p>        
+                <b class="color-rojo xs-text">Utiliza esta función para cuando se hayan realizado cambios en el repositorio o cuando se haya configurado un nuevo repositorio.</b></p>
             <a class="btn btn-warning" href="<?= base_url . 'data/downloadAndUnzip' ?>"><i class="fas fa-exclamation-triangle"></i></i> Descargar el repositorio y descomprimir todo <i class="fas fa-exclamation-triangle"></i></a>
         </div>
         <hr>
@@ -33,7 +33,7 @@
         <hr>
         <form class="ajaxform" data-parsley-validate data-parsley-trigger="focusout" >
             <script>$('.ajaxform').submit(false);</script>
-            <div class="input-group"">
+            <div class="input-group">
                 <input type="text" name="txtBuscarGraficos" id="txtBuscarGraficos" placeholder="Buscar por nombre de archivo..." class="form-control mr-1" required minlength="3" data-parsley-error-message="La busqueda debe contener al menos 3 caracteres!" data-parsley-errors-container="#errorContainer" />
                 <div class="input-group-addon">
                     <button class="btn btn-primary form-control ml-1" id="btn_buscar_graficos"><i class="fas fa-search-plus"></i> Buscar</button>
@@ -112,19 +112,19 @@
                     <label class="">Millones aportados: </label>
                 </div>
                 <div class="col-sm-2 text-left">
-                    <input type="number" value="<?php if(isset($dato_millones) && $dato_millones->texto != ''){echo $dato_millones->texto;}?>" name="txtDatoMillones" class="form-control"/> 
+                    <input type="number" value="<?php if(isset($dato_millones) && $dato_millones->texto != ''){echo $dato_millones->texto;}?>" name="txtDatoMillones" class="form-control"/>
                 </div>
                 <div class="col-sm-2 text-right align-self-center">
                     <label class="">Iniciativas apoyadas: </label>
                 </div>
                 <div class="col-sm-2 text-left">
-                    <input type="number" value="<?php if(isset($dato_iniciativas) && $dato_iniciativas->texto != '' ){echo $dato_iniciativas->texto;}?>" name="txtDatoIniciativas"  class="form-control"/> 
+                    <input type="number" value="<?php if(isset($dato_iniciativas) && $dato_iniciativas->texto != '' ){echo $dato_iniciativas->texto;}?>" name="txtDatoIniciativas"  class="form-control"/>
                 </div>
                 <div class="col-sm-2 text-right align-self-center">
                     <label class="">Beneficiados: </label>
                 </div>
                 <div class="col-sm-2 text-left">
-                    <input type="number" value="<?php if(isset($dato_beneficiados) && $dato_beneficiados->texto != '' ){echo $dato_beneficiados->texto;}?>" name="txtDatoBeneficiados" class="form-control"/> 
+                    <input type="number" value="<?php if(isset($dato_beneficiados) && $dato_beneficiados->texto != '' ){echo $dato_beneficiados->texto;}?>" name="txtDatoBeneficiados" class="form-control"/>
                 </div>
             </div>
             <hr class="bc-celeste">
@@ -141,6 +141,3 @@
 </div>
 
 </div>
-
-
-

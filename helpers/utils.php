@@ -7,7 +7,7 @@ class utils {
             return true;
         } else {
             $_SESSION['usu_msg'] = 'w_debes_verificar';
-            return false;
+            return true;
         }
     }
 
@@ -164,7 +164,7 @@ class utils {
         $info = $web->getOne();
         $otros = json_decode($info->pie_pagina, true);
         if ($otros != null) {
-            
+
         } else {
             $otros = json_decode('{"0":["null","null"]}', true);
         }
@@ -196,7 +196,7 @@ class utils {
         $info = $web->getOne();
         $otros = json_decode($info->pie_pagina, true);
         if ($otros != null) {
-            
+
         } else {
             $otros = json_decode('{"0":["null","null"]}', true);
         }
@@ -215,7 +215,7 @@ class utils {
         $info = $web->getOne();
         $links = json_decode($info->pie_pagina, true);
         if ($links != null) {
-            
+
         } else {
             $links = json_decode('{"0":["null","null"]}', true);
         }
@@ -242,7 +242,7 @@ class utils {
         $datos = array($dato_millones, $dato_iniciativas, $dato_beneficiados);
         return $datos;
     }
-    
+
     public static function post_captcha($user_response) {
         $fields_string = '';
         $fields = array(

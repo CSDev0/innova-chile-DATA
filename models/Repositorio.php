@@ -60,9 +60,9 @@ class Repositorio {
 
     public function update() {
         $query = "UPDATE repositorio SET usuario='{$this->getUsuario()}', repositorio = '{$this->getRepositorio()}', ultima_modificacion = '{$this->getUltima_modificacion()}', Usuario_id = '{$this->getUsuario_id()}'";
-        $query .= "WHERE id = 1;";
+        $query .= "WHERE id = {$this->getId()};";
         $repo = new Repositorio();
-        $repo->setId('1');
+        $repo->setId($this->getId());
         $repo_antiguo = $repo->getRepoById()->fetch_object();
         $save = $this->db->query($query);
         $result = false;

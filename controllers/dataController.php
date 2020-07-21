@@ -19,10 +19,12 @@ class dataController {
 
                 if ($usuario && $repositorio) {
                     $repo = new Repositorio();
+
                     $repo->setUsuario($usuario);
                     $repo->setRepositorio($repositorio);
                     $repo->setUltima_modificacion($date);
                     $repo->setUsuario_id($usuario_id);
+                    $repo->setId('1');
                     $resultado = $repo->update();
                     if (isset($resultado) && $resultado == true) {
                         $_SESSION['repo_mensaje'] = 'e_modificar';
@@ -92,7 +94,7 @@ class dataController {
                 $grafico = new Grafico_destacado();
                 $grafico->setId($id);
                 $resultado = $grafico->delete();
-                if ($resultado) {  
+                if ($resultado) {
                     $_SESSION['graf_msg'] = 'e_eliminar';
                     header("Location:" . base_url . 'gestion/data');
                 }
@@ -104,5 +106,9 @@ class dataController {
             header("Location:" . base_url . 'web/login');
         }
     }
+
+    
+
+
 
 }

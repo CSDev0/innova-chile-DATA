@@ -9,6 +9,7 @@ ob_start();
 date_default_timezone_set('Etc/UTC');
 require_once ('models/Estudio.php');
 require_once 'models/Grafico_destacado.php';
+require_once 'models/Convocatoria.php';
 require_once 'models/Web.php';
 require_once 'PHPMailer/PHPMailerAutoload.php';
 
@@ -38,6 +39,8 @@ class webController {
     }
 
     function convocatorias() {
+        $convocatoria = new Convocatoria();
+        $convocatorias = $convocatoria->getAll();
         require_once('views/layout/menubar.php');
         require_once('views/convocatorias/menubar-convocatorias.php');
         require_once('views/convocatorias/convocatorias.php');

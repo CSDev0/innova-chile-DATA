@@ -30,9 +30,14 @@
         }
     }
     $.scrollify.disable();
-</script>
 
-<iframe id="contendedor-convocatorias" src="https://datainnovacion.github.io/llamado_3/">
+</script>
+  <?php
+  while ($gra = $convocatorias->fetch_object()) {
+    echo '<iframe id="contendedor-convocatorias" src="'.base_url.$gra->archivo.'"></iframe>';
+    break;
+  }
+?>
 
 </iframe>
 

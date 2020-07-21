@@ -20,7 +20,7 @@
                         <div class='col-sm mb-2'>
                             <label for="cbAno">Año del estudio:</label>
                             <?php
-                            $seleccionado = 2010;
+                            $seleccionado = date("Y");
                             $antiguedad = 1900;
 
                             print '<select class="form-control" name="slcAno" required="true">';
