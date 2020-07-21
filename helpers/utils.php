@@ -7,7 +7,7 @@ class utils {
             return true;
         } else {
             $_SESSION['usu_msg'] = 'w_debes_verificar';
-            return true;
+            return false;
         }
     }
 

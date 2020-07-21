@@ -31,7 +31,6 @@ class usuarioController {
             $usuario->setCorreo($_POST['txtCorreo']);
             $usuario->setClave($_POST['txtClave']);
             $identidad = $usuario->login();
-            $identidad->verificado = 1;
             if ($identidad && is_object($identidad)) {
                 $_SESSION['identidad'] = $identidad;
                 $_SESSION['tipo_usuario'] = $identidad->tipo;
