@@ -1,4 +1,6 @@
 $(function () {
+    $(".landing-page-navbar").removeClass("bg-gradient");
+    $(".landing-page-nav-link").removeClass("bg-gradient");
     $.scrollify({
         section: ".seccion",
         interstitialSection: ".seccion-extra",
@@ -14,6 +16,8 @@ $(function () {
             if ($.scrollify.current().attr('data-section-name') == "quienes_somos")
             {
                 $("#quienes_somos_title").show("puff", 800);
+                $(".landing-page-navbar").removeClass("bg-gradient");
+                $(".landing-page-nav-link").removeClass("bg-gradient");
                 $(".landing-page-navbar").addClass("no-bg");
                 $(".landing-page-nav-link").addClass("initial-state")
                 $(".logo-corfo").css("opacity", "1");
@@ -26,6 +30,8 @@ $(function () {
                 $("#datos_destacados_title").show("puff", 800);
                 $(".landing-page-navbar").removeClass("no-bg");
                 $(".landing-page-nav-link").removeClass("initial-state")
+                $(".landing-page-navbar").addClass("bg-gradient");
+                $(".landing-page-nav-link").addClass("bg-gradient");
                 $(".logo-corfo").css("opacity", "0");
                 $("#graficos_destacados_title").hide("puff", 0);
             }
@@ -35,6 +41,8 @@ $(function () {
                 $("#graficos_destacados_title").show("puff", 800);
                 $(".landing-page-navbar").removeClass("no-bg");
                 $(".landing-page-nav-link").removeClass("initial-state")
+                $(".landing-page-navbar").addClass("bg-gradient");
+                $(".landing-page-nav-link").addClass("bg-gradient");
                 $(".logo-corfo").css("opacity", "0");
                 $("#data_title").hide("puff", 0);
             }
@@ -45,23 +53,27 @@ $(function () {
                 $("#data_title").show("puff", 800);
                 $(".landing-page-navbar").removeClass("no-bg");
                 $(".landing-page-nav-link").removeClass("initial-state")
+                $(".landing-page-navbar").addClass("bg-gradient");
+                $(".landing-page-nav-link").addClass("bg-gradient");
                 $(".logo-corfo").css("opacity", "0");
                 $("#estudios_title").hide("puff", 0);
-                
+
                 $("#nuestros_title").hide("puff", 0);
                 $("#lecturas_title").hide("puff", 0);
-                
+
             }
             if ($.scrollify.current().attr('data-section-name') == "estudios")
             {
                 $("#data_title").hide("puff", 0);
                 $("#estudios_title").show("puff", 800);
-                
+
                 $("#nuestros_title").show("puff", 800);
                 $("#lecturas_title").show("puff", 800);
-                
+
                 $(".landing-page-navbar").removeClass("no-bg");
                 $(".landing-page-nav-link").removeClass("initial-state");
+                $(".landing-page-navbar").addClass("bg-gradient");
+                $(".landing-page-nav-link").addClass("bg-gradient");
                 $(".logo-corfo").css("opacity", "0");
                 $("#chile_title").hide("puff", 0);
 
@@ -71,6 +83,8 @@ $(function () {
                 $("#chile_title").show("puff", 800);
                 $(".landing-page-navbar").removeClass("no-bg");
                 $(".landing-page-nav-link").removeClass("initial-state");
+                $(".landing-page-navbar").addClass("bg-gradient");
+                $(".landing-page-nav-link").addClass("bg-gradient");
                 $(".logo-corfo").css("opacity", "0");
             }
         },

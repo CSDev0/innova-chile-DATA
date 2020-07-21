@@ -73,13 +73,13 @@ $(window).scroll(function () {
 
 //FOOTER STICKY------------------------------------------------
 function flecha_abajo() {
-    $('#flecha-animada').removeClass('fas fa-angle-up fa-3x icono-azul')
-    $('#flecha-animada').addClass('fas fa-angle-down fa-3x icono-azul')
+    $('#flecha-animada').removeClass('fal fa-angle-up fa-3x color-blanco')
+    $('#flecha-animada').addClass('fal fa-angle-down fa-3x color-blanco')
 }
 ;
 function flecha_arriba() {
-    $('#flecha-animada').removeClass('fas fa-angle-down fa-3x icono-azul')
-    $('#flecha-animada').addClass('fas fa-angle-up fa-3x icono-azul')
+    $('#flecha-animada').removeClass('fal fa-angle-down fa-3x color-blanco')
+    $('#flecha-animada').addClass('fal fa-angle-up fa-3x color-blanco')
 }
 $('.footer-sticky').mouseenter($.debounce(350, function (e) {
     var altura = $('.footer-sticky').get(0).scrollHeight;

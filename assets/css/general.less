@@ -1,4 +1,4 @@
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css');
+@import url('https://pro.fontawesome.com/releases/v5.13.0/css/all.css');
 @import "style.less";
 /* Esto le da un estilo a todos los objetos para poder detectar los bordes de cada elemento y si sobresalen.*/
 
@@ -113,7 +113,7 @@ p.white{
     left: 5px;
 }
 .logo-innova{
-    background: url("../img/logos/DATAINNOVALOGO.png") center no-repeat transparent;
+    background: url("../img/logos/DATAINNOVALOGO_2.png") center no-repeat transparent;
     background-size: contain;
     background-repeat: no-repeat;
     width: 100%;
@@ -138,19 +138,20 @@ p.white{
     transition: width 1s ease-in-out;
 }
 .btn-primary{
-    background-color: @second-color;
+    background-color: @main-color;
     .s-text();
     border: none;
 }
 .btn-primary:hover{
-    background-color: @main-color;
+    background-color: @second-color;
     color: white;
 }
 .btn-primary:active, .btn-primary:focus{
-    color: @second-color;
-    background-color: @third-color;
+    color: @second-color !important;
+    background-color: @third-color !important;
 }
 .btn:active, .btn:focus{
+    background-color: @third-color;
     outline: none !important;
     box-shadow: none !important;
 }
@@ -234,6 +235,14 @@ a:hover{
 }
 .link-claro{
     color: @special-color;
+    .s-text();
+}
+.link-celeste{
+    color: @third-color;
+    .s-text();
+}
+.link-celeste:hover{
+    color: white;
     .s-text();
 }
 .link-claro:hover{
@@ -343,7 +352,7 @@ a:hover{
 }
 .initial-state{
     .s-text() !important;
-    background-color: white !important;
+    background-color: transparent !important;
     color: @main-color !important;
     .transition(0.5s) !important;
     .border-radius(5px);
@@ -368,18 +377,18 @@ a:hover{
     z-index: 100;
 }
 #bg-footer{
-    background-color: @third-color;
-    padding-bottom: 30px;
+    padding-bottom: 0px;
 }
 #footer{
     .transition(1s);
 }
 
 #copyright{
-    margin-top: 0px;
-    padding-top: 10px;
-    padding-bottom: 5px;
-    background-color: @fourth-color;
+    height: 30px;
+    margin-top: 20px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    background-color: @third-color;
 }
 
 /*---------------------------------------------------------------*/

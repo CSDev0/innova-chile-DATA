@@ -1,35 +1,35 @@
-<section id="footer" class="seccion-extra footer-sticky" >
+<section id="footer" class="seccion-extra footer-sticky bg-gradient" >
     <div id="bg-footer">
-        <div class="text-center"><i class="fas fa-angle-up fa-3x color-azul" id="flecha-animada"></i></div>
+        <div class="text-center"><i class="fal fa-angle-up fa-3x color-blanco" id="flecha-animada"></i></div>
         <div class="container">
             <div class="row w-100">
                 <div class="col-sm-4">
-                    <h4>Te puede interesar</h4>
+                    <h4 class="color-blanco">Te puede interesar</h4>
                     <?php utils::getOtros(); ?>
                 </div>
                 <div class="col-sm-4 text-center">
                     <div class="col-sm">
-                        <a class="link-normal" href="<?= base_url ?>web/faq"> <i class="fa fa-angle-double-right color-azul"></i> Preguntas frecuentes (FAQ) <i class="fa fa-angle-double-left color-azul"></i></a><br>
+                        <a class="link-celeste" href="<?= base_url ?>web/faq"> <i class="fa fa-angle-double-right color-blanco"></i> Preguntas frecuentes (FAQ) <i class="fa fa-angle-double-left color-azul"></i></a><br>
                     </div>
                     <br>
                     <div class="col-sm">
-                        <h4>Siguenos en nuestras redes</h4>
+                        <h4 class="color-blanco">Siguenos en nuestras redes</h4>
                         <?php utils::getLinks(); ?>
                     </div>
 
                 </div>
                 <div class="col-sm-4">
-                    <h4>Mapa del sitio</h4>
-                    <i class="fa fa-angle-double-right color-azul"></i><a class="link-normal" href="<?= base_url ?>web/inicio"> Inicio</a><br>
-                    <i class="fa fa-angle-double-right color-azul"></i><a class="link-normal" href="<?= base_url ?>web/convocatorias"> Convocatorias</a><br>
-                    <i class="fa fa-angle-double-right color-azul"></i><a class="link-normal" href="<?= base_url ?>web/login"> Zona de administración</a><br>
+                    <h4 class="color-blanco">Mapa del sitio</h4>
+                    <i class="fa fa-angle-double-right color-blanco"></i><a class="link-celeste" href="<?= base_url ?>web/inicio"> Inicio</a><br>
+                    <i class="fa fa-angle-double-right color-blanco"></i><a class="link-celeste" href="<?= base_url ?>web/convocatorias"> Convocatorias</a><br>
+                    <i class="fa fa-angle-double-right color-blanco"></i><a class="link-celeste" href="<?= base_url ?>web/login"> Zona de administración</a><br>
                 </div>
             </div>
 
         </div>
     </div>
     <div id="copyright">
-        <p class="white text-center">© InnovaChile CORFO todos los derechos reservados <?php echo date("Y"); ?>.</p>
+        <p class="color-azul text-center">© InnovaChile CORFO todos los derechos reservados <?php echo date("Y"); ?>.</p>
     </div>
 </section>
 

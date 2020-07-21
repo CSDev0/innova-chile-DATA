@@ -1,11 +1,11 @@
 /*Azul claro*/
-@main-color: #002642;
+@main-color: #0F4C75;
 
 /*Azul oscuro*/
 @second-color: #002642;
 
 /*Celeste claro */
-@third-color: #c2e7ff;
+@third-color: #bddaed;
 
 /*Azul super oscuro */
 @fourth-color: #002642;
@@ -13,10 +13,13 @@
 /*Celeste*/
 @fifth-color: #002642;
 
-/*Naranja (ahora es rojo))*/
-@special-color: #E8505B;
-@special-color-darker: #db7508;
+/*ROJO*/
+/*@special-color: #E8505B;*/
+/*NARANJA*/
+@special-color: #F58457;
 
+@special-color-darker: #c6414a;
+@white-color: #FEFFFF;
 /*Color crema*/
 @special-second-color: #FFE9D2;
 
@@ -27,7 +30,8 @@
 
 /*Fuentes*/
 .bold-font(){
-    font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif !important;
+/*    font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif !important;*/
+    font-family: 'Riona Sans W01 Thin';
     font-weight: normal;
     font-style: normal;
 }
@@ -87,6 +91,22 @@
     -webkit-border-radius: @size;
     -moz-border-radius: @size;
     border-radius: @size;
+}
+.background-gradient(@first, @second){
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(@first), to(@second));
+    background: -webkit-linear-gradient(@first, @second);
+    background: -moz-linear-gradient(@first, @second);
+    background: -o-linear-gradient(@first, @second);
+    background: linear-gradient(@first, @second);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.background-image-gradient(@first, @second){
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(@first), to(@second));
+    background-image: -webkit-linear-gradient(@first, @second);
+    background-image: -moz-linear-gradient(@first, @second);
+    background-image: -o-linear-gradient(@first, @second);
+    background-image: linear-gradient(@first, @second);
 }
 ::-webkit-scrollbar {
     width: 16px;
@@ -191,7 +211,7 @@
     color: @special-color;
 }
 .icono-celeste{
-    color: @third-color;
+    color: @special-color;
 }
 .color-ig {
     color: transparent;
@@ -220,8 +240,14 @@
     color: white;
     padding: 5px;
 }
+.bg-degrad{
+    
+}
 .bg-gris{
     background-color: @lightgray;
+}
+.bg-gradient{
+    .background-image-gradient(@second-color, @main-color);
 }
 .bc-gris{
     border-color: @gray;
