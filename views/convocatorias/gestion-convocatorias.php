@@ -29,6 +29,7 @@
         <p>Aquí podras agregar y eliminar las <b class="color-azul">Convocatorias</b>, para esto, primero se debe descargar el repositorio de <b class="color-azul">Github</b> que contiene las convocatorias.</p>
 
         <button class="btn btn-primary" href="#modal-agregar-convocatoria" data-toggle="modal"><i class="fas fa-plus-square"></i> Agregar</button>
+        <button class="btn btn-primary" name="btn_todos_nuestros_estudios" id="btn_todos_nuestros_estudios"><i class="fas fa-eye"></i> Ver todos</button>
         <hr>
             <form class="ajaxform" data-parsley-validate data-parsley-trigger="focusout" >
                 <script>$('.ajaxform').submit(false);</script>

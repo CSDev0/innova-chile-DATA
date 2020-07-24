@@ -14,7 +14,7 @@ if (isset($_POST["query"])) {
     $resultado = $convocatoria->search('all');
 }
 
-if($resultado){
+if(true){
   if (mysqli_num_rows($resultado) > 0 && $resultado != null) {
       $output .= '<div class="table-responsive">
                                       <table class="table table-striped"">
@@ -28,21 +28,20 @@ if($resultado){
       $contador = 0;
       while ($obj = mysqli_fetch_array($resultado)) {
           $archivo = substr($obj['archivo'], strrpos($obj['archivo'], '/') + 1);
-          if ($obj['tipo'] == "estudio") {
+               #. $convocatoria->getAnoById($obj['convocatoria_id_ano']).
               $contador = $contador + 1;
               $output .= '
                       <tr>
                               <td>' . $obj["id"] . '</td>
                               <td><a class="link-normal small" href="' . base_url . $obj['archivo'] . '" target="_blank">' . $archivo . '</a></td>
-                              <td>' . $obj["año"] . '</td>
-                              <td>' . utils::acortador($obj['archivo'], 30) . '</td>
+                              <td></td>
+                              <td>LLamado '. $obj['llamado'].'</td>
                               <td>
-                                <a href="#modal-eliminar" data-toggle="modal" ruta="convocatoria/delete&id=" id=' . $obj['id'] . ' nombre="' . utils::acortador($obj['nombre'], 60) .'" tipo="'.$obj['tipo'].'" class="btn btn-danger eliminar" style="margin-top: 5px; width: 100%;" >
+                                <a href="#modal-eliminar" data-toggle="modal" ruta="convocatoria/delete&id=" id=' . $obj['id'] . ' nombre="' . utils::acortador($obj['archivo'], 60) .'" class="btn btn-danger eliminar" style="margin-top: 5px; width: 100%;" >
                                   <i class="fas fa-trash-alt"></i> Eliminar
                                 </a>
                               </td>
                       </tr>';
-          }
       }
       if ($contador == 0) {
           echo '<h3><i class="far fa-sad-cry"></i> No hay resultados, intente otra busqueda.</h3>';

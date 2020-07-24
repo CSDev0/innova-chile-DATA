@@ -74,14 +74,15 @@ class convocatoriaController {
               $convocatoria->setAno($_POST['slcAno']);
               $convocatoria->setLlamado($_POST['slcLlamado']);
               $resultado = $convocatoria->save();
+              var_dump($resultado);
               if ($resultado) {
                   $_SESSION['graf_msg'] = 'e_agregar';
               } else {
                   $_SESSION['graf_msg'] = 'f_agregar';
               }
-              header("Location:" . base_url . 'gestion/convocatoria');
+              header("Location:" . base_url . 'gestion/convocatorias');
           } else {
-              header("Location:" . base_url . 'gestion/convocatoria');
+              header("Location:" . base_url . 'gestion/convocatorias');
           }
       } else {
           header("Location:" . base_url . 'web/login');
@@ -97,11 +98,11 @@ class convocatoriaController {
             $resultado = $convocatoria->delete();
             if ($resultado) {
                 $_SESSION['graf_msg'] = 'e_eliminar';
-                header("Location:" . base_url . 'gestion/convocatoria');
+                header("Location:" . base_url . 'gestion/convocatorias');
             }
         } else {
             $_SESSION['graf_msg'] = 'f_eliminar';
-            header("Location:" . base_url . 'gestion/convocatoria');
+            header("Location:" . base_url . 'gestion/convocatorias');
         }
     } else {
         header("Location:" . base_url . 'web/login');

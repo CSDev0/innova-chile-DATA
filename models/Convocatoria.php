@@ -46,9 +46,28 @@ class Convocatoria
       $now = new DateTime();
       $date = $now->format("Y-m-d H:i:s");
 
-      $query = "INSERT INTO convocatoria VALUES (NULL, '{$this->getArchivo()}', {$this->getAno()},{$this->getLlamado()} );";
+      $y = $this->db->query("SELECT * FROM anoconvocatoria WHERE ano = {$this->getAno()} ;");
+      $ano = $y->fetch_object();
+      if ($ano->id) {
+      }else {
+        $query2 = "INSERT INTO anoconvocatoria VALUES (NULL, {$this->getAno()} );";
+        if ($sYear = $this->db->query($query2)) {}
+          else{
+            $sYear = $this->db->error;
+            return $sYear;
+          }
+          $y = $this->db->query("SELECT * FROM anoconvocatoria WHERE ano = {$this->getAno()} ;");
+          $ano = $y->fetch_object();
+      }
 
-      $save = $this->db->query($query);
+      $query = "INSERT INTO convocatoria VALUES (NULL, '{$this->getArchivo()}', {$this->getLlamado()},{$ano->id} );";
+
+      if ($save = $this->db->query($query)) {}
+        else{
+          $save = $this->db->error;
+          return $save;
+        }
+
 
       $result = false;
       if ($save) {
@@ -67,12 +86,12 @@ class Convocatoria
 
   public function search($busqueda) {
       if ($busqueda == 'all') {
-          $query = "SELECT * FROM estudio ORDER BY año DESC;";
+          $query = "SELECT * FROM convocatoria;";
       } else {
           if (is_numeric($busqueda)) {
-              $query = "SELECT * FROM estudio WHERE año = " . $busqueda . ";";
+              $query = "SELECT * FROM convocatoria WHERE llamado = " . $busqueda . ";";
           } else {
-              $query = "SELECT * FROM estudio WHERE archivo LIKE '%" . $busqueda . "%'";
+              $query = "SELECT * FROM convocatoria WHERE archivo LIKE '%" . $busqueda . "%'";
           }
       }
       $resultado = $this->db->query($query);
@@ -114,7 +133,15 @@ class Convocatoria
   }
 
   public function getAll() {
-      $estudios = $this->db->query("SELECT * FROM convocatoria ORDER BY año ASC;");
+      $estudios = $this->db->query("SELECT * FROM convocatoria ORDER BY convocatoria_id_ano DESC;");
+      return $estudios;
+  }
+  public function getAnoById($id) {
+    $estudios = $this->db->query("SELECT * FROM anoconvocatoria WHERE id ={$id};");
+    return $estudios;
+  }
+  public function getAnos() {
+      $estudios = $this->db->query("SELECT * FROM anoconvocatoria ORDER BY ano DESC;");
       return $estudios;
   }
 

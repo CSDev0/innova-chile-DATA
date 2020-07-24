@@ -41,6 +41,7 @@ class webController {
     function convocatorias() {
         $convocatoria = new Convocatoria();
         $convocatorias = $convocatoria->getAll();
+        $anosConv = $convocatoria->getAnos();
         require_once('views/layout/menubar.php');
         require_once('views/convocatorias/menubar-convocatorias.php');
         require_once('views/convocatorias/convocatorias.php');

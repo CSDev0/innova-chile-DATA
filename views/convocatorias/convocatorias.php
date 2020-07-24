@@ -34,12 +34,11 @@
 </script>
   <?php
   while ($gra = $convocatorias->fetch_object()) {
-    echo '<iframe id="contendedor-convocatorias" src="'.base_url.$gra->archivo.'"></iframe>';
+    echo'<h1>lol</h1>';
+    echo '<iframe id="contendedor-convocatorias" src="'.base_url . $gra->archivo.'"></iframe>';
     break;
   }
 ?>
-
-</iframe>
 
 <script>
     $('.convocatoria-link.llamado').click(function () {
