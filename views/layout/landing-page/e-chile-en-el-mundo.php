@@ -5,7 +5,7 @@
             <div class="row section vw-100">
                 <div class="col-sm-12">
                     <div class="container">
-                        <h1 class="text-center" id="chile_title">Chile en el mundo</h1>
+                        <h1 class="text-center" id="chile_title"><i class="fad fa-globe-americas icono-celeste"></i> Chile en el mundo</h1>
                         <hr class="faded">
                         <br>
 

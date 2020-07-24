@@ -3,34 +3,34 @@
         <div class="container">
             <div class="row section justify-content-center">
                 <div class="col-sm-12 align-self-top h-100">
-                    <h1 class="text-center" id="datos_destacados_title">Datos destacados</h1>
+                    <h1 class="text-center" id="datos_destacados_title"><i class="fad fa-star icono-celeste"></i> Datos destacados</h1>
                     <hr class="faded " >
                 </div>
-                <div class="col-sm">
+                <div class="col-12 mt-5 pr-5 mr-2">
                     <div class="row">
-                        <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+                        <div class="col-6 col-sm-6 col-md-6 col-lg-6 dato-destacado">
                             <div class="row justify-content-center">
-                            <h2 class="destacado-naranja"><i class="fas fa-dollar-sign fa-2x"></i></h2>
+                            <h2 class="destacado-naranja"><i class="fad fa-sack-dollar fa-3x"></i></h2>
                             </div>
                             <div class="row justify-content-center">
-                            <h2 class="destacado-naranja"><span class="count"><?php if(isset($dato_millones) && $dato_millones->texto != ''){echo $dato_millones->texto;}?></span>
-                                <br>millones</h2>
+                            <h2 class="destacado-naranja"><i class="fal fa-plus"></i> <span class="count"><?php if(isset($dato_millones) && $dato_millones->texto != ''){echo $dato_millones->texto;}?></span>
+                                <br>millones de pesos</h2>
                             </div>
                         </div>
-                        <div class="col-6 col-sm-6 col-md-6 col-lg-6 ">
+                        <div class="col-6 col-sm-6 col-md-6 col-lg-6 dato-destacado ">
                             <div class="row justify-content-center">
-                            <h2 class="destacado-naranja"><i class="fas fa-globe fa-2x"></i></h2>
+                            <h2 class="destacado-naranja"><i class="fad fa-users-crown fa-3x"></i></h2>
                             </div>
                             <div class="row justify-content-center">
-                                    <h2 class="destacado-naranja"><span class="count"><?php if(isset($dato_beneficiados) && $dato_beneficiados->texto != '' ){echo $dato_beneficiados->texto;}?></span>
-                                        <br>beneficiados</h2>
+                                    <h2 class="destacado-naranja"><i class="fal fa-plus"></i> <span class="count"><?php if(isset($dato_beneficiados) && $dato_beneficiados->texto != '' ){echo $dato_beneficiados->texto;}?></span>
+                                        <br>beneficiados en total</h2>
                             </div>
                         </div>
                     </div>
-                    <div class="row justify-content-center">
+                    <div class="row justify-content-center mt-5 pt-2 mr-2 dato-destacado">
                         <div class="col-12 col-sm-12 col-md-4 col-lg-4">
-                            <h2 class="destacado-naranja"><i class="fas fa-chart-line fa-2x"></i></h2>
-                            <h2 class="destacado-naranja"><span class="count"><?php if(isset($dato_iniciativas) && $dato_iniciativas->texto != '' ){echo $dato_iniciativas->texto;}?></span>
+                            <h2 class="destacado-naranja"><i class="fad fa-rocket-launch fa-3x"></i></h2>
+                            <h2 class="destacado-naranja"><i class="fal fa-plus"></i> <span class="count"><?php if(isset($dato_iniciativas) && $dato_iniciativas->texto != '' ){echo $dato_iniciativas->texto;}?></span>
                                 <br>Iniciativas apoyadas</h2>
                         </div>
                     </div>
@@ -44,7 +44,7 @@
         <div class="row section">
             <div class="col-sm-12 align-self-top w-100">
                 <div class="container">
-                    <h1 class="text-center" id="graficos_destacados_title">Graficos destacados</h1>
+                    <h1 class="text-center" id="graficos_destacados_title"><i class="fad fa-file-chart-line icono-celeste"></i> Graficos destacados</h1>
                     <hr class="faded" >
                 </div>
             </div>
@@ -76,8 +76,8 @@
                                 }
                                 $contador++;
                                 ?>
-                                <div class="contenedor-grafico">
-                                    <iframe class="grafico-destacado" src="<?= base_url . $gra->archivo ?>">
+                                <div class="contenedor-grafico justify-content-center">
+                                    <iframe class="grafico-destacado justify-content-center border pl-5 mb-2" src="<?= base_url . $gra->archivo ?>">
                                     </iframe>
                                 </div>
                             </div>

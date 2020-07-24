@@ -1,6 +1,7 @@
 $(document).ready(function () {
     bsCustomFileInput.init()
     loop_flecha_animada();
+    window.onresize = resizeSecciones();
 });
 
 //Funcion para definir el tamaño de las secciones dependiendo del tamaño del dispositivo.
@@ -20,14 +21,14 @@ function resizeSecciones() {
     $("#bg-quienes-somos").css("width", "100%");
 }
 resizeSecciones();
-window.onresize = resizeSecciones();
+
 
 function datosDestacados() {
     $('.count').each(function () {
         $(this).prop('Counter', 0).animate({
             Counter: $(this).text()
         }, {
-            duration: 2000,
+            duration: 3000,
             easing: 'easeOutExpo',
             step: function (now) {
                 $(this).text(Math.ceil(now));

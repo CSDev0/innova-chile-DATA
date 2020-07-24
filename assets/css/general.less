@@ -42,7 +42,7 @@ input.parsley-error
 }
 body {
     right: -1px;
-
+    overflow-x: hidden;
 }
 html{
     scrollbar-color: @main-color white;
@@ -106,21 +106,21 @@ p.white{
     background-image: url("../img/logos/corfo_logo.png");
     background-size: contain;
     background-repeat: no-repeat;
-    width: 100px;
-    height: 40px;
+    width: 140px;
+    height: 70px;
     position: absolute;
     top:0;
     left: 5px;
 }
 .logo-innova{
-    background: url("../img/logos/DATAINNOVALOGO_2.png") center no-repeat transparent;
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 120px;
-    margin: auto;
-    margin-top: 0px;
-    .transition(1s);
+        background: url("../img/logos/DATAINNOVALOGO_3.png") center no-repeat transparent;
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 90px;
+        margin: auto;
+        margin-top: 0px;
+        .transition(1s);
 }
 .logo-innova:hover{
     .scale(1.1);
@@ -193,19 +193,20 @@ button:active, button:focus{
     background-color: @special-color;
     margin: auto;
     margin-bottom: 2em;
-    .border-radius(100px);
+    .border-radius(200px);
     .scale(1.1);
-    .transition(0.3s);
+    .transition(0.5s);
+    transition: width .9s ease out;
 
 }
 .circulo-data:hover{
-    .scale(1.2);
-    .button-shadow();
-    border: 5px solid @special-second-color;
+    .scale(1.4);
+    border: 8px solid @main-color;
 }
 .texto-circulo-data{
     margin: auto;
     .m-text();
+    .normal-font();
 }
 .circle-link{
     text-align: center;
@@ -335,11 +336,22 @@ a:hover{
     background-repeat: repeat-y;
 }
 .destacado-naranja{
-    .bold-italic-font();
+    .bold-font();
     .l-text();
     color: @special-color;
     padding-left: 30px;
     text-align: center;
+
+}
+.dato-destacado{
+    .transition(0.5s);
+    cursor: cell;
+}
+.dato-destacado:hover{
+    padding: 40px;
+    .scale(1.1);
+    .border-radius(1000px);
+    border: 1px solid red;
 }
 .count{
     .xxl-text();
@@ -411,8 +423,8 @@ a:hover{
 }
 hr.faded {
     border: 0;
-    height: 2px;
-    background-image: linear-gradient(to right, rgba(11,101,171,0.05), rgba(11,101,171,1), rgba(11,101,171,0.05));
+    height: 1.5px;
+    background-image: linear-gradient(to right, rgba(15,76,117,0.08), rgba(15,76,117,1), rgba(15,76,117,0.08));
 }
 hr.faded-blanco {
     border: 0;
@@ -489,14 +501,17 @@ hr.faded-blanco {
         margin: 0px;
     }
     .logo-innova{
-        background: url("../img/logos/DATAINNOVALOGO.png") center no-repeat transparent;
+        background: url("../img/logos/DATAINNOVALOGO_3.png") center no-repeat transparent;
         background-size: contain;
         background-repeat: no-repeat;
         width: 100%;
-        height: 80px;
+        height: 90px;
         margin: auto;
         margin-top: 0px;
         .transition(1s);
+    }
+    #bg-quienes-somos{
+        display: none;
     }
 }
 @media(min-width:992px){

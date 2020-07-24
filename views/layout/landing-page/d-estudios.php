@@ -3,7 +3,7 @@
         <div class="row section justify-content-center vw-100">
             <div class="col-sm-12 align-self-top ">
                 <div class="container">
-                    <h1 class="text-center" id="estudios_title">Estudios</h1>
+                    <h1 class="text-center" id="estudios_title"><i class="fad fa-folder-open icono-celeste"></i> Estudios</h1>
                     <hr class="faded" >
                     <br>
                     <p><?= utils::getTextoByTipoContenido('Estudios') ?></p>

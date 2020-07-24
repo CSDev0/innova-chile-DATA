@@ -1,4 +1,4 @@
-$(function () {
+$(document).ready(function () {
     $(".landing-page-navbar").removeClass("bg-gradient");
     $(".landing-page-nav-link").removeClass("bg-gradient");
     $.scrollify({

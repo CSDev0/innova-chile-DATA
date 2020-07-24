@@ -14,9 +14,9 @@
 @fifth-color: #002642;
 
 /*ROJO*/
-/*@special-color: #E8505B;*/
+@special-color: #E8505B;
 /*NARANJA*/
-@special-color: #F58457;
+/*@special-color: #F58457;*/
 
 @special-color-darker: #c6414a;
 @white-color: #FEFFFF;
@@ -31,19 +31,23 @@
 /*Fuentes*/
 .bold-font(){
 /*    font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif !important;*/
-    font-family: 'Riona Sans W01 Thin';
+    font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif !important;
     font-weight: normal;
     font-style: normal;
 }
 .bold-italic-font(){
     font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif !important;
-    font-weight: bold;
+    font-weight: thin;
     font-style: normal;
 }
 .normal-font(){
     font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif !important;
     font-weight: 300;
     font-style: normal;
+}
+div{
+    .normal-font();
+    .s-text();
 }
 .xxl-text(){
     font-size: 50px;
@@ -160,9 +164,6 @@
 .bg-primary:hover{
     color: white;
 }
-.bold-font{
-    font-weight: bold;
-}
 
 .xxl-text{
     .xxl-text();
@@ -248,6 +249,9 @@
 }
 .bg-gradient{
     .background-image-gradient(@second-color, @main-color);
+}
+.fa-gradient{
+    .background-gradient(@second-color, @main-color);
 }
 .bc-gris{
     border-color: @gray;

@@ -59,33 +59,33 @@
 //        });
         var divContainer = '#bg-quienes-somos'
         new SuperParticles({
-            "maxFps": 30,
+            "maxFps": 15,
             "autoStartAnimation": true,
             "container": {
                 "element": divContainer,
                 "backgroundCssRule": ""
             },
             "pixiApp": {
-                "antialias": false,
+                "antialias": true,
                 "transparent": true,
                 "forceFXAA": false,
                 "powerPreference": "high-performance",
                 "resolution": 1
             },
             "particles": {
-                "amount": 30,
+                "amount": 20,
                 "radius": 2,
-                "velocity": 5,
+                "velocity": 3,
                 "color": "0x2680BD",
                 "fadeInDuration": 3000,
                 "fadeOutDuration": 600,
                 "keepRelativePositionOnResize": true
             },
             "lines": {
-                "minDistance": 0.20,
-                "color": "0xE8505B",
+                "minDistance": 0.50,
+                "color": "0xc4c4c4",
                 "maxOpacity": 0.3,
-                "thickness": 1,
+                "thickness": 0.5,
                 "distanceBasedTransparency": true
             },
             "debug": {
