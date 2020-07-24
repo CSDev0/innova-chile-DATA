@@ -137,6 +137,7 @@ class gestionController {
               require_once('views/convocatorias/gestion-convocatorias.php');
               require_once('views/convocatorias/modal-repositorio.php');
               require_once('views/convocatorias/modal-agregar-convocatoria.php');
+              require_once 'views/mensajes/modal-eliminar.php';
 
           } else {
               header("Location:" . base_url . 'web/inicio');

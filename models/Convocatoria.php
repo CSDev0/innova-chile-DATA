@@ -100,12 +100,22 @@ class Convocatoria
 
   public function getConvocatoriaById() {
       $result = false;
-      $query = "SELECT * FROM graficodestacado WHERE id='{$this->getId()}' LIMIT 1;";
+      $query = "SELECT * FROM convocatoria WHERE id = {$this->getId()} LIMIT 1;";
       $grafico = $this->db->query($query);
+
       if ($grafico) {
-          $result = $grafico->fetch_object();
-      }
-      return $result;
+
+        $result = $grafico->fetch_object();
+        $conv = new Convocatoria();
+        $conv->setId($result->id);
+        $conv->setAno($result->convocatoria_id_ano);
+        $conv->setLlamado($result->llamado);
+        $conv->setArchivo($result->archivo);
+      } else{
+          $result = $this->db->error;
+          return $result;
+        }
+      return $conv;
   }
 
   public function delete() {
@@ -134,15 +144,42 @@ class Convocatoria
 
   public function getAll() {
       $estudios = $this->db->query("SELECT * FROM convocatoria ORDER BY convocatoria_id_ano DESC;");
-      return $estudios;
+      if ($estudios) {
+        $i=0;
+        while ($result = $estudios->fetch_object()) {
+            $convocatorias[$i] = $result;
+            $i++;
+        }
+        return $convocatorias;
+      } else{
+          $result = $this->db->error;
+          return $result;
+        }
   }
-  public function getAnoById($id) {
-    $estudios = $this->db->query("SELECT * FROM anoconvocatoria WHERE id ={$id};");
-    return $estudios;
+  public function getAnoById() {
+    $query="SELECT * FROM anoconvocatoria WHERE id ={$this->getAno()};";
+    $estudios = $this->db->query($query);
+    if ($estudios) {
+      return $estudios->fetch_object();
+    }else {
+      $result = $this->db->error;
+      return $result;
+    }
+
   }
   public function getAnos() {
       $estudios = $this->db->query("SELECT * FROM anoconvocatoria ORDER BY ano DESC;");
-      return $estudios;
+      if ($estudios) {
+        $i=0;
+        while ($result = $estudios->fetch_object()) {
+          $convocatorias[$i] = $result;
+          $i++;
+        }
+        return $convocatorias;
+      } else{
+          $result = $this->db->error;
+          return $result;
+        }
   }
 
 }

@@ -6,10 +6,7 @@
                     <div class="col-1-10 " >
                       <?php
                       if ($convocatorias) {
-                        while ($conv = $convocatorias->fetch_object()) {
-                          echo '<a class="convocatoria-link boton active" data-toggle="collapse" data-target="#navbarPorAnos2" id="ultima-convocatoria" data-link='.base_url.$conv->archivo.' href="#">&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-award icono-blanco"></i> Ultima convocatoria&nbsp;&nbsp;&nbsp;&nbsp;</a>';
-                          break;
-                        }
+                        echo '<a class="convocatoria-link boton active" data-toggle="collapse" data-target="#navbarPorAnos2" id="ultima-convocatoria" data-link='.base_url.$convocatorias[0]->archivo.' href="#">&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-award icono-blanco"></i> Ultima convocatoria&nbsp;&nbsp;&nbsp;&nbsp;</a>';
                       }
                     ?>
                     </div>
@@ -28,22 +25,21 @@
                                 <br>
                                 <?php
                                 if ($convocatorias) {
-                                    while ($y = $anosConv->fetch_object()) {
-                                      echo '<a data-toggle="collapse" href="#" data-target="#Ano'.$y->ano.'" class="convocatoria-link ano">'.$y->ano.'</a>';
-                                      echo '<div id="Ano'.$y->ano.'" class="collapse anos" data-parent="#accordion"><br>';
-                                      printLllamados($convocatorias,$y);
+                                  $v=count($convocatorias);
+                                  $c=count($anosConv);
+                                    for ($i=0; $i < $c ; $i++) {
+                                      echo '<a data-toggle="collapse" href="#" data-target="#Ano'.$anosConv[$i]->ano.'" class="convocatoria-link ano">'.$anosConv[$i]->ano.'</a>';
+                                      echo '<div id="Ano'.$anosConv[$i]->ano.'" class="collapse anos" data-parent="#accordion"><br>';
+                                      #var_dump($convocatorias);
+                                      for ($j=0; $j < $v ; $j++) {
+                                        if ($convocatorias[$j]->convocatoria_id_ano == $anosConv[$i]->id) {
+                                          echo '<a class="convocatoria-link llamado" href="#">Llamado '.$convocatorias[$j]->llamado.'</a>';
+                                        }
+                                      }
                                       echo '</div>';
                                     }
                                 }
 
-                                function printLllamados($convocatorias,$y) {
-                                  $i = $y->id;
-                                  while ($conv = $convocatorias->fetch_object()) {
-                                    if ($conv->convocatoria_id_ano == $y->id) {
-                                      echo '<a class="convocatoria-link llamado" href="#">Llamado '.$conv->llamado.'</a>';
-                                    }
-                                  }
-                                }
 
                                 ?>
 

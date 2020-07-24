@@ -33,9 +33,8 @@
 
 </script>
   <?php
-  while ($gra = $convocatorias->fetch_object()) {
-    echo'<h1>lol</h1>';
-    echo '<iframe id="contendedor-convocatorias" src="'.base_url . $gra->archivo.'"></iframe>';
+  while ($convocatorias) {
+    echo '<iframe id="contendedor-convocatorias" src="'.base_url . $convocatorias[0]->archivo.'"></iframe>';
     break;
   }
 ?>

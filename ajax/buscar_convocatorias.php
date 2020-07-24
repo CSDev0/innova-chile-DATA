@@ -28,14 +28,18 @@ if(true){
       $contador = 0;
       while ($obj = mysqli_fetch_array($resultado)) {
           $archivo = substr($obj['archivo'], strrpos($obj['archivo'], '/') + 1);
-               #. $convocatoria->getAnoById($obj['convocatoria_id_ano']).
+              $current_convocatoria= new Convocatoria();
+              $current_convocatoria->setId(intval($obj["id"]));
+              $conv = $current_convocatoria->getConvocatoriaById();
+              $ano = $conv->getAnoById();
+
               $contador = $contador + 1;
               $output .= '
                       <tr>
-                              <td>' . $obj["id"] . '</td>
+                              <td>' . $conv->getId() . '</td>
                               <td><a class="link-normal small" href="' . base_url . $obj['archivo'] . '" target="_blank">' . $archivo . '</a></td>
-                              <td></td>
-                              <td>LLamado '. $obj['llamado'].'</td>
+                              <td>'.$ano->ano.'</td>
+                              <td>LLamado '. $conv->getLlamado() .'</td>
                               <td>
                                 <a href="#modal-eliminar" data-toggle="modal" ruta="convocatoria/delete&id=" id=' . $obj['id'] . ' nombre="' . utils::acortador($obj['archivo'], 60) .'" class="btn btn-danger eliminar" style="margin-top: 5px; width: 100%;" >
                                   <i class="fas fa-trash-alt"></i> Eliminar
