@@ -15,9 +15,9 @@
             $(iframe).before('<div class="bg-iframe"><div id="spinner"><i class="fa fa-spinner fa-spin fa-4x fa-fw icono-naranja"></i>\n\
                 </div></div></div>');
             $(iframe).before(function () {
-                $('#menubar-convocatorias').css("opacity", 0);
+                //$('#menubar-convocatorias').css("opacity", 0);
                 setTimeout(function () {
-                    $('#menubar-convocatorias').css("visibility", "hidden");
+                    //$('#menubar-convocatorias').css("visibility", "hidden");
                 }, 500);
             });
             $(iframe).on('load', function () {

@@ -24,6 +24,7 @@
                             <div id="accordion">
                                 <br>
                                 <?php
+                                #var_dump($anosConv);
                                 if ($convocatorias) {
                                   $v=count($convocatorias);
                                   $c=count($anosConv);
@@ -33,7 +34,7 @@
                                       #var_dump($convocatorias);
                                       for ($j=0; $j < $v ; $j++) {
                                         if ($convocatorias[$j]->convocatoria_id_ano == $anosConv[$i]->id) {
-                                          echo '<a class="convocatoria-link llamado" href="#">Llamado '.$convocatorias[$j]->llamado.'</a>';
+                                          echo '<a class="convocatoria-link llamado" data-toggle="collapse" data-target="#navbarPorAnos2" data-link='.base_url.$convocatorias[$j]->archivo.' href="#">&nbsp;&nbsp;&nbsp;&nbsp; Llamado '.$convocatorias[$j]->llamado.'&nbsp;&nbsp;&nbsp;&nbsp;</a>';
                                         }
                                       }
                                       echo '</div>';
