@@ -5,6 +5,7 @@ class Grafico_destacado {
     private $id;
     private $archivo;
     private $posicion;
+    private $seccion;
     private $db;
 
     public function __construct() {
@@ -22,6 +23,9 @@ class Grafico_destacado {
     function getPosicion() {
         return $this->posicion;
     }
+    function getSeccion() {
+        return $this->seccion;
+    }
 
     function setId($id) {
         $this->id = $id;
@@ -33,6 +37,9 @@ class Grafico_destacado {
 
     function setPosicion($posicion) {
         $this->posicion = $posicion;
+    }
+    function setSeccion($seccion) {
+        $this->seccion = $seccion;
     }
 
     public function search($busqueda) {
@@ -52,7 +59,7 @@ class Grafico_destacado {
         $now = new DateTime();
         $date = $now->format("Y-m-d H:i:s");
 
-        $query = "INSERT INTO graficodestacado VALUES (NULL, '{$this->getArchivo()}', '{$this->getPosicion()}' );";
+        $query = "INSERT INTO graficodestacado VALUES (NULL, '{$this->getArchivo()}', '{$this->getPosicion()}','{$this->getSeccion()}' );";
 
         $save = $this->db->query($query);
 
@@ -95,7 +102,7 @@ class Grafico_destacado {
         $gra_eliminado = $grafico_destacado->getGraficoById();
         if ($this->db->query($query) == TRUE && $this->db->affected_rows > 0) {
             require_once 'models/Log.php';
-            $archivo_nombre = substr($gra_eliminado->getArchivo(), strrpos($gra_eliminado->getArchivo(), '/') + 1); 
+            $archivo_nombre = substr($gra_eliminado->getArchivo(), strrpos($gra_eliminado->getArchivo(), '/') + 1);
             $log = new Log();
             $log->setFecha($date);
             $log->setTipo('Eliminar');

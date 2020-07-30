@@ -72,6 +72,7 @@ class dataController {
                 $grafico = new Grafico_destacado();
                 $grafico->setArchivo($_POST['slcArchivo']);
                 $grafico->setPosicion('0');
+                $grafico->setSeccion($_POST['slcSeccion']);
                 $resultado = $grafico->save();
                 if ($resultado) {
                     $_SESSION['graf_msg'] = 'e_agregar';
@@ -107,7 +108,7 @@ class dataController {
         }
     }
 
-    
+
 
 
 

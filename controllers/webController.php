@@ -18,6 +18,7 @@ class webController {
     function inicio() {
         $grafico_destacado = new Grafico_destacado();
         $graficos = $grafico_destacado->getAll();
+        $graficos2 = $grafico_destacado->getAll();
         $estudio = new Estudio();
         $estudios1 = $estudio->getAllByAno();
         $estudios2 = $estudio->getAllByAno();

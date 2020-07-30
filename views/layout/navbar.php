@@ -6,7 +6,7 @@
                 <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#contenido-navbar-hamburguer">
                     <span class="icon-bar top-bar"></span>
                     <span class="icon-bar middle-bar"></span>
-                    <span class="icon-bar bottom-bar"></span>				
+                    <span class="icon-bar bottom-bar"></span>
                 </button>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -56,7 +56,7 @@
         <!-- /.container -->
     </nav>
     <nav class="navbar full-nav fixed-top navbar-expand-sm landing-page-navbar bg-gradient">
-        <div class="logo-corfo"></div>
+         <a href="https://www.corfo.cl/sites/cpp/innovacion"> <div class="logo-corfo"></div> </a> 
         <div class="navbar-collapse justify-content-center">
             <ul class="navbar-nav">
                 <li class="nav-item">

@@ -14,22 +14,20 @@
                     </div>
                     <div class="container">
                         <div class="row">
-                            <div class="col-sm-6">
-                                <div class="contenedor-grafico small">
-                                    <iframe class="grafico-chile" src="<?= base_url ?>uploads/chile_en_el_mundo/GCR_chile.html">
-                                    </iframe>
-                                </div>
-                                <div class="small-br"></div>
-                                <h2 class="text-center">Grafico Indice de Competitividad</h2>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="contenedor-grafico small">
-                                    <iframe class="grafico-chile" src="<?= base_url ?>uploads/chile_en_el_mundo/GII_chile.html">
-                                    </iframe>
-                                </div>
-                                <div class="small-br"></div>
-                                <h2 class="text-center">Grafico Indice de Innovación</h2>
-                            </div>
+                          <?php
+                          while ($gra2 = $graficos2->fetch_object()) {
+                            if ($gra2->seccion == 1) {
+                              ?>
+                              <div class="col-sm-6">
+                                  <div class="contenedor-grafico small">
+                                      <iframe class="grafico-destacado justify-content-center border pl-5 mb-2" src="<?= base_url . $gra2->archivo ?>">
+                                      </iframe>
+                                  </div>
+                              </div>
+                              <?php
+                            }
+                          }
+                           ?>
                             <div class="col-sm-2"></div>
                         </div>
                     </div>
@@ -41,5 +39,3 @@
     </section>
 
 </div>
-
-

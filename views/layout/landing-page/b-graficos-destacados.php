@@ -44,7 +44,7 @@
         <div class="row section">
             <div class="col-sm-12 align-self-top w-100">
                 <div class="container">
-                    <h1 class="text-center" id="graficos_destacados_title"><i class="fad fa-file-chart-line icono-celeste"></i> Graficos destacados</h1>
+                    <h1 class="text-center" id="graficos_destacados_title"><i class="fad fa-file-chart-line icono-celeste"></i> Gráficos destacados</h1>
                     <hr class="faded" >
                 </div>
             </div>
@@ -57,9 +57,14 @@
                             <li data-target="#graficos-crsl" data-slide-to="0" class="active"></li>
                             <?php
                             $cantidad_graficos = mysqli_num_rows($graficos);
+                            $graSeccion = $graficos->fetch_object();
                             if ($cantidad_graficos > 1) {
                                 for ($x = 1; $x < $cantidad_graficos; $x++) {
-                                    echo '<li data-target="#graficos-crsl" data-slide-to="' . $x . '"></li>';
+                                  $d=$x-1;
+                                    if ($graSeccion->seccion == 0) {
+                                      echo '<li data-target="#graficos-crsl" data-slide-to="' . $d . '"></li>';
+                                    }
+
                                 }
                             }
                             ?>
@@ -75,11 +80,15 @@
                                     echo '<div class="carousel-item">';
                                 }
                                 $contador++;
+                                if ($graSeccion->seccion == 0) {
+
                                 ?>
                                 <div class="contenedor-grafico justify-content-center">
                                     <iframe class="grafico-destacado justify-content-center border pl-5 mb-2" src="<?= base_url . $gra->archivo ?>">
                                     </iframe>
                                 </div>
+                                <?php
+                              } ?>
                             </div>
                             <?php
                         }

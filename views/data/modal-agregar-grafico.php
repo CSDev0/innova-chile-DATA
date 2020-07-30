@@ -26,7 +26,16 @@
                                     echo '<label for="slcArchivo">No hay archivos compatibles en el repositorio o no se ha descargado uno. </label>';
                                 }
                                 ?>
-                            
+
+                        </div>
+                        <div class='col-sm mb-2'>
+                            <div class="form-group">
+                                <label for="slcActivado">Seccion: </label>
+                                <select class="form-control"  name=slcSeccion>
+                                    <option value="0" >Graficos destacados</option>
+                                    <option value="1" >Chile en el mundo</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
                 </div>
