@@ -6,15 +6,20 @@
                     <h1 class="text-center" id="estudios_title"><i class="fad fa-folder-open icono-celeste"></i> Estudios</h1>
                     <hr class="faded" >
                     <br>
-                    <p><?= utils::getTextoByTipoContenido('Estudios') ?></p>
+
                 </div>
             </div>
             </section>
             <section class="seccion" data-section-name="nuestros_estudios" id="nuestros-estudios">
-                <div class="row section">
+                <div class="row section ">
                     <div class="col-sm-12 align-self-top vw-100">
                         <h2 class="text-center" id="nuestros_title">Nuestros estudios</h2>
                         <br>
+                        <div class="container">
+                          <p><?= utils::getTextoByTipoContenido('Estudios') ?></p>
+                          <br>
+                        </div>
+
                     </div>
                 </div>
                 <div class="col-sm-12 align-self-top vw-100">
@@ -32,8 +37,8 @@
                                         ?>
                                         <div class="col-sm-6">
                                             <li>
-                                                <a class="link-normal estudios" data-nombre="<?= $est1->nombre ?>" data-descripcion="<?= $est1->descripcion ?>" 
-                                                   data-archivo="<?= $est1->archivo ?>" data-tipo="<?= $est1->tipo ?>" 
+                                                <a class="link-normal estudios" data-nombre="<?= $est1->nombre ?>" data-descripcion="<?= $est1->descripcion ?>"
+                                                   data-archivo="<?= $est1->archivo ?>" data-tipo="<?= $est1->tipo ?>"
                                                    href="#modal-estudios" data-toggle="modal" ><?= $est1->nombre ?> (<?= $est1->ano_estudio ?>)</a>
                                             </li>
                                         </div>
@@ -66,6 +71,11 @@
                     <div class="col-sm-12 align-self-top vw-100 ">
                         <h2 class="text-center"  id="lecturas_title">Lecturas recomendadas</h2>
                         <br>
+                        <div class="container">
+                          <p><?= utils::getTextoByTipoContenido('Lecturas') ?></p>
+                          <br>
+                        </div>
+
                     </div>
                 </div>
                 <div class="col-sm-12 align-self-top vw-100">
@@ -84,8 +94,8 @@
                                         ?>
                                         <div class="col-sm-6">
                                             <li>
-                                                <a class="link-normal estudios" data-nombre="<?= $est2->nombre ?>" data-descripcion="<?= $est2->descripcion ?>" 
-                                                   data-enlace="<?= $est2->enlace ?>" data-tipo="<?= $est2->tipo ?>" 
+                                                <a class="link-normal estudios" data-nombre="<?= $est2->nombre ?>" data-descripcion="<?= $est2->descripcion ?>"
+                                                   data-enlace="<?= $est2->enlace ?>" data-tipo="<?= $est2->tipo ?>"
                                                    href="#modal-estudios" data-toggle="modal" ><?= $est2->nombre ?> (<?= $est2->ano_estudio ?>) </a>
                                             </li>
                                         </div>
