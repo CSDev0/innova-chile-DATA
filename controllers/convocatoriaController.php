@@ -56,10 +56,10 @@ class convocatoriaController {
               $zip->extractTo('uploads/repo/');
               $zip->close();
               $_SESSION['repo_mensaje'] = 'e_unzip';
-              header("Location:" . base_url . 'gestion/convocaorias');
+              header("Location:" . base_url . 'gestion/convocatorias');
           } else {
               $_SESSION['repo_mensaje'] = 'f_unzip';
-              header("Location:" . base_url . 'gestion/convocaorias');
+              header("Location:" . base_url . 'gestion/convocatorias');
           }
       } else {
           header("Location:" . base_url . 'web/login');
