@@ -1,7 +1,7 @@
 <h2 class='mt-2'> Gestionar <b>Data</b></h2>
 <hr>
-<div class="row">
-    <div class="col-sm-10 contenedor-gestion">
+<div class="row pr-4">
+    <div class="col-12 contenedor-gestion">
         <h3><b>Repositorio</b></h3>
         <p>Aquí podras modificar el repositorio de <b class="color-azul">Github</b> del cual provengan los <b class="color-azul">Graficos destacados</b>.</p>
         <button class="btn btn-primary m-text d-flex align-items-center" href="#modal-repositorio" data-toggle="modal" usuario="<?= $repo->usuario ?>"
@@ -23,7 +23,7 @@
         }
         ?>
     </div>
-    <div class="col-sm-10 contenedor-gestion">
+    <div class="col-12 contenedor-gestion">
         <div id="loading-div" class='loading-div'></div>
         <h3><b>Graficos destacados</b></h3>
         <p>Aquí podras agregar, modificar y eliminar los graficos destacados de la sección <b class="color-azul">Graficos destacados</b>, para esto, primero se debe descargar el repositorio de <b class="color-azul">Github</b> que contiene los graficos.</p>
@@ -103,7 +103,7 @@
 
         </script>
     </div>
-    <div class="col-sm-10 contenedor-gestion">
+    <div class="col-12 contenedor-gestion">
         <h3><b>Datos destacados</b></h3>
         <p>Aquí podras modificar las variables ubicadas en <b class="color-azul">Datos destacados</b>.</p>
         <form action="<?php echo base_url . 'contenido/updateDatos'; ?>" method="post" enctype="multipart/form-data" >

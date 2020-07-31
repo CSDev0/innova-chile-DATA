@@ -22,11 +22,11 @@ class usuarioController {
 //  Funcion para enviar los datos de inicio de sesión.
     function loginRequest() {
         if (isset($_POST)) {
-//            $res = utils::post_captcha($_POST['g-recaptcha-response']);
-//            if (!$res['success']) {
-//                header('Location:' . base_url . 'web/login');
-//                $_SESSION['aut_msg'] = 'f_captcha';
-//            } else {
+            $res = utils::post_captcha($_POST['g-recaptcha-response']);
+            if (!$res['success']) {
+                header('Location:' . base_url . 'web/login');
+                $_SESSION['aut_msg'] = 'f_captcha';
+            } else {
             $usuario = new Usuario();
             $usuario->setCorreo($_POST['txtCorreo']);
             $usuario->setClave($_POST['txtClave']);
@@ -56,11 +56,11 @@ class usuarioController {
                 header('Location:' . base_url . 'web/login');
             }
         }
-//        }
+        }
     }
 
 //  Funcion para cerrar sesión.
-    public function logout() {
+    function logout() {
         if (utils::isLogged()) {
             if (isset($_SESSION['identidad'])) {
                 $now = new DateTime();
@@ -84,8 +84,7 @@ class usuarioController {
     }
 
 //  Funcion para guardar un usuario siendo un administrador.
-    public function save() {
-
+    function save() {
         if (utils::isAdmin()) {
             if (isset($_POST)) {
                 $usuario = new Usuario();
@@ -112,7 +111,7 @@ class usuarioController {
         }
     }
 
-    public function update() {
+    function update() {
         if (utils::isAdmin()) {
             if (isset($_POST)) {
                 $usuario = new Usuario();
@@ -138,10 +137,8 @@ class usuarioController {
     }
 
     #Borrar usuario
-
-    public function delete() {
+    function delete() {
         if (utils::isAdmin()) {
-            if (isset($_POST)) {
                 $usuario = new Usuario();
                 if (isset($_GET['id'])) {
                     $id = $_GET['id'];
@@ -155,21 +152,20 @@ class usuarioController {
                     }
                 } else {
                     $_SESSION['usu_msg'] = "f_no_encontrado";
+                    header('Location:' . base_url . 'gestion/usuarios');
                 }
-
                 if (isset($delete) && $delete == true) {
                     $_SESSION['usu_msg'] = 'e_eliminar';
                 } elseif ($delete == false & $delete != null) {
                     $_SESSION['usu_msg'] = 'f_eliminar';
                 }
-            }
-            header("Location:" . base_url . 'gestion/usuarios');
+                header('Location:' . base_url . 'gestion/usuarios');
         } else {
             header('Location:' . base_url . 'usuario/panel');
         }
     }
 
-    public function enviarCodigoActivar() {
+    function enviarCodigoActivar() {
         if (utils::isLogged()) {
             if (isset($_GET['id'])) {
                 $id_usuario = $_GET['id'];
@@ -215,7 +211,7 @@ class usuarioController {
         }
     }
 
-    public function verificarMiCuenta() {
+    function verificarMiCuenta() {
         if (utils::isLogged()) {
             if (utils::isVerified()) {
                 header("Location: " . base_url . 'usuario/panel');
@@ -227,7 +223,7 @@ class usuarioController {
         }
     }
 
-    public function TokenVerificarCuenta() {
+    function TokenVerificarCuenta() {
         if (isset($_POST['txtToken']) || isset($_SESSION['token'])) {
             if (isset($_POST['txtToken'])) {
                 $token_key = $_POST['txtToken'];
@@ -279,7 +275,7 @@ class usuarioController {
         }
     }
 
-    public function solicitarRestablecer() {
+    function solicitarRestablecer() {
         $res = utils::post_captcha($_POST['g-recaptcha-response']);
         if (!$res['success']) {
             header('Location:' . base_url . 'web/login');
@@ -327,7 +323,7 @@ class usuarioController {
         }
     }
 
-    public function solicitarRestablecerAutenticado() {
+    function solicitarRestablecerAutenticado() {
         if (utils::isLogged()) {
             $correo_restablecer = $_SESSION['identidad']->correo;
             $expiry_date = Date('Y-m-d H:i', strtotime('+1 days'));
@@ -360,11 +356,11 @@ class usuarioController {
         }
     }
 
-    public function restablecerIngresarCodigo() {
+    function restablecerIngresarCodigo() {
         require_once 'views/usuario/restablecer-clave/ingresar-codigo-restablecer.php';
     }
 
-    public function TokenRestablecerClave() {
+    function TokenRestablecerClave() {
         if (isset($_POST['txtToken']) || isset($_SESSION['token_key'])) {
             if (isset($_POST['txtToken'])) {
                 $token_key = $_POST['txtToken'];
@@ -409,7 +405,7 @@ class usuarioController {
         }
     }
 
-    public function guardarClave() {
+    function guardarClave() {
         if (isset($_SESSION['token_key'])) {
             if (isset($_POST['txtClave'])) {
                 $id_usuario = $_POST['id_usuario'];
@@ -456,7 +452,7 @@ class usuarioController {
         }
     }
 
-    public function cancelarRestablecer() {
+    function cancelarRestablecer() {
         $id_usuario = $_POST['id_usuario'];
         $usuario = new Usuario();
         $usuario->setId($id_usuario);

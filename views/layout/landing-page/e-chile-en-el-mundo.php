@@ -1,6 +1,5 @@
 <div class="bg-chile">
     <section class="seccion fullview chile_mundo" data-section-name="chile_en_el_mundo">
-
         <div class="container-fluid d-flex justify-content-center">
             <div class="row section vw-100">
                 <div class="col-sm-12">
@@ -8,8 +7,7 @@
                         <h1 class="text-center" id="chile_title"><i class="fad fa-globe-americas icono-celeste"></i> Chile en el mundo</h1>
                         <hr class="faded">
                         <br>
-
-                        <p class="fullview"><?= utils::getTextoByTipoContenido('Chile en el mundo') ?></p>
+                        <p class=""><?= utils::getTextoByTipoContenido('Chile en el mundo') ?></p>
                         <br>
                     </div>
                     <div class="container">
@@ -37,5 +35,4 @@
         </div>
         <br> <br> <br>   <br><br> <br> <br>   <br><br> <br> <br>   <br>
     </section>
-
 </div>

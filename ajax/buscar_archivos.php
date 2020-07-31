@@ -15,8 +15,9 @@ if (isset($_POST["query"])) {
 
 }
 if (mysqli_num_rows($resultado) > 0 && $resultado != null) {
-    $output .= '<div class="table-responsive">
-                                    <table class="table table-striped d-flex">
+    $output .= '<div class="table-responsive w-100">
+                                    <table class="table table-striped d-flex w-100">
+                                    <tbody class="w-100">
                                         <tr>
                                             <th scope="col" class="col-sm-1">#</th>
                                             <th scope="col" class="col-sm-3">Archivo</th>

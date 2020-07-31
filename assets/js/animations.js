@@ -3,6 +3,7 @@ $(document).ready(function () {
     $(".landing-page-nav-link").removeClass("bg-gradient");
     $.scrollify({
         section: ".seccion",
+        scrollSpeed: 1000,
         interstitialSection: ".seccion-extra",
         easing: "easeOutExpo",
         setHeights: false,
@@ -15,7 +16,7 @@ $(document).ready(function () {
         {
             if ($.scrollify.current().attr('data-section-name') == "quienes_somos")
             {
-                $("#quienes_somos_title").show("puff", 800);
+                $("#quienes_somos_title").show("puff", 650);
                 $(".landing-page-navbar").removeClass("bg-gradient");
                 $(".landing-page-nav-link").removeClass("bg-gradient");
                 $(".landing-page-navbar").addClass("no-bg");
@@ -27,7 +28,7 @@ $(document).ready(function () {
             if ($.scrollify.current().attr('data-section-name') == "datos_destacados")
             {
                 datosDestacados();
-                $("#datos_destacados_title").show("puff", 800);
+                $("#datos_destacados_title").show("puff", 650);
                 $(".landing-page-navbar").removeClass("no-bg");
                 $(".landing-page-nav-link").removeClass("initial-state")
                 $(".landing-page-navbar").addClass("bg-gradient");
@@ -38,7 +39,7 @@ $(document).ready(function () {
             if ($.scrollify.current().attr('data-section-name') == "graficos_destacados")
             {
                 $("#datos_destacados_title").hide("puff", 0);
-                $("#graficos_destacados_title").show("puff", 800);
+                $("#graficos_destacados_title").show("puff", 650);
                 $(".landing-page-navbar").removeClass("no-bg");
                 $(".landing-page-nav-link").removeClass("initial-state")
                 $(".landing-page-navbar").addClass("bg-gradient");
@@ -50,7 +51,7 @@ $(document).ready(function () {
             if ($.scrollify.current().attr('data-section-name') == "data")
             {
                 $("#graficos_destacados_title").hide("puff", 0);
-                $("#data_title").show("puff", 800);
+                $("#data_title").show("puff", 650);
                 $(".landing-page-navbar").removeClass("no-bg");
                 $(".landing-page-nav-link").removeClass("initial-state")
                 $(".landing-page-navbar").addClass("bg-gradient");
@@ -65,10 +66,10 @@ $(document).ready(function () {
             if ($.scrollify.current().attr('data-section-name') == "estudios")
             {
                 $("#data_title").hide("puff", 0);
-                $("#estudios_title").show("puff", 800);
+                $("#estudios_title").show("puff", 650);
 
-                $("#nuestros_title").show("puff", 800);
-                $("#lecturas_title").show("puff", 800);
+                $("#nuestros_title").show("puff", 650);
+                $("#lecturas_title").show("puff", 650);
 
                 $(".landing-page-navbar").removeClass("no-bg");
                 $(".landing-page-nav-link").removeClass("initial-state");
@@ -80,7 +81,7 @@ $(document).ready(function () {
             }
             if ($.scrollify.current().attr('data-section-name') === "chile_en_el_mundo")
             {
-                $("#chile_title").show("puff", 800);
+                $("#chile_title").show("puff", 650);
                 $(".landing-page-navbar").removeClass("no-bg");
                 $(".landing-page-nav-link").removeClass("initial-state");
                 $(".landing-page-navbar").addClass("bg-gradient");
@@ -90,6 +91,7 @@ $(document).ready(function () {
         },
         after: function (index)
         {
+            $.scrollify.update();
         }
 
 

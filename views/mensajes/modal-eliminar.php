@@ -1,7 +1,7 @@
 <div id="modal-eliminar" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form id='formulario-eliminar'>
+            <form id='formulario-eliminar' method="GET" action="">
                 <div class="modal-header">
                     <h3 id='titulo-eliminar'>
 
@@ -13,7 +13,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-success" data-dismiss="modal"><i class="fas fa-times"></i> Cancelar</button>
-                    <a href="" class="btn btn-danger" id='boton-eliminar'><font class="color-blanco"><i class="fas fa-trash-alt"></i> Eliminar</font></a>
+                    <button type="submit" class="btn btn-danger" id='boton-eliminar'><font class="color-blanco"><i class="fas fa-trash-alt"></i> Eliminar</font></button>
                 </div>
             </form>
         </div>

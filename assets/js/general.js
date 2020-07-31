@@ -14,11 +14,10 @@ function resizeSecciones() {
             x = w.innerWidth || e.clientWidth || g.clientWidth,
             y = w.innerHeight || e.clientHeight || g.clientHeight;
     $('.seccion.fullview').css("width", "100%");
-    $('.seccion.fullview').css('height', y - 5); //Si se ocupa el height completo ocurre un extraño bug al desplazarse entre secciones, por lo que se le resta 5 y se soluciona.
-    $('.seccion.fullview.chile_mundo').css('height', '120%'); 
-    $("#bg-quienes-somos").css("height", y);
-    $("#bg-chile").css('height', '120%'); 
-    $("#bg-quienes-somos").css("width", "100%");
+    $('.seccion.fullview').css("min-height", y);
+//    $('.seccion.fullview').css('height', y - 5); //Si se ocupa el height completo ocurre un extraño bug al desplazarse entre secciones, por lo que se le resta 5 y se soluciona.
+    $("#bg-chile").css('height', '100%'); 
+    $("#data-seccion").css('height', '100%'); 
 }
 resizeSecciones();
 
@@ -59,13 +58,13 @@ var header = false;
 $(window).scroll(function () {
     if ($(this).scrollBottom() < 60 && abierto === false) {
         var altura = $('.footer-sticky').get(0).scrollHeight;
-        $('.footer-sticky').animate({height: altura}, 50);
+        $('.footer-sticky').animate({height: altura}, 5);
         abierto = true;
         flecha_abajo();
 
     } else {
         if ($(this).scrollBottom() > 50 && abierto === true) {
-            $('.footer-sticky').animate({height: '40px'}, 50);
+            $('.footer-sticky').animate({height: '40px'}, 5);
             abierto = false;
             flecha_arriba();
         }
@@ -82,10 +81,10 @@ function flecha_arriba() {
     $('#flecha-animada').removeClass('fal fa-angle-down fa-3x color-blanco')
     $('#flecha-animada').addClass('fal fa-angle-up fa-3x color-blanco')
 }
-$('.footer-sticky').mouseenter($.debounce(350, function (e) {
+$('.footer-sticky').mouseenter($.throttle(350, function (e) {
     var altura = $('.footer-sticky').get(0).scrollHeight;
 
-    $(this).animate({height: altura}, 50);
+    $(this).animate({height: altura}, 5);
     abierto = true;
     flecha_abajo();
 })).mouseleave($.throttle(700, function (e) {
@@ -99,7 +98,7 @@ $('.footer-sticky').mouseenter($.debounce(350, function (e) {
 //    }
 }));
 function esconderFooter() {
-    $(".footer-sticky").animate({height: '40px'}, 50);
+    $(".footer-sticky").animate({height: '40px'}, 5);
     abierto = false;
     flecha_arriba();
 }

@@ -9,14 +9,13 @@
                 </div>
                 <div class="col-sm-4 text-center">
                     <div class="col-sm">
-                        <a class="link-celeste" href="<?= base_url ?>web/faq"> <i class="fa fa-angle-double-right color-blanco"></i> Preguntas frecuentes (FAQ) <i class="fa fa-angle-double-left color-azul"></i></a><br>
+                        <a class="link-celeste" href="<?= base_url ?>web/faq"> <i class="fa fa-angle-double-right color-blanco"></i> Preguntas frecuentes (FAQ) <i class="fa fa-angle-double-left color-blanco"></i></a><br>
                     </div>
                     <br>
                     <div class="col-sm">
                         <h4 class="color-blanco">Siguenos en nuestras redes</h4>
                         <?php utils::getLinks(); ?>
                     </div>
-
                 </div>
                 <div class="col-sm-4">
                     <h4 class="color-blanco">Mapa del sitio</h4>

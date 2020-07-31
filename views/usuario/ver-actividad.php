@@ -1,3 +1,4 @@
+<div class="table-responsive">
 <table class="table table-striped">
     <thead>
         <tr>
@@ -16,7 +17,7 @@
 
                 <tr>
                     <th scope="row"><?=$usuario  ?></th>
-                    <td><b><?= $log->tipo ?> </b> <?= $log->actividad ?></td>
+                    <td><b><?= $log->tipo ?> </b><br> <span class="d-inline-block text-wrap" style="max-width: 250px; width: auto;"><?= $log->actividad ?></span></td>
                     <td><?= $fecha ?></td>
                     <td><a class='btn btn-info' data-toggle="modal" href="#modal-ver-actividad"
                            usuario="<?= $usuario  ?>" tipo="<?=$log->tipo?>" actividad="<?=$log->actividad?>"
@@ -28,3 +29,4 @@
         ?>
     </tbody>
 </table>
+</div>

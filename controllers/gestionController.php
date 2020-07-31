@@ -123,8 +123,7 @@ class gestionController {
         }
     }
 
-    function convocatorias()
-    {
+    function convocatorias(){
       if (utils::isVerified()) {
           if (utils::isAdminOEmpleado()) {
               require_once("views/mensajes/cont_msg.php");

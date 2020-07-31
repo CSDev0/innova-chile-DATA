@@ -1,7 +1,7 @@
 <h2 class='mt-2'> Gestionar <b>Convocatorias</b></h2>
 <hr>
-<div class="row">
-    <div class="col-sm-10 contenedor-gestion">
+<div class="row pr-4">
+    <div class="col-12 contenedor-gestion">
         <h3><b>Repositorio</b></h3>
         <p>Aquí podras modificar el repositorio de <b class="color-azul">Github</b> del cual provengan las <b class="color-azul">Convocatorias</b>.</p>
         <button class="btn btn-primary m-text d-flex align-items-center" href="#modal-repositorio" data-toggle="modal" usuario="<?= $repo->usuario ?>"
@@ -23,7 +23,7 @@
         }
         ?>
     </div>
-    <div class="col-sm-10 contenedor-gestion">
+    <div class="col-12 contenedor-gestion">
         <div id="loading-div" class='loading-div'></div>
         <h3><b>Convocatorias</b></h3>
         <p>Aquí podras agregar y eliminar las <b class="color-azul">Convocatorias</b>, para esto, primero se debe descargar el repositorio de <b class="color-azul">Github</b> que contiene las convocatorias.</p>
@@ -99,4 +99,6 @@
                 });
             </script>
 
+    </div>
+    </div>
     </div>

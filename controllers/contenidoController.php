@@ -86,7 +86,7 @@ class contenidoController {
         }
     }
 
-    public function updatePregunta() {
+    function updatePregunta() {
         if (utils::isVerified()) {
             if (utils::isAdminOEmpleado()) {
                 if (isset($_POST)) {
@@ -129,7 +129,7 @@ class contenidoController {
         }
     }
 
-    public function deletePregunta() {
+    function deletePregunta() {
         if (utils::isVerified()) {
             if (utils::isAdminOEmpleado()) {
                 if (isset($_GET['id'])) {
@@ -153,7 +153,7 @@ class contenidoController {
         }
     }
 
-    public function saveArchivo() {
+    function saveArchivo() {
         if (utils::isVerified()) {
             if (utils::isAdminOEmpleado()) {
                 if (isset($_POST)) {
@@ -201,7 +201,7 @@ class contenidoController {
         }
     }
 
-    public function deleteArchivo() {
+   function deleteArchivo() {
         if (utils::isVerified()) {
             if (utils::isAdminOEmpleado()) {
                 if (isset($_GET['id'])) {
@@ -230,7 +230,7 @@ class contenidoController {
         }
     }
 
-    public function updateDatos() {
+    function updateDatos() {
         if (utils::isVerified()) {
             if (utils::isAdminOEmpleado()) {
                 if (isset($_POST)) {

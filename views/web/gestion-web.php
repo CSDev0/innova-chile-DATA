@@ -1,8 +1,7 @@
 <h2> Gestionar <b>Sitio Web</b></h2>
 <hr>
-<div class="row">
-
-    <div class="col-sm-10 contenedor-gestion">
+<div class="row pr-2">
+    <div class="col-12contenedor-gestion">
       <form action="<?php echo base_url.'web/update';?>" method="post" enctype="multipart/form-data" >
       <div class="row">
         <div class="col-sm-6">
@@ -19,7 +18,7 @@
           </div>
       </form>
     </div>
-    <div class="col-sm-10 contenedor-gestion">
+    <div class="col-12 contenedor-gestion">
         <div id="loading-div" class='loading-div'></div>
         <h3>Preguntas frecuentes</h3>
         <button class="btn btn-primary btn-abrir-modal-web" href="#modal-agregar-pregunta" data-toggle="modal" data-tipo="">

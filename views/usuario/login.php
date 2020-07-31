@@ -62,8 +62,8 @@ if (isset($_SESSION['identidad'])) {
                             <a href="#modal-restablecer" data-toggle="modal">¿Has olvidado tu clave? haz click aquí</a>
                         </div>
                         <div class="modal-footer m-0 p-0 pt-2">
-                            <button class="btn btn-primary" name="btnLogin" type="submit" >Iniciar sesión</button>
-                            <a href="<?= base_url ?>web/inicio" class="btn btn-danger">Volver</a>
+                            <a href="<?= base_url ?>web/inicio" class="btn btn-danger"><i class="fal fa-arrow-circle-left"></i> Volver</a>
+                            <button class="btn btn-primary" name="btnLogin" type="submit" >Iniciar sesión <i class="fal fa-sign-in-alt"></i></button>
                         </div>
                     </div>
                 </form>

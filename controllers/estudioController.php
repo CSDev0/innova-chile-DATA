@@ -7,7 +7,7 @@ require_once 'helpers/utils.php';
 
 class estudioController {
 
-    public function save() {
+    function save() {
         if (utils::isAdminOEmpleado()) {
 
             if (isset($_POST)) {
@@ -122,7 +122,7 @@ class estudioController {
         }
     }
 
-    public function delete() {
+    function delete() {
         if (utils::isAdminOEmpleado()) {
             if (isset($_GET['id'])) {
                 $estudio = new Estudio();
@@ -149,7 +149,7 @@ class estudioController {
         }
     }
 
-    public function view() {
+    function view() {
         if (utils::isAdminOEmpleado()) {
             if (isset($_GET['id'])) {
                 $estudio = new Estudio();
@@ -176,6 +176,18 @@ class estudioController {
         }
     }
 
+    function nuestrosEstudios() {
+        require_once('views/layout/menubar.php');
+        require_once('views/layout/landing-page/modal-estudios.php');
+        $estudio = new Estudio();
+        $estudios1 = $estudio->getAllByAno();
+        require_once('views/estudios/nuestros-estudios.php');
+    }
+    function lecturasRecomendadas() {
+        require_once('views/layout/menubar.php');
+        require_once('views/layout/landing-page/modal-estudios.php');
+        $estudio = new Estudio();
+        $estudios2 = $estudio->getAllByAno();
+        require_once('views/estudios/lecturas-recomendadas.php');
+    }
 }
-
-ob_end_flush();

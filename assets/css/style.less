@@ -30,7 +30,7 @@
 
 /*Fuentes*/
 .bold-font(){
-/*    font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif !important;*/
+    /*    font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif !important;*/
     font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif !important;
     font-weight: normal;
     font-style: normal;
@@ -113,27 +113,25 @@ div{
     background-image: linear-gradient(@first, @second);
 }
 ::-webkit-scrollbar {
-    width: 16px;
-    height: 16px;
-    border: 1px solid red;
+    width: 10px;
+    height: 10px;
 }
 ::-webkit-scrollbar-button {
     width: 0px;
     height: 0px;
 }
 ::-webkit-scrollbar-thumb {
-    background: #2680bd;
-    border-radius: 0px;
+    .background-image-gradient(@second-color, @main-color);
+    height: 20%;
 }
 ::-webkit-scrollbar-thumb:hover {
-    background: #48acf1;
+    background: @second-color;
 }
 ::-webkit-scrollbar-thumb:active {
-    background: #0062ab;
+    background: @special-color;
 }
 ::-webkit-scrollbar-track {
     background: #ebf5ff;
-
     border-radius: 0px;
 }
 ::-webkit-scrollbar-track:hover {
@@ -214,13 +212,6 @@ div{
 .icono-celeste{
     color: @special-color;
 }
-.color-ig {
-    color: transparent;
-    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-    background: -webkit-radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-    background-clip: text;
-    -webkit-background-clip: text;
-}
 .bg-ultima-modificacion{
     background-color: @second-color;
     color: white;
@@ -241,8 +232,11 @@ div{
     color: white;
     padding: 5px;
 }
+.bg-blanco{
+    background-color: white;
+}
 .bg-degrad{
-    
+
 }
 .bg-gris{
     background-color: @lightgray;
@@ -252,6 +246,35 @@ div{
 }
 .fa-gradient{
     .background-gradient(@second-color, @main-color);
+}
+.fab:hover{
+    .transition(0.7s);
+    .scale(1.07);
+}
+.fa-facebook{
+    display: inline-block;
+    border-radius: 60px;
+    box-shadow: 0px 0px 2px #888;
+    padding: 0.2em 0.2em;
+    color: #3b5998;
+}
+.fa-instagram{
+    display: inline-block;
+    border-radius: 60px;
+    box-shadow: 0px 0px 2px #888;
+    padding: 0.2em 0.25em;
+    color: transparent;
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    background: -webkit-radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+.fa-twitter{
+    display: inline-block;
+    border-radius: 60px;
+    box-shadow: 0px 0px 2px #888;
+    padding: 0.2em 0.2em;
+    color: #00acee;
 }
 .bc-gris{
     border-color: @gray;

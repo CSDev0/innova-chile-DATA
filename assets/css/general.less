@@ -40,12 +40,17 @@ input.parsley-error
     opacity: 1;
     transition: 0.3s;
 }
+.fullview{
+    min-width: 100vw;
+    height: 100%;
+}
 body {
     right: -1px;
     overflow-x: hidden;
 }
 html{
     scrollbar-color: @main-color white;
+    scrollbar-width: thin;
 }
 html,body
 {
@@ -113,14 +118,14 @@ p.white{
     left: 5px;
 }
 .logo-innova{
-        background: url("../img/logos/DATAINNOVALOGO_3.png") center no-repeat transparent;
-        background-size: contain;
-        background-repeat: no-repeat;
-        width: 100%;
-        height: 90px;
-        margin: auto;
-        margin-top: 0px;
-        .transition(1s);
+    background: url("../img/logos/DATAINNOVALOGO_3.png") center no-repeat transparent;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 90px;
+    margin: auto;
+    margin-top: 0px;
+    .transition(1s);
 }
 .logo-innova:hover{
     .scale(1.1);
@@ -197,9 +202,9 @@ button:active, button:focus{
     .scale(1.1);
     .transition(0.5s);
     transition: width .9s ease out;
-
+    cursor: pointer;
 }
-.circulo-data:hover{
+div.circulo-data:hover{
     .scale(1.4);
     border: 8px solid @main-color;
 }
@@ -208,11 +213,11 @@ button:active, button:focus{
     .m-text();
     .normal-font();
 }
-.circle-link{
+div.circle-link{
     text-align: center;
     display: block;
     vertical-align: middle;
-
+    cursor: pointer;
 }
 
 .circle-link h3{
@@ -253,6 +258,8 @@ a:hover{
 .link-normal{
     color: @second-color;
     .s-text();
+    font-weight: lighter !important;
+
 }
 
 .link-normal:hover{
@@ -298,31 +305,6 @@ a:hover{
     background-position: center;
     background-repeat: no-repeat;
 }
-.bg-datos-destacados{
-    width:100%;
-    height: 100%;
-    top: 20px;
-    opacity:1;
-    filter: brightness(100%);
-    z-index: -5;
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-.bg-data{
-    width:100%;
-    height: 100%;
-    background: linear-gradient(rgba(255,255,255,.1), rgba(255,255,255,.1)), url("../img/bg/edit4.jpg");
-    top: 20px;
-    opacity:1;
-    filter: brightness(100%);
-    z-index: -5;
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-}
 .bg-chile{
     width:100%;
     background: linear-gradient(rgba(255,255,255,.9), rgba(255,255,255,.8)), url("../img/bg/floor.png");
@@ -351,7 +333,6 @@ a:hover{
     padding: 40px;
     .scale(1.1);
     .border-radius(1000px);
-    border: 1px solid red;
 }
 .count{
     .xxl-text();
@@ -362,22 +343,7 @@ a:hover{
     background-color: white !important;
     transition: background-color 0.5s ease 0s !important;
 }
-.initial-state{
-    .s-text() !important;
-    background-color: transparent !important;
-    color: @main-color !important;
-    .transition(0.5s) !important;
-    .border-radius(5px);
-    margin-left: 0px;
-    margin-right: 20px;
-    width: 100%;
-    text-align: center;
-    .normal-font();
-}
-.initial-state:hover{
-    color: @second-color;
-    background-color: white;
-}
+
 /*---------------------------------------------------------------*/
 /*PIE DE PAGINA*/
 
@@ -392,7 +358,7 @@ a:hover{
     padding-bottom: 0px;
 }
 #footer{
-    .transition(1s);
+    .transition(0.6s);
 }
 
 #copyright{

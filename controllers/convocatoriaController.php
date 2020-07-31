@@ -89,7 +89,7 @@ class convocatoriaController {
       }
   }
 
-  public function delete() {
+  function delete() {
     if (utils::isAdminOEmpleado()) {
         if (isset($_GET['id'])) {
             $id = $_GET['id'];

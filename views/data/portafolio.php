@@ -6,12 +6,16 @@
  */
 ?>
 <script>
+
     $(".se-pre-con").fadeOut("slow");
     $(document).ready(function () {
+        $.scrollify.disable();
         $(".landing-page-navbar").removeClass("no-bg");
-        $(".landing-page-nav-link").removeClass("initial-state")
+        $(".landing-page-nav-link").removeClass("initial-state");
+        $("#menubar").removeClass("sticky-top");
         $("#jumbo").hide();
         showSpinnerWhileIFrameLoads();
+        $("#menubar").slideUp(400);
     });
     function showSpinnerWhileIFrameLoads() {
         var iframe = $('iframe');
@@ -26,8 +30,8 @@
             });
         }
     }
-    $.scrollify.disable();
+
 </script>
-<iframe width="100%" height="1000px" frameBorder='0' src="https://datainnovacion.shinyapps.io/portafolio/">
+<iframe id="portafolio-shiny" frameborder="0" style="overflow:hidden;height:90vh;width:100%" height="90vh" width="100%" frameBorder='0' src="https://datainnovacion.shinyapps.io/portafolio/">
 </iframe>
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br>

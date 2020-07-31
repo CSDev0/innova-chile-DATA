@@ -185,5 +185,5 @@ $("#modal-eliminar").on('show.bs.modal', function (e) {
     var ruta = $(opener).attr('ruta');
     $(this).find('[id="titulo-eliminar"]').html('Eliminar ' + tipo);
     $(this).find('[id="pregunta-eliminar"]').html('¿Estas seguro de eliminar ' + tipo + ': <span class="color-azul">"' + nombre + '"</span>?');
-    $(this).find('[id="boton-eliminar"]').attr('href', baseurl + ruta + id);
+    $(this).find('[id="formulario-eliminar"]').attr('action', baseurl + ruta + id);
 });

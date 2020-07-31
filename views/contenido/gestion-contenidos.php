@@ -39,14 +39,13 @@ clipboard.on('error', function(e) {
   hideTooltip(e.trigger);
 });
 </script>
-
+<div class="pr-2">
 <h2> Gestionar <b>Textos y Archivos</b></h2>
 <hr>
-
-    <div class="col-sm-10 m-0 contenedor-gestion">
+    <div class="col-12 m-0 contenedor-gestion">
         <h3><b>Textos</b></h3>
         <div class="row">
-    <p class="col-sm-10"> A continuación se encuentran los botones correspondientes a cada sección de la pagina principal, en la cual podrás editar los textos referentes a ellas.</p>
+    <p class="col-12"> A continuación se encuentran los botones correspondientes a cada sección de la pagina principal, en la cual podrás editar los textos referentes a ellas.</p>
 </div>
         <button class="btn btn-primary btn-abrir-modal-contenido" href="#modal-contenido" data-toggle="modal" tipo="<?php if($qui){ echo $qui->tipo;} ?>"
 
@@ -86,7 +85,7 @@ clipboard.on('error', function(e) {
                 ultima_modificacion="<?php  if($lec){echo utils::getTiempo($lec->ultima_modificacion);} ?>" nombre="<?php if($lec){echo $lec->nombre;}?>">
 
             <i class="fas fa-edit"></i> Lecturas</button>
-
+<div class="row mt-2 pl-0 m-0">
             <button class="btn btn-primary btn-abrir-modal-contenido" href="#modal-contenido" data-toggle="modal" tipo="<?php if($chi){echo $chi->tipo;}else{ echo 'Chile en el mundo';} ?>"
 
                  texto="<?php if($chi){echo htmlentities($chi->texto);} ?>" usuario_modificacion="<?php if($chi){echo utils::getUsuarioNombre($chi->Usuario_id);} ?>"
@@ -94,9 +93,10 @@ clipboard.on('error', function(e) {
                  ultima_modificacion="<?php if($chi){echo utils::getTiempo($chi->ultima_modificacion);} ?>" nombre="<?php if($chi){echo $chi->nombre;}?>">
 
             <i class="fas fa-edit"></i> Chile en el mundo</button>
+</div>
         <br><br>
     </div>
-<div class="col-sm-10 m-0 mt-2 contenedor-gestion">
+<div class="col-12 m-0 mt-2 contenedor-gestion">
         <div id="loading-div" class='loading-div'></div>
         <h3><b>Archivos e imagenes</b></h3>
         <p> Aquí podras agregar archivos e imagenes para usarlas a traves de su enlace en los textos de la pagina.</p>
@@ -172,6 +172,7 @@ clipboard.on('error', function(e) {
 
     </div>
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</div>
 </div>
 </div>
 </div>

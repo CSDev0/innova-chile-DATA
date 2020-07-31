@@ -1,10 +1,11 @@
+<div class="pr-2">
 <h2 class='mt-2'> Gestionar <b>Usuarios</b></h2>
 <hr>
 <div class="row">
-    <div class='col-sm'>
-    <input data-size="s"type="checkbox" id="estudios-toggle" checked data-toggle="toggle" data-on="Usuarios" data-off="Actividad" data-onstyle="nuestros" data-offstyle="recomendadas">
+    <div class='col-12'>
+    <input data-size="s" type="checkbox" id="estudios-toggle" checked data-toggle="toggle" data-on="Usuarios" data-off="Actividad" data-onstyle="nuestros" data-offstyle="recomendadas">
     </div>
-    <div class="col-sm-10 estudios" id="contenedor-nuestros-estudios">
+    <div class="col-12 contenedor-estudios" id="contenedor-nuestros-estudios">
         <div id="loading-div" class='loading-div'></div>
         <h3>Usuarios</h3>
         <button class="btn btn-primary" href="#modal-agregar-usuario" data-toggle="modal"><i class="fas fa-plus-square"></i> Agregar</button>
@@ -80,13 +81,14 @@
         </script>
     </div>
 </div>
-<div class="row">
-    <div class="col-sm-10 lecturas" id="contenedor-lecturas-recomendadas">
+<div class="row pr-4">
+    <div class="col-12 contenedor-lecturas " id="contenedor-lecturas-recomendadas">
         <h4>Registro de actividad</h4>
         <?php require_once('views/usuario/ver-actividad.php'); ?>
     </div>
 </div>
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</div>
 </div>
 </div>
 </div>

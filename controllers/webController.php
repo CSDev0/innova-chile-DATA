@@ -113,7 +113,7 @@ class webController {
         header("Location: " . base_url . 'web/contacto');
     }
 
-    public function update() {
+    function update() {
         if (utils::isAdminOEmpleado()) {
             if (isset($_POST)) {
                 $web = new Web();

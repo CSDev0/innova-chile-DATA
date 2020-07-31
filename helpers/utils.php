@@ -169,7 +169,7 @@ class utils {
             $otros = json_decode('{"0":["null","null"]}', true);
         }
         for ($i = 0; $i < count($otros); $i++) {
-            echo '<i class="fa fa-angle-double-right" style="color: #0062AB"></i><a class="link-normal" href="' . $otros["" . $i . ""][1] . '">' . $otros["" . $i . ""][0] . '</a><br>';
+            echo '<i class="fa fa-angle-double-right color-blanco" ></i><a class="link-celeste" href="' . $otros["" . $i . ""][1] . '"> ' . $otros["" . $i . ""][0] . '</a><br>';
         }
     }
 
@@ -178,7 +178,7 @@ class utils {
         $web = new Web();
         $web->setId(1);
         $info = $web->getOne();
-        echo '<a href="' . $info->fb_link . '"><i class="fab fa-facebook-square fa-4x color-azul mr-2"></i></a><a href="' . $info->ig_link . '"><i class="fab fa-instagram-square fa-4x color-ig mr-2"></i></a><a href="' . $info->twt_link . '"><i class="fab fa-twitter-square fa-4x color-azul-claro mr-2"></i></a>';
+        echo '<a href="' . $info->fb_link . '"><i class="fab fa-facebook fa-2x fa-facebook mr-2"></i></a><a href="' . $info->ig_link . '"><i class="fab fa-instagram fa-2x fa-instagram mr-2"></i></a><a href="' . $info->twt_link . '"><i class="fab fa-twitter fa-2x fa-twitter mr-2"></i></a>';
     }
 
     public static function getLinksB() {
