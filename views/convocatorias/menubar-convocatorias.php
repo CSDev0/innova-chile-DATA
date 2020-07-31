@@ -26,23 +26,32 @@
                                 <?php
                                 #var_dump($anosConv);
                                 if ($convocatorias) {
-                                  $v=count($convocatorias);
                                   $c=count($anosConv);
                                     for ($i=0; $i < $c ; $i++) {
                                       echo '<a data-toggle="collapse" href="#" data-target="#Ano'.$anosConv[$i]->ano.'" class="convocatoria-link ano">'.$anosConv[$i]->ano.'</a>';
-                                      echo '<div id="Ano'.$anosConv[$i]->ano.'" class="collapse anos" data-parent="#accordion"><br>';
-                                      #var_dump($convocatorias);
-                                      for ($j=0; $j < $v ; $j++) {
-                                        if ($convocatorias[$j]->convocatoria_id_ano == $anosConv[$i]->id) {
-                                          echo '<a class="convocatoria-link llamado" data-toggle="collapse" data-target="#navbarPorAnos2" data-link='.base_url.$convocatorias[$j]->archivo.' href="#">&nbsp;&nbsp;&nbsp;&nbsp; Llamado '.$convocatorias[$j]->llamado.'&nbsp;&nbsp;&nbsp;&nbsp;</a>';
-                                        }
-                                      }
-                                      echo '</div>';
+
                                     }
                                 }
-
-
                                 ?>
+                                <div class="row">
+                                    <div class="container">
+                                      <?php
+                                      if ($convocatorias2) {
+                                        $v=count($convocatorias2);
+                                        $c=count($anosConv2);
+                                          for ($i=0; $i < $c ; $i++) {
+                                            echo '<div id="Ano'.$anosConv2[$i]->ano.'" class="collapse anos" data-parent="#accordion"><br>';
+                                            #var_dump($convocatorias);
+                                            for ($j=0; $j < $v ; $j++) {
+                                              if ($convocatorias2[$j]->convocatoria_id_ano == $anosConv2[$i]->id) {
+                                                echo '<a class="convocatoria-link llamado" data-toggle="collapse" data-target="#navbarPorAnos2" data-link='.base_url.$convocatorias2[$j]->archivo.' href="#">&nbsp;&nbsp;&nbsp;&nbsp; Llamado '.$convocatorias2[$j]->llamado.'&nbsp;&nbsp;&nbsp;&nbsp;</a>';
+                                              }
+                                            }
+                                            echo '</div>';
+                                          }
+                                      }
+                                      ?>
+                                    </div>
 
                             </div>
                         </div>
