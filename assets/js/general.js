@@ -64,7 +64,7 @@ $(window).scroll(function () {
 
     } else {
         if ($(this).scrollBottom() > 50 && abierto === true) {
-            $('.footer-sticky').animate({height: '40px'}, 5);
+            $('.footer-sticky').animate({height: '30px'}, 5);
             abierto = false;
             flecha_arriba();
         }
@@ -98,7 +98,7 @@ $('.footer-sticky').mouseenter($.throttle(350, function (e) {
 //    }
 }));
 function esconderFooter() {
-    $(".footer-sticky").animate({height: '40px'}, 5);
+    $(".footer-sticky").animate({height: '30px'}, 5);
     abierto = false;
     flecha_arriba();
 }

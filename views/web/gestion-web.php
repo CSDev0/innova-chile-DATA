@@ -1,22 +1,21 @@
 <h2> Gestionar <b>Sitio Web</b></h2>
 <hr>
 <div class="row pr-2">
-    <div class="col-12contenedor-gestion">
-      <form action="<?php echo base_url.'web/update';?>" method="post" enctype="multipart/form-data" >
-      <div class="row">
-        <div class="col-sm-6">
-          <?php require_once('general.php') ?>
-        </div>
-        <div class="col-sm-6">
-          <?php require_once('pie-pagina.php') ?>
-        </div>
-      </div>
-          <hr class="bc-celeste">
-          <div class="row justify-content-end">
-      <a href="<?=base_url.'gestion/web'?>" type="button" class="btn btn-danger mr-2" ><i class="fas fa-times"></i> Cancelar</a>
-      <button type="submit" class="btn btn-success mr-3" id="saveBtnPie"><i class="fas fa-save"></i> Guardar cambios</button>
-          </div>
-      </form>
+    <div class="col-12 contenedor-gestion">
+        <form action="<?= base_url . 'web/update'; ?>" method="post" enctype="multipart/form-data" >
+            <div class="row">
+                <div class="col-sm-6">
+                    <?php require_once('general.php') ?>
+                </div>
+                <div class="col-sm-6">
+                    <?php require_once('pie-pagina.php') ?>
+                </div>
+            </div>
+            <div class="row justify-content-end">
+                <a href="<?= base_url . 'gestion/web' ?>" type="button" class="btn btn-danger mr-2" ><i class="fas fa-times"></i> Cancelar</a>
+                <button type="submit" class="btn btn-success mr-3" id="saveBtnPie"><i class="fas fa-save"></i> Guardar cambios</button>
+            </div>
+        </form>
     </div>
     <div class="col-12 contenedor-gestion">
         <div id="loading-div" class='loading-div'></div>
@@ -47,7 +46,7 @@
                             $loading.show();
                         })
                         .ajaxStop(function () {
-                            setTimeout(function(){
+                            setTimeout(function () {
                                 $loading.hide();
                             }, 300);
                         });

@@ -15,6 +15,9 @@ require_once 'PHPMailer/PHPMailerAutoload.php';
 
 class webController {
 
+    function error404(){
+        require_once('views/layout/error404.php');
+    }
     function inicio() {
         $grafico_destacado = new Grafico_destacado();
         $graficos = $grafico_destacado->getAll();
@@ -50,16 +53,18 @@ class webController {
         require_once('views/convocatorias/convocatorias.php');
     }
 
-    function apptest() {
-        require_once('views/layout/menubar.php');
-        require_once('views/data/app.php');
-    }
-
     function portafolio() {
         require_once('views/layout/menubar.php');
         require_once('views/data/portafolio.php');
     }
-
+    function leyid() {
+        require_once('views/layout/menubar.php');
+        require_once('views/data/leyid.php');
+    }
+    function historico() {
+        require_once('views/layout/menubar.php');
+        require_once('views/convocatorias/historico.php');
+    }
     function faq() {
         require_once 'models/Contenido.php';
         $preguntas = new Contenido();
@@ -124,6 +129,9 @@ class webController {
                 $web->setIgLink($_POST['txtIgLink']);
                 $web->setFbLink($_POST['txtFbLink']);
                 $web->setTwtLink($_POST['txtTwtLink']);
+                $web->setPortafolio_link($_POST['txtPortafolio']);
+                $web->setLeyid_link($_POST['txtLeyId']);
+                $web->setHistorico_link($_POST['txtHistorico']);
                 $pie_pag = $_POST['txtPiePag'];
                 $web->setPiePagina(json_decode($pie_pag, true));
                 $resultado = $web->update();

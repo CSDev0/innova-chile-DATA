@@ -74,7 +74,6 @@ class convocatoriaController {
               $convocatoria->setAno($_POST['slcAno']);
               $convocatoria->setLlamado($_POST['slcLlamado']);
               $resultado = $convocatoria->save();
-              var_dump($resultado);
               if ($resultado) {
                   $_SESSION['graf_msg'] = 'e_agregar';
               } else {
@@ -107,9 +106,5 @@ class convocatoriaController {
     } else {
         header("Location:" . base_url . 'web/login');
     }
-
   }
-
-
-
 }

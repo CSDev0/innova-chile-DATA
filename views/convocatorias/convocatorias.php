@@ -33,9 +33,13 @@
 
 </script>
   <?php
+  if($convocatorias){
   while ($convocatorias) {
     echo '<iframe id="contendedor-convocatorias" src="'.base_url . $convocatorias[0]->archivo.'"></iframe>';
     break;
+  }
+  }else{
+      echo '<h2 class="text-center mt-2">No hay convocatorias registradas.</h2>';
   }
 ?>
 

@@ -42,7 +42,6 @@ class Convocatoria
   }
 
   public function save() {
-
       $now = new DateTime();
       $date = $now->format("Y-m-d H:i:s");
 
@@ -60,7 +59,7 @@ class Convocatoria
           $ano = $y->fetch_object();
       }
 
-      $query = "INSERT INTO convocatoria VALUES (NULL, '{$this->getArchivo()}', {$this->getLlamado()},{$ano->id} );";
+      $query = "INSERT INTO convocatoria VALUES (NULL, '{$this->getArchivo()}', '{$this->getLlamado()}', {$ano->id} );";
 
       if ($save = $this->db->query($query)) {}
         else{
@@ -150,7 +149,11 @@ class Convocatoria
             $convocatorias[$i] = $result;
             $i++;
         }
-        return $convocatorias;
+        if(isset($convocatorias)){
+            return $convocatorias;
+        } else {
+            return false;
+        }
       } else{
           $result = $this->db->error;
           return $result;

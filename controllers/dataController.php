@@ -98,6 +98,9 @@ class dataController {
                 if ($resultado) {
                     $_SESSION['graf_msg'] = 'e_eliminar';
                     header("Location:" . base_url . 'gestion/data');
+                } else {
+                    $_SESSION['graf_msg'] = 'f_eliminar';
+                    header("Location:" . base_url . 'gestion/data');
                 }
             } else {
                 $_SESSION['graf_msg'] = 'f_eliminar';
@@ -107,9 +110,5 @@ class dataController {
             header("Location:" . base_url . 'web/login');
         }
     }
-
-
-
-
 
 }

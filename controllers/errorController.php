@@ -1,8 +1,10 @@
 <?php
 
-class errorController{
+class errorController {
 
-    public function index(){
-        echo "<h1> Lo que buscas no existe! </h1>";
+    public function index() {
+        require_once 'views/layout/header.php';
+        require_once 'views/layout/error404.php';
+        require_once('views/layout/footer-sticky.php');
     }
 }

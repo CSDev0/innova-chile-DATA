@@ -22,11 +22,11 @@ function addInput() {
   }
   var v = parseInt(counter)+1;
   var newTextBoxDivA = $(document.createElement('div')).attr('id','TextBoxDivA'+v);
-  newTextBoxDivA.after().html('<input type="text" class="form-control" placeholder="titulo" name="textboxA'+v+'" id="textboxA'+v+'"><hr class="bc-celeste">');
+  newTextBoxDivA.after().html('<input type="text" class="form-control mt-4" placeholder="titulo" name="textboxA'+v+'" id="textboxA'+v+'">');
   newTextBoxDivA.appendTo('#TextBoxesGroupA');
 
   var newTextBoxDivB = $(document.createElement('div')).attr('id','TextBoxDivB'+v);
-  newTextBoxDivB.after().html('<input type="text" class="form-control" placeholder="enlace" name="textboxB'+v+'" id="textboxB'+v+'"><hr class="bc-celeste">');
+  newTextBoxDivB.after().html('<input type="text" class="form-control mt-4" placeholder="enlace" name="textboxB'+v+'" id="textboxB'+v+'">');
   newTextBoxDivB.appendTo('#TextBoxesGroupB');
 
 }

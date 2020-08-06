@@ -39,7 +39,7 @@
                                         if ($full_contador1 >= 8) {
                                             ?>
                                             <div class="col-12 row justify-content-end p-0">
-                                                <a href="<?= base_url . 'estudio/nuestrosEstudios' ?>" class="btn btn-primary" ><i class="fal fa-file-plus"></i> Ver más </a>
+                                                <a href="<?= base_url . 'estudio/nuestrosEstudios' ?>" class="link-normal m-text" ><i class="fal fa-file-plus"></i> Ver más... </a>
                                             </div>
                                             <?php
                                             break;
@@ -104,7 +104,7 @@
                                         if ($full_contador2 >= 8) {
                                             ?>
                                             <div class="col-12 row justify-content-end p-0">
-                                                <a href="<?= base_url . 'estudio/nuestrosEstudios' ?>" class="btn btn-primary" ><i class="fal fa-file-plus"></i> Ver más </a>
+                                                <a href="<?= base_url . 'estudio/lecturasRecomendadas' ?>" class="link-normal m-text" ><i class="fal fa-file-plus"></i> Ver más... </a>
                                             </div>
                                             <?php
                                             break;

@@ -57,12 +57,10 @@
                             $cantidad_graficos = mysqli_num_rows($graficos);
                             $graSeccion = $graficos->fetch_object();
                             if ($cantidad_graficos > 1) {
-                                for ($x = 1; $x < $cantidad_graficos; $x++) {
-                                  $d=$x-1;
+                                for ($x = 1; $x < $cantidad_graficos-1; $x++) {
                                     if ($graSeccion->seccion == 0) {
-                                      echo '<li data-target="#graficos-crsl" data-slide-to="' . $d . '"></li>';
+                                      echo '<li data-target="#graficos-crsl" data-slide-to="' . $x . '"></li>';
                                     }
-
                                 }
                             }
                             ?>

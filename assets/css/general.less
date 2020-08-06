@@ -12,7 +12,8 @@ input.parsley-error
 {
     color: #B94A48 !important;
     background-color: white !important;
-    border: 1px solid red !important;
+    border-width: 0 0 2px !important;
+    border-color: red !important;
 }
 .error-input-text{
     height: 5px;
@@ -26,6 +27,33 @@ input.parsley-error
 
 .form-control{
     .s-text();
+    border-radius: 0px !important;
+    outline: 0 !important;
+    border-width: 0 0 1.5px !important;
+    border-color: lightgray !important;
+}
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+select:focus,
+.uneditable-input:focus {   
+    border-color: rgba(126, 239, 104, 0.8);
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(126, 239, 104, 0.0);
+    outline: 0 none !important;
+    border-width: 0 0 2px !important;
+    border-color: @main-color !important;
 }
 .small-br{
     height: 8px;
@@ -356,6 +384,11 @@ a:hover{
 }
 #bg-footer{
     padding-bottom: 0px;
+    padding-top: 0px;
+}
+.conten-flecha{
+    margin-top: -10px;
+    top: -50px;
 }
 #footer{
     .transition(0.6s);

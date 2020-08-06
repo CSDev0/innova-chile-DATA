@@ -102,7 +102,7 @@ class Grafico_destacado {
         $gra_eliminado = $grafico_destacado->getGraficoById();
         if ($this->db->query($query) == TRUE && $this->db->affected_rows > 0) {
             require_once 'models/Log.php';
-            $archivo_nombre = substr($gra_eliminado->getArchivo(), strrpos($gra_eliminado->getArchivo(), '/') + 1);
+            $archivo_nombre = substr($gra_eliminado->archivo, strrpos($gra_eliminado->archivo, '/') + 1);
             $log = new Log();
             $log->setFecha($date);
             $log->setTipo('Eliminar');

@@ -1,6 +1,6 @@
 <section id="footer" class="seccion-extra footer-sticky bg-gradient" >
     <div id="bg-footer">
-        <div class="text-center"><i class="fal fa-angle-up fa-3x color-blanco" id="flecha-animada"></i></div>
+        <div class="text-center align-items-top conten-flecha"><i class="fal fa-angle-up fa-3x color-blanco " id="flecha-animada"></i></div>
         <div class="container">
             <div class="row w-100">
                 <div class="col-sm-4">

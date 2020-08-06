@@ -1,5 +1,6 @@
 <?php
 $nombre_completo = utils::getNombreCompleto();
+$_SESSION['tipo_usuario'] = 'admin';
 ?>
 
 <script>

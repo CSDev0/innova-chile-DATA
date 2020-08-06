@@ -41,8 +41,8 @@
                             ?>
                         </div>
                         <div class='col-sm mb-2'>
-                            <label for="slcLlamado">Nombre: </label>
-                            <input type="number" value="0" name="slcLlamado"  class="form-control"/>
+                            <label for="slcLlamado">Nombre a mostrar: </label>
+                            <input type="text" name="slcLlamado"  class="form-control"/>
                         </div>
                     </div>
                 </div>
