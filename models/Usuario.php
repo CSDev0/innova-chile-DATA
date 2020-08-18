@@ -150,7 +150,7 @@ class Usuario {
             $log = new Log();
             $log->setFecha($date);
             $log->setTipo('Agregar');
-            $log->setActividad('Usuario->' . $this->getNombre());
+            $log->setActividad('Usuario'.' <i class=icon-fa>&#xf0a9;</i> '.$this->getNombre());
             $log->setUsuario_id($_SESSION['identidad']->id);
             $log->save();
             $result = true;
@@ -175,7 +175,7 @@ class Usuario {
             $log = new Log();
             $log->setFecha($date);
             $log->setTipo('Eliminar');
-            $log->setActividad('Usuario->' . $usu_eliminado->nombre);
+            $log->setActividad('Usuario'.' <i class=icon-fa>&#xf0a9;</i> '.$usu_eliminado->nombre);
             $log->setUsuario_id($_SESSION['identidad']->id);
             $log->save();
             $result = true;
@@ -203,7 +203,7 @@ class Usuario {
             $log = new Log();
             $log->setFecha($date);
             $log->setTipo('Modificar');
-            $log->setActividad('Usuario->' . $usu_antiguo->nombre . ' ' . $usu_antiguo->apellido);
+            $log->setActividad('Usuario'.' <i class=icon-fa>&#xf0a9;</i> '. $usu_antiguo->nombre . ' ' . $usu_antiguo->apellido);
             $log->setUsuario_id($_SESSION['identidad']->id);
             $log->save();
             $result = true;

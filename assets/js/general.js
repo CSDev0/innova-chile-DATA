@@ -2,8 +2,96 @@ $(document).ready(function () {
     bsCustomFileInput.init()
     loop_flecha_animada();
     window.onresize = resizeSecciones();
-});
+    $('#sidebarCollapse').toggleClass('collapsed');
 
+    $('#btn-nes').addClass('btn-content-active');
+    $('#btn-nes').addClass('noHover');
+    $('.contenedor-first').show();
+    $('.contenedor-second, .contenedor-third').hide();
+
+    $('#nes-marker').show();
+    $('#lec-marker, #pro-marker').hide();
+
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 200) {
+            $('.scrollToTop').fadeIn();
+        } else {
+            $('.scrollToTop').fadeOut();
+        }
+    });
+    $('.show-load').click(function () {
+        showLoad();
+    });
+
+    //Click event to scroll to top
+    $('.scrollToTop').click(function () {
+        $('html, body').animate({scrollTop: 0}, 500);
+        return false;
+    });
+
+
+});
+$(function () {
+    $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('#sidebarCollapse').toggleClass('collapsed');
+    });
+});
+$('#btn-nes').click($.debounce(300, function (e) {
+    var btn = $('#btn-nes');
+    if (btn.hasClass('btn-content-active')) {
+    } else {
+        btn.addClass('btn-content-active');
+        btn.addClass('noHover');
+
+        $('#btn-lec, #btn-pro').removeClass('btn-content-active');
+        $('#btn-lec, #btn-pro').removeClass('noHover');
+
+        $('#nes-marker').show('pulsate', {times: 1}, 200);
+        $('#lec-marker, #pro-marker').hide();
+
+        $('.contenedor-first').show();
+        $('.contenedor-second, .contenedor-third').hide();
+    }
+}));
+$('#btn-lec').click($.debounce(300, function (e) {
+    var btn = $('#btn-lec');
+    if (btn.hasClass('btn-content-active')) {
+    } else {
+        btn.addClass('btn-content-active');
+        btn.addClass('noHover');
+
+        $('#btn-nes, #btn-pro').removeClass('btn-content-active');
+        $('#btn-nes, #btn-pro').removeClass('noHover');
+
+        $('#lec-marker').show('pulsate', {times: 1}, 200);
+        $('#nes-marker, #pro-marker').hide();
+
+        $('.contenedor-first, .contenedor-third').hide();
+        $('.contenedor-second').show();
+
+    }
+}));
+$('#btn-pro').click($.debounce(300, function (e) {
+    var btn = $('#btn-pro');
+    if (btn.hasClass('btn-content-active')) {
+    } else {
+        btn.addClass('btn-content-active');
+        btn.addClass('noHover');
+
+        $('#btn-nes, #btn-lec').removeClass('btn-content-active');
+        $('#btn-nes, #btn-lec').removeClass('noHover');
+
+        $('#pro-marker').show('pulsate', {times: 1}, 200);
+        $('#nes-marker, #lec-marker').hide();
+
+        $('.contenedor-third').show();
+        $('.contenedor-first, .contenedor-second').hide();
+    }
+}));
+function showLoad() {
+    $(".se-pre-con").show('puff', 200);
+}
 //Funcion para definir el tamaño de las secciones dependiendo del tamaño del dispositivo.
 //Esto Para solucionar bug de desplazamiento entre las secciones. (al usar viewport o height 100%).
 function resizeSecciones() {
@@ -16,8 +104,8 @@ function resizeSecciones() {
     $('.seccion.fullview').css("width", "100%");
     $('.seccion.fullview').css("min-height", y);
 //    $('.seccion.fullview').css('height', y - 5); //Si se ocupa el height completo ocurre un extraño bug al desplazarse entre secciones, por lo que se le resta 5 y se soluciona.
-    $("#bg-chile").css('height', '100%'); 
-    $("#data-seccion").css('height', '100%'); 
+    $("#bg-chile").css('height', '100%');
+    $("#data-seccion").css('height', '100%');
 }
 resizeSecciones();
 
@@ -37,14 +125,15 @@ function datosDestacados() {
 }
 ;
 
+
+
+
+
 $(".nav-link").on('click', function (e) {
     $.scrollify.move($(this).attr('href'));
 });
 
-$("#dropdown-item-hover6").on('click', function (e) {
-    $.scrollify.move($(this).attr('href'));
-});
-$("#dropdown-item-hover7").on('click', function (e) {
+$(".dropdown-item").on('click', function (e) {
     $.scrollify.move($(this).attr('href'));
 });
 
@@ -211,7 +300,7 @@ $('.convocatoria-link.llamado').on('click', function (e) {
     }
 });
 $('button').tooltip({
-  trigger: 'click',
-  placement: 'bottom'
+    trigger: 'click',
+    placement: 'bottom'
 });
 

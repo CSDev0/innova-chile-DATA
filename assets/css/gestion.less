@@ -10,7 +10,9 @@ and open the template in the editor.
 @import "style.less";
 
 .btn-abrir-modal-contenido{
-  width: 16%;
+    width: 100%;
+    max-width: 230px;
+    margin-top: 5px;
 }
 
 
@@ -84,25 +86,94 @@ and open the template in the editor.
     background-color: @second-color;
 }
 .panel{
-    width: 99%;
+    width: 97%;
     .s-text();
     text-align: center;
-    opacity: 0;
+    border-width: 1px 1px 4px;
+    border-color: @special-color-darker;
+    background-color: transparent;
+    opacity: 1;
+    min-height: 66px;
 }
+.panel:hover{
+    border: 1px solid @special-color-darker;
+}
+.btn-develop{
+    width: 97%;
+    .xs-text();
+    text-align: center;
+    border: 1px solid white;
+    background-color: transparent;
+    opacity: 0.4;
+    min-height: 36px;
+}
+
 .btn.btn-nuestros{
+    width: 100%;
+    max-width: 240px;
     .s-text();
-    font-weight: bold;
+    font-family: 'Riona sans W01 Regular';
     background-color: @special-color;
     color: white;
 }
 .btn.btn-nuestros:hover{
-    font-weight: bold;
     background-color: @special-color-darker;
     color: white;
 }
+.btn-option{
+    border: none;
+    width: 100%;
+    max-width: 220px;
+    .xs-text();
+    font-family: 'Riona sans W01 thin';
+    background-color: @special-color;
+    color: white;
+    .transition(0.2s);
+}
+.btn-option:hover{
+    .scale(1.05);
+    color: white;
+    
+}
+.btn-option:focus, .btn-option:active{
+    box-shadow: inset 0px 0px 7px rgba(0,0,0,0.3) !important;
+}
+.noHover{
+    box-shadow: inset 0px 0px 7px rgba(0,0,0,0.3) !important;
+    pointer-events: none;
+}
+#nes-marker{
+    position: absolute;
+    z-index: 200;
+    margin-top: 5px;
+    margin-left: -15px;
+    color: @main-color;
+    transform: rotate(-90deg);
+}
+#lec-marker{
+    position: absolute;
+    z-index: 200;
+    margin-top: 5px;
+    margin-left: -15px;
+    color: @main-color;
+    transform: rotate(-90deg);
+}
+#pro-marker{
+    position: absolute;
+    z-index: 200;
+    margin-top: 5px;
+    margin-left: -15px;
+    color: @main-color;
+    transform: rotate(-90deg);
+}
+.btn-content-active{
+    box-shadow: inset 0px 0px 10px rgba(0,0,0,0.5);
+}
 .btn.btn-recomendadas{
-     .s-text();
-    font-weight: bold;
+    width: 100%;
+    max-width: 240px;
+    .s-text();
+    font-family: 'Riona sans W01 Regular';
     background-color: @second-color;
     color: white;
 }
@@ -120,7 +191,7 @@ and open the template in the editor.
     padding: 10px;
     border: 1px solid @third-color;
     background-color: white;
-    margin-top: 140px;
+    margin-top: 250px;
     margin-left: 15px;
     width: 97%;
     margin-bottom: 10px;
@@ -136,9 +207,10 @@ and open the template in the editor.
     padding: 10px;
     border: 1px solid #D1ECFF;
     background-color: white;
-    transition: 0.3s;
     margin-bottom: 20px;
     margin-left: 15px;
+    display: inline-block;
+    .transition(1s);
 }
 .contenedor-overflow{
     border-radius: 5px;
@@ -166,11 +238,15 @@ and open the template in the editor.
     margin-bottom: 10px;
     top: 0;
     z-index: 100;
-    opacity: 0;
-    visibility: hidden;
     transition: 0.3s;
 }
 .modal-open{
     padding-right: 0 !important;
     padding-left: 0 !important;
+}
+th{
+    background-color: @third-color ;
+    font-weight: bold;
+    color: @main-color;
+    border-bottom: 4px solid @third-darker-color;
 }

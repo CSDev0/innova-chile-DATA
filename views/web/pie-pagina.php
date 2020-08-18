@@ -15,5 +15,5 @@
   </div>
 </div>
 <br><br>
-<button type='button' class="btn btn-success" value='Agregar Link' id='addButton'><i class="fas fa-plus"></i></button>
-<button type='button' class="btn btn-danger" value='Quitar Link' id='removeButton'><i class="fas fa-minus"></i></button>
+<button type='button' class="btn btn-success" value='Agregar Link' id='addButton'><i class="fal fa-plus"></i></button>
+<button type='button' class="btn btn-danger" value='Quitar Link' id='removeButton'><i class="fal fa-minus"></i></button>

@@ -47,37 +47,30 @@ if (isset($_POST["query"])) {
 }
 if ($resultado != null) {
     if (mysqli_num_rows($resultado) > 0) {
-        $output .= '<h4 id="resultado_orden"></h4>
+        $output .= '<h5 id="resultado_orden"></h5>
             <div class="table-responsive">
-                                    <table class="table table-striped"">
+                                    <table class="table table-striped xs-text">
                                         <tr>
                                             <th>Ordenar</th>
-                                            <th scope="col">Archivo</th>
-                                            <th scope="col">Gestión</th>
-                                        </tr>
-                                        <tbody>';
+                                            <th>Archivo</th>
+                                            <th>Gestión</th>
+                                        </tr>';
         while ($obj = mysqli_fetch_array($resultado)) {
             $archivo = substr($obj['archivo'], strrpos($obj['archivo'], '/') + 1);
             $output .= '
                     <tr id="grafico-' . $obj['id'] . '">
-                            <td><i class="fas fa-arrows-alt fa-lg drag-icon"></i></td>
+                            <td><i class="fal fa-arrows-alt fa-lg drag-icon"></i></td>
                             <td><a class="link-normal small" href="' . base_url . $obj['archivo'] . '" target="_blank">' . $archivo . '</a></td>
                             <td>
-                        <a href="#modal-eliminar" data-toggle="modal" ruta="data/deleteGrafico&id=" tipo="Grafico destacado" id="' . $obj['id'] . '" nombre="' . $archivo . '"  class="btn btn-danger eliminar"
-                           style="margin-top: 5px; width: 100%;" >
-                           <i class="fas fa-trash-alt"></i> Eliminar</a>
+                        <a href="#modal-eliminar" data-toggle="modal" ruta="data/deleteGrafico&id=" tipo="Grafico destacado" id="' . $obj['id'] . '" nombre="' . $archivo . '"  class="btn btn-danger eliminar xs-text mt-1 w-100" >
+                           <i class="fal fa-trash-alt"></i> Eliminar</a>
                             </td>
                     </tr>';
         }
-        $output .= '</tbody>';
-        $output .= '</table>';
-        $output .= '</div>';
-        $output .= '<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>';
-        $output .= '<script src="' . base_url . 'assets/js/boxes.js"></script>';
         echo $output;
     } else {
-        echo '<h3><i class="far fa-sad-cry"></i> No se han encontrado graficos.</h3>';
+        echo '<h3><i class="far fa-sad-cry"></i> No se han encontrado gráficos.</h3>';
     }
 } else {
-    echo '<h3><i class="far fa-sad-cry"></i> No se han encontrado graficos.</h3>';
+    echo '<h3><i class="far fa-sad-cry"></i> No se han encontrado gráficos.</h3>';
 }

@@ -3,6 +3,15 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- FAVICON CONFIG -->
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0f4c75">
+        <meta name="msapplication-TileColor" content="#2d89ef">
+        <meta name="theme-color" content="#ffffff">
+        <!-- ------------------------------------------------------------------------------------------------- -->
         <script src="https://www.google.com/recaptcha/api.js?onload=CaptchaCallback&render=explicit" async defer></script>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" crossorigin="anonymous">
         <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
@@ -12,6 +21,7 @@
         <link rel="stylesheet/less" href="<?= base_url ?>assets/css/general.less">
         <link rel="stylesheet/less" href="<?= base_url ?>assets/css/gestion.less">
         <link rel="stylesheet" href="<?= base_url ?>assets/css/loader.css">
+        <link rel="stylesheet" href="<?= base_url ?>assets/icon/icons.css">
         <link rel="stylesheet/less" href="<?= base_url ?>assets/css/navbar.less">
         <!--  Para mostrar errores de LESS si es que ocurriesen activar:       -->
         <!--  <script type="text/javascript">less = {env: 'development'};</script> -->
@@ -40,4 +50,4 @@
     <body>
 
         <!--Para utilizar var_dump y esas cosas de debug, colocar    style="display: none"   a este elemento (el loader)-->
-                <div class="se-pre-con"></div>
+        <div class="se-pre-con"></div>

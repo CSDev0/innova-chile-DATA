@@ -7,7 +7,52 @@
   color: #0f0 !important;
   outline: solid #f00 1px !important;
 }*/
+.icon-fa{
+    font-family: 'FontAwesome';
+    font-style: normal;
+    color: @main-color;
+}
+.scrollToTop{
+    width:50px; 
+    height:50px;
+    padding:10px; 
+    border-radius: 300px;
+    text-align:center; 
+    color: white;
+    position:fixed;
+    bottom:70px;
+    right:10px;
+    background-color: @main-color;
+    z-index: 5000;
+    opacity: 0.7;
+    .transition(0.3s);
+}
+.scrollToTop:hover{
+    background-color: @second-color;
+    color: white;
+}
 
+.custom-file-label::after {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 3;
+    display: block;
+    height: calc(1.5em + .75rem);
+    padding: .375rem .75rem;
+    line-height: 1.5;
+    color: #495057;
+    content: "Buscar";
+    background-color: #e9ecef;
+    border-left: inherit;
+    border-radius: 0 .25rem .25rem 0;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+    border-bottom-left-radius: 0px;
+}
 input.parsley-error
 {
     color: #B94A48 !important;
@@ -27,9 +72,15 @@ input.parsley-error
 
 .form-control{
     .s-text();
-    border-radius: 0px !important;
+    .border-radius(2px);
     outline: 0 !important;
     border-width: 0 0 1.5px !important;
+    border-color: lightgray !important;
+}
+.select-form{
+    outline: 0 !important;
+    .border-radius(5px);
+    border-width: 1px 1px 2px !important;
     border-color: lightgray !important;
 }
 textarea:focus,
@@ -165,26 +216,31 @@ p.white{
     margin-bottom: 0px;
 }
 .btn{
-    -webkit-transition: width 1s ease-in-out;
-    -moz-transition: width 1s ease-in-out;
-    -o-transition: width 1s ease-in-out;
-    transition: width 1s ease-in-out;
+    -webkit-transition: width 0.3s ease-in-out !important; 
+    -moz-transition: width 0.3s ease-in-out !important;
+    -o-transition: width 0.3s ease-in-out !important;
+    transition: width 0.3s ease-in-out !important;
+    .transition(0.3s) !important;
 }
 .btn-primary{
     background-color: @main-color;
     .s-text();
-    border: none;
+    .border-radius(5px);
+    .normal-font();
+    border-width: 0px 0px 4px;
+    border-color: @main-darker-color;
 }
 .btn-primary:hover{
-    background-color: @second-color;
+    background-color: @main-darker-color;
+    border-color: @second-color;
     color: white;
 }
 .btn-primary:active, .btn-primary:focus{
     color: @second-color !important;
     background-color: @third-color !important;
+    border-color: @third-darker-color !important;
 }
 .btn:active, .btn:focus{
-    background-color: @third-color;
     outline: none !important;
     box-shadow: none !important;
 }
@@ -193,26 +249,52 @@ button:active, button:focus{
     box-shadow: none !important;
 }
 .btn-success{
-    border: none;
     .s-text();
+    .normal-font();
+    outline: 0 !important;
+    background-color: @green;
+    .border-radius(5px);
+    border-width: 0px 0px 4px;
+    border-color: @darkgreen;
+}
+.btn-success:hover{
+    background-color: #25bc3e;
+    border-color: @darkgreen;
 }
 .btn-danger{
-    border: none;
+    background-color: @special-color;
     .s-text();
+    .normal-font();
+    outline: 0 !important;
+    .border-radius(5px);
+    border-width: 0px 0px 4px;
+    border-color: @special-color-darker;
+}
+.btn-danger:hover{
+    background-color: @special-color-darker;
 }
 .btn-warning{
     background-color: #ffbf00;
     color: white;
     .s-text();
     .transition(0.5s);
-    border: none;
+    outline: 0 !important;
+    .border-radius(5px);
+    border-width: 0px 0px 4px;
+    border-color: #E0A800;
 }
 .btn-warning:hover{
     background-color: #E0A800;
     color: black;
     .s-text();
-    .transition(0.5s);
-    border: none;
+}
+.btn-info{
+    .s-text();
+    .normal-font();
+    font-weight: normal !important;
+    .border-radius(5px);
+    border-width: 0px 0px 4px;
+    border-color: #138496;
 }
 .dot-list {
     list-style-type: disc !important;
@@ -391,7 +473,7 @@ a:hover{
     top: -50px;
 }
 #footer{
-    .transition(0.6s);
+    .transition(0.8s);
 }
 
 #copyright{

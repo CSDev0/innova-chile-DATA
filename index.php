@@ -38,5 +38,5 @@ if (class_exists($nombre_controlador)) {
     mostrar_error();
 }
 require_once 'views/layout/footer-sticky.php';
+if (ob_get_level() > 0) ob_end_flush();
 
-ob_end_flush();

@@ -2,7 +2,7 @@
 
 .icon-bar {
     width: 22px;
-    height: 3px;
+    height: 2.5px;
     background-color: WHITE;
     display: block;
     transition: all 0.2s;
@@ -38,7 +38,44 @@
 .navbar-toggler.collapsed .bottom-bar {
     transform: rotate(0);
 }
+.navbar-toggler2 {
+    width: 65px;
+    height: 40px;
+    border-radius: 300px;
+    padding: 0px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    border: none;
+    background-color: @special-color
+}
+.navbar-toggler2:hover{
+    background-color: @special-color-darker;
+}
+.navbar-toggler2 .top-bar {
+    transform: rotate(45deg);
+    transform-origin: 15% 15%;
+}
 
+.navbar-toggler2 .middle-bar {
+    opacity: 0;
+}
+
+.navbar-toggler2 .bottom-bar {
+    transform: rotate(-45deg);
+    transform-origin: 0% 80%;
+}
+
+.navbar-toggler2.collapsed .top-bar {
+    transform: rotate(0);
+}
+
+.navbar-toggler2.collapsed .middle-bar {
+    opacity: 1;
+}
+
+.navbar-toggler2.collapsed .bottom-bar {
+    transform: rotate(0);
+}
 
 
 /*---------------------------------------------------------------*/
@@ -143,3 +180,49 @@
     background-color: white;
 }
 /*---------------------------------------------------------------*/
+
+.vertical-nav {
+    padding-top: 40px;
+  min-width: 17rem;
+  width: 17rem;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s;
+}
+
+.page-content {
+  width: calc(100% - 17rem);
+  margin-left: 17rem;
+  transition: all 0.4s;
+}
+
+/* for toggle behavior */
+
+#sidebar.active {
+  margin-left: -17rem;
+}
+
+#content.active {
+  width: 100%;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  #sidebar {
+    margin-left: -17rem;
+  }
+  #sidebar.active {
+    margin-left: 0;
+  }
+  #content {
+    width: 100%;
+    margin: 0;
+  }
+  #content.active {
+    margin-left: 17rem;
+    width: calc(100% - 17rem);
+  }
+}

@@ -3,43 +3,42 @@
 class utils {
 
     public static function isVerified() {
-//        if ($_SESSION['identidad']->verificado == 1) {
+        if ($_SESSION['identidad']->verificado == 1) {
             return true;
-//        } else {
-//            $_SESSION['usu_msg'] = 'w_debes_verificar';
-//            return true;
-//        }
+        } else {
+            $_SESSION['usu_msg'] = 'w_debes_verificar';
+            return false;
+        }
     }
 
     public static function isAdmin() {
-        return true;
-//        if (isset($_SESSION['tipo_usuario'])) {
-//            if ($_SESSION['tipo_usuario'] == 'admin') {
-//                return true;
-//            } else {
-//                $_SESSION['aut_msg'] = 'f_restringido';
-//                return true;
-//            }
-//        } else {
-//            $_SESSION['aut_msg'] = 'f_no_login';
-//            return true;
-//        }
+        if (isset($_SESSION['tipo_usuario'])) {
+            if ($_SESSION['tipo_usuario'] == 'admin') {
+                return true;
+            } else {
+                $_SESSION['aut_msg'] = 'f_restringido';
+                return false;
+            }
+        } else {
+            $_SESSION['aut_msg'] = 'f_no_login';
+            return false;
+        }
     }
 
     public static function isAdminOEmpleado() {
-//        if (isset($_SESSION['tipo_usuario']) & isset($_SESSION['identidad']) & $_SESSION['identidad']->nombre != null) {
-//            if ($_SESSION['tipo_usuario'] == 'admin' || $_SESSION['tipo_usuario'] == 'empleado') {
-//                return true;
-//            } else {
-//                $_SESSION['aut_msg'] = 'f_restringido';
-//                return true;
-//            }
-//        } else {
-//            unset($_SESSION['identidad']);
-//            unset($_SESSION['tipo_usuario']);
-//            $_SESSION['aut_msg'] = 'f_no_login';
-            return true;
-//        }
+        if (isset($_SESSION['tipo_usuario']) & isset($_SESSION['identidad']) & $_SESSION['identidad']->nombre != null) {
+            if ($_SESSION['tipo_usuario'] == 'admin' || $_SESSION['tipo_usuario'] == 'empleado') {
+                return true;
+            } else {
+                $_SESSION['aut_msg'] = 'f_restringido';
+                return false;
+            }
+        } else {
+            unset($_SESSION['identidad']);
+            unset($_SESSION['tipo_usuario']);
+            $_SESSION['aut_msg'] = 'f_no_login';
+            return false;
+        }
     }
 
     public static function isEmpleado() {
@@ -48,11 +47,11 @@ class utils {
                 return true;
             } else {
                 $_SESSION['aut_msg'] = 'f_restringido';
-                return true;
+                return false;
             }
         } else {
             $_SESSION['aut_msg'] = 'f_no_login';
-            return true;
+            return false;
         }
     }
 
@@ -61,18 +60,17 @@ class utils {
             return true;
         } else {
             $_SESSION['aut_msg'] = 'f_no_login';
-            return true;
+            return false;
         }
     }
 
     public static function getNombreCompleto() {
-//        if (isset($_SESSION['identidad'])) {
-//            $nombre = $_SESSION['identidad']->nombre . ' ' . $_SESSION['identidad']->apellido;
-//            return $nombre;
-//        } else {
-//            return true;
-//        }
-        return 'Claudio Saez';
+        if (isset($_SESSION['identidad'])) {
+            $nombre = $_SESSION['identidad']->nombre . ' ' . $_SESSION['identidad']->apellido;
+            return $nombre;
+        } else {
+            return false;
+        }
     }
 
     // Start function
@@ -166,7 +164,7 @@ class utils {
         $info = $web->getOne();
         $otros = json_decode($info->pie_pagina, true);
         if ($otros != null) {
-
+            
         } else {
             $otros = json_decode('{"0":["null","null"]}', true);
         }
@@ -198,7 +196,7 @@ class utils {
         $info = $web->getOne();
         $otros = json_decode($info->pie_pagina, true);
         if ($otros != null) {
-
+            
         } else {
             $otros = json_decode('{"0":["null","null"]}', true);
         }
@@ -217,7 +215,7 @@ class utils {
         $info = $web->getOne();
         $links = json_decode($info->pie_pagina, true);
         if ($links != null) {
-
+            
         } else {
             $links = json_decode('{"0":["null","null"]}', true);
         }
@@ -251,8 +249,8 @@ class utils {
             'secret' => '6LdDIbAZAAAAAJD0-7Nk8sqYxo1_UVAfPyZJ01La',
             'response' => $user_response
         );
-        foreach($fields as $key=>$value)
-        $fields_string .= $key . '=' . $value . '&';
+        foreach ($fields as $key => $value)
+            $fields_string .= $key . '=' . $value . '&';
         $fields_string = rtrim($fields_string, '&');
 
         $ch = curl_init();
@@ -266,4 +264,68 @@ class utils {
 
         return json_decode($result, true);
     }
+
+    public static function enviarCorreoFaltante($nombre_corfo, $correo_corfo, $pass_corfo, $correo_destino, $nombre_proyecto, $codigo_proyecto) {
+        $resultado = false;
+        if ($nombre_corfo && $correo_corfo && $pass_corfo && $correo_destino && $nombre_proyecto && $codigo_proyecto) {
+            require 'helpers/correos/recordatorioCorfo.php';
+            require 'helpers/correos/firmaCorfo.php';
+            date_default_timezone_set('America/Santiago');
+            require_once 'PHPMailer/PHPMailerAutoload.php';
+            $mail = new PHPMailer;
+            $mail->isSMTP();
+            $mail->setLanguage('es');
+            $mail->CharSet = 'utf-8';
+            $mail->SMTPDebug = 0;
+            $mail->SMTPAuth = TRUE; // enable SMTP authentication
+            $mail->SMTPSecure = "tls"; //Secure conection
+            $mail->Host = 'smtp.office365.com';
+            $mail->Port = 587; //587 es el puerto predeterminado para seguridad TLS.
+            $mail->Username = $correo_corfo; // Correo GMAIL.
+            $mail->Password = $pass_corfo; // Clave de gmail or App Specific Password.
+            $mail->IsHTML(true); //El contenido usa Tags HTML?
+            $mail->setFrom($correo_corfo, $nombre_corfo . ' - Corfo'); // Set the sender of the message.
+            $mail->addAddress($correo_destino, 'Atención! Beneficiario de innovachile Corfo'); // Set the recipient of the message.
+            $mail->Body = $correo_mensaje . $firma;
+            $mail->Subject = 'Atención! Beneficiario de innovachile Corfo'; // The subject of the message.
+            if ($mail->send()) {
+                $resultado = true;
+            } else {
+                $resultado = false;
+            }
+        } else {
+            $resultado = false;
+        }
+        return $resultado;
+    }
+
+    public static function enviarCorreoFaltanteAlwaysTrue($nombre_corfo, $correo_corfo, $pass_corfo, $correo_destino, $nombre_proyecto, $codigo_proyecto) {
+        $resultado = true;
+        if ($nombre_corfo && $correo_corfo && $pass_corfo && $correo_destino && $nombre_proyecto && $codigo_proyecto) {
+            require 'helpers/correos/recordatorioCorfo.php';
+            require 'helpers/correos/firmaCorfo.php';
+            date_default_timezone_set('America/Santiago');
+            require_once 'PHPMailer/PHPMailerAutoload.php';
+            $mail = new PHPMailer;
+            $mail->isSMTP();
+            $mail->setLanguage('es');
+            $mail->CharSet = 'utf-8';
+            $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+            $mail->SMTPAuth = TRUE; // enable SMTP authentication
+            $mail->SMTPSecure = "tls"; //Secure conection
+            $mail->Host = 'smtp.office365.com';
+            $mail->Port = 587; //587 es el puerto predeterminado para seguridad TLS.
+            $mail->Username = $correo_corfo; // Correo GMAIL.
+            $mail->Password = $pass_corfo; // Clave de gmail or App Specific Password.
+            $mail->IsHTML(true); //El contenido usa Tags HTML?
+            $mail->setFrom($correo_corfo, $nombre_corfo . ' - Corfo'); // Set the sender of the message.
+            $mail->addAddress($correo_destino, 'Atención! Beneficiario de innovachile Corfo'); // Set the recipient of the message.
+            $mail->Body = $correo_mensaje . $firma;
+            $mail->Subject = 'Atención! Beneficiario de innovachile Corfo'; // The subject of the message.
+        } else {
+            $resultado = true;
+        }
+        return $resultado;
+    }
+
 }

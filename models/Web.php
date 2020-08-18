@@ -109,6 +109,13 @@ class Web {
         $save = $this->db->query($query);
         $result = false;
         if ($save) {
+            require_once 'models/Log.php';
+            $log = new Log();
+            $log->setFecha($date);
+            $log->setTipo('Modificar');
+            $log->setActividad('Pagina Web');
+            $log->setUsuario_id($_SESSION['identidad']->id);
+            $log->save();
             $result = true;
         }
         return $result;
@@ -139,6 +146,13 @@ class Web {
         $save = $this->db->query($query);
         $result = false;
         if ($save) {
+            require_once 'models/Log.php';
+            $log = new Log();
+            $log->setFecha($date);
+            $log->setTipo('Modificar');
+            $log->setActividad('Pagina Web');
+            $log->setUsuario_id($_SESSION['identidad']->id);
+            $log->save();
             $result = true;
         }
         return $result;

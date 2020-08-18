@@ -1,5 +1,5 @@
 <?php
-date_default_timezone_set('Etc/UTC');
+date_default_timezone_set('America/Santiago');
 require_once 'PHPMailer/PHPMailerAutoload.php';
 
 $mail = new PHPMailer;

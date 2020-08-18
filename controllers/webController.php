@@ -25,10 +25,16 @@ class webController {
         $estudio = new Estudio();
         $estudios1 = $estudio->getAllByAno();
         $estudios2 = $estudio->getAllByAno();
+        $estudios3 = $estudio->getAllByAno();
+        
         $datos = utils::getDatosDestacados();
         list($dato_millones, $dato_iniciativas, $dato_beneficiados) = $datos;
         require_once('views/layout/navbar.php');
         require_once('views/layout/landing-page.php');
+    }
+    function test(){
+        require_once('views/layout/menubar.php');
+        require_once('views/development/test.php');
     }
 
     function login() {
@@ -146,7 +152,12 @@ class webController {
             header('Location:' . base_url . 'web/inicio');
         }
     }
-
+    function develop() {
+        if (utils::isAdminOEmpleado()) {
+            require_once 'views/layout/sidebar.php';
+            require_once 'views/development/menu.php';
+        }
+    }
 }
 
 ob_end_flush();

@@ -1,12 +1,12 @@
 /*Azul claro*/
 @main-color: #0F4C75;
-
+@main-darker-color: #0c3f60;
 /*Azul oscuro*/
 @second-color: #002642;
 
 /*Celeste claro */
 @third-color: #bddaed;
-
+@third-darker-color: #9fb7c6;
 /*Azul super oscuro */
 @fourth-color: #002642;
 
@@ -27,12 +27,21 @@
 @text-color: #49535E;
 @gray: #bfbfbf;
 @lightgray: #EEEEEE;
-
+@green: #29ce4a;
+@darkgreen: #23af3c;
+@red: #E8505B;
+@darkred: #c6414a; 
 /*Fuentes*/
+.riona-thin(){
+     font-family: 'Riona sans W01 Thin';
+}
+.riona-regular(){
+     font-family: 'Riona sans W01 Regular';
+}
 .bold-font(){
     /*    font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif !important;*/
-    font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif !important;
-    font-weight: normal;
+    font-family: 'Riona Sans W01 Regular';
+    font-weight: 100;
     font-style: normal;
 }
 .bold-italic-font(){
@@ -153,7 +162,9 @@ div{
 .form-control:-ms-input-placeholder { color: @gray; }  /* Internet Explorer 10-11 */
 .form-control::-ms-input-placeholder { color: @gray; }  /* Microsoft Edge */
 
-
+.thin-font{
+    font-weight: normal;
+}
 .bg-primary{
     color: white;
     background-color: @main-color;
@@ -192,7 +203,7 @@ div{
     color: @second-color;
 }
 .color-azul{
-    color: @second-color;
+    color: @main-color;
 }
 .icono-azul-claro{
     color: @fifth-color;
@@ -201,7 +212,10 @@ div{
     color: @fifth-color;
 }
 .color-rojo{
-    color: red;
+    color: @red !important;
+}
+.color-rojo-oscuro{
+    color: @darkred !important;
 }
 .color-verde{
     color: #28A745;
@@ -276,6 +290,7 @@ div{
     padding: 0.2em 0.2em;
     color: #00acee;
 }
+
 .bc-gris{
     border-color: @gray;
 }

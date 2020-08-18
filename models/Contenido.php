@@ -78,9 +78,9 @@ class Contenido {
             $log->setFecha($this->getUltima_modificacion());
             $log->setTipo('Agregar');
             if ($this->getTipo() == 'pregunta') {
-                $log->setActividad('Pregunta frecuente->' . $this->getNombre());
+                $log->setActividad('Pregunta frecuente'.' <i class=icon-fa>&#xf0a9;</i> '.$this->getNombre());
             } else {
-                $log->setActividad('Texto->' . $this->getNombre());
+                $log->setActividad('Contenido'.' <i class=icon-fa>&#xf0a9;</i> '.$this->getNombre());
             }
             $log->setTxt_nuevo($this->getTexto());
             $log->setUsuario_id($this->getUsuario_id());
@@ -106,9 +106,9 @@ class Contenido {
             $log->setFecha($this->getUltima_modificacion());
             $log->setTipo('Modificar');
             if ($this->getTipo() == 'pregunta') {
-                $log->setActividad('Pregunta frecuente->' . $this->getNombre());
+                $log->setActividad('Pregunta frecuente'.' <i class=icon-fa>&#xf0a9;</i> '.$this->getNombre());
             } else {
-                $log->setActividad('Texto->' . $this->getNombre());
+                $log->setActividad('Contenido'.' <i class=icon-fa>&#xf0a9;</i> '.$this->getNombre());
             }
             $log->setTxt_antiguo($cont_antiguo->texto);
             $log->setTxt_nuevo($this->getTexto());
@@ -134,9 +134,9 @@ class Contenido {
             $log->setFecha($this->getUltima_modificacion());
             $log->setTipo('Modificar');
             if ($this->getTipo() == 'pregunta') {
-                $log->setActividad('Pregunta frecuente->' . $this->getNombre());
+                $log->setActividad('Pregunta frecuente'.' <i class=icon-fa>&#xf0a9;</i> '.$this->getNombre());
             } else {
-                $log->setActividad('Texto->' . $this->getNombre());
+                $log->setActividad('Contenido->'.' <i class=icon-fa>&#xf0a9;</i> '.$this->getNombre());
             }
             $log->setTxt_antiguo($cont_antiguo->texto);
             $log->setTxt_nuevo($this->getTexto());
@@ -198,9 +198,9 @@ class Contenido {
             $log->setFecha($date);
             $log->setTipo('Eliminar');
             if($cont_eliminado->tipo == "pregunta"){
-                $log->setActividad('Pregunta frecuente->' . $cont_eliminado->nombre);
+                $log->setActividad('Pregunta frecuente'.' <i class=icon-fa>&#xf0a9;</i> '.$cont_eliminado->nombre);
             }else{
-                $log->setActividad('Contenido->' . $cont_eliminado->nombre);
+                $log->setActividad('Contenido'.' <i class=icon-fa>&#xf0a9;</i> '.$cont_eliminado->nombre);
             }
             $log->setTxt_antiguo($cont_eliminado->texto);
             $log->setUsuario_id($cont_eliminado->Usuario_id);

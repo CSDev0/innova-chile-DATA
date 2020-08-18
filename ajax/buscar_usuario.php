@@ -16,7 +16,7 @@ if (isset($_POST["query"])) {
 
 if (mysqli_num_rows($resultado) > 0 && $resultado != null) {
     $output .= '<div class="table-responsive">
-                                    <table class="table table-striped"">
+                                    <table class="table table-striped xs-text">
                                             <tr>
                                                     <th>RUT</th>
                                                     <th>Nombre</th>
@@ -43,7 +43,7 @@ if (mysqli_num_rows($resultado) > 0 && $resultado != null) {
         if ($usu['verificado'] == 1) {
             $verificado = "<i class='fas fa-check color-verde'></i> Correo verificado";
         } else {
-            $verificado = "<i class='fas fa-times color-rojo'></i> Correo aún no verificado <a href='".base_url.'usuario/enviarCodigoActivar&id='.$usu['id']."' class='btn btn-success xs-text' ><i class='fas fa-envelope'></i> Enviar codigo</a>";
+            $verificado = "<i class='fas fa-times color-rojo'></i> Correo aún no verificado <a href='".base_url.'usuario/enviarCodigoActivar&id='.$usu['id']."' class='btn btn-success xs-text' ><i class='fal fa-envelope'></i> Enviar codigo</a>";
         }
         $output .= '
                     <tr>
@@ -55,18 +55,16 @@ if (mysqli_num_rows($resultado) > 0 && $resultado != null) {
                             <td>' . $habilitado . '</td>
                             <td>' . $verificado . '</td>
                             <td>
-                        <a href="#modal-modificar-usuario" data-toggle="modal" class="btn btn-success" style="width: 100%;" 
+                        <a href="#modal-modificar-usuario" data-toggle="modal" class="btn btn-success xs-text" style="width: 100%;" 
  id=' . $usu['id'] . ' rut=' . $usu['rut'] . ' nombre=' . $usu['nombre'] . ' apellido=' . $usu['apellido'] . ' correo=' . $usu['correo'] . ' genero=' . $usu['genero'] . ' habilitado=' . $usu['habilitado'] . ' >
-                            <i class="fas fa-edit"></i> Modificar</a>
+                            <i class="fal fa-edit"></i> Modificar</a>
                             
-                        <a href="#modal-eliminar" data-toggle="modal" ruta="usuario/delete&id=" id="' . $usu['id'] . '" nombre="' . utils::acortador($usu['nombre'] . ' ' . $usu['apellido'], 60) . '" tipo="' . $usu['tipo'] . '"class="btn btn-danger eliminar" 
+                        <a href="#modal-eliminar" data-toggle="modal" ruta="usuario/delete&id=" id="' . $usu['id'] . '" nombre="' . utils::acortador($usu['nombre'] . ' ' . $usu['apellido'], 60) . '" tipo="' . $usu['tipo'] . '"class="btn btn-danger eliminar xs-text" 
                            style="margin-top: 5px; width: 100%;" >
-                           <i class="fas fa-trash-alt"></i> Eliminar</a>
+                           <i class="fal fa-trash-alt"></i> Eliminar</a>
                             </td>
                     </tr>';
     }
-    $output .= '<script src="' . base_url . 'assets/js/modal-eliminar.js"></script>';
-    $output .= '<script src="' . base_url . 'assets/js/boxes.js"></script>';
     echo $output;
 } else {
     echo '<h3><i class="far fa-sad-cry"></i> No hay resultados, intente otra busqueda.</h3>';

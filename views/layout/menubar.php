@@ -14,14 +14,15 @@
             </li>
             <li class="nav-item">
                 <div class="dropdown">
-                <a class="nav-link dropdown-toggle landing-page-nav-link" href="#estudios"><i class="fad fa-bookmark icono-celeste"></i> Estudios</a>
+                    <a class="nav-link dropdown-toggle landing-page-nav-link" href="#politicas_publicas"><i class="fad fa-bookmark icono-celeste"></i> Políticas públicas</a>
 
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <div class="move-drop">
-                        <a class="dropdown-item" id="dropdown-item-hover" href="<?= base_url ?>estudio/nuestrosEstudios"><i class="fal fa-angle-double-right" id="nav-bar-dropdown-arrow"></i> Nuestros estudios</a>
-                        <a class="dropdown-item" id="dropdown-item-hover" href="<?= base_url ?>estudio/lecturasRecomendadas"><i class="fal fa-angle-double-right" id="nav-bar-dropdown-arrow"></i> Lecturas recomendadas</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <div class="move-drop">
+                            <a class="dropdown-item" id="dropdown-item-hover" href="<?= base_url ?>estudio/nuestrosEstudios"><i class="fal fa-angle-double-right" id="nav-bar-dropdown-arrow"></i> Nuestros estudios</a>
+                            <a class="dropdown-item" id="dropdown-item-hover" href="<?= base_url ?>estudio/lecturasRecomendadas"><i class="fal fa-angle-double-right" id="nav-bar-dropdown-arrow"></i> Lecturas recomendadas</a>
+                            <a class="dropdown-item" id="dropdown-item-hover" href="<?= base_url ?>estudio/programas"><i class="fal fa-angle-double-right" id="nav-bar-dropdown-arrow"></i> Programas</a>
+                        </div>
                     </div>
-                </div>
                 </div>
             </li>
         </ul>

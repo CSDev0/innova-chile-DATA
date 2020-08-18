@@ -75,7 +75,7 @@ class Convocatoria
           $log = new Log();
           $log->setFecha($date);
           $log->setTipo('Agregar');
-          $log->setActividad('Convocatoria->' . $archivo_nombre);
+          $log->setActividad('Convocatoria'.' <i class=icon-fa>&#xf0a9;</i> '.$archivo_nombre);
           $log->setUsuario_id($_SESSION['identidad']->id);
           $log->save();
           $result = true;
@@ -131,7 +131,7 @@ class Convocatoria
           $log = new Log();
           $log->setFecha($date);
           $log->setTipo('Eliminar');
-          $log->setActividad('Convocatoria->' . $archivo_nombre);
+          $log->setActividad('Convocatoria'.' <i class=icon-fa>&#xf0a9;</i> '.$archivo_nombre);
           $log->setUsuario_id($_SESSION['identidad']->id);
           $log->save();
           $result = true;

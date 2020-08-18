@@ -50,7 +50,7 @@ if ($resultado != null) {
     if (mysqli_num_rows($resultado) > 0) {
         $output .= '<h4 id="resultado_orden"></h4>
             <div class="table-responsive">
-                                    <table class="table table-striped"">
+                                    <table class="table table-striped xs-text">
                                             <tr>
                                                     <th>Ordenar</th>
                                                     <th>Pregunta</th>
@@ -70,13 +70,13 @@ if ($resultado != null) {
                             <td>' . utils::acortador(htmlentities($obj["texto"]), 100) . '</td>
                             <td>' .$ultima_modificacion. '</td>
                             <td>
-                        <a href="#modal-modificar-pregunta" data-toggle="modal" class="btn btn-success" style="width: 100%;" 
+                        <a href="#modal-modificar-pregunta" data-toggle="modal" class="btn btn-success xs-text" style="width: 100%;" 
  id="' . $obj['id'] . '" pregunta="' . $obj['nombre'] . '" respuesta="' . htmlentities($obj['texto']) . '" ultima_modificacion="' . $ultima_modificacion . '" usuario_modificacion="' . utils::getUsuarioNombre($obj['Usuario_id']) . '">
-                            <i class="fas fa-edit"></i> Modificar</a>
+                            <i class="fal fa-edit"></i> Modificar</a>
                             
-                        <a href="#modal-eliminar" data-toggle="modal" ruta="contenido/deletePregunta&id=" id="' . $obj['id'] .'" nombre="' . utils::acortador($obj['nombre'], 60) .'" tipo="'.$obj['tipo'].'" class="btn btn-danger eliminar" 
+                        <a href="#modal-eliminar" data-toggle="modal" ruta="contenido/deletePregunta&id=" id="' . $obj['id'] .'" nombre="' . utils::acortador($obj['nombre'], 60) .'" tipo="'.$obj['tipo'].'" class="btn btn-danger eliminar xs-text" 
                            style="margin-top: 5px; width: 100%;" >
-                           <i class="fas fa-trash-alt"></i> Eliminar</a>
+                           <i class="fal fa-trash-alt"></i> Eliminar</a>
                             </td>
                     </tr>
                    ';
@@ -84,8 +84,6 @@ if ($resultado != null) {
         $output .= '</tbody>';
         $output .= '</table>';
         $output .= '</div>';
-        $output .= '<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>';
-        $output .= '<script src="' . base_url . 'assets/js/boxes.js"></script>';
         echo $output;
     } else {
         echo '<h3><i class="far fa-sad-cry"></i> No se han encontrado preguntas.</h3>';

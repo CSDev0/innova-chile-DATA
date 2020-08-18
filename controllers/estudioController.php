@@ -9,7 +9,6 @@ class estudioController {
 
     function save() {
         if (utils::isAdminOEmpleado()) {
-
             if (isset($_POST)) {
                 $id = isset($_POST['txtId']) ? $_POST['txtId'] : false;
                 $nombre = isset($_POST['txtNombre']) ? $_POST['txtNombre'] : false;
@@ -24,8 +23,8 @@ class estudioController {
                     $estudio->setDescripcion($descripcion);
                     $estudio->setAno_estudio($ano_estudio);
                     $estudio->setTipo($tipo);
-                    $estudio->setUsuario_id($_SESSION['identidad']->id);
-
+                    $estudio->setUsuario_id(1);
+//                    $estudio->setUsuario_id($_SESSION['identidad']->id);
                     //Guardar el documento
                     //Preguntar si viene el parametro ID, si es asi, esto seria una modificacion del estudio.
                     if ($id != null && $id != false) {
@@ -40,22 +39,40 @@ class estudioController {
                             if ($tipo_archivo == "application/msword" || $tipo_archivo == "application/pdf" || $tipo_archivo == "text/plain" ||
                                     $tipo_archivo == "application/vnd.ms-excel" || $tipo_archivo == "text/html" ||
                                     $tipo_archivo == "application/vnd.ms-powerpoint" ||
-                                    $tipo_archivo == "application/vnd.openxmlformats-officedocument.presentationml.presentation") {
-                                if (!is_dir('uploads/documentos/estudios/')) {
-                                    mkdir('uploads/documentos/estudios/', 0777, true);
-                                }
-                                if (file_exists('uploads/documentos/estudios/' . $nombre_archivo)) {
-                                    unlink('uploads/documentos/estudios/' . $nombre_archivo);
-                                    move_uploaded_file($archivo['tmp_name'], 'uploads/documentos/estudios/' . $nombre_archivo);
-                                    $est = new Estudio();
-                                    $est->setId($id);
-                                    $est1 = $est->getEstudioById();
-                                    $archivo_antiguo = $est1->archivo;
+                                    $tipo_archivo == "application/vnd.openxmlformats-officedocument.presentationml.presentation" || $tipo_archivo == "application/vnd.openxmlformats-officedocument.wordprocessingml.document") {
+                                if ($tipo == 'programa') {
+                                    if (!is_dir('uploads/documentos/programas/')) {
+                                        mkdir('uploads/documentos/programas/', 0777, true);
+                                    }
+                                    if (file_exists('uploads/documentos/programas/' . $nombre_archivo)) {
+                                        unlink('uploads/documentos/programas/' . $nombre_archivo);
+                                        move_uploaded_file($archivo['tmp_name'], 'uploads/documentos/programas/' . $nombre_archivo);
+                                        $est = new Estudio();
+                                        $est->setId($id);
+                                        $est1 = $est->getEstudioById();
+                                        $archivo_antiguo = $est1->archivo;
+                                        $estudio->setArchivo($nombre_archivo);
+                                    } else {
+                                        move_uploaded_file($archivo['tmp_name'], 'uploads/documentos/programas/' . $nombre_archivo);
+                                        $estudio->setArchivo($nombre_archivo);
+                                    }
+                                } elseif ($tipo == 'estudio') {
+                                    if (!is_dir('uploads/documentos/estudios/')) {
+                                        mkdir('uploads/documentos/estudios/', 0777, true);
+                                    }
+                                    if (file_exists('uploads/documentos/estudios/' . $nombre_archivo)) {
+                                        unlink('uploads/documentos/estudios/' . $nombre_archivo);
+                                        move_uploaded_file($archivo['tmp_name'], 'uploads/documentos/estudios/' . $nombre_archivo);
+                                        $est = new Estudio();
+                                        $est->setId($id);
+                                        $est1 = $est->getEstudioById();
+                                        $archivo_antiguo = $est1->archivo;
 
-                                    $estudio->setArchivo($nombre_archivo);
-                                } else {
-                                    move_uploaded_file($archivo['tmp_name'], 'uploads/documentos/estudios/' . $nombre_archivo);
-                                    $estudio->setArchivo($nombre_archivo);
+                                        $estudio->setArchivo($nombre_archivo);
+                                    } else {
+                                        move_uploaded_file($archivo['tmp_name'], 'uploads/documentos/estudios/' . $nombre_archivo);
+                                        $estudio->setArchivo($nombre_archivo);
+                                    }
                                 }
                             } else {
                                 $_SESSION['estu_msg'] = "f_tipo_archivo";
@@ -79,16 +96,30 @@ class estudioController {
                                     $tipo_archivo == "application/vnd.ms-excel" || $tipo_archivo == "text/html" ||
                                     $tipo_archivo == "application/vnd.ms-powerpoint" ||
                                     $tipo_archivo == "application/vnd.openxmlformats-officedocument.presentationml.presentation") {
-                                if (!file_exists('uploads/documentos/estudios')) {
-                                    mkdir('uploads/documentos/estudios', 0777, true);
-                                }
-                                if (file_exists('uploads/documentos/estudios/' . $nombre_archivo)) {
-                                    unlink('uploads/documentos/estudios/' . $nombre_archivo);
-                                    move_uploaded_file($archivo['tmp_name'], 'uploads/documentos/estudios/' . $nombre_archivo);
-                                    $estudio->setArchivo($nombre_archivo);
-                                } else {
-                                    move_uploaded_file($archivo['tmp_name'], 'uploads/documentos/estudios/' . $nombre_archivo);
-                                    $estudio->setArchivo($nombre_archivo);
+                                if ($tipo == 'estudio') {
+                                    if (!file_exists('uploads/documentos/estudios')) {
+                                        mkdir('uploads/documentos/estudios', 0777, true);
+                                    }
+                                    if (file_exists('uploads/documentos/estudios/' . $nombre_archivo)) {
+                                        unlink('uploads/documentos/estudios/' . $nombre_archivo);
+                                        move_uploaded_file($archivo['tmp_name'], 'uploads/documentos/estudios/' . $nombre_archivo);
+                                        $estudio->setArchivo($nombre_archivo);
+                                    } else {
+                                        move_uploaded_file($archivo['tmp_name'], 'uploads/documentos/estudios/' . $nombre_archivo);
+                                        $estudio->setArchivo($nombre_archivo);
+                                    }
+                                } elseif ($tipo == 'programa') {
+                                    if (!file_exists('uploads/documentos/programas')) {
+                                        mkdir('uploads/documentos/programas', 0777, true);
+                                    }
+                                    if (file_exists('uploads/documentos/programas/' . $nombre_archivo)) {
+                                        unlink('uploads/documentos/programas/' . $nombre_archivo);
+                                        move_uploaded_file($archivo['tmp_name'], 'uploads/documentos/programas/' . $nombre_archivo);
+                                        $estudio->setArchivo($nombre_archivo);
+                                    } else {
+                                        move_uploaded_file($archivo['tmp_name'], 'uploads/documentos/programas/' . $nombre_archivo);
+                                        $estudio->setArchivo($nombre_archivo);
+                                    }
                                 }
                             } else {
                                 $_SESSION['estu_msg'] = "f_tipo_archivo";
@@ -183,11 +214,19 @@ class estudioController {
         $estudios1 = $estudio->getAllByAno();
         require_once('views/estudios/nuestros-estudios.php');
     }
+
     function lecturasRecomendadas() {
         require_once('views/layout/menubar.php');
         require_once('views/layout/landing-page/modal-estudios.php');
         $estudio = new Estudio();
         $estudios2 = $estudio->getAllByAno();
         require_once('views/estudios/lecturas-recomendadas.php');
+    }
+    function programas() {
+        require_once('views/layout/menubar.php');
+        require_once('views/layout/landing-page/modal-estudios.php');
+        $estudio = new Estudio();
+        $estudios = $estudio->getAllByAno();
+        require_once('views/estudios/programas.php');
     }
 }

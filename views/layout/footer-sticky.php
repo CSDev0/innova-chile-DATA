@@ -48,10 +48,11 @@
     };
 </script>
 <script>
+
     $(window).on('load', function () {
         // Animate loader off screen
         setTimeout(function () {
-            $(".se-pre-con").fadeOut("slow");
+            $(".se-pre-con").hide('slide', {direction: 'up'}, 300);
         }, 300);
 
 //        particlesJS.load('bg-quienes-somos', baseurl + 'assets/particlesjs-config.json', function () {
@@ -107,7 +108,7 @@
         dialogsInBody: true,
         placeholder: 'Ingrese un texto descriptivo.',
         tabsize: 5,
-        height: 250,
+        height: 150,
         toolbar: [
             // [groupName, [list of button]]
             ['style', ['bold', 'italic', 'underline', 'clear']],
@@ -118,7 +119,7 @@
             ['view', ['fullscreen', 'codeview', 'help']],
         ]
     });
-    $('#input-estudio-texto').summernote({
+    $('.input-estudio-texto').summernote({
         lang: 'es-ES',
         dialogsInBody: true,
         placeholder: 'Ingrese un texto descriptivo.',

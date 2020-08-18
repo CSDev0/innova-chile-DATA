@@ -28,13 +28,11 @@ class Archivo {
     public function search($busqueda) {
         if ($busqueda == 'all') {
             $query = "SELECT * FROM archivo ORDER BY id DESC;";
-
         } else {
 
             $query = "
                    SELECT * FROM archivo
 	WHERE archivo LIKE '%" . $busqueda . "%' ";
-
         }
         $resultado = $this->db->query($query);
         return $resultado;
@@ -52,31 +50,36 @@ class Archivo {
             $log = new Log();
             $log->setFecha($date);
             $log->setTipo('Agregar');
-            $log->setActividad('Archivo->' . $this->getArchivo());
+            $log->setActividad('Archivo'.' <i class=icon-fa>&#xf0a9;</i> '.$this->getArchivo());
             $log->setUsuario_id($_SESSION['identidad']->id);
             $log->save();
             $result = true;
         }
         return $result;
     }
-    public function delete(){
+
+    public function delete() {
         $now = new DateTime();
         $date = $now->format("Y-m-d H:i:s");
         $query = "DELETE FROM archivo WHERE id = '{$this->getId()}';";
+        $archivo = new Estudio();
+        $archivo->setId($this->getId());
+        $arch_eliminado = $archivo->getArchivoById();
         $result = false;
         if ($this->db->query($query) == TRUE && $this->db->affected_rows > 0) {
             require_once 'models/Log.php';
             $log = new Log();
             $log->setFecha($date);
             $log->setTipo('Eliminar');
-            $log->setActividad('Archivo->' . $this->getArchivo());
+            $log->setActividad('Archivo'.' <i class=icon-fa>&#xf0a9;</i> '.$arch_eliminado->getArchivo());
             $log->setUsuario_id($_SESSION['identidad']->id);
             $log->save();
             $result = true;
         }
         return $result;
     }
-    public function getArchivoById(){
+
+    public function getArchivoById() {
         $result = false;
         $query = "SELECT * FROM archivo WHERE id='{$this->getId()}' LIMIT 1;";
         $archivo = $this->db->query($query);
@@ -85,4 +88,5 @@ class Archivo {
         }
         return $result;
     }
+
 }

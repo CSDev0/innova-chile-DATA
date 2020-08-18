@@ -71,7 +71,7 @@ class Repositorio {
             $log = new Log();
             $log->setFecha($this->getUltima_modificacion());
             $log->setTipo('Modificar');
-            $log->setActividad('Repositorio->' . $repo_antiguo->repositorio);
+            $log->setActividad('Repositorio'.' <i class=icon-fa>&#xf0a9;</i> '.$repo_antiguo->repositorio);
             $log->setUsuario_id($this->getUsuario_id());
             $log->save();
             $result = true;

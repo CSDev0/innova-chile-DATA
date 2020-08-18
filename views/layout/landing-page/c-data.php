@@ -5,7 +5,7 @@
                 <h1 class="text-center" id="data_title"><i class="fad fa-chart-bar icono-celeste"></i> Data</h1>
                 <hr class="faded" >
                 <br>
-                <div class="col-12 row text-center justify-content-center p-0 m-0 mb-5">
+                <div class="container text-center mb-5">
                     <?= utils::getTextoByTipoContenido('Data') ?>
                 </div>
                 <br>

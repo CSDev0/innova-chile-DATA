@@ -100,7 +100,7 @@ class Estudio {
         $date = $now->format("Y-m-d H:i:s");
 
         $query = "INSERT INTO estudio VALUES (NULL, '{$this->getNombre()}', '{$this->getDescripcion()}', '{$this->getAno_estudio()}', ";
-        if ($this->getTipo() == 'estudio') {
+        if ($this->getTipo() == 'estudio' || $this->getTipo() == 'programa'  ) {
             $query .= "'{$this->getArchivo()}', ";
         } else {
             $query .= "NULL, ";
@@ -120,7 +120,7 @@ class Estudio {
             $log = new Log();
             $log->setFecha($date);
             $log->setTipo('Agregar');
-            $log->setActividad('Estudios->' . $this->getNombre());
+            $log->setActividad($this->getTipo().' <i class=icon-fa>&#xf0a9;</i> '. $this->getNombre());
             $log->setTxt_nuevo($this->getDescripcion());
             $log->setUsuario_id($this->getUsuario_id());
             $log->save();
@@ -141,7 +141,7 @@ class Estudio {
 
     public function getEstudioById() {
         $result = false;
-        $query = "SELECT * FROM estudio WHERE id = '{$this->id}' LIMIT 1";
+        $query = "SELECT * FROM estudio WHERE id = '{$this->getId()}' LIMIT 1";
         $estudio = $this->db->query($query);
         if ($estudio) {
             $result = $estudio->fetch_object();
@@ -153,16 +153,16 @@ class Estudio {
         $now = new DateTime();
         $date = $now->format("Y-m-d H:i:s");
         $result = false;
-        $query = "DELETE FROM estudio WHERE id = '$this->id'";
+        $query = "DELETE FROM estudio WHERE id = '{$this->getId()}'";
         $estudio = new Estudio();
-        $estudio->setId($this->id);
+        $estudio->setId($this->getId());
         $est_eliminado = $estudio->getEstudioById();
         if ($this->db->query($query) == TRUE && $this->db->affected_rows > 0) {
             require_once 'models/Log.php';
             $log = new Log();
             $log->setFecha($date);
             $log->setTipo('Eliminar');
-            $log->setActividad('Estudios->' . $est_eliminado->nombre);
+            $log->setActividad($est_eliminado->tipo.' <i class=icon-fa>&#xf0a9;</i> '. $est_eliminado->nombre);
             $log->setTxt_antiguo($est_eliminado->descripcion);
             $log->setUsuario_id($est_eliminado->Usuario_id);
             $log->save();
@@ -200,7 +200,7 @@ class Estudio {
         }
         $query .= "enlace='{$this->getEnlace()}', ultima_modificacion='{$date}', Usuario_id ='{$this->getUsuario_id()}' WHERE id = {$this->getId()};";
         $estudio = new Estudio();
-        $estudio->setId($this->id);
+        $estudio->setId($this->getId());
         $est_antiguo = $estudio->getEstudioById();
         
         $save = $this->db->query($query);
@@ -210,7 +210,7 @@ class Estudio {
             $log = new Log();
             $log->setFecha($date);
             $log->setTipo('Modificar');
-            $log->setActividad('Estudios->' . $est_antiguo->nombre);
+            $log->setActividad($est_antiguo->tipo.' <i class=icon-fa>&#xf0a9;</i> '.$est_antiguo->nombre);
             $log->setTxt_antiguo($est_antiguo->descripcion);
             $log->setTxt_nuevo($this->getDescripcion());
             $log->setUsuario_id($this->getUsuario_id());

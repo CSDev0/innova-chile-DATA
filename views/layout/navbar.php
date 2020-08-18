@@ -25,12 +25,12 @@
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                 <div class="move-drop">
                                     <a class="dropdown-item" id="dropdown-item-hover" href="<?= base_url ?>web/portafolio"><i class="fa fa-angle-double-right" id="nav-bar-dropdown-arrow"></i> Portafolio</a>
-                                    <a class="dropdown-item"  id="dropdown-item-hover2" href="#"><i class="fa fa-angle-double-right" id="nav-bar-dropdown-arrow2"></i> Ley I+D</a>
+                                    <a class="dropdown-item"  id="dropdown-item-hover2" href="#"><i class="fal fa-angle-double-right" id="nav-bar-dropdown-arrow2"></i> Ley I+D</a>
                                     <div class="dropdown">
-                                        <a class="dropdown-item" id="dropdown-item-hover3"href="#"><i class="fa fa-angle-double-right" id="nav-bar-dropdown-arrow3"></i> Subsidios</a>
+                                        <a class="dropdown-item" id="dropdown-item-hover3"href="#"><i class="fal fa-angle-double-right" id="nav-bar-dropdown-arrow3"></i> Subsidios</a>
                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                            <a class="dropdown-item" id="dropdown-item-hover4" href="<?= base_url ?>web/convocatorias"><i class="fa fa-angle-double-right" id="nav-bar-dropdown-arrow4"></i> Convocatorias</a>
-                                            <a class="dropdown-item" id="dropdown-item-hover5" href="<?= base_url ?>web/apptest"><i class="fa fa-angle-double-right" id="nav-bar-dropdown-arrow5"></i> Historico desde 2010</a>
+                                            <a class="dropdown-item" id="dropdown-item-hover4" href="<?= base_url ?>web/convocatorias"><i class="fal fa-angle-double-right" id="nav-bar-dropdown-arrow4"></i> Convocatorias</a>
+                                            <a class="dropdown-item" id="dropdown-item-hover5" href="<?= base_url ?>web/apptest"><i class="fal fa-angle-double-right" id="nav-bar-dropdown-arrow5"></i> Historico desde 2010</a>
                                         </div>
                                     </div>
                                 </div>
@@ -39,10 +39,11 @@
                     </li>
                     <li class="nav-item d-flex justify-content-center mb-2">
                         <div class="dropdown">
-                            <a class="nav-link dropdown-toggle" href="#estudios"><i class="fad fa-bookmark icono-celeste"></i> Estudios</a>
+                            <a class="nav-link dropdown-toggle" href="#politicas_publicas"><i class="fad fa-bookmark icono-celeste"></i> Políticas públicas</a>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" id="dropdown-item-hover6" href="#nuestros_estudios"><i class="fa fa-angle-double-right" id="nav-bar-dropdown-arrow6"></i> Nuestros estudios</a>
-                                <a class="dropdown-item"  id="dropdown-item-hover7" href="#lecturas_recomendadas"><i class="fa fa-angle-double-right" id="nav-bar-dropdown-arrow7"></i> Lecturas recomendadas</a>
+                                <a class="dropdown-item" id="dropdown-item-hover6" href="#nuestros_estudios"><i class="fal fa-angle-double-right" id="nav-bar-dropdown-arrow6"></i> Nuestros estudios</a>
+                                <a class="dropdown-item"  id="dropdown-item-hover7" href="#lecturas_recomendadas"><i class="fal fa-angle-double-right" id="nav-bar-dropdown-arrow7"></i> Lecturas recomendadas</a>
+                                <a class="dropdown-item"  id="dropdown-item-hover7" href="#programas"><i class="fal fa-angle-double-right" id="nav-bar-dropdown-arrow7"></i> Programas</a>
                             </div>
                         </div>
                     </li>
@@ -74,10 +75,11 @@
                 </li>
                 <li class="nav-item">
                     <div class="dropdown">
-                        <a class="nav-link dropdown-toggle landing-page-nav-link " href="#estudios"><i class="fad fa-bookmark icono-celeste"></i> Estudios</a>
+                        <a class="nav-link dropdown-toggle landing-page-nav-link " href="#politicas_publicas"><i class="fad fa-bookmark icono-celeste"></i> Políticas públicas </a>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" id="dropdown-item-hover6" href="#nuestros_estudios"><i class="fa fa-angle-double-right" id="nav-bar-dropdown-arrow6"></i> Nuestros estudios</a>
-                            <a class="dropdown-item"  id="dropdown-item-hover7" href="#lecturas_recomendadas"><i class="fa fa-angle-double-right" id="nav-bar-dropdown-arrow7"></i> Lecturas recomendadas</a>
+                            <a class="dropdown-item" id="dropdown-item-hover6" href="#nuestros_estudios"><i class="fal fa-angle-double-right" id="nav-bar-dropdown-arrow6"></i> Nuestros estudios</a>
+                            <a class="dropdown-item"  id="dropdown-item-hover7" href="#lecturas_recomendadas"><i class="fal fa-angle-double-right" id="nav-bar-dropdown-arrow7"></i> Lecturas recomendadas</a>
+                                <a class="dropdown-item"  id="dropdown-item-hover7" href="#programas"><i class="fal fa-angle-double-right" id="nav-bar-dropdown-arrow7"></i> Programas</a>
                         </div>
                     </div>
                 </li>

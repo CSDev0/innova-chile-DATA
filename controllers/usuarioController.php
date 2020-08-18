@@ -9,7 +9,7 @@ class usuarioController {
     function panel() {
         if (utils::isVerified()) {
             if (utils::isAdminOEmpleado()) {
-                require_once ('views/usuario/sidebar.php');
+                require_once ('views/layout/sidebar.php');
                 require_once ('views/usuario/mi-perfil.php');
             } else {
                 header('Location:' . base_url . 'web/login');
@@ -31,7 +31,6 @@ class usuarioController {
             $usuario->setCorreo($_POST['txtCorreo']);
             $usuario->setClave($_POST['txtClave']);
             $identidad = $usuario->login();
-            $identidad->verificado=1;
             if ($identidad && is_object($identidad)) {
                 $_SESSION['identidad'] = $identidad;
                 $_SESSION['tipo_usuario'] = $identidad->tipo;

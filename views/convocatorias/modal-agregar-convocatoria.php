@@ -12,7 +12,7 @@
                         <div class="col-sm mb-2">
                                 <?php
                                 if($files){
-                                    echo '<label for="slcArchivo">Seleccione el archivo del grafico: </label>';
+                                    echo '<label for="slcArchivo">Seleccione el archivo de la convocatoria: </label>';
                                     echo '<select class="form-control" id="Archivo" name=slcArchivo onfocus="this.size = 5;" onblur="this.size = 1;" onchange="this.size = 1; this.blur();">';
                                 foreach ($files as $file1) {
                                     $info1 = pathinfo($file1);

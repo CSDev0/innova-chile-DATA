@@ -70,7 +70,7 @@ class Grafico_destacado {
             $log = new Log();
             $log->setFecha($date);
             $log->setTipo('Agregar');
-            $log->setActividad('Grafico destacado->' . $archivo_nombre);
+            $log->setActividad('Grafico destacado'.' <i class=icon-fa>&#xf0a9;</i> '.$archivo_nombre);
             $log->setUsuario_id($_SESSION['identidad']->id);
             $log->save();
             $result = true;
@@ -106,7 +106,7 @@ class Grafico_destacado {
             $log = new Log();
             $log->setFecha($date);
             $log->setTipo('Eliminar');
-            $log->setActividad('Grafico destacado->' . $archivo_nombre);
+            $log->setActividad('Grafico destacado'.' <i class=icon-fa>&#xf0a9;</i> '.$archivo_nombre);
             $log->setUsuario_id($_SESSION['identidad']->id);
             $log->save();
             $result = true;
