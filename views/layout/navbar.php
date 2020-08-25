@@ -75,16 +75,16 @@
                 </li>
                 <li class="nav-item">
                     <div class="dropdown">
-                        <a class="nav-link dropdown-toggle landing-page-nav-link " href="#politicas_publicas"><i class="fad fa-bookmark icono-celeste"></i> Políticas públicas </a>
+                        <a class="nav-link dropdown-toggle landing-page-nav-link " href="<?=base_url.'web/politicas_publicas'?>"><i class="fad fa-bookmark icono-celeste"></i> Políticas públicas </a>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" id="dropdown-item-hover6" href="#nuestros_estudios"><i class="fal fa-angle-double-right" id="nav-bar-dropdown-arrow6"></i> Nuestros estudios</a>
-                            <a class="dropdown-item"  id="dropdown-item-hover7" href="#lecturas_recomendadas"><i class="fal fa-angle-double-right" id="nav-bar-dropdown-arrow7"></i> Lecturas recomendadas</a>
-                                <a class="dropdown-item"  id="dropdown-item-hover7" href="#programas"><i class="fal fa-angle-double-right" id="nav-bar-dropdown-arrow7"></i> Programas</a>
+                            <a class="dropdown-item" id="dropdown-item-hover6" href="<?=base_url.'web/politicas_publicas#nuestros_estudios'?>"><i class="fal fa-angle-double-right" id="nav-bar-dropdown-arrow6"></i> Nuestros estudios</a>
+                            <a class="dropdown-item"  id="dropdown-item-hover7" href="<?=base_url.'web/politicas_publicas#lecturas_recomendadas'?>"><i class="fal fa-angle-double-right" id="nav-bar-dropdown-arrow7"></i> Lecturas recomendadas</a>
+                                <a class="dropdown-item"  id="dropdown-item-hover7" href="<?=base_url.'web/politicas_publicas#programas'?>"><i class="fal fa-angle-double-right" id="nav-bar-dropdown-arrow7"></i> Programas</a>
                         </div>
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link landing-page-nav-link bg-gradient" href="#chile_en_el_mundo"><i class="fad fa-globe-americas icono-celeste"></i> Chile en el mundo</a>
+                    <a class="nav-link landing-page-nav-link bg-gradient" href="<?=base_url.'web/chile_en_el_mundo'?>"><i class="fad fa-globe-americas icono-celeste"></i> Chile en el mundo</a>
                 </li>
             </ul>
         </div>

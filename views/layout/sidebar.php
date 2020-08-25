@@ -25,6 +25,12 @@ if(utils::isVerified()){
                 <button class="btn btn-primary panel show-load" onclick='window.location.href = "<?= base_url ?>gestion/web"'><i class="fal fa-wrench"></i> Gestionar Sitio Web y Preguntas frecuentes</button>
             </div>
             <?php
+        }elseif($_SESSION['tipo_usuario'] == 'empleado'){
+            ?>
+            <div class="mb-2">
+                <button class="btn btn-primary panel show-load" onclick='window.location.href = "<?= base_url ?>gestion/usuarios"'><i class="fal fa-users"></i> Ver Actividad</button>
+            </div>
+        <?php
         }
         ?>
         <div class="mb-2">

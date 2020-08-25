@@ -46,8 +46,8 @@
                     <hr class="faded" >
                 </div>
             </div>
-            <div class="row ">
-                <div class="col-sm-12" style="width: 98vw">
+            <div class="row">
+                <div class="col-12" style="width: 100vw">
                     <div id="graficos-crsl" class="carousel slide destacados" data-ride="carousel">
 
                         <!--Indicadores-->

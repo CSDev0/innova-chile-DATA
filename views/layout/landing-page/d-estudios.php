@@ -1,4 +1,12 @@
-<section class="seccion" data-section-name="politicas_publicas">
+<script>
+    $(document).ready(function () {
+    $(".landing-page-navbar").removeClass("no-bg");
+    $(".landing-page-nav-link").removeClass("initial-state");
+    $(".landing-page-navbar").addClass("bg-gradient");
+    $(".landing-page-nav-link").addClass("bg-gradient");
+    });
+</script>
+<section class="seccion" data-section-name="politicas">
     <div class="container d-flex h-100">
         <div class="row section justify-content-center vw-100">
             <div class="col-sm-12 align-self-top ">

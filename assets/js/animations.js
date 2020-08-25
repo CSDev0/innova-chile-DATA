@@ -23,6 +23,8 @@ $(document).ready(function () {
                 $(".landing-page-nav-link").addClass("initial-state")
                 $(".logo-corfo").css("opacity", "1");
                 $("#datos_destacados_title").hide("puff", 0);
+                is_in_footer = false;
+                esconderFooter();
 
             }
             if ($.scrollify.current().attr('data-section-name') == "datos_destacados")
@@ -35,6 +37,8 @@ $(document).ready(function () {
                 $(".landing-page-nav-link").addClass("bg-gradient");
                 $(".logo-corfo").css("opacity", "0");
                 $("#graficos_destacados_title").hide("puff", 0);
+                is_in_footer = false;
+                esconderFooter();
             }
             if ($.scrollify.current().attr('data-section-name') == "graficos_destacados")
             {
@@ -46,6 +50,8 @@ $(document).ready(function () {
                 $(".landing-page-nav-link").addClass("bg-gradient");
                 $(".logo-corfo").css("opacity", "0");
                 $("#data_title").hide("puff", 0);
+                is_in_footer = false;
+                esconderFooter();
             }
 
             if ($.scrollify.current().attr('data-section-name') == "data")
@@ -61,9 +67,12 @@ $(document).ready(function () {
 
                 $("#nuestros_title").hide("puff", 0);
                 $("#lecturas_title").hide("puff", 0);
+                $('#footer-space').remove();
+                is_in_footer = false;
+                esconderFooter();
 
             }
-            if ($.scrollify.current().attr('data-section-name') == "politicas_publicas")
+            if ($.scrollify.current().attr('data-section-name') == "politicas")
             {
                 $("#data_title").hide("puff", 0);
                 $("#estudios_title").show("puff", 650);
@@ -78,9 +87,71 @@ $(document).ready(function () {
                 $(".landing-page-nav-link").addClass("bg-gradient");
                 $(".logo-corfo").css("opacity", "0");
                 $("#chile_title").hide("puff", 0);
+                $('#footer-space').remove();
+                is_in_footer = false;
+                esconderFooter();
 
             }
-            if ($.scrollify.current().attr('data-section-name') === "chile_en_el_mundo")
+            if ($.scrollify.current().attr('data-section-name') == "nuestros_estudios")
+            {
+                $("#data_title").hide("puff", 0);
+                $("#estudios_title").show("puff", 650);
+
+                $("#nuestros_title").show("puff", 650);
+                $("#lecturas_title").show("puff", 650);
+                $("#programas_title").show("puff", 650);
+
+                $(".landing-page-navbar").removeClass("no-bg");
+                $(".landing-page-nav-link").removeClass("initial-state");
+                $(".landing-page-navbar").addClass("bg-gradient");
+                $(".landing-page-nav-link").addClass("bg-gradient");
+                $(".logo-corfo").css("opacity", "0");
+                $("#chile_title").hide("puff", 0);
+                $('#footer-space').remove();
+                is_in_footer = false;
+                esconderFooter();
+            }
+            if ($.scrollify.current().attr('data-section-name') == "lecturas_recomendadas")
+            {
+                $("#data_title").hide("puff", 0);
+                $("#estudios_title").show("puff", 650);
+
+                $("#nuestros_title").show("puff", 650);
+                $("#lecturas_title").show("puff", 650);
+                $("#programas_title").show("puff", 650);
+
+                $(".landing-page-navbar").removeClass("no-bg");
+                $(".landing-page-nav-link").removeClass("initial-state");
+                $(".landing-page-navbar").addClass("bg-gradient");
+                $(".landing-page-nav-link").addClass("bg-gradient");
+                $(".logo-corfo").css("opacity", "0");
+                $("#chile_title").hide("puff", 0);
+                $('#footer-space').remove();
+                is_in_footer = false;
+                esconderFooter();
+
+            }
+            if ($.scrollify.current().attr('data-section-name') == "programas")
+            {
+                $("#data_title").hide("puff", 0);
+                $("#estudios_title").show("puff", 650);
+
+                $("#nuestros_title").show("puff", 650);
+                $("#lecturas_title").show("puff", 650);
+                $("#programas_title").show("puff", 650);
+
+                $(".landing-page-navbar").removeClass("no-bg");
+                $(".landing-page-nav-link").removeClass("initial-state");
+                $(".landing-page-navbar").addClass("bg-gradient");
+                $(".landing-page-nav-link").addClass("bg-gradient");
+                $(".logo-corfo").css("opacity", "0");
+                $("#chile_title").hide("puff", 0);
+                $('#footer-space').remove();
+                is_in_footer = false;
+                esconderFooter();
+
+            }
+            if ($.scrollify.current().attr('data-section-name') === "chile")
             {
                 $("#chile_title").show("puff", 650);
                 $(".landing-page-navbar").removeClass("no-bg");
@@ -88,6 +159,21 @@ $(document).ready(function () {
                 $(".landing-page-navbar").addClass("bg-gradient");
                 $(".landing-page-nav-link").addClass("bg-gradient");
                 $(".logo-corfo").css("opacity", "0");
+                $('#footer-space').remove();
+                is_in_footer = false;
+                esconderFooter();
+            }
+            if ($.scrollify.current().attr('data-section-name') === "pie_pagina")
+            {
+                $("#chile_title").hide("puff", 650);
+                $(".landing-page-navbar").removeClass("no-bg");
+                $(".landing-page-nav-link").removeClass("initial-state");
+                $(".landing-page-navbar").addClass("bg-gradient");
+                $(".landing-page-nav-link").addClass("bg-gradient");
+                $(".logo-corfo").css("opacity", "0");
+                $('body').append('<div id="footer-space" class="mt-5 pt-5"><br><br><br><br></div>');
+                is_in_footer = true;
+                mostrarFooter();
             }
         },
         after: function (index)

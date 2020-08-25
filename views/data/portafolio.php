@@ -15,7 +15,7 @@ unset($object);
         $("#jumbo").hide();
         showSpinnerWhileIFrameLoads();
         $("#menubar").slideUp(400);
-        $("#footer").css('height', '30px');
+        $("#footer").hide();
     });
     function showSpinnerWhileIFrameLoads() {
         var iframe = $('iframe');
@@ -32,6 +32,5 @@ unset($object);
     }
 
 </script>
-<iframe id="portafolio-shiny" frameborder="0" style="overflow:hidden;height:95vh;width:100%" height="90vh" width="100%" frameBorder='0' src="<?=$web->portafolio_link ? $web->portafolio_link : 'error' ?>">
+<iframe id="portafolio-shiny" frameborder="0" style="overflow:hidden;height:100vh;width:100%" height="90vh" width="100%" frameBorder='0' src="<?=$web->portafolio_link ? $web->portafolio_link : 'error' ?>">
 </iframe>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br>

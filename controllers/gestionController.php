@@ -13,7 +13,7 @@ class gestionController {
     function usuarios() {
         if (utils::isLogged()) {
             if (utils::isVerified()) {
-                if (utils::isAdmin()) {
+                if (utils::isAdminOEmpleado()) {
                     $usuario = new Usuario();
                     $usuarios = $usuario->getAll();
                     $log = new Log();

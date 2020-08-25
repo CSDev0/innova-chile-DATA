@@ -1,4 +1,4 @@
-<nav id="menubar" class="navbar sticky-top navbar-expand-sm bg-gradient seccion" data-section-name="menubar">
+<nav id="menubar" class="navbar sticky-top navbar-expand-sm bg-gradient">
     <div class="navbar-collapse justify-content-center">
         <ul class="navbar-nav">
             <li class="nav-item">
@@ -14,13 +14,30 @@
             </li>
             <li class="nav-item">
                 <div class="dropdown">
-                    <a class="nav-link dropdown-toggle landing-page-nav-link" href="#politicas_publicas"><i class="fad fa-bookmark icono-celeste"></i> Políticas públicas</a>
+                    <a class="nav-link dropdown-toggle landing-page-nav-link" href="<?= base_url . "web/politicas_publicas" ?>"><i class="fad fa-bookmark icono-celeste"></i> Políticas públicas</a>
 
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <div class="move-drop">
-                            <a class="dropdown-item" id="dropdown-item-hover" href="<?= base_url ?>estudio/nuestrosEstudios"><i class="fal fa-angle-double-right" id="nav-bar-dropdown-arrow"></i> Nuestros estudios</a>
-                            <a class="dropdown-item" id="dropdown-item-hover" href="<?= base_url ?>estudio/lecturasRecomendadas"><i class="fal fa-angle-double-right" id="nav-bar-dropdown-arrow"></i> Lecturas recomendadas</a>
-                            <a class="dropdown-item" id="dropdown-item-hover" href="<?= base_url ?>estudio/programas"><i class="fal fa-angle-double-right" id="nav-bar-dropdown-arrow"></i> Programas</a>
+                        <div class="move-drop" id='lista_politicas'>
+                            <script>
+                                $(document).ready(function () {
+                                    if (window.location.href.indexOf("politicas_publicas") > -1) {
+                                        $('#politicas_scrollify').show();
+                                        $('#politicas_links').hide();
+                                    } else {
+                                        $('#politicas_links').show();
+                                        $('#politicas_scrollify').hide();
+                                    }
+                                });</script>
+                            <div id='politicas_links' style="display: none;">
+                                <a class="dropdown-item" id="dropdown-item-hover6" href="<?=base_url.'web/politicas_publicas#nuestros_estudios'?>"><i class="fal fa-angle-double-right" id="nav-bar-dropdown-arrow6"></i> Nuestros estudios</a>
+                                <a class="dropdown-item"  id="dropdown-item-hover7" href="<?=base_url.'web/politicas_publicas#lecturas_recomendadas'?>"><i class="fal fa-angle-double-right" id="nav-bar-dropdown-arrow7"></i> Lecturas recomendadas</a>
+                                <a class="dropdown-item"  id="dropdown-item-hover7" href="<?=base_url.'web/politicas_publicas#programas'?>"><i class="fal fa-angle-double-right" id="nav-bar-dropdown-arrow7"></i> Programas</a>
+                            </div>
+                            <div id='politicas_scrollify' style="display: none;">
+                                <a class="dropdown-item" id="dropdown-item-hover6" href="#nuestros_estudios"><i class="fal fa-angle-double-right" id="nav-bar-dropdown-arrow6"></i> Nuestros estudios</a>
+                                <a class="dropdown-item"  id="dropdown-item-hover7" href="#lecturas_recomendadas"><i class="fal fa-angle-double-right" id="nav-bar-dropdown-arrow7"></i> Lecturas recomendadas</a>
+                                <a class="dropdown-item"  id="dropdown-item-hover7" href="#programas"><i class="fal fa-angle-double-right" id="nav-bar-dropdown-arrow7"></i> Programas</a>
+                            </div>
                         </div>
                     </div>
                 </div>

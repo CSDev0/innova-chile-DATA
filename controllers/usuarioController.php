@@ -67,7 +67,8 @@ class usuarioController {
                 require_once 'models/Log.php';
                 $log = new Log();
                 $log->setFecha($date);
-                $log->setTipo('Cerrar sesión');
+                $log->setTipo( 'Cerrar sesión');
+                $log->setActividad("<i class='icon-fa color-rojo'>&#xf0a8;</i> ".$_SESSION['identidad']->nombre." ".$_SESSION['identidad']->apellido." ha cerrado sesión.");
                 $log->setUsuario_id($_SESSION['identidad']->id);
                 $log->save();
                 unset($_SESSION['identidad']);

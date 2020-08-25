@@ -1,5 +1,13 @@
+<script>
+    $(document).ready(function () {
+    $(".landing-page-navbar").removeClass("no-bg");
+    $(".landing-page-nav-link").removeClass("initial-state");
+    $(".landing-page-navbar").addClass("bg-gradient");
+    $(".landing-page-nav-link").addClass("bg-gradient");
+    });
+</script>
 <div class="bg-chile">
-    <section class="seccion fullview chile_mundo" data-section-name="chile_en_el_mundo">
+    <section class="seccion fullview chile_mundo" data-section-name="chile">
         <div class="container-fluid d-flex justify-content-center">
             <div class="row section vw-100">
                 <div class="col-sm-12">
@@ -48,8 +56,7 @@
                     </div>
                 </div>
             </div>
-
+            <br><br><br><br>
         </div>
-        <br> <br> <br>   <br><br> <br> <br>   <br><br> <br> <br>   <br>
     </section>
 </div>

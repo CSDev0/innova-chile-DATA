@@ -116,22 +116,20 @@ class Usuario {
             $usuario = $login->fetch_object();
             $validar = password_verify($clave, $usuario->clave);
 
-
             if ($validar) {
-
                 $result = $usuario;
+
+                $now = new DateTime();
+                $date = $now->format("Y-m-d H:i:s");
+                require_once 'models/Log.php';
+                $log = new Log();
+                $log->setFecha($date);
+                $log->setTipo('Iniciar sesión');
+                $log->setActividad("<i class='icon-fa text-success'>&#xf0a9;</i> ".$usuario->nombre." ".$usuario->apellido." ha iniciado sesión");
+                $log->setUsuario_id($usuario->id);
+                $log->save();
             } else {
-                if ($clave == $usuario->clave) {
-                    $result = $usuario;
-                    $now = new DateTime();
-                    $date = $now->format("Y-m-d H:i:s");
-                    require_once 'models/Log.php';
-                    $log = new Log();
-                    $log->setFecha($date);
-                    $log->setTipo('Iniciar sesión');
-                    $log->setUsuario_id($usuario->id);
-                    $log->save();
-                }
+                $result = false;
             }
         }
         return $result;
@@ -150,7 +148,7 @@ class Usuario {
             $log = new Log();
             $log->setFecha($date);
             $log->setTipo('Agregar');
-            $log->setActividad('Usuario'.' <i class=icon-fa>&#xf0a9;</i> '.$this->getNombre());
+            $log->setActividad('Usuario' . ' <i class=icon-fa>&#xf0a9;</i> ' . $this->getNombre());
             $log->setUsuario_id($_SESSION['identidad']->id);
             $log->save();
             $result = true;
@@ -175,7 +173,7 @@ class Usuario {
             $log = new Log();
             $log->setFecha($date);
             $log->setTipo('Eliminar');
-            $log->setActividad('Usuario'.' <i class=icon-fa>&#xf0a9;</i> '.$usu_eliminado->nombre);
+            $log->setActividad('Usuario' . ' <i class=icon-fa>&#xf0a9;</i> ' . $usu_eliminado->nombre);
             $log->setUsuario_id($_SESSION['identidad']->id);
             $log->save();
             $result = true;
@@ -203,7 +201,7 @@ class Usuario {
             $log = new Log();
             $log->setFecha($date);
             $log->setTipo('Modificar');
-            $log->setActividad('Usuario'.' <i class=icon-fa>&#xf0a9;</i> '. $usu_antiguo->nombre . ' ' . $usu_antiguo->apellido);
+            $log->setActividad('Usuario' . ' <i class=icon-fa>&#xf0a9;</i> ' . $usu_antiguo->nombre . ' ' . $usu_antiguo->apellido);
             $log->setUsuario_id($_SESSION['identidad']->id);
             $log->save();
             $result = true;
@@ -284,4 +282,5 @@ class Usuario {
         }
         return $result;
     }
+
 }

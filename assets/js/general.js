@@ -1,3 +1,4 @@
+var is_in_footer = false;
 $(document).ready(function () {
     bsCustomFileInput.init()
     loop_flecha_animada();
@@ -144,21 +145,21 @@ $.fn.scrollBottom = function () {
 };
 var abierto = false;
 var header = false;
-$(window).scroll(function () {
-    if ($(this).scrollBottom() < 60 && abierto === false) {
-        var altura = $('.footer-sticky').get(0).scrollHeight;
-        $('.footer-sticky').animate({height: altura}, 5);
-        abierto = true;
-        flecha_abajo();
-
-    } else {
-        if ($(this).scrollBottom() > 50 && abierto === true) {
-            $('.footer-sticky').animate({height: '30px'}, 5);
-            abierto = false;
-            flecha_arriba();
-        }
-    }
-});
+//$(window).scroll(function () {
+//    if ($(this).scrollBottom() < 60 && abierto === false) {
+//        var altura = $('.footer-sticky').get(0).scrollHeight;
+//        $('.footer-sticky').animate({height: altura}, 5);
+//        abierto = true;
+//        flecha_abajo();
+//
+//    } else {
+//        if ($(this).scrollBottom() > 50 && abierto === true) {
+//            $('.footer-sticky').animate({height: '30px'}, 5);
+//            abierto = false;
+//            flecha_arriba();
+//        }
+//    }
+//});
 
 //FOOTER STICKY------------------------------------------------
 function flecha_abajo() {
@@ -171,21 +172,18 @@ function flecha_arriba() {
     $('#flecha-animada').addClass('fal fa-angle-up fa-3x color-blanco')
 }
 $('.footer-sticky').mouseenter($.throttle(350, function (e) {
+    mostrarFooter();
+})).mouseleave($.throttle(700, function (e) {
+    if(is_in_footer === false){
+        esconderFooter();
+    }
+}));
+function mostrarFooter() {
     var altura = $('.footer-sticky').get(0).scrollHeight;
-
-    $(this).animate({height: altura}, 5);
+    $('.footer-sticky').animate({height: altura}, 5);
     abierto = true;
     flecha_abajo();
-})).mouseleave($.throttle(700, function (e) {
-//    if ($(window).scrollBottom() < 20 && abierto === true) {
-//
-//    } else {
-//        if (abierto === true) {
-
-    esconderFooter();
-//        }
-//    }
-}));
+}
 function esconderFooter() {
     $(".footer-sticky").animate({height: '30px'}, 5);
     abierto = false;
